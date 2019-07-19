@@ -1,0 +1,10 @@
+C:\Users\gganp\Desktop\Comprador\Comprador\bin\Debug\Comprador.exe.config
+C:\Users\gganp\Desktop\Comprador\Comprador\bin\Debug\Comprador.exe
+C:\Users\gganp\Desktop\Comprador\Comprador\bin\Debug\Comprador.pdb
+C:\Users\gganp\Desktop\Comprador\Comprador\obj\Debug\Comprador.csprojAssemblyReference.cache
+C:\Users\gganp\Desktop\Comprador\Comprador\obj\Debug\Comprador.Form1.resources
+C:\Users\gganp\Desktop\Comprador\Comprador\obj\Debug\Comprador.Properties.Resources.resources
+C:\Users\gganp\Desktop\Comprador\Comprador\obj\Debug\Comprador.csproj.GenerateResource.cache
+C:\Users\gganp\Desktop\Comprador\Comprador\obj\Debug\Comprador.csproj.CoreCompileInputs.cache
+C:\Users\gganp\Desktop\Comprador\Comprador\obj\Debug\Comprador.exe
+C:\Users\gganp\Desktop\Comprador\Comprador\obj\Debug\Comprador.pdb
