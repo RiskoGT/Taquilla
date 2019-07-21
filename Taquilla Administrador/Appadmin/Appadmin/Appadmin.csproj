@@ -52,6 +52,12 @@
     <Compile Include="Acceso.Designer.cs">
       <DependentUpon>Acceso.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cartelera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cartelera.Designer.cs">
+      <DependentUpon>Cartelera.cs</DependentUpon>
+    </Compile>
     <Compile Include="controlInformes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Acceso.resx">
       <DependentUpon>Acceso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cartelera.resx">
+      <DependentUpon>Cartelera.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="controlInformes.resx">
       <DependentUpon>controlInformes.cs</DependentUpon>

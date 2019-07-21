@@ -20,7 +20,9 @@ namespace Appadmin
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Cartelera frm = new Cartelera();
+            frm.Show();
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)

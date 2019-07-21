@@ -10,32 +10,22 @@ using System.Windows.Forms;
 
 namespace Appadmin
 {
-    public partial class controlInformes : Form
+    public partial class Cartelera : Form
     {
-        public controlInformes()
+        public Cartelera()
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
         }
 
-        private void controlInformes_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel5_Paint(object sender, PaintEventArgs e)
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
         private void regresarMenu_Click(object sender, EventArgs e)
         {
-             Form1 frm = new Form1();
+            Form1 frm = new Form1();
             frm.Show();
             this.Hide();
         }
