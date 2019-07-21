@@ -29,9 +29,14 @@ namespace Taquilla_cliente_comprador
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            Form formulariocon = new Frm_Confirmasion();
-            formulariocon.Show();
-            Visible = false;
+            Form formulariopago = new Frm_Confirmasion();
+            formulariopago.Show();
+			this.Visible = false;
         }
-    }
+
+		private void Frm_pago_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			Application.Exit();
+		}
+	}
 }

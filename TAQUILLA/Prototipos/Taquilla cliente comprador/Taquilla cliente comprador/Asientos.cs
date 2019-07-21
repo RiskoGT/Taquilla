@@ -29,7 +29,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_B7.BackColor = Color.Silver; ;
+                Btn_B7.BackColor = Color.White; ;
                 b7 = 0;
             }
         }
@@ -45,7 +45,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_C8.BackColor = Color.Silver;
+                Btn_C8.BackColor = Color.White;
                 c8 = 0;
             }
         }
@@ -61,7 +61,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_C9.BackColor = Color.Silver; ;
+                Btn_C9.BackColor = Color.White; ;
                 c9 = 0;
             }
         }
@@ -77,7 +77,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_C10.BackColor = Color.Silver; ;
+                Btn_C10.BackColor = Color.White; ;
                 c10 = 0;
             }
         }
@@ -93,7 +93,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_D1.BackColor = Color.Silver; ;
+                Btn_D1.BackColor = Color.White; ;
                 d1 = 0;
             }
         }
@@ -109,7 +109,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_E1.BackColor = Color.Silver; ;
+                Btn_E1.BackColor = Color.White; ;
                 e1 = 0;
             }
         }
@@ -125,7 +125,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_F1.BackColor = Color.Silver; ;
+                Btn_F1.BackColor = Color.White; ;
                 f1 = 0;
             }
         }
@@ -141,7 +141,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_G1.BackColor = Color.Silver; ;
+                Btn_G1.BackColor = Color.White; ;
                 g1 = 0;
             }
         }
@@ -158,7 +158,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_H1.BackColor = Color.Silver; ;
+                Btn_H1.BackColor = Color.White; ;
                 h1 = 0;
             }
         }
@@ -174,7 +174,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_I1.BackColor = Color.Silver; ;
+                Btn_I1.BackColor = Color.White; ;
                 i1 = 0;
             }
         }
@@ -190,7 +190,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_D2.BackColor = Color.Silver; ;
+                Btn_D2.BackColor = Color.White; ;
                 d2 = 0;
             }
         }
@@ -206,7 +206,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_D1.BackColor = Color.Silver; ;
+                Btn_D1.BackColor = Color.White; ;
                 d1 = 0;
             }
         }
@@ -222,7 +222,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_D5.BackColor = Color.Silver; ;
+                Btn_D5.BackColor = Color.White; ;
                 d5 = 0;
             }
         }
@@ -238,7 +238,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_D6.BackColor = Color.Silver; ;
+                Btn_D6.BackColor = Color.White; ;
                 d6 = 0;
             }
         }
@@ -254,7 +254,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_D7.BackColor = Color.Silver; ;
+                Btn_D7.BackColor = Color.White; ;
                 d7 = 0;
             }
         }
@@ -270,7 +270,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_D8.BackColor = Color.Silver; ;
+                Btn_D8.BackColor = Color.White; ;
                 d8= 0;
             }
         }
@@ -286,7 +286,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_D9.BackColor = Color.Silver; ;
+                Btn_D9.BackColor = Color.White; ;
                 d9 = 0;
             }
         }
@@ -302,7 +302,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_D10.BackColor = Color.Silver; ;
+                Btn_D10.BackColor = Color.White; ;
                 d10 = 0;
             }
         }
@@ -318,7 +318,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_D4.BackColor = Color.Silver; ;
+                Btn_D4.BackColor = Color.White; ;
                 d4 = 0;
             }
         }
@@ -334,7 +334,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_E5.BackColor = Color.Silver; ;
+                Btn_E5.BackColor = Color.White; ;
                 e5 = 0;
             }
         }
@@ -350,7 +350,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_E2.BackColor = Color.Silver; ;
+                Btn_E2.BackColor = Color.White; ;
                 e2 = 0;
             }
         }
@@ -366,7 +366,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_E3.BackColor = Color.Silver; ;
+                Btn_E3.BackColor = Color.White; ;
                 e3 = 0;
             }
         }
@@ -382,7 +382,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_E4.BackColor = Color.Silver; ;
+                Btn_E4.BackColor = Color.White; ;
                 e4 = 0;
             }
         }
@@ -398,7 +398,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_E6.BackColor = Color.Silver; ;
+                Btn_E6.BackColor = Color.White; ;
                 e6 = 0;
             }
         }
@@ -414,7 +414,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_E7.BackColor = Color.Silver; ;
+                Btn_E7.BackColor = Color.White; ;
                 e7 = 0;
             }
         }
@@ -430,7 +430,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_E8.BackColor = Color.Silver; ;
+                Btn_E8.BackColor = Color.White; ;
                 e8 = 0;
             }
         }
@@ -446,7 +446,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_E9.BackColor = Color.Silver; ;
+                Btn_E9.BackColor = Color.White; ;
                 e9 = 0;
             }
         }
@@ -462,7 +462,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_E10.BackColor = Color.Silver; ;
+                Btn_E10.BackColor = Color.White; ;
                 e10 = 0;
             }
         }
@@ -478,7 +478,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_F2.BackColor = Color.Silver; ;
+                Btn_F2.BackColor = Color.White; ;
                 f2= 0;
             }
         }
@@ -494,7 +494,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_F3.BackColor = Color.Silver; ;
+                Btn_F3.BackColor = Color.White; ;
                 f3 = 0;
             }
         }
@@ -510,7 +510,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_F4.BackColor = Color.Silver; ;
+                Btn_F4.BackColor = Color.White; ;
                 f4 = 0;
             }
         }
@@ -526,7 +526,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_F5.BackColor = Color.Silver; ;
+                Btn_F5.BackColor = Color.White; ;
                 f5 = 0;
             }
         }
@@ -542,7 +542,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_F6.BackColor = Color.Silver; ;
+                Btn_F6.BackColor = Color.White; ;
                 f6 = 0;
             }
         }
@@ -558,7 +558,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_F7.BackColor = Color.Silver; ;
+                Btn_F7.BackColor = Color.White; ;
                 f7 = 0;
             }
         }
@@ -574,7 +574,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_F8.BackColor = Color.Silver; ;
+                Btn_F8.BackColor = Color.White; ;
                 f8 = 0;
             }
         }
@@ -590,7 +590,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_F9.BackColor = Color.Silver; ;
+                Btn_F9.BackColor = Color.White; ;
                 f9 = 0;
             }
         }
@@ -606,7 +606,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_F10.BackColor = Color.Silver; ;
+                Btn_F10.BackColor = Color.White; ;
                 f10 = 0;
             }
         }
@@ -622,7 +622,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_G2.BackColor = Color.Silver; ;
+                Btn_G2.BackColor = Color.White; ;
                 g2 = 0;
             }
         }
@@ -638,7 +638,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_G3.BackColor = Color.Silver; ;
+                Btn_G3.BackColor = Color.White; ;
                 g3 = 0;
             }
         }
@@ -654,7 +654,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_G4.BackColor = Color.Silver; ;
+                Btn_G4.BackColor = Color.White; ;
                 g4 = 0;
             }
         }
@@ -670,7 +670,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_G6.BackColor = Color.Silver; ;
+                Btn_G6.BackColor = Color.White; ;
                 g6 = 0;
             }
         }
@@ -686,7 +686,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_G6.BackColor = Color.Silver; ;
+                Btn_G6.BackColor = Color.White; ;
                 g6 = 0;
             }
         }
@@ -702,7 +702,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_G7.BackColor = Color.Silver; ;
+                Btn_G7.BackColor = Color.White; ;
                 g7 = 0;
             }
         }
@@ -718,7 +718,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_G8.BackColor = Color.Silver; ;
+                Btn_G8.BackColor = Color.White; ;
                 g8= 0;
             }
         }
@@ -734,7 +734,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_G9.BackColor = Color.Silver; ;
+                Btn_G9.BackColor = Color.White; ;
                 g9 = 0;
             }
         }
@@ -750,7 +750,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_G10.BackColor = Color.Silver; ;
+                Btn_G10.BackColor = Color.White; ;
                 g10 = 0;
             }
         }
@@ -766,7 +766,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_H2.BackColor = Color.Silver; ;
+                Btn_H2.BackColor = Color.White; ;
                 h2 = 0;
             }
         }
@@ -782,7 +782,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_H3.BackColor = Color.Silver; ;
+                Btn_H3.BackColor = Color.White; ;
                 h3 = 0;
             }
         }
@@ -798,7 +798,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_H4.BackColor = Color.Silver; ;
+                Btn_H4.BackColor = Color.White; ;
                 h4 = 0;
             }
         }
@@ -814,7 +814,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_H5.BackColor = Color.Silver; ;
+                Btn_H5.BackColor = Color.White; ;
                 h5 = 0;
             }
         }
@@ -830,7 +830,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_H6.BackColor = Color.Silver; ;
+                Btn_H6.BackColor = Color.White; ;
                 h6 = 0;
             }
         }
@@ -846,7 +846,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_H7.BackColor = Color.Silver; ;
+                Btn_H7.BackColor = Color.White; ;
                 h7 = 0;
             }
         }
@@ -862,7 +862,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_H8.BackColor = Color.Silver; ;
+                Btn_H8.BackColor = Color.White; ;
                 h8 = 0;
             }
         }
@@ -878,7 +878,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_H9.BackColor = Color.Silver; ;
+                Btn_H9.BackColor = Color.White; ;
                 h9 = 0;
             }
         }
@@ -894,7 +894,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_H10.BackColor = Color.Silver; ;
+                Btn_H10.BackColor = Color.White; ;
                 h10 = 0;
             }
         }
@@ -910,7 +910,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_I2.BackColor = Color.Silver; ;
+                Btn_I2.BackColor = Color.White; ;
                 i2 = 0;
             }
         }
@@ -926,7 +926,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_I3.BackColor = Color.Silver; ;
+                Btn_I3.BackColor = Color.White; ;
                 i3 = 0;
             }
         }
@@ -942,7 +942,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_I4.BackColor = Color.Silver; ;
+                Btn_I4.BackColor = Color.White; ;
                 i4 = 0;
             }
         }
@@ -958,7 +958,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_I5.BackColor = Color.Silver; ;
+                Btn_I5.BackColor = Color.White; ;
                 i5 = 0;
             }
         }
@@ -974,7 +974,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_I6.BackColor = Color.Silver; ;
+                Btn_I6.BackColor = Color.White; ;
                 i6 = 0;
             }
         }
@@ -990,7 +990,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_I7.BackColor = Color.Silver; ;
+                Btn_I7.BackColor = Color.White; ;
                 i7 = 0;
             }
         }
@@ -1006,7 +1006,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_I8.BackColor = Color.Silver; ;
+                Btn_I8.BackColor = Color.White; ;
                 i8 = 0;
             }
         }
@@ -1022,7 +1022,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_I9.BackColor = Color.Silver; ;
+                Btn_I9.BackColor = Color.White; ;
                 i9 = 0;
             }
         }
@@ -1038,12 +1038,59 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_I10.BackColor = Color.Silver; ;
+                Btn_I10.BackColor = Color.White; ;
                 i10 = 0;
             }
         }
 
-        private void Btn_C5_Click(object sender, EventArgs e)
+		private void Frm_asientos_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			Application.Exit();
+		}
+
+		private void timer1_Tick(object sender, EventArgs e)
+		{
+			if (Int32.Parse(Txt_asientos.Text) == contador)
+			{
+				Btn_A1.Enabled = false; Btn_A2.Enabled = false; Btn_A3.Enabled = false; Btn_A4.Enabled = false; Btn_A5.Enabled = false;
+				Btn_A6.Enabled = false; Btn_A7.Enabled = false; Btn_A8.Enabled = false; Btn_A9.Enabled = false; Btn_A10.Enabled = false;
+				Btn_B1.Enabled = false; Btn_B2.Enabled = false; Btn_B3.Enabled = false; Btn_B4.Enabled = false; Btn_B5.Enabled = false;
+				Btn_B6.Enabled = false; Btn_B7.Enabled = false; Btn_B8.Enabled = false; Btn_B9.Enabled = false; Btn_B10.Enabled = false;
+				Btn_C1.Enabled = false; Btn_C2.Enabled = false; Btn_C3.Enabled = false; Btn_C4.Enabled = false; Btn_C5.Enabled = false;
+				Btn_C6.Enabled = false; Btn_C7.Enabled = false; Btn_C8.Enabled = false; Btn_C9.Enabled = false; Btn_C10.Enabled = false;
+				Btn_D1.Enabled = false; Btn_D2.Enabled = false; Btn_D3.Enabled = false; Btn_D4.Enabled = false; Btn_D5.Enabled = false;
+				Btn_D6.Enabled = false; Btn_D7.Enabled = false; Btn_D8.Enabled = false; Btn_D9.Enabled = false; Btn_D10.Enabled = false;
+				Btn_E1.Enabled = false; Btn_E2.Enabled = false; Btn_E3.Enabled = false; Btn_E4.Enabled = false; Btn_E5.Enabled = false;
+				Btn_E6.Enabled = false; Btn_E7.Enabled = false; Btn_E8.Enabled = false; Btn_E9.Enabled = false; Btn_E10.Enabled = false;
+				Btn_F1.Enabled = false; Btn_F2.Enabled = false; Btn_F3.Enabled = false; Btn_F4.Enabled = false; Btn_F5.Enabled = false;
+				Btn_E10.Enabled = false; Btn_F7.Enabled = false; Btn_F8.Enabled = false; Btn_F9.Enabled = false; Btn_F10.Enabled = false;
+				Btn_H1.Enabled = false; Btn_H2.Enabled = false; Btn_H3.Enabled = false; Btn_H4.Enabled = false; Btn_H5.Enabled = false;
+				Btn_H6.Enabled = false; Btn_H7.Enabled = false; Btn_H8.Enabled = false; Btn_H9.Enabled = false; Btn_H10.Enabled = false;
+				Btn_I1.Enabled = false; Btn_I2.Enabled = false; Btn_I3.Enabled = false; Btn_I4.Enabled = false; Btn_I5.Enabled = false;
+				Btn_I6.Enabled = false; Btn_I7.Enabled = false; Btn_I8.Enabled = false; Btn_I9.Enabled = false; Btn_I10.Enabled = false;
+			}
+			if (Int32.Parse(Txt_asientos.Text) < contador)
+			{
+				Btn_A1.Enabled = true; Btn_A2.Enabled = true; Btn_A3.Enabled = true; Btn_A4.Enabled = true; Btn_A5.Enabled = true;
+				Btn_A6.Enabled = true; Btn_A7.Enabled = true; Btn_A8.Enabled = true; Btn_A9.Enabled = true; Btn_A10.Enabled = true;
+				Btn_B1.Enabled = true; Btn_B2.Enabled = true; Btn_B3.Enabled = true; Btn_B4.Enabled = true; Btn_B5.Enabled = true;
+				Btn_B6.Enabled = true; Btn_B7.Enabled = true; Btn_B8.Enabled = true; Btn_B9.Enabled = true; Btn_B10.Enabled = true;
+				Btn_C1.Enabled = true; Btn_C2.Enabled = true; Btn_C3.Enabled = true; Btn_C4.Enabled = true; Btn_C5.Enabled = true;
+				Btn_C6.Enabled = true; Btn_C7.Enabled = true; Btn_C8.Enabled = true; Btn_C9.Enabled = true; Btn_C10.Enabled = true;
+				Btn_D1.Enabled = true; Btn_D2.Enabled = true; Btn_D3.Enabled = true; Btn_D4.Enabled = true; Btn_D5.Enabled = true;
+				Btn_D6.Enabled = true; Btn_D7.Enabled = true; Btn_D8.Enabled = true; Btn_D9.Enabled = true; Btn_D10.Enabled = true;
+				Btn_E1.Enabled = true; Btn_E2.Enabled = true; Btn_E3.Enabled = true; Btn_E4.Enabled = true; Btn_E5.Enabled = true;
+				Btn_E6.Enabled = true; Btn_E7.Enabled = true; Btn_E8.Enabled = true; Btn_E9.Enabled = true; Btn_E10.Enabled = true;
+				Btn_F1.Enabled = true; Btn_F2.Enabled = true; Btn_F3.Enabled = true; Btn_F4.Enabled = true; Btn_F5.Enabled = true;
+				Btn_E10.Enabled = true; Btn_F7.Enabled = true; Btn_F8.Enabled = true; Btn_F9.Enabled = true; Btn_F10.Enabled = true;
+				Btn_H1.Enabled = true; Btn_H2.Enabled = true; Btn_H3.Enabled = true; Btn_H4.Enabled = true; Btn_H5.Enabled = true;
+				Btn_H6.Enabled = true; Btn_H7.Enabled = true; Btn_H8.Enabled = true; Btn_H9.Enabled = true; Btn_H10.Enabled = true;
+				Btn_I1.Enabled = true; Btn_I2.Enabled = true; Btn_I3.Enabled = true; Btn_I4.Enabled = true; Btn_I5.Enabled = true;
+				Btn_I6.Enabled = true; Btn_I7.Enabled = true; Btn_I8.Enabled = true; Btn_I9.Enabled = true; Btn_I10.Enabled = true;
+			}
+		}
+
+		private void Btn_C5_Click(object sender, EventArgs e)
         {
             if (c5 == 0)
             {
@@ -1054,7 +1101,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_C5.BackColor = Color.Silver; ;
+                Btn_C5.BackColor = Color.White; ;
                 c5 = 0;
             }
         }
@@ -1070,7 +1117,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_C3.BackColor = Color.Silver; ;
+                Btn_C3.BackColor = Color.White; ;
                 c3 = 0;
             }
         }
@@ -1086,7 +1133,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_C2.BackColor = Color.Silver; ;
+                Btn_C2.BackColor = Color.White; ;
                 c2 = 0;
             }
         }
@@ -1102,7 +1149,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_C4.BackColor = Color.Silver; ;
+                Btn_C4.BackColor = Color.White; ;
                 c4 = 0;
             }
         }
@@ -1125,7 +1172,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_B2.BackColor = Color.Silver; ;
+                Btn_B2.BackColor = Color.White; ;
                 b2 = 0;
             }
         }
@@ -1141,7 +1188,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_B3.BackColor = Color.Silver; ;
+                Btn_B3.BackColor = Color.White; ;
                 b3 = 0;
             }
         }
@@ -1157,7 +1204,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_B4.BackColor = Color.Silver; ;
+                Btn_B4.BackColor = Color.White; ;
                 b4 = 0;
             }
         }
@@ -1173,7 +1220,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_B5.BackColor = Color.Silver; ;
+                Btn_B5.BackColor = Color.White; ;
                 b5 = 0;
             }
         }
@@ -1189,7 +1236,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_B6.BackColor = Color.Silver; ;
+                Btn_B6.BackColor = Color.White; ;
                 b6 = 0;
             }
         }
@@ -1205,7 +1252,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_B8.BackColor = Color.Silver; ;
+                Btn_B8.BackColor = Color.White; ;
                 b8 = 0;
             }
         }
@@ -1221,7 +1268,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_B9.BackColor = Color.Silver; ;
+                Btn_B9.BackColor = Color.White; ;
                 b9 = 0;
             }
         }
@@ -1237,7 +1284,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_B10.BackColor = Color.Silver; ;
+                Btn_B10.BackColor = Color.White; ;
                 b10 = 0;
             }
         }
@@ -1253,7 +1300,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_C1.BackColor = Color.Silver; ;
+                Btn_C1.BackColor = Color.White; ;
                 c1 = 0;
             }
         }
@@ -1269,7 +1316,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_A3.BackColor = Color.Silver; ;
+                Btn_A3.BackColor = Color.White; ;
                 a3 = 0;
             }
         }
@@ -1285,7 +1332,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_A4.BackColor = Color.Silver; ;
+                Btn_A4.BackColor = Color.White; ;
                 a4 = 0;
             }
         }
@@ -1301,7 +1348,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_A5.BackColor = Color.Silver; ;
+                Btn_A5.BackColor = Color.White; ;
                 a5 = 0;
             }
         }
@@ -1317,7 +1364,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_A6.BackColor = Color.Silver; ;
+                Btn_A6.BackColor = Color.White; ;
                 a6 = 0;
             }
         }
@@ -1333,7 +1380,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_A7.BackColor = Color.Silver; ;
+                Btn_A7.BackColor = Color.White; ;
                 a7 = 0;
             }
         }
@@ -1349,7 +1396,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_A8.BackColor = Color.Silver; ;
+                Btn_A8.BackColor = Color.White; ;
                 a8 = 0;
             }
         }
@@ -1365,7 +1412,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_A9.BackColor = Color.Silver; ;
+                Btn_A9.BackColor = Color.White; ;
                 a9 = 0;
             }
         }
@@ -1381,7 +1428,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_A10.BackColor = Color.Silver; ;
+                Btn_A10.BackColor = Color.White; ;
                 a10 = 0;
             }
         }
@@ -1397,7 +1444,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_B1.BackColor = Color.Silver; ;
+                Btn_B1.BackColor = Color.White; ;
                 b1 = 0;
             }
         }
@@ -1418,7 +1465,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_C6.BackColor = Color.Silver; ;
+                Btn_C6.BackColor = Color.White; ;
                 c6 = 0;
             }
         }
@@ -1434,7 +1481,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_C7.BackColor = Color.Silver;
+                Btn_C7.BackColor = Color.White;
                 c7 = 0;
 
             }
@@ -1466,22 +1513,22 @@ namespace Taquilla_cliente_comprador
                  g1 = 0; g2 = 0; g3 = 0; g4 = 0; g5 = 0; g6 = 0; g7 = 0; g8 = 0; g9 = 0; g10 = 0;
                  h1 = 0; h2 = 0; h3 = 0; h4 = 0; h5 = 0; h6 = 0; h7 = 0; h8 = 0; h9 = 0; h10 = 0;
                  i1 = 0; i2 = 0; i3 = 0; i4 = 0; i5 = 0; i6 = 0; i7 = 0; i8 = 0; i9 = 0; i10 = 0;
-                Btn_A1.BackColor = Color.Silver; Btn_A2.BackColor = Color.Silver; Btn_A3.BackColor = Color.Silver; Btn_A4.BackColor = Color.Silver; Btn_A5.BackColor = Color.Silver;
-                Btn_A6.BackColor = Color.Silver; Btn_A7.BackColor = Color.Silver; Btn_A8.BackColor = Color.Silver; Btn_A9.BackColor = Color.Silver; Btn_A10.BackColor = Color.Silver;
-                Btn_B1.BackColor = Color.Silver; Btn_B2.BackColor = Color.Silver; Btn_B3.BackColor = Color.Silver; Btn_B4.BackColor = Color.Silver; Btn_B5.BackColor = Color.Silver;
-                Btn_B6.BackColor = Color.Silver; Btn_B7.BackColor = Color.Silver; Btn_B8.BackColor = Color.Silver; Btn_B9.BackColor = Color.Silver; Btn_B10.BackColor = Color.Silver;
-                Btn_C1.BackColor = Color.Silver; Btn_C2.BackColor = Color.Silver; Btn_C3.BackColor = Color.Silver; Btn_C4.BackColor = Color.Silver; Btn_C5.BackColor = Color.Silver;
-                Btn_C6.BackColor = Color.Silver; Btn_C7.BackColor = Color.Silver; Btn_C8.BackColor = Color.Silver; Btn_C9.BackColor = Color.Silver; Btn_C10.BackColor = Color.Silver;
-                Btn_D1.BackColor = Color.Silver; Btn_D2.BackColor = Color.Silver; Btn_D3.BackColor = Color.Silver; Btn_D4.BackColor = Color.Silver; Btn_D5.BackColor = Color.Silver;
-                Btn_D6.BackColor = Color.Silver; Btn_D7.BackColor = Color.Silver; Btn_D8.BackColor = Color.Silver; Btn_D9.BackColor = Color.Silver; Btn_D10.BackColor = Color.Silver;
-                Btn_E1.BackColor = Color.Silver; Btn_E2.BackColor = Color.Silver; Btn_E3.BackColor = Color.Silver; Btn_E4.BackColor = Color.Silver; Btn_E5.BackColor = Color.Silver;
-                Btn_E6.BackColor = Color.Silver; Btn_E7.BackColor = Color.Silver; Btn_E8.BackColor = Color.Silver; Btn_E9.BackColor = Color.Silver; Btn_E10.BackColor = Color.Silver;
-                Btn_F1.BackColor = Color.Silver; Btn_F2.BackColor = Color.Silver; Btn_F3.BackColor = Color.Silver; Btn_F4.BackColor = Color.Silver; Btn_F5.BackColor = Color.Silver;
-                Btn_E10.BackColor = Color.Silver; Btn_F7.BackColor = Color.Silver; Btn_F8.BackColor = Color.Silver; Btn_F9.BackColor = Color.Silver; Btn_F10.BackColor = Color.Silver;
-                Btn_H1.BackColor = Color.Silver; Btn_H2.BackColor = Color.Silver; Btn_H3.BackColor = Color.Silver; Btn_H4.BackColor = Color.Silver; Btn_H5.BackColor = Color.Silver;
-                Btn_H6.BackColor = Color.Silver; Btn_H7.BackColor = Color.Silver; Btn_H8.BackColor = Color.Silver; Btn_H9.BackColor = Color.Silver; Btn_H10.BackColor = Color.Silver;
-                Btn_I1.BackColor = Color.Silver; Btn_I2.BackColor = Color.Silver; Btn_I3.BackColor = Color.Silver; Btn_I4.BackColor = Color.Silver; Btn_I5.BackColor = Color.Silver;
-                Btn_I6.BackColor = Color.Silver; Btn_I7.BackColor = Color.Silver; Btn_I8.BackColor = Color.Silver; Btn_I9.BackColor = Color.Silver; Btn_I10.BackColor = Color.Silver;
+                Btn_A1.BackColor = Color.White; Btn_A2.BackColor = Color.White; Btn_A3.BackColor = Color.White; Btn_A4.BackColor = Color.White; Btn_A5.BackColor = Color.White;
+                Btn_A6.BackColor = Color.White; Btn_A7.BackColor = Color.White; Btn_A8.BackColor = Color.White; Btn_A9.BackColor = Color.White; Btn_A10.BackColor = Color.White;
+                Btn_B1.BackColor = Color.White; Btn_B2.BackColor = Color.White; Btn_B3.BackColor = Color.White; Btn_B4.BackColor = Color.White; Btn_B5.BackColor = Color.White;
+                Btn_B6.BackColor = Color.White; Btn_B7.BackColor = Color.White; Btn_B8.BackColor = Color.White; Btn_B9.BackColor = Color.White; Btn_B10.BackColor = Color.White;
+                Btn_C1.BackColor = Color.White; Btn_C2.BackColor = Color.White; Btn_C3.BackColor = Color.White; Btn_C4.BackColor = Color.White; Btn_C5.BackColor = Color.White;
+                Btn_C6.BackColor = Color.White; Btn_C7.BackColor = Color.White; Btn_C8.BackColor = Color.White; Btn_C9.BackColor = Color.White; Btn_C10.BackColor = Color.White;
+                Btn_D1.BackColor = Color.White; Btn_D2.BackColor = Color.White; Btn_D3.BackColor = Color.White; Btn_D4.BackColor = Color.White; Btn_D5.BackColor = Color.White;
+                Btn_D6.BackColor = Color.White; Btn_D7.BackColor = Color.White; Btn_D8.BackColor = Color.White; Btn_D9.BackColor = Color.White; Btn_D10.BackColor = Color.White;
+                Btn_E1.BackColor = Color.White; Btn_E2.BackColor = Color.White; Btn_E3.BackColor = Color.White; Btn_E4.BackColor = Color.White; Btn_E5.BackColor = Color.White;
+                Btn_E6.BackColor = Color.White; Btn_E7.BackColor = Color.White; Btn_E8.BackColor = Color.White; Btn_E9.BackColor = Color.White; Btn_E10.BackColor = Color.White;
+                Btn_F1.BackColor = Color.White; Btn_F2.BackColor = Color.White; Btn_F3.BackColor = Color.White; Btn_F4.BackColor = Color.White; Btn_F5.BackColor = Color.White;
+                Btn_E10.BackColor = Color.White; Btn_F7.BackColor = Color.White; Btn_F8.BackColor = Color.White; Btn_F9.BackColor = Color.White; Btn_F10.BackColor = Color.White;
+                Btn_H1.BackColor = Color.White; Btn_H2.BackColor = Color.White; Btn_H3.BackColor = Color.White; Btn_H4.BackColor = Color.White; Btn_H5.BackColor = Color.White;
+                Btn_H6.BackColor = Color.White; Btn_H7.BackColor = Color.White; Btn_H8.BackColor = Color.White; Btn_H9.BackColor = Color.White; Btn_H10.BackColor = Color.White;
+                Btn_I1.BackColor = Color.White; Btn_I2.BackColor = Color.White; Btn_I3.BackColor = Color.White; Btn_I4.BackColor = Color.White; Btn_I5.BackColor = Color.White;
+                Btn_I6.BackColor = Color.White; Btn_I7.BackColor = Color.White; Btn_I8.BackColor = Color.White; Btn_I9.BackColor = Color.White; Btn_I10.BackColor = Color.White;
             }
            
         }
@@ -1496,7 +1543,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_A1.BackColor = Color.Silver; ;
+                Btn_A1.BackColor = Color.White; ;
                 a1 = 0;
             }
         }
@@ -1512,7 +1559,7 @@ namespace Taquilla_cliente_comprador
             else
             {
                 contador = contador - 1;
-                Btn_A2.BackColor = Color.Silver; ;
+                Btn_A2.BackColor = Color.White; ;
                 a2 = 0;
             }
         }

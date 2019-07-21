@@ -34,7 +34,7 @@ namespace Taquilla_cliente_comprador
         {
 
             if (count4 == 0)
-            { MessageBox.Show("Selecion Incorecta Boletos"); }
+            { MessageBox.Show("Por favor, seleccione al menos 1 boleto para continuar, Gracias!!"); }
             else {
 
                 Frm_asientos asi = new Frm_asientos();
@@ -210,5 +210,15 @@ namespace Taquilla_cliente_comprador
             formulariocar.Show();
             Visible = false;
         }
-    }
+
+		private void Frm_boletos_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			Application.Exit();
+		}
+
+		private void Btn_canTBoletos_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

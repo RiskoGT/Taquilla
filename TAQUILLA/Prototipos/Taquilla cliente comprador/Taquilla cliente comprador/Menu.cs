@@ -49,5 +49,10 @@ namespace Taquilla_cliente_comprador
         {
 
         }
-    }
+
+		private void Frm_menu_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			Application.Exit();
+		}
+	}
 }

@@ -17,12 +17,23 @@ namespace Taquilla_cliente_comprador
             InitializeComponent();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            Form formulariobol = new Frm_boletos();
-            formulariobol.Show();
-            Visible = false;
-        }
-      
-    }
+
+
+		private void button9_Click(object sender, EventArgs e)
+		{
+			Form formulariobol = new Frm_boletos();
+			formulariobol.Show();
+			Visible = false;
+		}
+
+		private void label1_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void Frm_cartelera_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			Application.Exit();
+		}
+	}
 }
