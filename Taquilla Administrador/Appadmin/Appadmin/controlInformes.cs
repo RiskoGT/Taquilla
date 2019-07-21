@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Runtime.InteropServices;
 namespace Appadmin
 {
     public partial class controlInformes : Form
@@ -17,6 +17,10 @@ namespace Appadmin
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
         }
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void sendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
         private void controlInformes_Load(object sender, EventArgs e)
         {
@@ -38,6 +42,21 @@ namespace Appadmin
              Form1 frm = new Form1();
             frm.Show();
             this.Hide();
+        }
+
+        private void label5_MouseDown(object sender, MouseEventArgs e)
+        {
+          
+        }
+
+        private void label4_MouseDown(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

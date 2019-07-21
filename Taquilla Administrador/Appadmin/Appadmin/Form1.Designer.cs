@@ -58,7 +58,7 @@
             this.panelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPrincipal.Location = new System.Drawing.Point(0, 0);
             this.panelPrincipal.Name = "panelPrincipal";
-            this.panelPrincipal.Size = new System.Drawing.Size(836, 497);
+            this.panelPrincipal.Size = new System.Drawing.Size(975, 588);
             this.panelPrincipal.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -77,7 +77,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(836, 428);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(975, 519);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // Ayuda
@@ -87,9 +87,10 @@
             this.Ayuda.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Ayuda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.Ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Ayuda.Location = new System.Drawing.Point(631, 3);
+            this.Ayuda.ForeColor = System.Drawing.Color.White;
+            this.Ayuda.Location = new System.Drawing.Point(733, 3);
             this.Ayuda.Name = "Ayuda";
-            this.Ayuda.Size = new System.Drawing.Size(202, 422);
+            this.Ayuda.Size = new System.Drawing.Size(239, 513);
             this.Ayuda.TabIndex = 3;
             this.Ayuda.UseVisualStyleBackColor = true;
             // 
@@ -100,9 +101,10 @@
             this.gestionUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gestionUsuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.gestionUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gestionUsuarios.Location = new System.Drawing.Point(421, 3);
+            this.gestionUsuarios.ForeColor = System.Drawing.Color.White;
+            this.gestionUsuarios.Location = new System.Drawing.Point(489, 3);
             this.gestionUsuarios.Name = "gestionUsuarios";
-            this.gestionUsuarios.Size = new System.Drawing.Size(204, 422);
+            this.gestionUsuarios.Size = new System.Drawing.Size(238, 513);
             this.gestionUsuarios.TabIndex = 2;
             this.gestionUsuarios.UseVisualStyleBackColor = true;
             // 
@@ -114,9 +116,10 @@
             this.informes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.informes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.informes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.informes.Location = new System.Drawing.Point(212, 3);
+            this.informes.ForeColor = System.Drawing.Color.White;
+            this.informes.Location = new System.Drawing.Point(246, 3);
             this.informes.Name = "informes";
-            this.informes.Size = new System.Drawing.Size(203, 422);
+            this.informes.Size = new System.Drawing.Size(237, 513);
             this.informes.TabIndex = 1;
             this.informes.UseVisualStyleBackColor = false;
             this.informes.Click += new System.EventHandler(this.button2_Click);
@@ -128,9 +131,10 @@
             this.gestionCartelera.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gestionCartelera.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.gestionCartelera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gestionCartelera.ForeColor = System.Drawing.Color.White;
             this.gestionCartelera.Location = new System.Drawing.Point(3, 3);
             this.gestionCartelera.Name = "gestionCartelera";
-            this.gestionCartelera.Size = new System.Drawing.Size(203, 422);
+            this.gestionCartelera.Size = new System.Drawing.Size(237, 513);
             this.gestionCartelera.TabIndex = 0;
             this.gestionCartelera.UseVisualStyleBackColor = true;
             this.gestionCartelera.Click += new System.EventHandler(this.button1_Click);
@@ -142,7 +146,7 @@
             this.barraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.barraTitulo.Location = new System.Drawing.Point(0, 0);
             this.barraTitulo.Name = "barraTitulo";
-            this.barraTitulo.Size = new System.Drawing.Size(836, 69);
+            this.barraTitulo.Size = new System.Drawing.Size(975, 69);
             this.barraTitulo.TabIndex = 2;
             this.barraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.barraTitulo_Paint);
             // 
@@ -161,6 +165,8 @@
             this.label1.TabIndex = 37;
             this.label1.Text = "Usuario";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
             // 
             // label2
             // 
@@ -170,10 +176,12 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(836, 69);
+            this.label2.Size = new System.Drawing.Size(975, 69);
             this.label2.TabIndex = 36;
             this.label2.Text = "GESTIONES";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label2_MouseDown);
             // 
             // panel1
             // 
@@ -181,14 +189,15 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(836, 88);
+            this.panel1.Size = new System.Drawing.Size(975, 88);
             this.panel1.TabIndex = 38;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // Close
             // 
             this.Close.Dock = System.Windows.Forms.DockStyle.Right;
             this.Close.Image = ((System.Drawing.Image)(resources.GetObject("Close.Image")));
-            this.Close.Location = new System.Drawing.Point(776, 0);
+            this.Close.Location = new System.Drawing.Point(915, 0);
             this.Close.Name = "Close";
             this.Close.Size = new System.Drawing.Size(60, 69);
             this.Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -204,7 +213,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(836, 69);
+            this.panel2.Size = new System.Drawing.Size(975, 69);
             this.panel2.TabIndex = 38;
             // 
             // panel3
@@ -221,7 +230,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(836, 497);
+            this.ClientSize = new System.Drawing.Size(975, 588);
             this.Controls.Add(this.panelPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";

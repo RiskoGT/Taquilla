@@ -25,6 +25,11 @@ namespace Appadmin
 
         private void regresarMenu_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void regresarMenu_Click_1(object sender, EventArgs e)
+        {
             Form1 frm = new Form1();
             frm.Show();
             this.Hide();
