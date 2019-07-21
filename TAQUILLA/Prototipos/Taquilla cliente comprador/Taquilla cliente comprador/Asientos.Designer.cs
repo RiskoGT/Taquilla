@@ -54,7 +54,7 @@
             this.Btn_C1 = new System.Windows.Forms.Button();
             this.Btn_C2 = new System.Windows.Forms.Button();
             this.Btn_C3 = new System.Windows.Forms.Button();
-            this.Btn_c4 = new System.Windows.Forms.Button();
+            this.Btn_C4 = new System.Windows.Forms.Button();
             this.Btn_C5 = new System.Windows.Forms.Button();
             this.Btn_C6 = new System.Windows.Forms.Button();
             this.Btn_C7 = new System.Windows.Forms.Button();
@@ -97,14 +97,14 @@
             this.Btn_D9 = new System.Windows.Forms.Button();
             this.Btn_D10 = new System.Windows.Forms.Button();
             this.Btn_E6 = new System.Windows.Forms.Button();
-            this.button57 = new System.Windows.Forms.Button();
+            this.Btn_F6 = new System.Windows.Forms.Button();
             this.Btn_G6 = new System.Windows.Forms.Button();
             this.Btn_H6 = new System.Windows.Forms.Button();
             this.Btn_I6 = new System.Windows.Forms.Button();
             this.Btn_E7 = new System.Windows.Forms.Button();
             this.Btn_E8 = new System.Windows.Forms.Button();
             this.Btn_E9 = new System.Windows.Forms.Button();
-            this.Btn_F6 = new System.Windows.Forms.Button();
+            this.Btn_E10 = new System.Windows.Forms.Button();
             this.Btn_F7 = new System.Windows.Forms.Button();
             this.Btn_F8 = new System.Windows.Forms.Button();
             this.Btn_F9 = new System.Windows.Forms.Button();
@@ -215,7 +215,7 @@
             this.tableLayoutPanel2.Controls.Add(this.Btn_C1, 1, 5);
             this.tableLayoutPanel2.Controls.Add(this.Btn_C2, 3, 5);
             this.tableLayoutPanel2.Controls.Add(this.Btn_C3, 5, 5);
-            this.tableLayoutPanel2.Controls.Add(this.Btn_c4, 7, 5);
+            this.tableLayoutPanel2.Controls.Add(this.Btn_C4, 7, 5);
             this.tableLayoutPanel2.Controls.Add(this.Btn_C5, 9, 5);
             this.tableLayoutPanel2.Controls.Add(this.Btn_C6, 11, 5);
             this.tableLayoutPanel2.Controls.Add(this.Btn_C7, 13, 5);
@@ -258,14 +258,14 @@
             this.tableLayoutPanel2.Controls.Add(this.Btn_D9, 17, 7);
             this.tableLayoutPanel2.Controls.Add(this.Btn_D10, 19, 7);
             this.tableLayoutPanel2.Controls.Add(this.Btn_E6, 11, 9);
-            this.tableLayoutPanel2.Controls.Add(this.button57, 11, 11);
+            this.tableLayoutPanel2.Controls.Add(this.Btn_F6, 11, 11);
             this.tableLayoutPanel2.Controls.Add(this.Btn_G6, 11, 13);
             this.tableLayoutPanel2.Controls.Add(this.Btn_H6, 11, 15);
             this.tableLayoutPanel2.Controls.Add(this.Btn_I6, 11, 17);
             this.tableLayoutPanel2.Controls.Add(this.Btn_E7, 13, 9);
             this.tableLayoutPanel2.Controls.Add(this.Btn_E8, 15, 9);
             this.tableLayoutPanel2.Controls.Add(this.Btn_E9, 17, 9);
-            this.tableLayoutPanel2.Controls.Add(this.Btn_F6, 19, 9);
+            this.tableLayoutPanel2.Controls.Add(this.Btn_E10, 19, 9);
             this.tableLayoutPanel2.Controls.Add(this.Btn_F7, 13, 11);
             this.tableLayoutPanel2.Controls.Add(this.Btn_F8, 15, 11);
             this.tableLayoutPanel2.Controls.Add(this.Btn_F9, 17, 11);
@@ -349,6 +349,7 @@
             this.Btn_A3.TabIndex = 2;
             this.Btn_A3.Text = "A3";
             this.Btn_A3.UseVisualStyleBackColor = false;
+            this.Btn_A3.Click += new System.EventHandler(this.Btn_A3_Click);
             // 
             // Btn_A4
             // 
@@ -362,6 +363,7 @@
             this.Btn_A4.TabIndex = 3;
             this.Btn_A4.Text = "A4";
             this.Btn_A4.UseVisualStyleBackColor = false;
+            this.Btn_A4.Click += new System.EventHandler(this.Btn_A4_Click);
             // 
             // Btn_A5
             // 
@@ -375,6 +377,7 @@
             this.Btn_A5.TabIndex = 4;
             this.Btn_A5.Text = "A5";
             this.Btn_A5.UseVisualStyleBackColor = false;
+            this.Btn_A5.Click += new System.EventHandler(this.Btn_A5_Click);
             // 
             // Btn_A6
             // 
@@ -388,6 +391,7 @@
             this.Btn_A6.TabIndex = 5;
             this.Btn_A6.Text = "A6";
             this.Btn_A6.UseVisualStyleBackColor = false;
+            this.Btn_A6.Click += new System.EventHandler(this.Btn_A6_Click);
             // 
             // Btn_A7
             // 
@@ -401,6 +405,7 @@
             this.Btn_A7.TabIndex = 6;
             this.Btn_A7.Text = "A7";
             this.Btn_A7.UseVisualStyleBackColor = false;
+            this.Btn_A7.Click += new System.EventHandler(this.Btn_A7_Click);
             // 
             // Btn_A8
             // 
@@ -414,6 +419,7 @@
             this.Btn_A8.TabIndex = 7;
             this.Btn_A8.Text = "A8";
             this.Btn_A8.UseVisualStyleBackColor = false;
+            this.Btn_A8.Click += new System.EventHandler(this.Btn_A8_Click);
             // 
             // Btn_A9
             // 
@@ -427,6 +433,7 @@
             this.Btn_A9.TabIndex = 8;
             this.Btn_A9.Text = "A9";
             this.Btn_A9.UseVisualStyleBackColor = false;
+            this.Btn_A9.Click += new System.EventHandler(this.Btn_A9_Click);
             // 
             // Btn_A10
             // 
@@ -440,6 +447,7 @@
             this.Btn_A10.TabIndex = 9;
             this.Btn_A10.Text = "A10";
             this.Btn_A10.UseVisualStyleBackColor = false;
+            this.Btn_A10.Click += new System.EventHandler(this.Btn_A10_Click);
             // 
             // Btn_B1
             // 
@@ -453,6 +461,7 @@
             this.Btn_B1.TabIndex = 10;
             this.Btn_B1.Text = "B1";
             this.Btn_B1.UseVisualStyleBackColor = false;
+            this.Btn_B1.Click += new System.EventHandler(this.Btn_B1_Click);
             // 
             // Btn_B2
             // 
@@ -466,6 +475,7 @@
             this.Btn_B2.TabIndex = 11;
             this.Btn_B2.Text = "B2";
             this.Btn_B2.UseVisualStyleBackColor = false;
+            this.Btn_B2.Click += new System.EventHandler(this.Btn_B2_Click);
             // 
             // Btn_B3
             // 
@@ -479,6 +489,7 @@
             this.Btn_B3.TabIndex = 12;
             this.Btn_B3.Text = "B3";
             this.Btn_B3.UseVisualStyleBackColor = false;
+            this.Btn_B3.Click += new System.EventHandler(this.Btn_B3_Click);
             // 
             // Btn_B4
             // 
@@ -492,6 +503,7 @@
             this.Btn_B4.TabIndex = 13;
             this.Btn_B4.Text = "B4";
             this.Btn_B4.UseVisualStyleBackColor = false;
+            this.Btn_B4.Click += new System.EventHandler(this.Btn_B4_Click);
             // 
             // Btn_B5
             // 
@@ -505,6 +517,7 @@
             this.Btn_B5.TabIndex = 14;
             this.Btn_B5.Text = "B5";
             this.Btn_B5.UseVisualStyleBackColor = false;
+            this.Btn_B5.Click += new System.EventHandler(this.Btn_B5_Click);
             // 
             // Btn_B6
             // 
@@ -518,6 +531,7 @@
             this.Btn_B6.TabIndex = 15;
             this.Btn_B6.Text = "B6";
             this.Btn_B6.UseVisualStyleBackColor = false;
+            this.Btn_B6.Click += new System.EventHandler(this.Btn_B6_Click);
             // 
             // Btn_B7
             // 
@@ -531,6 +545,7 @@
             this.Btn_B7.TabIndex = 16;
             this.Btn_B7.Text = "B7";
             this.Btn_B7.UseVisualStyleBackColor = false;
+            this.Btn_B7.Click += new System.EventHandler(this.Btn_B7_Click);
             // 
             // Btn_B8
             // 
@@ -544,6 +559,7 @@
             this.Btn_B8.TabIndex = 17;
             this.Btn_B8.Text = "B8";
             this.Btn_B8.UseVisualStyleBackColor = false;
+            this.Btn_B8.Click += new System.EventHandler(this.Btn_B8_Click);
             // 
             // Btn_B9
             // 
@@ -557,6 +573,7 @@
             this.Btn_B9.TabIndex = 18;
             this.Btn_B9.Text = "B9";
             this.Btn_B9.UseVisualStyleBackColor = false;
+            this.Btn_B9.Click += new System.EventHandler(this.Btn_B9_Click);
             // 
             // Btn_B10
             // 
@@ -570,6 +587,7 @@
             this.Btn_B10.TabIndex = 19;
             this.Btn_B10.Text = "B10";
             this.Btn_B10.UseVisualStyleBackColor = false;
+            this.Btn_B10.Click += new System.EventHandler(this.Btn_B10_Click);
             // 
             // Btn_C1
             // 
@@ -583,6 +601,7 @@
             this.Btn_C1.TabIndex = 20;
             this.Btn_C1.Text = "C1";
             this.Btn_C1.UseVisualStyleBackColor = false;
+            this.Btn_C1.Click += new System.EventHandler(this.Btn_C1_Click);
             // 
             // Btn_C2
             // 
@@ -596,6 +615,7 @@
             this.Btn_C2.TabIndex = 21;
             this.Btn_C2.Text = "C2";
             this.Btn_C2.UseVisualStyleBackColor = false;
+            this.Btn_C2.Click += new System.EventHandler(this.Btn_C2_Click);
             // 
             // Btn_C3
             // 
@@ -609,19 +629,21 @@
             this.Btn_C3.TabIndex = 22;
             this.Btn_C3.Text = "C3";
             this.Btn_C3.UseVisualStyleBackColor = false;
+            this.Btn_C3.Click += new System.EventHandler(this.Btn_C3_Click);
             // 
-            // Btn_c4
+            // Btn_C4
             // 
-            this.Btn_c4.BackColor = System.Drawing.Color.Silver;
-            this.Btn_c4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn_c4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_c4.ForeColor = System.Drawing.Color.Blue;
-            this.Btn_c4.Location = new System.Drawing.Point(348, 119);
-            this.Btn_c4.Name = "Btn_c4";
-            this.Btn_c4.Size = new System.Drawing.Size(81, 37);
-            this.Btn_c4.TabIndex = 23;
-            this.Btn_c4.Text = "C4";
-            this.Btn_c4.UseVisualStyleBackColor = false;
+            this.Btn_C4.BackColor = System.Drawing.Color.Silver;
+            this.Btn_C4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_C4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_C4.ForeColor = System.Drawing.Color.Blue;
+            this.Btn_C4.Location = new System.Drawing.Point(348, 119);
+            this.Btn_C4.Name = "Btn_C4";
+            this.Btn_C4.Size = new System.Drawing.Size(81, 37);
+            this.Btn_C4.TabIndex = 23;
+            this.Btn_C4.Text = "C4";
+            this.Btn_C4.UseVisualStyleBackColor = false;
+            this.Btn_C4.Click += new System.EventHandler(this.Btn_C4_Click);
             // 
             // Btn_C5
             // 
@@ -635,6 +657,7 @@
             this.Btn_C5.TabIndex = 24;
             this.Btn_C5.Text = "C5";
             this.Btn_C5.UseVisualStyleBackColor = false;
+            this.Btn_C5.Click += new System.EventHandler(this.Btn_C5_Click);
             // 
             // Btn_C6
             // 
@@ -676,6 +699,7 @@
             this.Btn_C8.TabIndex = 27;
             this.Btn_C8.Text = "C8";
             this.Btn_C8.UseVisualStyleBackColor = false;
+            this.Btn_C8.Click += new System.EventHandler(this.Btn_C8_Click);
             // 
             // Btn_C9
             // 
@@ -689,6 +713,7 @@
             this.Btn_C9.TabIndex = 28;
             this.Btn_C9.Text = "C9";
             this.Btn_C9.UseVisualStyleBackColor = false;
+            this.Btn_C9.Click += new System.EventHandler(this.Btn_C9_Click);
             // 
             // Btn_C10
             // 
@@ -702,6 +727,7 @@
             this.Btn_C10.TabIndex = 29;
             this.Btn_C10.Text = "C10";
             this.Btn_C10.UseVisualStyleBackColor = false;
+            this.Btn_C10.Click += new System.EventHandler(this.Btn_C10_Click);
             // 
             // Btn_D1
             // 
@@ -715,6 +741,7 @@
             this.Btn_D1.TabIndex = 30;
             this.Btn_D1.Text = "D1";
             this.Btn_D1.UseVisualStyleBackColor = false;
+            this.Btn_D1.Click += new System.EventHandler(this.Btn_D1_Click);
             // 
             // Btn_E1
             // 
@@ -728,6 +755,7 @@
             this.Btn_E1.TabIndex = 31;
             this.Btn_E1.Text = "E1";
             this.Btn_E1.UseVisualStyleBackColor = false;
+            this.Btn_E1.Click += new System.EventHandler(this.Btn_E1_Click);
             // 
             // Btn_F1
             // 
@@ -741,6 +769,7 @@
             this.Btn_F1.TabIndex = 32;
             this.Btn_F1.Text = "F1";
             this.Btn_F1.UseVisualStyleBackColor = false;
+            this.Btn_F1.Click += new System.EventHandler(this.Btn_F1_Click);
             // 
             // Btn_G1
             // 
@@ -754,6 +783,7 @@
             this.Btn_G1.TabIndex = 33;
             this.Btn_G1.Text = "G1";
             this.Btn_G1.UseVisualStyleBackColor = false;
+            this.Btn_G1.Click += new System.EventHandler(this.Btn_G1_Click);
             // 
             // Btn_H1
             // 
@@ -767,6 +797,7 @@
             this.Btn_H1.TabIndex = 34;
             this.Btn_H1.Text = "H1";
             this.Btn_H1.UseVisualStyleBackColor = false;
+            this.Btn_H1.Click += new System.EventHandler(this.Btn_H1_Click);
             // 
             // Btn_I1
             // 
@@ -780,6 +811,7 @@
             this.Btn_I1.TabIndex = 35;
             this.Btn_I1.Text = "I1";
             this.Btn_I1.UseVisualStyleBackColor = false;
+            this.Btn_I1.Click += new System.EventHandler(this.Btn_I1_Click);
             // 
             // Btn_D2
             // 
@@ -793,6 +825,7 @@
             this.Btn_D2.TabIndex = 36;
             this.Btn_D2.Text = "D2";
             this.Btn_D2.UseVisualStyleBackColor = false;
+            this.Btn_D2.Click += new System.EventHandler(this.Btn_D2_Click);
             // 
             // Btn_D3
             // 
@@ -806,6 +839,7 @@
             this.Btn_D3.TabIndex = 37;
             this.Btn_D3.Text = "D3";
             this.Btn_D3.UseVisualStyleBackColor = false;
+            this.Btn_D3.Click += new System.EventHandler(this.Btn_D3_Click);
             // 
             // Btn_E2
             // 
@@ -819,6 +853,7 @@
             this.Btn_E2.TabIndex = 38;
             this.Btn_E2.Text = "E2";
             this.Btn_E2.UseVisualStyleBackColor = false;
+            this.Btn_E2.Click += new System.EventHandler(this.Btn_E2_Click);
             // 
             // Btn_E3
             // 
@@ -832,6 +867,7 @@
             this.Btn_E3.TabIndex = 39;
             this.Btn_E3.Text = "E3";
             this.Btn_E3.UseVisualStyleBackColor = false;
+            this.Btn_E3.Click += new System.EventHandler(this.Btn_E3_Click);
             // 
             // Btn_F3
             // 
@@ -845,6 +881,7 @@
             this.Btn_F3.TabIndex = 40;
             this.Btn_F3.Text = "F3";
             this.Btn_F3.UseVisualStyleBackColor = false;
+            this.Btn_F3.Click += new System.EventHandler(this.Btn_F3_Click);
             // 
             // Btn_F2
             // 
@@ -858,6 +895,7 @@
             this.Btn_F2.TabIndex = 41;
             this.Btn_F2.Text = "F2";
             this.Btn_F2.UseVisualStyleBackColor = false;
+            this.Btn_F2.Click += new System.EventHandler(this.Btn_F2_Click);
             // 
             // Btn_G2
             // 
@@ -871,6 +909,7 @@
             this.Btn_G2.TabIndex = 42;
             this.Btn_G2.Text = "G2";
             this.Btn_G2.UseVisualStyleBackColor = false;
+            this.Btn_G2.Click += new System.EventHandler(this.Btn_G2_Click);
             // 
             // Btn_G3
             // 
@@ -884,6 +923,7 @@
             this.Btn_G3.TabIndex = 43;
             this.Btn_G3.Text = "G3";
             this.Btn_G3.UseVisualStyleBackColor = false;
+            this.Btn_G3.Click += new System.EventHandler(this.Btn_G3_Click);
             // 
             // Btn_H2
             // 
@@ -897,6 +937,7 @@
             this.Btn_H2.TabIndex = 44;
             this.Btn_H2.Text = "H2";
             this.Btn_H2.UseVisualStyleBackColor = false;
+            this.Btn_H2.Click += new System.EventHandler(this.Btn_H2_Click);
             // 
             // Btn_H3
             // 
@@ -910,6 +951,7 @@
             this.Btn_H3.TabIndex = 45;
             this.Btn_H3.Text = "H3";
             this.Btn_H3.UseVisualStyleBackColor = false;
+            this.Btn_H3.Click += new System.EventHandler(this.Btn_H3_Click);
             // 
             // Btn_I2
             // 
@@ -923,6 +965,7 @@
             this.Btn_I2.TabIndex = 46;
             this.Btn_I2.Text = "I2";
             this.Btn_I2.UseVisualStyleBackColor = false;
+            this.Btn_I2.Click += new System.EventHandler(this.Btn_I2_Click);
             // 
             // Btn_I3
             // 
@@ -936,6 +979,7 @@
             this.Btn_I3.TabIndex = 47;
             this.Btn_I3.Text = "I3";
             this.Btn_I3.UseVisualStyleBackColor = false;
+            this.Btn_I3.Click += new System.EventHandler(this.Btn_I3_Click);
             // 
             // Btn_D4
             // 
@@ -949,6 +993,7 @@
             this.Btn_D4.TabIndex = 48;
             this.Btn_D4.Text = "D4";
             this.Btn_D4.UseVisualStyleBackColor = false;
+            this.Btn_D4.Click += new System.EventHandler(this.Btn_D4_Click);
             // 
             // Btn_D5
             // 
@@ -962,6 +1007,7 @@
             this.Btn_D5.TabIndex = 49;
             this.Btn_D5.Text = "D5";
             this.Btn_D5.UseVisualStyleBackColor = false;
+            this.Btn_D5.Click += new System.EventHandler(this.Btn_D5_Click);
             // 
             // Btn_E4
             // 
@@ -975,6 +1021,7 @@
             this.Btn_E4.TabIndex = 50;
             this.Btn_E4.Text = "E4";
             this.Btn_E4.UseVisualStyleBackColor = false;
+            this.Btn_E4.Click += new System.EventHandler(this.Btn_E4_Click);
             // 
             // Btn_E5
             // 
@@ -988,6 +1035,7 @@
             this.Btn_E5.TabIndex = 51;
             this.Btn_E5.Text = "E5";
             this.Btn_E5.UseVisualStyleBackColor = false;
+            this.Btn_E5.Click += new System.EventHandler(this.Btn_E5_Click);
             // 
             // Btn_F4
             // 
@@ -1001,6 +1049,7 @@
             this.Btn_F4.TabIndex = 52;
             this.Btn_F4.Text = "F4";
             this.Btn_F4.UseVisualStyleBackColor = false;
+            this.Btn_F4.Click += new System.EventHandler(this.Btn_F4_Click);
             // 
             // Btn_F5
             // 
@@ -1014,6 +1063,7 @@
             this.Btn_F5.TabIndex = 53;
             this.Btn_F5.Text = "F5";
             this.Btn_F5.UseVisualStyleBackColor = false;
+            this.Btn_F5.Click += new System.EventHandler(this.Btn_F5_Click);
             // 
             // Btn_G4
             // 
@@ -1027,6 +1077,7 @@
             this.Btn_G4.TabIndex = 54;
             this.Btn_G4.Text = "G4";
             this.Btn_G4.UseVisualStyleBackColor = false;
+            this.Btn_G4.Click += new System.EventHandler(this.Btn_G4_Click);
             // 
             // Btn_G5
             // 
@@ -1040,6 +1091,7 @@
             this.Btn_G5.TabIndex = 55;
             this.Btn_G5.Text = "G5";
             this.Btn_G5.UseVisualStyleBackColor = false;
+            this.Btn_G5.Click += new System.EventHandler(this.Btn_G5_Click);
             // 
             // Btn_H4
             // 
@@ -1053,6 +1105,7 @@
             this.Btn_H4.TabIndex = 56;
             this.Btn_H4.Text = "H4";
             this.Btn_H4.UseVisualStyleBackColor = false;
+            this.Btn_H4.Click += new System.EventHandler(this.Btn_H4_Click);
             // 
             // Btn_H5
             // 
@@ -1066,6 +1119,7 @@
             this.Btn_H5.TabIndex = 57;
             this.Btn_H5.Text = "H5";
             this.Btn_H5.UseVisualStyleBackColor = false;
+            this.Btn_H5.Click += new System.EventHandler(this.Btn_H5_Click);
             // 
             // Btn_I4
             // 
@@ -1079,6 +1133,7 @@
             this.Btn_I4.TabIndex = 58;
             this.Btn_I4.Text = "I4";
             this.Btn_I4.UseVisualStyleBackColor = false;
+            this.Btn_I4.Click += new System.EventHandler(this.Btn_I4_Click);
             // 
             // Btn_I5
             // 
@@ -1092,6 +1147,7 @@
             this.Btn_I5.TabIndex = 59;
             this.Btn_I5.Text = "I5";
             this.Btn_I5.UseVisualStyleBackColor = false;
+            this.Btn_I5.Click += new System.EventHandler(this.Btn_I5_Click);
             // 
             // Btn_D6
             // 
@@ -1105,6 +1161,7 @@
             this.Btn_D6.TabIndex = 60;
             this.Btn_D6.Text = "D6";
             this.Btn_D6.UseVisualStyleBackColor = false;
+            this.Btn_D6.Click += new System.EventHandler(this.Btn_D6_Click);
             // 
             // Btn_D7
             // 
@@ -1118,6 +1175,7 @@
             this.Btn_D7.TabIndex = 61;
             this.Btn_D7.Text = "D7";
             this.Btn_D7.UseVisualStyleBackColor = false;
+            this.Btn_D7.Click += new System.EventHandler(this.Btn_D7_Click);
             // 
             // Btn_D8
             // 
@@ -1131,6 +1189,7 @@
             this.Btn_D8.TabIndex = 62;
             this.Btn_D8.Text = "D8";
             this.Btn_D8.UseVisualStyleBackColor = false;
+            this.Btn_D8.Click += new System.EventHandler(this.Btn_D8_Click);
             // 
             // Btn_D9
             // 
@@ -1144,6 +1203,7 @@
             this.Btn_D9.TabIndex = 63;
             this.Btn_D9.Text = "D9";
             this.Btn_D9.UseVisualStyleBackColor = false;
+            this.Btn_D9.Click += new System.EventHandler(this.Btn_D9_Click);
             // 
             // Btn_D10
             // 
@@ -1157,6 +1217,7 @@
             this.Btn_D10.TabIndex = 64;
             this.Btn_D10.Text = "D10";
             this.Btn_D10.UseVisualStyleBackColor = false;
+            this.Btn_D10.Click += new System.EventHandler(this.Btn_D10_Click);
             // 
             // Btn_E6
             // 
@@ -1170,19 +1231,21 @@
             this.Btn_E6.TabIndex = 65;
             this.Btn_E6.Text = "E6";
             this.Btn_E6.UseVisualStyleBackColor = false;
+            this.Btn_E6.Click += new System.EventHandler(this.Btn_E6_Click);
             // 
-            // button57
+            // Btn_F6
             // 
-            this.button57.BackColor = System.Drawing.Color.Silver;
-            this.button57.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button57.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button57.ForeColor = System.Drawing.Color.Blue;
-            this.button57.Location = new System.Drawing.Point(564, 278);
-            this.button57.Name = "button57";
-            this.button57.Size = new System.Drawing.Size(81, 37);
-            this.button57.TabIndex = 66;
-            this.button57.Text = "F6";
-            this.button57.UseVisualStyleBackColor = false;
+            this.Btn_F6.BackColor = System.Drawing.Color.Silver;
+            this.Btn_F6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_F6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_F6.ForeColor = System.Drawing.Color.Blue;
+            this.Btn_F6.Location = new System.Drawing.Point(564, 278);
+            this.Btn_F6.Name = "Btn_F6";
+            this.Btn_F6.Size = new System.Drawing.Size(81, 37);
+            this.Btn_F6.TabIndex = 66;
+            this.Btn_F6.Text = "F6";
+            this.Btn_F6.UseVisualStyleBackColor = false;
+            this.Btn_F6.Click += new System.EventHandler(this.Button57_Click);
             // 
             // Btn_G6
             // 
@@ -1196,6 +1259,7 @@
             this.Btn_G6.TabIndex = 67;
             this.Btn_G6.Text = "G6";
             this.Btn_G6.UseVisualStyleBackColor = false;
+            this.Btn_G6.Click += new System.EventHandler(this.Btn_G6_Click);
             // 
             // Btn_H6
             // 
@@ -1209,6 +1273,7 @@
             this.Btn_H6.TabIndex = 68;
             this.Btn_H6.Text = "H6";
             this.Btn_H6.UseVisualStyleBackColor = false;
+            this.Btn_H6.Click += new System.EventHandler(this.Btn_H6_Click);
             // 
             // Btn_I6
             // 
@@ -1222,6 +1287,7 @@
             this.Btn_I6.TabIndex = 69;
             this.Btn_I6.Text = "I6";
             this.Btn_I6.UseVisualStyleBackColor = false;
+            this.Btn_I6.Click += new System.EventHandler(this.Btn_I6_Click);
             // 
             // Btn_E7
             // 
@@ -1235,6 +1301,7 @@
             this.Btn_E7.TabIndex = 70;
             this.Btn_E7.Text = "E7";
             this.Btn_E7.UseVisualStyleBackColor = false;
+            this.Btn_E7.Click += new System.EventHandler(this.Btn_E7_Click);
             // 
             // Btn_E8
             // 
@@ -1248,6 +1315,7 @@
             this.Btn_E8.TabIndex = 71;
             this.Btn_E8.Text = "E8";
             this.Btn_E8.UseVisualStyleBackColor = false;
+            this.Btn_E8.Click += new System.EventHandler(this.Btn_E8_Click);
             // 
             // Btn_E9
             // 
@@ -1261,19 +1329,21 @@
             this.Btn_E9.TabIndex = 72;
             this.Btn_E9.Text = "E9";
             this.Btn_E9.UseVisualStyleBackColor = false;
+            this.Btn_E9.Click += new System.EventHandler(this.Btn_E9_Click);
             // 
-            // Btn_F6
+            // Btn_E10
             // 
-            this.Btn_F6.BackColor = System.Drawing.Color.Silver;
-            this.Btn_F6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn_F6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_F6.ForeColor = System.Drawing.Color.Blue;
-            this.Btn_F6.Location = new System.Drawing.Point(996, 225);
-            this.Btn_F6.Name = "Btn_F6";
-            this.Btn_F6.Size = new System.Drawing.Size(81, 37);
-            this.Btn_F6.TabIndex = 73;
-            this.Btn_F6.Text = "E10";
-            this.Btn_F6.UseVisualStyleBackColor = false;
+            this.Btn_E10.BackColor = System.Drawing.Color.Silver;
+            this.Btn_E10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_E10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_E10.ForeColor = System.Drawing.Color.Blue;
+            this.Btn_E10.Location = new System.Drawing.Point(996, 225);
+            this.Btn_E10.Name = "Btn_E10";
+            this.Btn_E10.Size = new System.Drawing.Size(81, 37);
+            this.Btn_E10.TabIndex = 73;
+            this.Btn_E10.Text = "E10";
+            this.Btn_E10.UseVisualStyleBackColor = false;
+            this.Btn_E10.Click += new System.EventHandler(this.Btn_E10_Click);
             // 
             // Btn_F7
             // 
@@ -1287,6 +1357,7 @@
             this.Btn_F7.TabIndex = 74;
             this.Btn_F7.Text = "F7";
             this.Btn_F7.UseVisualStyleBackColor = false;
+            this.Btn_F7.Click += new System.EventHandler(this.Btn_F7_Click);
             // 
             // Btn_F8
             // 
@@ -1300,6 +1371,7 @@
             this.Btn_F8.TabIndex = 75;
             this.Btn_F8.Text = "F8";
             this.Btn_F8.UseVisualStyleBackColor = false;
+            this.Btn_F8.Click += new System.EventHandler(this.Btn_F8_Click);
             // 
             // Btn_F9
             // 
@@ -1313,6 +1385,7 @@
             this.Btn_F9.TabIndex = 76;
             this.Btn_F9.Text = "F9";
             this.Btn_F9.UseVisualStyleBackColor = false;
+            this.Btn_F9.Click += new System.EventHandler(this.Btn_F9_Click);
             // 
             // Btn_G7
             // 
@@ -1326,6 +1399,7 @@
             this.Btn_G7.TabIndex = 77;
             this.Btn_G7.Text = "G7";
             this.Btn_G7.UseVisualStyleBackColor = false;
+            this.Btn_G7.Click += new System.EventHandler(this.Btn_G7_Click);
             // 
             // Btn_G8
             // 
@@ -1339,6 +1413,7 @@
             this.Btn_G8.TabIndex = 78;
             this.Btn_G8.Text = "G8";
             this.Btn_G8.UseVisualStyleBackColor = false;
+            this.Btn_G8.Click += new System.EventHandler(this.Btn_G8_Click);
             // 
             // Btn_G9
             // 
@@ -1352,6 +1427,7 @@
             this.Btn_G9.TabIndex = 79;
             this.Btn_G9.Text = "G9";
             this.Btn_G9.UseVisualStyleBackColor = false;
+            this.Btn_G9.Click += new System.EventHandler(this.Btn_G9_Click);
             // 
             // Btn_G10
             // 
@@ -1365,6 +1441,7 @@
             this.Btn_G10.TabIndex = 80;
             this.Btn_G10.Text = "G10";
             this.Btn_G10.UseVisualStyleBackColor = false;
+            this.Btn_G10.Click += new System.EventHandler(this.Btn_G10_Click);
             // 
             // Btn_F10
             // 
@@ -1378,6 +1455,7 @@
             this.Btn_F10.TabIndex = 81;
             this.Btn_F10.Text = "F10";
             this.Btn_F10.UseVisualStyleBackColor = false;
+            this.Btn_F10.Click += new System.EventHandler(this.Btn_F10_Click);
             // 
             // Btn_H7
             // 
@@ -1391,6 +1469,7 @@
             this.Btn_H7.TabIndex = 82;
             this.Btn_H7.Text = "H7";
             this.Btn_H7.UseVisualStyleBackColor = false;
+            this.Btn_H7.Click += new System.EventHandler(this.Btn_H7_Click);
             // 
             // Btn_H8
             // 
@@ -1404,6 +1483,7 @@
             this.Btn_H8.TabIndex = 83;
             this.Btn_H8.Text = "H8";
             this.Btn_H8.UseVisualStyleBackColor = false;
+            this.Btn_H8.Click += new System.EventHandler(this.Btn_H8_Click);
             // 
             // Btn_H9
             // 
@@ -1417,6 +1497,7 @@
             this.Btn_H9.TabIndex = 84;
             this.Btn_H9.Text = "H9";
             this.Btn_H9.UseVisualStyleBackColor = false;
+            this.Btn_H9.Click += new System.EventHandler(this.Btn_H9_Click);
             // 
             // Btn_I7
             // 
@@ -1430,6 +1511,7 @@
             this.Btn_I7.TabIndex = 85;
             this.Btn_I7.Text = "I7";
             this.Btn_I7.UseVisualStyleBackColor = false;
+            this.Btn_I7.Click += new System.EventHandler(this.Btn_I7_Click);
             // 
             // Btn_I8
             // 
@@ -1443,6 +1525,7 @@
             this.Btn_I8.TabIndex = 86;
             this.Btn_I8.Text = "I8";
             this.Btn_I8.UseVisualStyleBackColor = false;
+            this.Btn_I8.Click += new System.EventHandler(this.Btn_I8_Click);
             // 
             // Btn_H10
             // 
@@ -1456,6 +1539,7 @@
             this.Btn_H10.TabIndex = 87;
             this.Btn_H10.Text = "H10";
             this.Btn_H10.UseVisualStyleBackColor = false;
+            this.Btn_H10.Click += new System.EventHandler(this.Btn_H10_Click);
             // 
             // Btn_I9
             // 
@@ -1469,6 +1553,7 @@
             this.Btn_I9.TabIndex = 88;
             this.Btn_I9.Text = "I9";
             this.Btn_I9.UseVisualStyleBackColor = false;
+            this.Btn_I9.Click += new System.EventHandler(this.Btn_I9_Click);
             // 
             // Btn_I10
             // 
@@ -1482,6 +1567,7 @@
             this.Btn_I10.TabIndex = 89;
             this.Btn_I10.Text = "I10";
             this.Btn_I10.UseVisualStyleBackColor = false;
+            this.Btn_I10.Click += new System.EventHandler(this.Btn_I10_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -1601,7 +1687,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.21858F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.689546F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 144F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 13F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel4.Controls.Add(this.Btn_dis, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.Btn_selec, 5, 0);
             this.tableLayoutPanel4.Controls.Add(this.Btn_oc, 9, 0);
@@ -1623,9 +1709,9 @@
             this.Btn_dis.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Btn_dis.Enabled = false;
             this.Btn_dis.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_dis.Location = new System.Drawing.Point(11, 3);
+            this.Btn_dis.Location = new System.Drawing.Point(10, 3);
             this.Btn_dis.Name = "Btn_dis";
-            this.Btn_dis.Size = new System.Drawing.Size(109, 34);
+            this.Btn_dis.Size = new System.Drawing.Size(107, 34);
             this.Btn_dis.TabIndex = 0;
             this.Btn_dis.Text = "Disponibles";
             this.Btn_dis.UseVisualStyleBackColor = false;
@@ -1636,9 +1722,9 @@
             this.Btn_selec.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Btn_selec.Enabled = false;
             this.Btn_selec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_selec.Location = new System.Drawing.Point(323, 3);
+            this.Btn_selec.Location = new System.Drawing.Point(315, 3);
             this.Btn_selec.Name = "Btn_selec";
-            this.Btn_selec.Size = new System.Drawing.Size(105, 34);
+            this.Btn_selec.Size = new System.Drawing.Size(103, 34);
             this.Btn_selec.TabIndex = 1;
             this.Btn_selec.Text = "Sleccion";
             this.Btn_selec.UseVisualStyleBackColor = false;
@@ -1649,9 +1735,9 @@
             this.Btn_oc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Btn_oc.Enabled = false;
             this.Btn_oc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_oc.Location = new System.Drawing.Point(635, 3);
+            this.Btn_oc.Location = new System.Drawing.Point(622, 3);
             this.Btn_oc.Name = "Btn_oc";
-            this.Btn_oc.Size = new System.Drawing.Size(99, 34);
+            this.Btn_oc.Size = new System.Drawing.Size(98, 34);
             this.Btn_oc.TabIndex = 2;
             this.Btn_oc.Text = "Ocupados";
             this.Btn_oc.UseVisualStyleBackColor = false;
@@ -1661,9 +1747,9 @@
             this.Lbl_dis.AutoSize = true;
             this.Lbl_dis.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Lbl_dis.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_dis.Location = new System.Drawing.Point(136, 0);
+            this.Lbl_dis.Location = new System.Drawing.Point(132, 0);
             this.Lbl_dis.Name = "Lbl_dis";
-            this.Lbl_dis.Size = new System.Drawing.Size(169, 40);
+            this.Lbl_dis.Size = new System.Drawing.Size(166, 40);
             this.Lbl_dis.TabIndex = 3;
             this.Lbl_dis.Text = "Asientos Disponibles";
             this.Lbl_dis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1673,9 +1759,9 @@
             this.Lbl_selec.AutoSize = true;
             this.Lbl_selec.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Lbl_selec.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_selec.Location = new System.Drawing.Point(454, 0);
+            this.Lbl_selec.Location = new System.Drawing.Point(444, 0);
             this.Lbl_selec.Name = "Lbl_selec";
-            this.Lbl_selec.Size = new System.Drawing.Size(163, 40);
+            this.Lbl_selec.Size = new System.Drawing.Size(160, 40);
             this.Lbl_selec.TabIndex = 4;
             this.Lbl_selec.Text = "Asientos de Seleccion";
             this.Lbl_selec.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1685,9 +1771,9 @@
             this.Lbl_oc.AutoSize = true;
             this.Lbl_oc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Lbl_oc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_oc.Location = new System.Drawing.Point(750, 0);
+            this.Lbl_oc.Location = new System.Drawing.Point(735, 0);
             this.Lbl_oc.Name = "Lbl_oc";
-            this.Lbl_oc.Size = new System.Drawing.Size(176, 40);
+            this.Lbl_oc.Size = new System.Drawing.Size(173, 40);
             this.Lbl_oc.TabIndex = 5;
             this.Lbl_oc.Text = "Asientos Ocupados";
             this.Lbl_oc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1695,7 +1781,7 @@
             // button2
             // 
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Location = new System.Drawing.Point(948, 3);
+            this.button2.Location = new System.Drawing.Point(929, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(138, 34);
             this.button2.TabIndex = 7;
@@ -1770,7 +1856,7 @@
         private System.Windows.Forms.Button Btn_C1;
         private System.Windows.Forms.Button Btn_C2;
         private System.Windows.Forms.Button Btn_C3;
-        private System.Windows.Forms.Button Btn_c4;
+        private System.Windows.Forms.Button Btn_C4;
         private System.Windows.Forms.Button Btn_C5;
         private System.Windows.Forms.Button Btn_C6;
         private System.Windows.Forms.Button Btn_C7;
@@ -1813,14 +1899,14 @@
         private System.Windows.Forms.Button Btn_D9;
         private System.Windows.Forms.Button Btn_D10;
         private System.Windows.Forms.Button Btn_E6;
-        private System.Windows.Forms.Button button57;
+        private System.Windows.Forms.Button Btn_F6;
         private System.Windows.Forms.Button Btn_G6;
         private System.Windows.Forms.Button Btn_H6;
         private System.Windows.Forms.Button Btn_I6;
         private System.Windows.Forms.Button Btn_E7;
         private System.Windows.Forms.Button Btn_E8;
         private System.Windows.Forms.Button Btn_E9;
-        private System.Windows.Forms.Button Btn_F6;
+        private System.Windows.Forms.Button Btn_E10;
         private System.Windows.Forms.Button Btn_F7;
         private System.Windows.Forms.Button Btn_F8;
         private System.Windows.Forms.Button Btn_F9;

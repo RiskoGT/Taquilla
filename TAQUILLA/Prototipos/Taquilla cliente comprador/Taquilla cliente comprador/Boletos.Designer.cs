@@ -60,12 +60,12 @@
             this.Txt_total = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.Btn_Siguente = new System.Windows.Forms.Button();
-            this.Btn_canTBoletos = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.Txt_totalB = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.Btn_regresar = new System.Windows.Forms.Button();
+            this.Btn_canTBoletos = new System.Windows.Forms.Button();
             this.Tlp_boletos.SuspendLayout();
             this.Tlp_boletos2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -580,20 +580,6 @@
             this.Btn_Siguente.UseVisualStyleBackColor = true;
             this.Btn_Siguente.Click += new System.EventHandler(this.Btn_Siguente_Click);
             // 
-            // Btn_canTBoletos
-            // 
-            this.Btn_canTBoletos.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Btn_canTBoletos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn_canTBoletos.Enabled = false;
-            this.Btn_canTBoletos.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_canTBoletos.Location = new System.Drawing.Point(33, 23);
-            this.Btn_canTBoletos.Margin = new System.Windows.Forms.Padding(10);
-            this.Btn_canTBoletos.Name = "Btn_canTBoletos";
-            this.Btn_canTBoletos.Size = new System.Drawing.Size(1116, 49);
-            this.Btn_canTBoletos.TabIndex = 1;
-            this.Btn_canTBoletos.Text = "Cantidad de Boletos";
-            this.Btn_canTBoletos.UseVisualStyleBackColor = false;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 5;
@@ -614,6 +600,16 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(98, 62);
             this.tableLayoutPanel1.TabIndex = 27;
             // 
+            // Txt_totalB
+            // 
+            this.Txt_totalB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_totalB.Location = new System.Drawing.Point(13, 13);
+            this.Txt_totalB.Name = "Txt_totalB";
+            this.Txt_totalB.Size = new System.Drawing.Size(68, 31);
+            this.Txt_totalB.TabIndex = 0;
+            this.Txt_totalB.Text = "0";
+            this.Txt_totalB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -626,16 +622,6 @@
             this.label1.TabIndex = 28;
             this.label1.Text = "Total Boletos ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Txt_totalB
-            // 
-            this.Txt_totalB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_totalB.Location = new System.Drawing.Point(13, 13);
-            this.Txt_totalB.Name = "Txt_totalB";
-            this.Txt_totalB.Size = new System.Drawing.Size(68, 31);
-            this.Txt_totalB.TabIndex = 0;
-            this.Txt_totalB.Text = "0";
-            this.Txt_totalB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel2
             // 
@@ -660,13 +646,28 @@
             // Btn_regresar
             // 
             this.Btn_regresar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_regresar.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_regresar.Location = new System.Drawing.Point(22, 15);
             this.Btn_regresar.Name = "Btn_regresar";
             this.Btn_regresar.Size = new System.Drawing.Size(121, 70);
             this.Btn_regresar.TabIndex = 0;
-            this.Btn_regresar.Text = "button7";
+            this.Btn_regresar.Text = "Regresar";
             this.Btn_regresar.UseVisualStyleBackColor = true;
             this.Btn_regresar.Click += new System.EventHandler(this.Btn_regresar_Click);
+            // 
+            // Btn_canTBoletos
+            // 
+            this.Btn_canTBoletos.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Btn_canTBoletos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_canTBoletos.Enabled = false;
+            this.Btn_canTBoletos.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_canTBoletos.Location = new System.Drawing.Point(33, 23);
+            this.Btn_canTBoletos.Margin = new System.Windows.Forms.Padding(10);
+            this.Btn_canTBoletos.Name = "Btn_canTBoletos";
+            this.Btn_canTBoletos.Size = new System.Drawing.Size(1116, 49);
+            this.Btn_canTBoletos.TabIndex = 1;
+            this.Btn_canTBoletos.Text = "Cantidad de Boletos";
+            this.Btn_canTBoletos.UseVisualStyleBackColor = false;
             // 
             // Frm_boletos
             // 
