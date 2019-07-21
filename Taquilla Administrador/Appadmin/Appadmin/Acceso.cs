@@ -16,5 +16,25 @@ namespace Appadmin
         {
             InitializeComponent();
         }
+
+        private void Accesotext_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
