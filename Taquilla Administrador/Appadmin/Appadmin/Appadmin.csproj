@@ -52,6 +52,12 @@
     <Compile Include="Acceso.Designer.cs">
       <DependentUpon>Acceso.cs</DependentUpon>
     </Compile>
+    <Compile Include="controlInformes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controlInformes.Designer.cs">
+      <DependentUpon>controlInformes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Acceso.resx">
       <DependentUpon>Acceso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controlInformes.resx">
+      <DependentUpon>controlInformes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

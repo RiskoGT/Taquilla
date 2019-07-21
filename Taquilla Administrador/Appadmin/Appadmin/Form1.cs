@@ -15,6 +15,7 @@ namespace Appadmin
         public Form1()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -24,12 +25,21 @@ namespace Appadmin
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            controlInformes frm = new controlInformes();
+            frm.Show();
+            this.Hide();
         }
 
         private void Close_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Acceso frm = new Acceso();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void barraTitulo_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
