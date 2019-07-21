@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_boletos));
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.Btn_canTBoletos = new System.Windows.Forms.Button();
+            this.Tlp_boletos = new System.Windows.Forms.TableLayoutPanel();
+            this.Tlp_boletos2 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -44,13 +43,13 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.Txt_3ra = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.Txt_niño = new System.Windows.Forms.TextBox();
-            this.Txt_3raT = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.Txt_adultoT = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.Txt_niñoT = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.Txt_3raT = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.Txt_adulto = new System.Windows.Forms.TextBox();
             this.Lbl_v3ra = new System.Windows.Forms.Label();
@@ -61,8 +60,14 @@
             this.Txt_total = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.Btn_Siguente = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
+            this.Btn_canTBoletos = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Txt_totalB = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.Btn_regresar = new System.Windows.Forms.Button();
+            this.Tlp_boletos.SuspendLayout();
+            this.Tlp_boletos2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
@@ -71,98 +76,89 @@
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // Tlp_boletos
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 96F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.Btn_canTBoletos, 1, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.12766F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.6383F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.06383F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 84.04256F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.12766F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1184, 651);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.Tlp_boletos.ColumnCount = 3;
+            this.Tlp_boletos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2F));
+            this.Tlp_boletos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 96F));
+            this.Tlp_boletos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2F));
+            this.Tlp_boletos.Controls.Add(this.Tlp_boletos2, 1, 3);
+            this.Tlp_boletos.Controls.Add(this.Btn_canTBoletos, 1, 1);
+            this.Tlp_boletos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Tlp_boletos.Location = new System.Drawing.Point(0, 0);
+            this.Tlp_boletos.Name = "Tlp_boletos";
+            this.Tlp_boletos.RowCount = 5;
+            this.Tlp_boletos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.12766F));
+            this.Tlp_boletos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.6383F));
+            this.Tlp_boletos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.06383F));
+            this.Tlp_boletos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 84.04256F));
+            this.Tlp_boletos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.12766F));
+            this.Tlp_boletos.Size = new System.Drawing.Size(1184, 651);
+            this.Tlp_boletos.TabIndex = 0;
             // 
-            // tableLayoutPanel2
+            // Tlp_boletos2
             // 
-            this.tableLayoutPanel2.ColumnCount = 15;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.46392F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.030928F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.46392F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.030928F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.278351F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.030928F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.278351F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.030928F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.278351F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.030928F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.278351F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.030928F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.278351F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.030928F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.46392F));
-            this.tableLayoutPanel2.Controls.Add(this.button1, 4, 2);
-            this.tableLayoutPanel2.Controls.Add(this.button2, 8, 2);
-            this.tableLayoutPanel2.Controls.Add(this.button3, 4, 4);
-            this.tableLayoutPanel2.Controls.Add(this.button4, 8, 4);
-            this.tableLayoutPanel2.Controls.Add(this.button5, 4, 6);
-            this.tableLayoutPanel2.Controls.Add(this.button6, 8, 6);
-            this.tableLayoutPanel2.Controls.Add(this.Lbl_3ra, 2, 2);
-            this.tableLayoutPanel2.Controls.Add(this.Lbl_adulto, 2, 4);
-            this.tableLayoutPanel2.Controls.Add(this.Lbl_niño, 2, 6);
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 6, 2);
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel6, 6, 6);
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel8, 12, 4);
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel9, 12, 6);
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel7, 12, 2);
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 6, 4);
-            this.tableLayoutPanel2.Controls.Add(this.Lbl_v3ra, 10, 2);
-            this.tableLayoutPanel2.Controls.Add(this.Lbl_vAdulto, 10, 4);
-            this.tableLayoutPanel2.Controls.Add(this.Lbl_VNiño, 10, 6);
-            this.tableLayoutPanel2.Controls.Add(this.Lbl_total, 10, 8);
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 12, 8);
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel10, 14, 10);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(26, 91);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 11;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.60784F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.960784F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.7451F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.960784F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.7451F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.960784F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.7451F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.960784F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.7451F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.960784F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.60784F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1130, 541);
-            this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // Btn_canTBoletos
-            // 
-            this.Btn_canTBoletos.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Btn_canTBoletos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn_canTBoletos.Enabled = false;
-            this.Btn_canTBoletos.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_canTBoletos.Location = new System.Drawing.Point(33, 23);
-            this.Btn_canTBoletos.Margin = new System.Windows.Forms.Padding(10);
-            this.Btn_canTBoletos.Name = "Btn_canTBoletos";
-            this.Btn_canTBoletos.Size = new System.Drawing.Size(1116, 49);
-            this.Btn_canTBoletos.TabIndex = 1;
-            this.Btn_canTBoletos.Text = "Cantidad de Boletos";
-            this.Btn_canTBoletos.UseVisualStyleBackColor = false;
+            this.Tlp_boletos2.ColumnCount = 15;
+            this.Tlp_boletos2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.46392F));
+            this.Tlp_boletos2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.030928F));
+            this.Tlp_boletos2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.46392F));
+            this.Tlp_boletos2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.030928F));
+            this.Tlp_boletos2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.278351F));
+            this.Tlp_boletos2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.030928F));
+            this.Tlp_boletos2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.278351F));
+            this.Tlp_boletos2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.030928F));
+            this.Tlp_boletos2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.278351F));
+            this.Tlp_boletos2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.030928F));
+            this.Tlp_boletos2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.278351F));
+            this.Tlp_boletos2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.030928F));
+            this.Tlp_boletos2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.278351F));
+            this.Tlp_boletos2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.030928F));
+            this.Tlp_boletos2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.46392F));
+            this.Tlp_boletos2.Controls.Add(this.button1, 4, 2);
+            this.Tlp_boletos2.Controls.Add(this.button2, 8, 2);
+            this.Tlp_boletos2.Controls.Add(this.button3, 4, 4);
+            this.Tlp_boletos2.Controls.Add(this.button4, 8, 4);
+            this.Tlp_boletos2.Controls.Add(this.button5, 4, 6);
+            this.Tlp_boletos2.Controls.Add(this.button6, 8, 6);
+            this.Tlp_boletos2.Controls.Add(this.Lbl_3ra, 2, 2);
+            this.Tlp_boletos2.Controls.Add(this.Lbl_adulto, 2, 4);
+            this.Tlp_boletos2.Controls.Add(this.Lbl_niño, 2, 6);
+            this.Tlp_boletos2.Controls.Add(this.tableLayoutPanel3, 6, 2);
+            this.Tlp_boletos2.Controls.Add(this.tableLayoutPanel6, 6, 6);
+            this.Tlp_boletos2.Controls.Add(this.tableLayoutPanel8, 12, 4);
+            this.Tlp_boletos2.Controls.Add(this.tableLayoutPanel9, 12, 6);
+            this.Tlp_boletos2.Controls.Add(this.tableLayoutPanel7, 12, 2);
+            this.Tlp_boletos2.Controls.Add(this.tableLayoutPanel5, 6, 4);
+            this.Tlp_boletos2.Controls.Add(this.Lbl_v3ra, 10, 2);
+            this.Tlp_boletos2.Controls.Add(this.Lbl_vAdulto, 10, 4);
+            this.Tlp_boletos2.Controls.Add(this.Lbl_VNiño, 10, 6);
+            this.Tlp_boletos2.Controls.Add(this.Lbl_total, 10, 8);
+            this.Tlp_boletos2.Controls.Add(this.tableLayoutPanel4, 12, 8);
+            this.Tlp_boletos2.Controls.Add(this.tableLayoutPanel10, 14, 10);
+            this.Tlp_boletos2.Controls.Add(this.tableLayoutPanel1, 6, 8);
+            this.Tlp_boletos2.Controls.Add(this.label1, 4, 8);
+            this.Tlp_boletos2.Controls.Add(this.tableLayoutPanel2, 0, 10);
+            this.Tlp_boletos2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Tlp_boletos2.Location = new System.Drawing.Point(26, 91);
+            this.Tlp_boletos2.Name = "Tlp_boletos2";
+            this.Tlp_boletos2.RowCount = 11;
+            this.Tlp_boletos2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.60784F));
+            this.Tlp_boletos2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.960784F));
+            this.Tlp_boletos2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.7451F));
+            this.Tlp_boletos2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.960784F));
+            this.Tlp_boletos2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.7451F));
+            this.Tlp_boletos2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.960784F));
+            this.Tlp_boletos2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.7451F));
+            this.Tlp_boletos2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.960784F));
+            this.Tlp_boletos2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.7451F));
+            this.Tlp_boletos2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.960784F));
+            this.Tlp_boletos2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.60784F));
+            this.Tlp_boletos2.Size = new System.Drawing.Size(1130, 541);
+            this.Tlp_boletos2.TabIndex = 0;
             // 
             // button1
             // 
@@ -175,6 +171,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "-";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // button2
             // 
@@ -187,6 +184,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "+";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // button3
             // 
@@ -199,6 +197,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "-";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // button4
             // 
@@ -211,6 +210,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "+";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // button5
             // 
@@ -223,6 +223,7 @@
             this.button5.TabIndex = 4;
             this.button5.Text = "-";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
             // button6
             // 
@@ -235,6 +236,7 @@
             this.button6.TabIndex = 5;
             this.button6.Text = "+";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.Button6_Click);
             // 
             // Lbl_3ra
             // 
@@ -325,6 +327,17 @@
             this.tableLayoutPanel6.Size = new System.Drawing.Size(98, 62);
             this.tableLayoutPanel6.TabIndex = 15;
             // 
+            // Txt_niño
+            // 
+            this.Txt_niño.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Txt_niño.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_niño.Location = new System.Drawing.Point(13, 13);
+            this.Txt_niño.Name = "Txt_niño";
+            this.Txt_niño.Size = new System.Drawing.Size(68, 34);
+            this.Txt_niño.TabIndex = 0;
+            this.Txt_niño.Text = "0";
+            this.Txt_niño.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // tableLayoutPanel8
             // 
             this.tableLayoutPanel8.ColumnCount = 5;
@@ -345,6 +358,17 @@
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel8.Size = new System.Drawing.Size(98, 62);
             this.tableLayoutPanel8.TabIndex = 17;
+            // 
+            // Txt_adultoT
+            // 
+            this.Txt_adultoT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Txt_adultoT.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_adultoT.Location = new System.Drawing.Point(13, 13);
+            this.Txt_adultoT.Name = "Txt_adultoT";
+            this.Txt_adultoT.Size = new System.Drawing.Size(68, 34);
+            this.Txt_adultoT.TabIndex = 0;
+            this.Txt_adultoT.Text = "0";
+            this.Txt_adultoT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel9
             // 
@@ -367,6 +391,17 @@
             this.tableLayoutPanel9.Size = new System.Drawing.Size(98, 62);
             this.tableLayoutPanel9.TabIndex = 18;
             // 
+            // Txt_niñoT
+            // 
+            this.Txt_niñoT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Txt_niñoT.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_niñoT.Location = new System.Drawing.Point(13, 13);
+            this.Txt_niñoT.Name = "Txt_niñoT";
+            this.Txt_niñoT.Size = new System.Drawing.Size(68, 34);
+            this.Txt_niñoT.TabIndex = 0;
+            this.Txt_niñoT.Text = "0";
+            this.Txt_niñoT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // tableLayoutPanel7
             // 
             this.tableLayoutPanel7.ColumnCount = 5;
@@ -388,17 +423,6 @@
             this.tableLayoutPanel7.Size = new System.Drawing.Size(98, 62);
             this.tableLayoutPanel7.TabIndex = 19;
             // 
-            // Txt_niño
-            // 
-            this.Txt_niño.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Txt_niño.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_niño.Location = new System.Drawing.Point(13, 13);
-            this.Txt_niño.Name = "Txt_niño";
-            this.Txt_niño.Size = new System.Drawing.Size(68, 34);
-            this.Txt_niño.TabIndex = 0;
-            this.Txt_niño.Text = "0";
-            this.Txt_niño.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // Txt_3raT
             // 
             this.Txt_3raT.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -409,28 +433,7 @@
             this.Txt_3raT.TabIndex = 0;
             this.Txt_3raT.Text = "0";
             this.Txt_3raT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // Txt_adultoT
-            // 
-            this.Txt_adultoT.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Txt_adultoT.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_adultoT.Location = new System.Drawing.Point(13, 13);
-            this.Txt_adultoT.Name = "Txt_adultoT";
-            this.Txt_adultoT.Size = new System.Drawing.Size(68, 34);
-            this.Txt_adultoT.TabIndex = 0;
-            this.Txt_adultoT.Text = "0";
-            this.Txt_adultoT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // Txt_niñoT
-            // 
-            this.Txt_niñoT.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Txt_niñoT.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_niñoT.Location = new System.Drawing.Point(13, 13);
-            this.Txt_niñoT.Name = "Txt_niñoT";
-            this.Txt_niñoT.Size = new System.Drawing.Size(68, 34);
-            this.Txt_niñoT.TabIndex = 0;
-            this.Txt_niñoT.Text = "0";
-            this.Txt_niñoT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Txt_3raT.TextChanged += new System.EventHandler(this.Txt_3raT_TextChanged);
             // 
             // tableLayoutPanel5
             // 
@@ -503,12 +506,13 @@
             // 
             this.Lbl_total.AutoSize = true;
             this.Lbl_total.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Lbl_total.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_total.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_total.ForeColor = System.Drawing.Color.Blue;
             this.Lbl_total.Location = new System.Drawing.Point(718, 350);
             this.Lbl_total.Name = "Lbl_total";
             this.Lbl_total.Size = new System.Drawing.Size(98, 68);
             this.Lbl_total.TabIndex = 24;
-            this.Lbl_total.Text = "Total";
+            this.Lbl_total.Text = "Total a Pagar ";
             this.Lbl_total.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel4
@@ -542,6 +546,7 @@
             this.Txt_total.TabIndex = 0;
             this.Txt_total.Text = "0";
             this.Txt_total.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Txt_total.TextChanged += new System.EventHandler(this.Txt_total_TextChanged);
             // 
             // tableLayoutPanel10
             // 
@@ -566,6 +571,7 @@
             // Btn_Siguente
             // 
             this.Btn_Siguente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_Siguente.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Siguente.Location = new System.Drawing.Point(23, 15);
             this.Btn_Siguente.Name = "Btn_Siguente";
             this.Btn_Siguente.Size = new System.Drawing.Size(130, 70);
@@ -574,20 +580,108 @@
             this.Btn_Siguente.UseVisualStyleBackColor = true;
             this.Btn_Siguente.Click += new System.EventHandler(this.Btn_Siguente_Click);
             // 
+            // Btn_canTBoletos
+            // 
+            this.Btn_canTBoletos.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Btn_canTBoletos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_canTBoletos.Enabled = false;
+            this.Btn_canTBoletos.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_canTBoletos.Location = new System.Drawing.Point(33, 23);
+            this.Btn_canTBoletos.Margin = new System.Windows.Forms.Padding(10);
+            this.Btn_canTBoletos.Name = "Btn_canTBoletos";
+            this.Btn_canTBoletos.Size = new System.Drawing.Size(1116, 49);
+            this.Btn_canTBoletos.TabIndex = 1;
+            this.Btn_canTBoletos.Text = "Cantidad de Boletos";
+            this.Btn_canTBoletos.UseVisualStyleBackColor = false;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 5;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.Controls.Add(this.Txt_totalB, 2, 2);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(488, 353);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(98, 62);
+            this.tableLayoutPanel1.TabIndex = 27;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Blue;
+            this.label1.Location = new System.Drawing.Point(373, 350);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 68);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Total Boletos ";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Txt_totalB
+            // 
+            this.Txt_totalB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_totalB.Location = new System.Drawing.Point(13, 13);
+            this.Txt_totalB.Name = "Txt_totalB";
+            this.Txt_totalB.Size = new System.Drawing.Size(68, 31);
+            this.Txt_totalB.TabIndex = 0;
+            this.Txt_totalB.Text = "0";
+            this.Txt_totalB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 5;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.Controls.Add(this.Btn_regresar, 2, 2);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 431);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 5;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(168, 100);
+            this.tableLayoutPanel2.TabIndex = 29;
+            // 
+            // Btn_regresar
+            // 
+            this.Btn_regresar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_regresar.Location = new System.Drawing.Point(22, 15);
+            this.Btn_regresar.Name = "Btn_regresar";
+            this.Btn_regresar.Size = new System.Drawing.Size(121, 70);
+            this.Btn_regresar.TabIndex = 0;
+            this.Btn_regresar.Text = "button7";
+            this.Btn_regresar.UseVisualStyleBackColor = true;
+            this.Btn_regresar.Click += new System.EventHandler(this.Btn_regresar_Click);
+            // 
             // Frm_boletos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 651);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.Tlp_boletos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1200, 690);
             this.Name = "Frm_boletos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cantidad de Boletos";
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
+            this.Tlp_boletos.ResumeLayout(false);
+            this.Tlp_boletos2.ResumeLayout(false);
+            this.Tlp_boletos2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
@@ -603,14 +697,17 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel10.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel Tlp_boletos;
+        private System.Windows.Forms.TableLayoutPanel Tlp_boletos2;
         private System.Windows.Forms.Button Btn_canTBoletos;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
@@ -641,5 +738,10 @@
         private System.Windows.Forms.TextBox Txt_total;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.Button Btn_Siguente;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TextBox Txt_totalB;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Button Btn_regresar;
     }
 }

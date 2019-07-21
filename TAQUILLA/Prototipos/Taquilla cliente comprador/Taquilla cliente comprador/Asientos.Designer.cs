@@ -123,6 +123,11 @@
             this.Btn_I10 = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.Btn_pantalla = new System.Windows.Forms.Button();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.Btn_confirmar = new System.Windows.Forms.Button();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.Lbl_asientos = new System.Windows.Forms.Label();
+            this.Txt_asientos = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.Btn_dis = new System.Windows.Forms.Button();
             this.Btn_selec = new System.Windows.Forms.Button();
@@ -130,15 +135,15 @@
             this.Lbl_dis = new System.Windows.Forms.Label();
             this.Lbl_selec = new System.Windows.Forms.Label();
             this.Lbl_oc = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.Btn_confirmar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
-            this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -316,6 +321,7 @@
             this.Btn_A1.TabIndex = 0;
             this.Btn_A1.Text = "A1";
             this.Btn_A1.UseVisualStyleBackColor = false;
+            this.Btn_A1.Click += new System.EventHandler(this.Btn_A1_Click);
             // 
             // Btn_A2
             // 
@@ -329,6 +335,7 @@
             this.Btn_A2.TabIndex = 1;
             this.Btn_A2.Text = "A2";
             this.Btn_A2.UseVisualStyleBackColor = false;
+            this.Btn_A2.Click += new System.EventHandler(this.Btn_A2_Click);
             // 
             // Btn_A3
             // 
@@ -1484,6 +1491,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel3.Controls.Add(this.Btn_pantalla, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel5, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel6, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(38, 62);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -1505,116 +1513,6 @@
             this.Btn_pantalla.TabIndex = 0;
             this.Btn_pantalla.Text = "Pantalla";
             this.Btn_pantalla.UseVisualStyleBackColor = false;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 13;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.173913F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.86957F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.173913F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.3913F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.173913F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.86957F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.173913F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.81194F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.717902F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.86957F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.173913F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.3913F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.173913F));
-            this.tableLayoutPanel4.Controls.Add(this.Btn_dis, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.Btn_selec, 5, 0);
-            this.tableLayoutPanel4.Controls.Add(this.Btn_oc, 9, 0);
-            this.tableLayoutPanel4.Controls.Add(this.Lbl_dis, 3, 0);
-            this.tableLayoutPanel4.Controls.Add(this.Lbl_selec, 7, 0);
-            this.tableLayoutPanel4.Controls.Add(this.Lbl_oc, 11, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(38, 16);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1106, 40);
-            this.tableLayoutPanel4.TabIndex = 2;
-            // 
-            // Btn_dis
-            // 
-            this.Btn_dis.BackColor = System.Drawing.Color.Silver;
-            this.Btn_dis.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn_dis.Enabled = false;
-            this.Btn_dis.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_dis.Location = new System.Drawing.Point(27, 3);
-            this.Btn_dis.Name = "Btn_dis";
-            this.Btn_dis.Size = new System.Drawing.Size(114, 34);
-            this.Btn_dis.TabIndex = 0;
-            this.Btn_dis.Text = "Disponibles";
-            this.Btn_dis.UseVisualStyleBackColor = false;
-            // 
-            // Btn_selec
-            // 
-            this.Btn_selec.BackColor = System.Drawing.Color.LawnGreen;
-            this.Btn_selec.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn_selec.Enabled = false;
-            this.Btn_selec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_selec.Location = new System.Drawing.Point(387, 3);
-            this.Btn_selec.Name = "Btn_selec";
-            this.Btn_selec.Size = new System.Drawing.Size(114, 34);
-            this.Btn_selec.TabIndex = 1;
-            this.Btn_selec.Text = "Sleccion";
-            this.Btn_selec.UseVisualStyleBackColor = false;
-            // 
-            // Btn_oc
-            // 
-            this.Btn_oc.BackColor = System.Drawing.Color.Crimson;
-            this.Btn_oc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn_oc.Enabled = false;
-            this.Btn_oc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_oc.Location = new System.Drawing.Point(747, 3);
-            this.Btn_oc.Name = "Btn_oc";
-            this.Btn_oc.Size = new System.Drawing.Size(114, 34);
-            this.Btn_oc.TabIndex = 2;
-            this.Btn_oc.Text = "Ocupados";
-            this.Btn_oc.UseVisualStyleBackColor = false;
-            // 
-            // Lbl_dis
-            // 
-            this.Lbl_dis.AutoSize = true;
-            this.Lbl_dis.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Lbl_dis.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_dis.Location = new System.Drawing.Point(171, 0);
-            this.Lbl_dis.Name = "Lbl_dis";
-            this.Lbl_dis.Size = new System.Drawing.Size(186, 40);
-            this.Lbl_dis.TabIndex = 3;
-            this.Lbl_dis.Text = "Asientos Disponibles";
-            this.Lbl_dis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Lbl_selec
-            // 
-            this.Lbl_selec.AutoSize = true;
-            this.Lbl_selec.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Lbl_selec.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_selec.Location = new System.Drawing.Point(531, 0);
-            this.Lbl_selec.Name = "Lbl_selec";
-            this.Lbl_selec.Size = new System.Drawing.Size(191, 40);
-            this.Lbl_selec.TabIndex = 4;
-            this.Lbl_selec.Text = "Asientos de Seleccion";
-            this.Lbl_selec.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Lbl_oc
-            // 
-            this.Lbl_oc.AutoSize = true;
-            this.Lbl_oc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Lbl_oc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_oc.Location = new System.Drawing.Point(891, 0);
-            this.Lbl_oc.Name = "Lbl_oc";
-            this.Lbl_oc.Size = new System.Drawing.Size(186, 40);
-            this.Lbl_oc.TabIndex = 5;
-            this.Lbl_oc.Text = "Asientos Ocupados";
-            this.Lbl_oc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // fileSystemWatcher1
-            // 
-            this.fileSystemWatcher1.EnableRaisingEvents = true;
-            this.fileSystemWatcher1.SynchronizingObject = this;
             // 
             // tableLayoutPanel5
             // 
@@ -1647,6 +1545,169 @@
             this.Btn_confirmar.UseVisualStyleBackColor = true;
             this.Btn_confirmar.Click += new System.EventHandler(this.Btn_confirmar_Click);
             // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 1;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel6.Controls.Add(this.Lbl_asientos, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.Txt_asientos, 0, 1);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 2;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(200, 59);
+            this.tableLayoutPanel6.TabIndex = 2;
+            // 
+            // Lbl_asientos
+            // 
+            this.Lbl_asientos.AutoSize = true;
+            this.Lbl_asientos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Lbl_asientos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_asientos.Location = new System.Drawing.Point(3, 0);
+            this.Lbl_asientos.Name = "Lbl_asientos";
+            this.Lbl_asientos.Size = new System.Drawing.Size(194, 29);
+            this.Lbl_asientos.TabIndex = 0;
+            this.Lbl_asientos.Text = "Cantidad de asientos";
+            this.Lbl_asientos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Txt_asientos
+            // 
+            this.Txt_asientos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Txt_asientos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_asientos.Location = new System.Drawing.Point(3, 32);
+            this.Txt_asientos.Name = "Txt_asientos";
+            this.Txt_asientos.Size = new System.Drawing.Size(194, 26);
+            this.Txt_asientos.TabIndex = 1;
+            this.Txt_asientos.Text = "0";
+            this.Txt_asientos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Txt_asientos.TextChanged += new System.EventHandler(this.Txt_asientos_TextChanged);
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 15;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 0.844773F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.14361F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.055966F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.47941F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.267159F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.72122F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.173913F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.81194F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.369863F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.16965F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.055966F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.21858F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.689546F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 144F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 13F));
+            this.tableLayoutPanel4.Controls.Add(this.Btn_dis, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.Btn_selec, 5, 0);
+            this.tableLayoutPanel4.Controls.Add(this.Btn_oc, 9, 0);
+            this.tableLayoutPanel4.Controls.Add(this.Lbl_dis, 3, 0);
+            this.tableLayoutPanel4.Controls.Add(this.Lbl_selec, 7, 0);
+            this.tableLayoutPanel4.Controls.Add(this.Lbl_oc, 11, 0);
+            this.tableLayoutPanel4.Controls.Add(this.button2, 13, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(38, 16);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1106, 40);
+            this.tableLayoutPanel4.TabIndex = 2;
+            // 
+            // Btn_dis
+            // 
+            this.Btn_dis.BackColor = System.Drawing.Color.Silver;
+            this.Btn_dis.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_dis.Enabled = false;
+            this.Btn_dis.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_dis.Location = new System.Drawing.Point(11, 3);
+            this.Btn_dis.Name = "Btn_dis";
+            this.Btn_dis.Size = new System.Drawing.Size(109, 34);
+            this.Btn_dis.TabIndex = 0;
+            this.Btn_dis.Text = "Disponibles";
+            this.Btn_dis.UseVisualStyleBackColor = false;
+            // 
+            // Btn_selec
+            // 
+            this.Btn_selec.BackColor = System.Drawing.Color.LawnGreen;
+            this.Btn_selec.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_selec.Enabled = false;
+            this.Btn_selec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_selec.Location = new System.Drawing.Point(323, 3);
+            this.Btn_selec.Name = "Btn_selec";
+            this.Btn_selec.Size = new System.Drawing.Size(105, 34);
+            this.Btn_selec.TabIndex = 1;
+            this.Btn_selec.Text = "Sleccion";
+            this.Btn_selec.UseVisualStyleBackColor = false;
+            // 
+            // Btn_oc
+            // 
+            this.Btn_oc.BackColor = System.Drawing.Color.Crimson;
+            this.Btn_oc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_oc.Enabled = false;
+            this.Btn_oc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_oc.Location = new System.Drawing.Point(635, 3);
+            this.Btn_oc.Name = "Btn_oc";
+            this.Btn_oc.Size = new System.Drawing.Size(99, 34);
+            this.Btn_oc.TabIndex = 2;
+            this.Btn_oc.Text = "Ocupados";
+            this.Btn_oc.UseVisualStyleBackColor = false;
+            // 
+            // Lbl_dis
+            // 
+            this.Lbl_dis.AutoSize = true;
+            this.Lbl_dis.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Lbl_dis.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_dis.Location = new System.Drawing.Point(136, 0);
+            this.Lbl_dis.Name = "Lbl_dis";
+            this.Lbl_dis.Size = new System.Drawing.Size(169, 40);
+            this.Lbl_dis.TabIndex = 3;
+            this.Lbl_dis.Text = "Asientos Disponibles";
+            this.Lbl_dis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Lbl_selec
+            // 
+            this.Lbl_selec.AutoSize = true;
+            this.Lbl_selec.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Lbl_selec.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_selec.Location = new System.Drawing.Point(454, 0);
+            this.Lbl_selec.Name = "Lbl_selec";
+            this.Lbl_selec.Size = new System.Drawing.Size(163, 40);
+            this.Lbl_selec.TabIndex = 4;
+            this.Lbl_selec.Text = "Asientos de Seleccion";
+            this.Lbl_selec.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Lbl_oc
+            // 
+            this.Lbl_oc.AutoSize = true;
+            this.Lbl_oc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Lbl_oc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_oc.Location = new System.Drawing.Point(750, 0);
+            this.Lbl_oc.Name = "Lbl_oc";
+            this.Lbl_oc.Size = new System.Drawing.Size(176, 40);
+            this.Lbl_oc.TabIndex = 5;
+            this.Lbl_oc.Text = "Asientos Ocupados";
+            this.Lbl_oc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button2.Location = new System.Drawing.Point(948, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(138, 34);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Regresar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
+            // 
             // Frm_asientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1658,13 +1719,16 @@
             this.Name = "Frm_asientos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "e";
+            this.Load += new System.EventHandler(this.Frm_asientos_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
-            this.tableLayoutPanel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1775,5 +1839,9 @@
         private System.Windows.Forms.Button Btn_I10;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Button Btn_confirmar;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.Label Lbl_asientos;
+        public System.Windows.Forms.TextBox Txt_asientos;
+        private System.Windows.Forms.Button button2;
     }
 }
