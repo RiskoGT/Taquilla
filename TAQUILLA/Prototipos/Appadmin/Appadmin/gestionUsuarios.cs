@@ -1,4 +1,5 @@
-﻿using System;
+﻿/*Randy Choc Gestion Usuarios 0901-16-1288*/
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace Appadmin
         public gestionUsuarios()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void GestionUsuarios_Load(object sender, EventArgs e)

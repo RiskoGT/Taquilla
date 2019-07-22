@@ -1,4 +1,5 @@
-﻿using System;
+﻿/*Edgar Casasola Formulario Cartelera 0901-16-9*/
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,6 +34,11 @@ namespace Appadmin
             Form1 frm = new Form1();
             frm.Show();
             this.Hide();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
