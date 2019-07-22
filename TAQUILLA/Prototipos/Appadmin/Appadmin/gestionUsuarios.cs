@@ -16,5 +16,32 @@ namespace Appadmin
         {
             InitializeComponent();
         }
+
+        private void GestionUsuarios_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RegresarMenu_Click(object sender, EventArgs e)
+        {
+            Form1 frm = new Form1();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
