@@ -12,8 +12,10 @@ using System.Diagnostics;
 namespace Taquilla_cliente_comprador
 {
    
-    public partial class Frm_boletos : Form
+    public partial class Frm_boletos : Form   
     {
+        /*Grupo 2  taquilla  cliente comprador
+        Gustavo Perez 0901-16-420 y Juan José Gámez 0901-16-47  */
         int cont1 = 0; int cont2 = 0; int cont3 = 0;
         int count1=0;
         int count2 = 0;
@@ -226,5 +228,10 @@ namespace Taquilla_cliente_comprador
 			Process.Start("Manual.pdf");
 
 		}
+
+        private void Frm_boletos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -12,6 +12,8 @@ namespace Taquilla_cliente_comprador
 {
     public partial class Frm_asientos : Form
     {
+        /*Grupo 2  taquilla  cliente comprador
+        Gustavo Perez 0901-16-420 y Juan José Gámez 0901-16-47  */
         int contador = 0;
         int a1, a2, a3, a4, a5, a6, a7, a8, a9, a10 = 0;
         int b1, b2, b3, b4, b5, b6, b7, b8, b9, b10 = 0;

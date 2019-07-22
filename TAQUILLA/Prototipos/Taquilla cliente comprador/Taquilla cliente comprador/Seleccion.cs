@@ -12,7 +12,9 @@ namespace Taquilla_cliente_comprador
 {
     public partial class Frm_cartelera : Form
     {
-		int sala = 0;
+        /*Grupo 2  taquilla  cliente comprador
+        Gustavo Perez 0901-16-420 y Juan José Gámez 0901-16-47  */
+        int sala = 0;
 		public Frm_cartelera()
 		{
 			InitializeComponent();
@@ -80,5 +82,10 @@ namespace Taquilla_cliente_comprador
 			
 			
 		}
-	}
+
+        private void Frm_cartelera_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

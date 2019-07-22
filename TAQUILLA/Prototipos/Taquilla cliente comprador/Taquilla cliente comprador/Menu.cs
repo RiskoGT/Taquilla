@@ -13,6 +13,8 @@ namespace Taquilla_cliente_comprador
 {
     public partial class Frm_menu : Form
     {
+        /*Grupo 2  taquilla  cliente comprador
+         Gustavo Perez 0901-16-420 y Juan José Gámez 0901-16-47  */
         public Frm_menu()
         {
             InitializeComponent();
