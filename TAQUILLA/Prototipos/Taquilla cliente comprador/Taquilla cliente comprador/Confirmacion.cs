@@ -31,8 +31,7 @@ namespace Taquilla_cliente_comprador
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-			Form formulariocon = new Frm_menu();
-			formulariocon.Show();
+			
 			Visible = false;
 		}
 	}

@@ -197,17 +197,17 @@ namespace Taquilla_cliente_comprador
 
         private void Btn_D3_Click(object sender, EventArgs e)
         {
-            if (d1 == 0)
+            if (d3 == 0)
             {
                 contador = contador + 1;
-                Btn_D1.BackColor = Color.LawnGreen; ;
-                d1 = d1 + 1;
+                Btn_D3.BackColor = Color.LawnGreen; ;
+                d3 = d3 + 1;
             }
             else
             {
                 contador = contador - 1;
-                Btn_D1.BackColor = Color.White; ;
-                d1 = 0;
+                Btn_D3.BackColor = Color.White; ;
+                d3 = 0;
             }
         }
 
@@ -661,17 +661,17 @@ namespace Taquilla_cliente_comprador
 
         private void Btn_G5_Click(object sender, EventArgs e)
         {
-            if (g6 == 0)
+            if (g5 == 0)
             {
                 contador = contador + 1;
-                Btn_G6.BackColor = Color.LawnGreen; ;
-                g6 = g6 + 1;
+                Btn_G5.BackColor = Color.LawnGreen; ;
+                g5 = g5 + 1;
             }
             else
             {
                 contador = contador - 1;
-                Btn_G6.BackColor = Color.White; ;
-                g6 = 0;
+                Btn_G5.BackColor = Color.White; ;
+                g5 = 0;
             }
         }
 
@@ -1090,7 +1090,14 @@ namespace Taquilla_cliente_comprador
 			}
 		}
 
-		private void Btn_C5_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            Form formulariobol = new Frm_ayudabol();
+            formulariobol.Show();
+           
+        }
+
+        private void Btn_C5_Click(object sender, EventArgs e)
         {
             if (c5 == 0)
             {

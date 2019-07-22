@@ -220,5 +220,12 @@ namespace Taquilla_cliente_comprador
 		{
 
 		}
-	}
+
+        private void Btn_ayuda_Click(object sender, EventArgs e)
+        {
+            Form formularioayu = new Frm_ayudabol();
+            formularioayu.Show();
+          
+        }
+    }
 }
