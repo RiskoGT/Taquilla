@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_cartelera));
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -46,11 +47,12 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-			this.button2 = new System.Windows.Forms.Button();
+			this.button1 = new System.Windows.Forms.Button();
 			this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-			this.button3 = new System.Windows.Forms.Button();
+			this.button2 = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.button9 = new System.Windows.Forms.Button();
+			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.tableLayoutPanel1.SuspendLayout();
 			this.tableLayoutPanel2.SuspendLayout();
 			this.tableLayoutPanel3.SuspendLayout();
@@ -316,7 +318,7 @@
 			// 
 			this.tableLayoutPanel6.ColumnCount = 1;
 			this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.tableLayoutPanel6.Controls.Add(this.button2, 0, 1);
+			this.tableLayoutPanel6.Controls.Add(this.button1, 0, 1);
 			this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel6.Location = new System.Drawing.Point(21, 3);
 			this.tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -327,23 +329,28 @@
 			this.tableLayoutPanel6.Size = new System.Drawing.Size(41, 471);
 			this.tableLayoutPanel6.TabIndex = 2;
 			// 
-			// button2
+			// button1
 			// 
-			this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-			this.button2.Location = new System.Drawing.Point(3, 214);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(35, 41);
-			this.button2.TabIndex = 0;
-			this.button2.Text = "<-";
-			this.button2.UseVisualStyleBackColor = true;
+			this.button1.BackColor = System.Drawing.Color.Transparent;
+			this.button1.BackgroundImage = global::Taquilla_cliente_comprador.Properties.Resources.izquierda;
+			this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
+			this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button1.Location = new System.Drawing.Point(3, 214);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(35, 41);
+			this.button1.TabIndex = 0;
+			this.button1.UseVisualStyleBackColor = false;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// tableLayoutPanel7
 			// 
 			this.tableLayoutPanel7.ColumnCount = 1;
 			this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-			this.tableLayoutPanel7.Controls.Add(this.button3, 0, 1);
+			this.tableLayoutPanel7.Controls.Add(this.button2, 0, 1);
 			this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel7.Location = new System.Drawing.Point(874, 3);
 			this.tableLayoutPanel7.Name = "tableLayoutPanel7";
@@ -354,16 +361,21 @@
 			this.tableLayoutPanel7.Size = new System.Drawing.Size(41, 471);
 			this.tableLayoutPanel7.TabIndex = 3;
 			// 
-			// button3
+			// button2
 			// 
-			this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-			this.button3.Location = new System.Drawing.Point(3, 214);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(35, 41);
-			this.button3.TabIndex = 0;
-			this.button3.Text = "->";
-			this.button3.UseVisualStyleBackColor = true;
+			this.button2.BackColor = System.Drawing.Color.Transparent;
+			this.button2.BackgroundImage = global::Taquilla_cliente_comprador.Properties.Resources.derecha;
+			this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.button2.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
+			this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
+			this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button2.Location = new System.Drawing.Point(3, 214);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(35, 41);
+			this.button2.TabIndex = 0;
+			this.button2.UseVisualStyleBackColor = false;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
 			// 
 			// label1
 			// 
@@ -393,6 +405,12 @@
 			this.button9.Text = "Continuar";
 			this.button9.UseVisualStyleBackColor = false;
 			this.button9.Click += new System.EventHandler(this.button9_Click);
+			// 
+			// timer1
+			// 
+			this.timer1.Enabled = true;
+			this.timer1.Interval = 10;
+			this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
 			// 
 			// Frm_cartelera
 			// 
@@ -440,9 +458,7 @@
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
 		private System.Windows.Forms.ComboBox comboBox1;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button button9;
 		private System.Windows.Forms.PictureBox pictureBox1;
@@ -451,5 +467,8 @@
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Timer timer1;
 	}
 }

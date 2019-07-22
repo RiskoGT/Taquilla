@@ -32,6 +32,8 @@
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
 			this.Lbl_pagoCompra = new System.Windows.Forms.Label();
+			this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
+			this.Btn_ayuda = new System.Windows.Forms.Button();
 			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
 			this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
 			this.textBox2 = new System.Windows.Forms.TextBox();
@@ -57,8 +59,10 @@
 			this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
 			this.button1 = new System.Windows.Forms.Button();
 			this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+			this.label7 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.tableLayoutPanel3.SuspendLayout();
+			this.tableLayoutPanel13.SuspendLayout();
 			this.tableLayoutPanel2.SuspendLayout();
 			this.tableLayoutPanel6.SuspendLayout();
 			this.tableLayoutPanel7.SuspendLayout();
@@ -67,6 +71,7 @@
 			this.tableLayoutPanel5.SuspendLayout();
 			this.tableLayoutPanel4.SuspendLayout();
 			this.tableLayoutPanel12.SuspendLayout();
+			this.tableLayoutPanel11.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -102,6 +107,7 @@
 			this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2F));
 			this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
 			this.tableLayoutPanel3.Controls.Add(this.Lbl_pagoCompra, 2, 1);
+			this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel13, 0, 1);
 			this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel3.Location = new System.Drawing.Point(26, 22);
 			this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -124,6 +130,33 @@
 			this.Lbl_pagoCompra.TabIndex = 1;
 			this.Lbl_pagoCompra.Text = "Datos Cobro";
 			this.Lbl_pagoCompra.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// tableLayoutPanel13
+			// 
+			this.tableLayoutPanel13.ColumnCount = 2;
+			this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+			this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+			this.tableLayoutPanel13.Controls.Add(this.Btn_ayuda, 0, 0);
+			this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tableLayoutPanel13.Location = new System.Drawing.Point(3, 8);
+			this.tableLayoutPanel13.Name = "tableLayoutPanel13";
+			this.tableLayoutPanel13.RowCount = 1;
+			this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel13.Size = new System.Drawing.Size(333, 41);
+			this.tableLayoutPanel13.TabIndex = 2;
+			// 
+			// Btn_ayuda
+			// 
+			this.Btn_ayuda.BackColor = System.Drawing.Color.White;
+			this.Btn_ayuda.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.Btn_ayuda.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Btn_ayuda.Location = new System.Drawing.Point(3, 3);
+			this.Btn_ayuda.Name = "Btn_ayuda";
+			this.Btn_ayuda.Size = new System.Drawing.Size(60, 35);
+			this.Btn_ayuda.TabIndex = 0;
+			this.Btn_ayuda.Text = "Ayuda";
+			this.Btn_ayuda.UseVisualStyleBackColor = false;
+			this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
 			// 
 			// tableLayoutPanel2
 			// 
@@ -495,6 +528,7 @@
 			this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36F));
 			this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2F));
 			this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+			this.tableLayoutPanel11.Controls.Add(this.label7, 2, 1);
 			this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel11.Location = new System.Drawing.Point(26, 93);
 			this.tableLayoutPanel11.Name = "tableLayoutPanel11";
@@ -504,6 +538,18 @@
 			this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
 			this.tableLayoutPanel11.Size = new System.Drawing.Size(1130, 26);
 			this.tableLayoutPanel11.TabIndex = 3;
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label7.Location = new System.Drawing.Point(364, 0);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(400, 24);
+			this.label7.TabIndex = 0;
+			this.label7.Text = "Ingrese los datos para realizar pago";
+			this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// Frm_pago
 			// 
@@ -522,6 +568,7 @@
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.tableLayoutPanel3.ResumeLayout(false);
 			this.tableLayoutPanel3.PerformLayout();
+			this.tableLayoutPanel13.ResumeLayout(false);
 			this.tableLayoutPanel2.ResumeLayout(false);
 			this.tableLayoutPanel2.PerformLayout();
 			this.tableLayoutPanel6.ResumeLayout(false);
@@ -537,6 +584,8 @@
 			this.tableLayoutPanel4.ResumeLayout(false);
 			this.tableLayoutPanel4.PerformLayout();
 			this.tableLayoutPanel12.ResumeLayout(false);
+			this.tableLayoutPanel11.ResumeLayout(false);
+			this.tableLayoutPanel11.PerformLayout();
 			this.ResumeLayout(false);
 
         }
@@ -571,5 +620,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
+        private System.Windows.Forms.Button Btn_ayuda;
+        private System.Windows.Forms.Label label7;
     }
 }

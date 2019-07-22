@@ -28,3 +28,4 @@ C:\Users\gganp\Desktop\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\T
 C:\Users\gganp\Desktop\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla cliente comprador.csproj.CoreCompileInputs.cache
 C:\Users\gganp\Desktop\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla cliente comprador.exe
 C:\Users\gganp\Desktop\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla cliente comprador.pdb
+C:\Users\juan_\Documents\Taquilla\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla_cliente_comprador.Frm_ayudabol.resources

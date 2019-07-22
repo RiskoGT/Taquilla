@@ -138,6 +138,10 @@
   <ItemGroup>
     <Content Include="App.ico" />
     <Content Include="cine.ico" />
+    <None Include="Resources\Spiderman Trailer.jpg" />
+    <None Include="Resources\Spiderman.jpg" />
+    <None Include="Resources\izquierda.png" />
+    <None Include="Resources\derecha.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

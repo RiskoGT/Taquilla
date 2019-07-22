@@ -128,6 +128,7 @@
 			this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
 			this.Lbl_asientos = new System.Windows.Forms.Label();
 			this.Txt_asientos = new System.Windows.Forms.TextBox();
+			this.label1 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
 			this.Btn_dis = new System.Windows.Forms.Button();
 			this.Btn_selec = new System.Windows.Forms.Button();
@@ -136,8 +137,8 @@
 			this.Lbl_selec = new System.Windows.Forms.Label();
 			this.Lbl_oc = new System.Windows.Forms.Label();
 			this.button2 = new System.Windows.Forms.Button();
+			this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
 			this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
-			this.label1 = new System.Windows.Forms.Label();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.tableLayoutPanel1.SuspendLayout();
 			this.tableLayoutPanel2.SuspendLayout();
@@ -157,6 +158,7 @@
 			this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 3);
 			this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 2);
 			this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 1, 1);
+			this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel7, 0, 2);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -1843,6 +1845,20 @@
 			this.Txt_asientos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.Txt_asientos.TextChanged += new System.EventHandler(this.Txt_asientos_TextChanged);
 			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.BackColor = System.Drawing.Color.DimGray;
+			this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.ForeColor = System.Drawing.Color.White;
+			this.label1.Location = new System.Drawing.Point(224, 0);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(657, 65);
+			this.label1.TabIndex = 3;
+			this.label1.Text = "Pantalla";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
 			// tableLayoutPanel4
 			// 
 			this.tableLayoutPanel4.ColumnCount = 15;
@@ -1860,7 +1876,7 @@
 			this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.21858F));
 			this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.689546F));
 			this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 144F));
-			this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+			this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52F));
 			this.tableLayoutPanel4.Controls.Add(this.Btn_dis, 1, 0);
 			this.tableLayoutPanel4.Controls.Add(this.Btn_selec, 5, 0);
 			this.tableLayoutPanel4.Controls.Add(this.Btn_oc, 9, 0);
@@ -1886,7 +1902,7 @@
 			this.Btn_dis.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Btn_dis.Location = new System.Drawing.Point(10, 3);
 			this.Btn_dis.Name = "Btn_dis";
-			this.Btn_dis.Size = new System.Drawing.Size(106, 34);
+			this.Btn_dis.Size = new System.Drawing.Size(104, 34);
 			this.Btn_dis.TabIndex = 0;
 			this.Btn_dis.Text = "Disponibles";
 			this.Btn_dis.UseVisualStyleBackColor = false;
@@ -1899,9 +1915,9 @@
 			this.Btn_selec.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
 			this.Btn_selec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.Btn_selec.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Btn_selec.Location = new System.Drawing.Point(313, 3);
+			this.Btn_selec.Location = new System.Drawing.Point(308, 3);
 			this.Btn_selec.Name = "Btn_selec";
-			this.Btn_selec.Size = new System.Drawing.Size(102, 34);
+			this.Btn_selec.Size = new System.Drawing.Size(100, 34);
 			this.Btn_selec.TabIndex = 1;
 			this.Btn_selec.Text = "Selecionado";
 			this.Btn_selec.UseVisualStyleBackColor = false;
@@ -1914,9 +1930,9 @@
 			this.Btn_oc.FlatAppearance.BorderColor = System.Drawing.Color.Red;
 			this.Btn_oc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.Btn_oc.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Btn_oc.Location = new System.Drawing.Point(617, 3);
+			this.Btn_oc.Location = new System.Drawing.Point(607, 3);
 			this.Btn_oc.Name = "Btn_oc";
-			this.Btn_oc.Size = new System.Drawing.Size(97, 34);
+			this.Btn_oc.Size = new System.Drawing.Size(95, 34);
 			this.Btn_oc.TabIndex = 2;
 			this.Btn_oc.Text = "Ocupado";
 			this.Btn_oc.UseVisualStyleBackColor = false;
@@ -1927,9 +1943,9 @@
 			this.Lbl_dis.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.Lbl_dis.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Lbl_dis.ForeColor = System.Drawing.Color.Gold;
-			this.Lbl_dis.Location = new System.Drawing.Point(131, 0);
+			this.Lbl_dis.Location = new System.Drawing.Point(129, 0);
 			this.Lbl_dis.Name = "Lbl_dis";
-			this.Lbl_dis.Size = new System.Drawing.Size(165, 40);
+			this.Lbl_dis.Size = new System.Drawing.Size(162, 40);
 			this.Lbl_dis.TabIndex = 3;
 			this.Lbl_dis.Text = "Asientos Disponibles";
 			this.Lbl_dis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1940,9 +1956,9 @@
 			this.Lbl_selec.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.Lbl_selec.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Lbl_selec.ForeColor = System.Drawing.Color.Gold;
-			this.Lbl_selec.Location = new System.Drawing.Point(441, 0);
+			this.Lbl_selec.Location = new System.Drawing.Point(433, 0);
 			this.Lbl_selec.Name = "Lbl_selec";
-			this.Lbl_selec.Size = new System.Drawing.Size(158, 40);
+			this.Lbl_selec.Size = new System.Drawing.Size(156, 40);
 			this.Lbl_selec.TabIndex = 4;
 			this.Lbl_selec.Text = "Asientos Seleccionados";
 			this.Lbl_selec.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1953,9 +1969,9 @@
 			this.Lbl_oc.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.Lbl_oc.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Lbl_oc.ForeColor = System.Drawing.Color.Gold;
-			this.Lbl_oc.Location = new System.Drawing.Point(729, 0);
+			this.Lbl_oc.Location = new System.Drawing.Point(717, 0);
 			this.Lbl_oc.Name = "Lbl_oc";
-			this.Lbl_oc.Size = new System.Drawing.Size(171, 40);
+			this.Lbl_oc.Size = new System.Drawing.Size(168, 40);
 			this.Lbl_oc.TabIndex = 5;
 			this.Lbl_oc.Text = "Asientos Ocupados";
 			this.Lbl_oc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1964,7 +1980,7 @@
 			// 
 			this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.button2.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button2.Location = new System.Drawing.Point(921, 3);
+			this.button2.Location = new System.Drawing.Point(906, 3);
 			this.button2.Name = "button2";
 			this.button2.Size = new System.Drawing.Size(138, 34);
 			this.button2.TabIndex = 7;
@@ -1972,24 +1988,23 @@
 			this.button2.UseVisualStyleBackColor = true;
 			this.button2.Click += new System.EventHandler(this.Button2_Click);
 			// 
+			// tableLayoutPanel7
+			// 
+			this.tableLayoutPanel7.ColumnCount = 1;
+			this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 62);
+			this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+			this.tableLayoutPanel7.RowCount = 3;
+			this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+			this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+			this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+			this.tableLayoutPanel7.Size = new System.Drawing.Size(29, 65);
+			this.tableLayoutPanel7.TabIndex = 3;
+			// 
 			// fileSystemWatcher1
 			// 
 			this.fileSystemWatcher1.EnableRaisingEvents = true;
 			this.fileSystemWatcher1.SynchronizingObject = this;
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.BackColor = System.Drawing.Color.DimGray;
-			this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.ForeColor = System.Drawing.Color.White;
-			this.label1.Location = new System.Drawing.Point(224, 0);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(657, 65);
-			this.label1.TabIndex = 3;
-			this.label1.Text = "Pantalla";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// timer1
 			// 
@@ -2137,5 +2152,6 @@
         private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Timer timer1;
-	}
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+    }
 }
