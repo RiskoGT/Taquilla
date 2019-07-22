@@ -1090,12 +1090,7 @@ namespace Taquilla_cliente_comprador
 			}
 		}
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            Form formulariobol = new Frm_ayudabol();
-            formulariobol.Show();
-           
-        }
+     
 
         private void Btn_C5_Click(object sender, EventArgs e)
         {

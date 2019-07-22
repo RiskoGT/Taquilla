@@ -63,6 +63,26 @@ namespace Taquilla_cliente_comprador.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap derecha {
+            get {
+                object obj = ResourceManager.GetObject("derecha", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap izquierda {
+            get {
+                object obj = ResourceManager.GetObject("izquierda", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Rey_leon {
             get {
                 object obj = ResourceManager.GetObject("Rey leon", resourceCulture);
@@ -76,6 +96,26 @@ namespace Taquilla_cliente_comprador.Properties {
         internal static System.Drawing.Bitmap Rey_leon_Trailer {
             get {
                 object obj = ResourceManager.GetObject("Rey leon Trailer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Spiderman {
+            get {
+                object obj = ResourceManager.GetObject("Spiderman", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Spiderman_Trailer {
+            get {
+                object obj = ResourceManager.GetObject("Spiderman Trailer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

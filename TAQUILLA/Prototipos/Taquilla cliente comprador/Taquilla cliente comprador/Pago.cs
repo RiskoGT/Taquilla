@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Taquilla_cliente_comprador
 {
@@ -45,9 +46,10 @@ namespace Taquilla_cliente_comprador
 
         private void Btn_ayuda_Click(object sender, EventArgs e)
         {
-            Form formulariopago = new Frm_ayudabol();
-            formulariopago.Show();
            
-        }
+
+			Process.Start("Manual.pdf");
+
+		}
     }
 }

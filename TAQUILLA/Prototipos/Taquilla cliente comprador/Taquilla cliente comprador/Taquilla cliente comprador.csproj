@@ -50,12 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ayudaboletos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ayudaboletos.Designer.cs">
-      <DependentUpon>ayudaboletos.cs</DependentUpon>
-    </Compile>
     <Compile Include="Boletos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,9 +88,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ayudaboletos.resx">
-      <DependentUpon>ayudaboletos.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Boletos.resx">
       <DependentUpon>Boletos.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,6 +138,10 @@
   <ItemGroup>
     <Content Include="App.ico" />
     <Content Include="cine.ico" />
+    <None Include="Resources\Spiderman Trailer.jpg" />
+    <None Include="Resources\Spiderman.jpg" />
+    <None Include="Resources\izquierda.png" />
+    <None Include="Resources\derecha.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

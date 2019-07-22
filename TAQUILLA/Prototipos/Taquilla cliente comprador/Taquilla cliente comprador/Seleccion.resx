@@ -120,6 +120,9 @@
   <data name="label5.Text" xml:space="preserve">
     <value>EL REY LEÓN de Disney, dirigida por Jon Favreau, nos lleva a la sabana africana donde un futuro rey ha nacido. Simba idolatra a su padre, el rey Mufasa, y está entusiasmado con su destino real. Pero no todos en el reino celebran la llegada del nuevo cachorro. Scar, el hermano de Mufasa y antiguo heredero al trono, tiene sus propios planes. La batalla de La Roca del Rey se ve teñida de traición, tragedia y drama, y acaba forzando a Simba al exilio. Con la ayuda de una curiosa pareja de amigos nuevos, Simba tendrá que arreglárselas para crecer y recuperar lo que legítimamente le corresponde. El estelar reparto incluye a: Donald Glover como Simba, Beyoncé Knowles-Carter en el papel de Nala, James Earl Jones como Mufasa, Chiwetel Ejiofor como Scar, Seth Rogen como Pumba y Billy Eichner en el papel de Timón.</value>
   </data>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

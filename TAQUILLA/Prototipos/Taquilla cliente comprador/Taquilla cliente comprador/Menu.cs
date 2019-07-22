@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Taquilla_cliente_comprador
 {
@@ -53,6 +54,11 @@ namespace Taquilla_cliente_comprador
 		private void Frm_menu_FormClosed(object sender, FormClosedEventArgs e)
 		{
 			Application.Exit();
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			Process.Start("Manual.pdf");
 		}
 	}
 }
