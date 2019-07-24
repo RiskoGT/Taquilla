@@ -52,7 +52,7 @@ namespace Appadmin
 
 
             this.Hide();
-            Form1 frm = new Form1();
+            MainMenu frm = new MainMenu();
             frm.Show();
             
         }
@@ -77,5 +77,10 @@ namespace Appadmin
             ReleaseCapture();
             sendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-    }
+
+		private void Acceso_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			Application.Exit();
+		}
+	}
 }

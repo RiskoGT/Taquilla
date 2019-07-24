@@ -31,7 +31,7 @@ namespace Appadmin
 
         private void regresarMenu_Click_1(object sender, EventArgs e)
         {
-            Form1 frm = new Form1();
+            MainMenu frm = new MainMenu();
             frm.Show();
             this.Hide();
         }
@@ -77,5 +77,18 @@ namespace Appadmin
         {
 
         }
-    }
+
+		private void Cartelera_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			Application.Exit();
+
+		}
+
+		private void button7_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			MainMenu mainMenu = new MainMenu();
+			mainMenu.Show();
+		}
+	}
 }

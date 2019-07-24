@@ -12,9 +12,9 @@ using System.Runtime.InteropServices;
 
 namespace Appadmin
 {
-    public partial class Form1 : Form
+    public partial class MainMenu : Form
     {
-        public Form1()
+        public MainMenu()
         {
             InitializeComponent();
             
@@ -84,5 +84,31 @@ namespace Appadmin
             frm.Show();
             this.Hide();
         }
-    }
+
+		private void button1_Click_1(object sender, EventArgs e)
+		{
+			Cartelera frm = new Cartelera();
+			frm.Show();
+			this.Hide();
+		}
+
+		private void button2_Click_1(object sender, EventArgs e)
+		{
+			controlInformes frm = new controlInformes();
+			frm.Show();
+			this.Hide();
+		}
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+			gestionUsuarios frm = new gestionUsuarios();
+			frm.Show();
+			this.Hide();
+		}
+
+		private void MainMenu_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			Application.Exit();
+		}
+	}
 }
