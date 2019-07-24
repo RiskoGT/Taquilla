@@ -104,7 +104,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.125F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.875F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 299F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel7, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel8, 2, 2);
@@ -140,7 +140,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(647, 386);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(646, 386);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel6
@@ -165,7 +165,7 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(318, 189);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(317, 189);
             this.tableLayoutPanel6.TabIndex = 3;
             // 
             // label12
@@ -184,7 +184,7 @@
             // 
             this.comboBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(162, 2);
+            this.comboBox2.Location = new System.Drawing.Point(161, 2);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(153, 24);
@@ -195,7 +195,7 @@
             // 
             this.comboBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(162, 49);
+            this.comboBox3.Location = new System.Drawing.Point(161, 49);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(153, 24);
@@ -230,7 +230,7 @@
             // 
             this.comboBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(162, 96);
+            this.comboBox4.Location = new System.Drawing.Point(161, 96);
             this.comboBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(153, 24);
@@ -241,7 +241,7 @@
             // 
             this.comboBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(162, 143);
+            this.comboBox5.Location = new System.Drawing.Point(161, 143);
             this.comboBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(153, 24);
@@ -276,7 +276,7 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.27957F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.72043F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(318, 189);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(317, 189);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // label13
@@ -285,7 +285,7 @@
             this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label13.Font = new System.Drawing.Font("Times New Roman", 13.8F);
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(193, 0);
+            this.label13.Location = new System.Drawing.Point(192, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(95, 27);
             this.label13.TabIndex = 49;
@@ -300,7 +300,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(3, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(184, 34);
+            this.label4.Size = new System.Drawing.Size(183, 34);
             this.label4.TabIndex = 48;
             this.label4.Text = "Fechas";
             // 
@@ -310,7 +310,7 @@
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox5.Font = new System.Drawing.Font("Times New Roman", 13.8F);
-            this.textBox5.Location = new System.Drawing.Point(193, 36);
+            this.textBox5.Location = new System.Drawing.Point(192, 36);
             this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
@@ -333,14 +333,14 @@
             this.tableLayoutPanel10.RowCount = 2;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(184, 151);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(183, 151);
             this.tableLayoutPanel10.TabIndex = 0;
             // 
             // pictureBox5
             // 
             this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox5.Location = new System.Drawing.Point(118, 2);
+            this.pictureBox5.Location = new System.Drawing.Point(117, 2);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(61, 44);
@@ -354,7 +354,7 @@
             this.comboBox6.Location = new System.Drawing.Point(3, 2);
             this.comboBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(109, 24);
+            this.comboBox6.Size = new System.Drawing.Size(108, 24);
             this.comboBox6.TabIndex = 2;
             this.comboBox6.Text = "Dia/Mes/Año";
             // 
@@ -365,7 +365,7 @@
             this.comboBox7.Location = new System.Drawing.Point(3, 77);
             this.comboBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(109, 24);
+            this.comboBox7.Size = new System.Drawing.Size(108, 24);
             this.comboBox7.TabIndex = 3;
             this.comboBox7.Text = "Dia/Mes/Año";
             // 
@@ -373,7 +373,7 @@
             // 
             this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox4.Location = new System.Drawing.Point(118, 77);
+            this.pictureBox4.Location = new System.Drawing.Point(117, 77);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(61, 44);
@@ -641,7 +641,7 @@
             this.tableLayoutPanel8.Controls.Add(this.peliculaSiguiente, 2, 0);
             this.tableLayoutPanel8.Controls.Add(this.peliculaAnterior, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.pictureBox1, 1, 0);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(863, 168);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(862, 168);
             this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
@@ -697,7 +697,7 @@
             this.tableLayoutPanel9.ColumnCount = 3;
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.30343F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.69657F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 232F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 233F));
             this.tableLayoutPanel9.Controls.Add(this.buscarPelicula, 2, 0);
             this.tableLayoutPanel9.Controls.Add(this.textBox4, 1, 0);
             this.tableLayoutPanel9.Controls.Add(this.pictureBox3, 0, 0);
@@ -706,7 +706,7 @@
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(647, 59);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(646, 59);
             this.tableLayoutPanel9.TabIndex = 53;
             // 
             // buscarPelicula
@@ -716,10 +716,10 @@
             this.buscarPelicula.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.buscarPelicula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buscarPelicula.ForeColor = System.Drawing.Color.White;
-            this.buscarPelicula.Location = new System.Drawing.Point(417, 2);
+            this.buscarPelicula.Location = new System.Drawing.Point(415, 2);
             this.buscarPelicula.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buscarPelicula.Name = "buscarPelicula";
-            this.buscarPelicula.Size = new System.Drawing.Size(227, 55);
+            this.buscarPelicula.Size = new System.Drawing.Size(228, 55);
             this.buscarPelicula.TabIndex = 42;
             this.buscarPelicula.Text = "Buscar";
             this.buscarPelicula.UseVisualStyleBackColor = true;
@@ -734,7 +734,7 @@
             this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(345, 55);
+            this.textBox4.Size = new System.Drawing.Size(343, 55);
             this.textBox4.TabIndex = 41;
             // 
             // pictureBox3
