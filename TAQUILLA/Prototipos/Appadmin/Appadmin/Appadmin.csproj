@@ -58,6 +58,18 @@
     <Compile Include="Cartelera.Designer.cs">
       <DependentUpon>Cartelera.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cine.Designer.cs">
+      <DependentUpon>Cine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ciudad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ciudad.Designer.cs">
+      <DependentUpon>Ciudad.cs</DependentUpon>
+    </Compile>
     <Compile Include="controlInformes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +95,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cartelera.resx">
       <DependentUpon>Cartelera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cine.resx">
+      <DependentUpon>Cine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ciudad.resx">
+      <DependentUpon>Ciudad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="controlInformes.resx">
       <DependentUpon>controlInformes.cs</DependentUpon>
@@ -127,6 +145,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\questions-circular-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\video-player.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amera 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagenPeli.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

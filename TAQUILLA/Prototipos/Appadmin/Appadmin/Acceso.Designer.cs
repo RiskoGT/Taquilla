@@ -64,7 +64,7 @@
             this.tableLayoutPanel1.Controls.Add(this.passtxt, 1, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 75);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -97,7 +97,7 @@
             this.Accesotext.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Accesotext.Font = new System.Drawing.Font("Times New Roman", 13.8F);
             this.Accesotext.Location = new System.Drawing.Point(244, 60);
-            this.Accesotext.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Accesotext.Margin = new System.Windows.Forms.Padding(2);
             this.Accesotext.Multiline = true;
             this.Accesotext.Name = "Accesotext";
             this.Accesotext.Size = new System.Drawing.Size(238, 25);
@@ -126,7 +126,7 @@
             this.tableLayoutPanel2.Controls.Add(this.botonSalir, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(244, 147);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -141,11 +141,11 @@
             this.IniciarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IniciarSesion.ForeColor = System.Drawing.Color.White;
             this.IniciarSesion.Location = new System.Drawing.Point(2, 2);
-            this.IniciarSesion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.IniciarSesion.Margin = new System.Windows.Forms.Padding(2);
             this.IniciarSesion.Name = "IniciarSesion";
             this.IniciarSesion.Size = new System.Drawing.Size(114, 30);
             this.IniciarSesion.TabIndex = 1;
-            this.IniciarSesion.Text = "SIGN IN";
+            this.IniciarSesion.Text = "LOG IN";
             this.IniciarSesion.UseVisualStyleBackColor = true;
             this.IniciarSesion.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -157,7 +157,7 @@
             this.botonSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonSalir.ForeColor = System.Drawing.Color.White;
             this.botonSalir.Location = new System.Drawing.Point(121, 2);
-            this.botonSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.botonSalir.Margin = new System.Windows.Forms.Padding(2);
             this.botonSalir.Name = "botonSalir";
             this.botonSalir.Size = new System.Drawing.Size(115, 30);
             this.botonSalir.TabIndex = 2;
@@ -171,7 +171,7 @@
             this.passtxt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.passtxt.Font = new System.Drawing.Font("Times New Roman", 13.8F);
             this.passtxt.Location = new System.Drawing.Point(244, 118);
-            this.passtxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.passtxt.Margin = new System.Windows.Forms.Padding(2);
             this.passtxt.Multiline = true;
             this.passtxt.Name = "passtxt";
             this.passtxt.Size = new System.Drawing.Size(238, 25);
@@ -185,7 +185,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Sitka Small", 18F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(169, 0);
+            this.label3.Location = new System.Drawing.Point(168, 0);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(434, 69);
@@ -197,8 +197,8 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(91, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(90, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(56, 55);
             this.pictureBox1.TabIndex = 42;
@@ -211,7 +211,7 @@
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel1, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 57);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.11502F));
@@ -227,12 +227,12 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.125F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.875F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 438F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
             this.tableLayoutPanel4.Controls.Add(this.label3, 2, 0);
             this.tableLayoutPanel4.Controls.Add(this.pictureBox1, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(2, 2);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -243,7 +243,7 @@
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(731, 52);
             this.panel1.TabIndex = 44;
@@ -255,7 +255,7 @@
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(668, 398);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(54, 60);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -272,7 +272,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tableLayoutPanel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Acceso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Acceso";

@@ -40,5 +40,42 @@ namespace Appadmin
         {
 
         }
+
+        private void BtnCiudad_Click(object sender, EventArgs e)
+        {            
+            Ciudad frm = new Ciudad();
+            frm.Show();
+        }
+
+        private void BtnCine_Click(object sender, EventArgs e)
+        {
+            Cine frm = new Cine();
+            frm.Show();
+        }
+
+        private void Label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label21_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

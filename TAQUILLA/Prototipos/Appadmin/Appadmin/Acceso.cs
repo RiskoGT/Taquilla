@@ -13,6 +13,9 @@ namespace Appadmin
 {
     public partial class Acceso : Form
     {
+        /* MySqlConnection databaseConnection = new MySqlConnection("datasource = 127.0.0.1; port=3306; username=root; " +
+            "password=; database=taquilla");
+            */
         public Acceso()
         {
             InitializeComponent();
@@ -43,6 +46,11 @@ namespace Appadmin
 
         private void button1_Click(object sender, EventArgs e)
         {
+            System.Data.SqlClient.SqlConnection con;
+            con = new System.Data.SqlClient.SqlConnection();
+            con.ConnectionString = "Data Source = .\\SQL";
+
+
             this.Hide();
             Form1 frm = new Form1();
             frm.Show();
