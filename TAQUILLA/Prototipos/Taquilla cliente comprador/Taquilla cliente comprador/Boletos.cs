@@ -40,7 +40,7 @@ namespace Taquilla_cliente_comprador
             else {
 
                 Frm_asientos asi = new Frm_asientos();
-                asi.Txt_asientos.Text = Txt_totalB.Text;
+                asi.Txt_asientos.Text = txtTotalB.Text;
                   
 
             
@@ -53,144 +53,144 @@ namespace Taquilla_cliente_comprador
 
         private void Button2_Click(object sender, EventArgs e)
         {
-             int.Parse(Txt_3ra.Text);
+             int.Parse(txt3ra.Text);
             cont1++;
-            Txt_3ra.Text = cont1.ToString();
+            txt3ra.Text = cont1.ToString();
                        
             count1 = count1 + 35;
-            int.Parse(Txt_3raT.Text);
+            int.Parse(txt3raT.Text);
            
-            Txt_3raT.Text = count1.ToString();
+            txt3raT.Text = count1.ToString();
          
             count4 = count4 + 35;
-            int.Parse(Txt_total.Text);
+            int.Parse(txtTotal.Text);
 
-            Txt_total.Text = count4.ToString();
+            txtTotal.Text = count4.ToString();
 
             count5 = count5 + 1;
-            int.Parse(Txt_totalB.Text);
+            int.Parse(txtTotalB.Text);
 
-            Txt_totalB.Text = count5.ToString();
+            txtTotalB.Text = count5.ToString();
 
 
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            int.Parse(Txt_3ra.Text);
+            int.Parse(txt3ra.Text);
             cont1--;
-            Txt_3ra.Text = cont1.ToString();
+            txt3ra.Text = cont1.ToString();
             if (cont1 >= 0) {
                 count1 = count1 - 35;
-                int.Parse(Txt_3raT.Text);
-                Txt_3raT.Text = count1.ToString();
+                int.Parse(txt3raT.Text);
+                txt3raT.Text = count1.ToString();
                 count4 = count4 - 35;
-                int.Parse(Txt_total.Text);
-                Txt_total.Text = count4.ToString();
+                int.Parse(txtTotal.Text);
+                txtTotal.Text = count4.ToString();
                 count5 = count5 - 1;
-                int.Parse(Txt_totalB.Text);
+                int.Parse(txtTotalB.Text);
 
-                Txt_totalB.Text = count5.ToString();
+                txtTotalB.Text = count5.ToString();
             }
             else
             {
                 MessageBox.Show("ERROR");
                 cont1 = 0;
-                int.Parse(Txt_3ra.Text);
+                int.Parse(txt3ra.Text);
 
-                Txt_3ra.Text = cont1.ToString();
+                txt3ra.Text = cont1.ToString();
             }
            
         }
 
         private void Button4_Click(object sender, EventArgs e)
         {
-          int.Parse(Txt_adulto.Text);
+          int.Parse(txtAdulto.Text);
             cont2++;
-            Txt_adulto.Text = cont2.ToString();
+            txtAdulto.Text = cont2.ToString();
             count2 = count2 + 38;
-            int.Parse(Txt_adultoT.Text);
-            Txt_adultoT.Text = count2.ToString();
+            int.Parse(txtAdultoT.Text);
+            txtAdultoT.Text = count2.ToString();
             count4 = count4 + 38;
-            int.Parse(Txt_total.Text);
-            Txt_total.Text = count4.ToString();
+            int.Parse(txtTotal.Text);
+            txtTotal.Text = count4.ToString();
             count5 = count5 + 1;
-            int.Parse(Txt_totalB.Text);
+            int.Parse(txtTotalB.Text);
 
-            Txt_totalB.Text = count5.ToString();
+            txtTotalB.Text = count5.ToString();
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
-             int.Parse(Txt_adulto.Text);
+             int.Parse(txtAdulto.Text);
             cont2--;
-            Txt_adulto.Text = cont2.ToString();
+            txtAdulto.Text = cont2.ToString();
             if (cont2 >= 0)
             {
                 count2 = count2 - 38;
-                int.Parse(Txt_adultoT.Text);
-                Txt_adultoT.Text = count2.ToString();
+                int.Parse(txtAdultoT.Text);
+                txtAdultoT.Text = count2.ToString();
                 count4 = count4 - 38;
-                int.Parse(Txt_total.Text);
-                Txt_total.Text = count4.ToString();
+                int.Parse(txtTotal.Text);
+                txtTotal.Text = count4.ToString();
                 count5 = count5 - 1;
-                int.Parse(Txt_totalB.Text);
+                int.Parse(txtTotalB.Text);
 
-                Txt_totalB.Text = count5.ToString();
+                txtTotalB.Text = count5.ToString();
             }
             else
             {
                 MessageBox.Show("ERROR");
                 cont2 = 0;
-                int.Parse(Txt_adulto.Text);
+                int.Parse(txtAdulto.Text);
 
-                Txt_adulto.Text = cont2.ToString();
+                txtAdulto.Text = cont2.ToString();
             }
 
         }
 
         private void Button6_Click(object sender, EventArgs e)
         {
-             int.Parse(Txt_niño.Text);
+             int.Parse(txtNiño.Text);
             cont3++;
-            Txt_niño.Text = cont3.ToString();
+            txtNiño.Text = cont3.ToString();
             count3 = count3 + 30;
-            int.Parse(Txt_niñoT.Text);
-            Txt_niñoT.Text = count3.ToString();
+            int.Parse(txtNiñoT.Text);
+            txtNiñoT.Text = count3.ToString();
             count4 = count4 + 30;
-            int.Parse(Txt_total.Text);
-            Txt_total.Text = count4.ToString();
+            int.Parse(txtTotal.Text);
+            txtTotal.Text = count4.ToString();
             count5 = count5 + 1;
-            int.Parse(Txt_totalB.Text);
+            int.Parse(txtTotalB.Text);
 
-            Txt_totalB.Text = count5.ToString();
+            txtTotalB.Text = count5.ToString();
         }
 
         private void Button5_Click(object sender, EventArgs e)
         {
-            int.Parse(Txt_niño.Text);
+            int.Parse(txtNiño.Text);
             cont3--;
-            Txt_niño.Text = cont3.ToString();
+            txtNiño.Text = cont3.ToString();
             if (cont3 >= 0)
             {
                 count3 = count3 - 30;
-                int.Parse(Txt_niñoT.Text);
-                Txt_niñoT.Text = count3.ToString();
+                int.Parse(txtNiñoT.Text);
+                txtNiñoT.Text = count3.ToString();
                 count4 = count4 - 30;
-                int.Parse(Txt_total.Text);
-                Txt_total.Text = count4.ToString();
+                int.Parse(txtTotal.Text);
+                txtTotal.Text = count4.ToString();
                 count5 = count5 - 1;
-                int.Parse(Txt_totalB.Text);
+                int.Parse(txtTotalB.Text);
 
-                Txt_totalB.Text = count5.ToString();
+                txtTotalB.Text = count5.ToString();
             }
             else
             {
                 MessageBox.Show("ERROR");
                 cont3 = 0;
-                int.Parse(Txt_niño.Text);
+                int.Parse(txtNiño.Text);
 
-                Txt_niño.Text = cont3.ToString();
+                txtNiño.Text = cont3.ToString();
             }
            
         }
@@ -225,11 +225,20 @@ namespace Taquilla_cliente_comprador
 
         private void Btn_ayuda_Click(object sender, EventArgs e)
         {
-			Process.Start("Manual.pdf");
 
 		}
 
         private void Frm_boletos_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TableLayoutPanel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void TlpPanel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

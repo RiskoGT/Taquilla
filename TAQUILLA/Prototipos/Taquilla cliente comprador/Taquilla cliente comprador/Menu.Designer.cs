@@ -29,131 +29,131 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_menu));
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.Cbo_seleccioneCiudad = new System.Windows.Forms.ComboBox();
-            this.Cbo_seleccioneCine = new System.Windows.Forms.ComboBox();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlppanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlppanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.ComboSeleccioneCiudad = new System.Windows.Forms.ComboBox();
+            this.ComboSeleccioneCine = new System.Windows.Forms.ComboBox();
+            this.tlppanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.tlppanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.Btn_verCartelera = new System.Windows.Forms.Button();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlppanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
+            this.tlppanel6.SuspendLayout();
+            this.tlppanel4.SuspendLayout();
+            this.tlppanel3.SuspendLayout();
+            this.tlppanel1.SuspendLayout();
+            this.tlppanel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // tlppanel6
             // 
-            this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 0, 2);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.76768F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.23232F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 388F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1184, 651);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tlppanel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tlppanel6.ColumnCount = 3;
+            this.tlppanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlppanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tlppanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlppanel6.Controls.Add(this.tlppanel4, 1, 1);
+            this.tlppanel6.Controls.Add(this.tlppanel3, 1, 0);
+            this.tlppanel6.Controls.Add(this.tlppanel1, 1, 2);
+            this.tlppanel6.Controls.Add(this.tlppanel2, 0, 2);
+            this.tlppanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlppanel6.Location = new System.Drawing.Point(0, 0);
+            this.tlppanel6.Name = "tlppanel6";
+            this.tlppanel6.RowCount = 3;
+            this.tlppanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.76768F));
+            this.tlppanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.23232F));
+            this.tlppanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 388F));
+            this.tlppanel6.Size = new System.Drawing.Size(1184, 651);
+            this.tlppanel6.TabIndex = 0;
             // 
-            // tableLayoutPanel2
+            // tlppanel4
             // 
-            this.tableLayoutPanel2.ColumnCount = 4;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.Controls.Add(this.Cbo_seleccioneCiudad, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Cbo_seleccioneCine, 2, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(121, 204);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(941, 55);
-            this.tableLayoutPanel2.TabIndex = 0;
+            this.tlppanel4.ColumnCount = 4;
+            this.tlppanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlppanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tlppanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tlppanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlppanel4.Controls.Add(this.ComboSeleccioneCiudad, 1, 0);
+            this.tlppanel4.Controls.Add(this.ComboSeleccioneCine, 2, 0);
+            this.tlppanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlppanel4.Location = new System.Drawing.Point(121, 204);
+            this.tlppanel4.Name = "tlppanel4";
+            this.tlppanel4.RowCount = 1;
+            this.tlppanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlppanel4.Size = new System.Drawing.Size(941, 55);
+            this.tlppanel4.TabIndex = 0;
             // 
-            // Cbo_seleccioneCiudad
+            // ComboSeleccioneCiudad
             // 
-            this.Cbo_seleccioneCiudad.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Cbo_seleccioneCiudad.Font = new System.Drawing.Font("Agency FB", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cbo_seleccioneCiudad.FormattingEnabled = true;
-            this.Cbo_seleccioneCiudad.Location = new System.Drawing.Point(97, 3);
-            this.Cbo_seleccioneCiudad.Name = "Cbo_seleccioneCiudad";
-            this.Cbo_seleccioneCiudad.Size = new System.Drawing.Size(370, 42);
-            this.Cbo_seleccioneCiudad.TabIndex = 0;
-            this.Cbo_seleccioneCiudad.Text = "Seleccione Ciudad";
+            this.ComboSeleccioneCiudad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ComboSeleccioneCiudad.Font = new System.Drawing.Font("Agency FB", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboSeleccioneCiudad.FormattingEnabled = true;
+            this.ComboSeleccioneCiudad.Location = new System.Drawing.Point(97, 3);
+            this.ComboSeleccioneCiudad.Name = "ComboSeleccioneCiudad";
+            this.ComboSeleccioneCiudad.Size = new System.Drawing.Size(370, 42);
+            this.ComboSeleccioneCiudad.TabIndex = 0;
+            this.ComboSeleccioneCiudad.Text = "Seleccione Ciudad";
             // 
-            // Cbo_seleccioneCine
+            // ComboSeleccioneCine
             // 
-            this.Cbo_seleccioneCine.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Cbo_seleccioneCine.Font = new System.Drawing.Font("Agency FB", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cbo_seleccioneCine.FormattingEnabled = true;
-            this.Cbo_seleccioneCine.Location = new System.Drawing.Point(473, 3);
-            this.Cbo_seleccioneCine.Name = "Cbo_seleccioneCine";
-            this.Cbo_seleccioneCine.Size = new System.Drawing.Size(370, 42);
-            this.Cbo_seleccioneCine.TabIndex = 1;
-            this.Cbo_seleccioneCine.Text = "Seleccione un cine";
+            this.ComboSeleccioneCine.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ComboSeleccioneCine.Font = new System.Drawing.Font("Agency FB", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboSeleccioneCine.FormattingEnabled = true;
+            this.ComboSeleccioneCine.Location = new System.Drawing.Point(473, 3);
+            this.ComboSeleccioneCine.Name = "ComboSeleccioneCine";
+            this.ComboSeleccioneCine.Size = new System.Drawing.Size(370, 42);
+            this.ComboSeleccioneCine.TabIndex = 1;
+            this.ComboSeleccioneCine.Text = "Seleccione un cine";
             // 
-            // tableLayoutPanel3
+            // tlppanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 3;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.Controls.Add(this.label1, 1, 1);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(121, 3);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 3;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(941, 195);
-            this.tableLayoutPanel3.TabIndex = 1;
+            this.tlppanel3.ColumnCount = 3;
+            this.tlppanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tlppanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
+            this.tlppanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tlppanel3.Controls.Add(this.lblTitulo, 1, 1);
+            this.tlppanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlppanel3.Location = new System.Drawing.Point(121, 3);
+            this.tlppanel3.Name = "tlppanel3";
+            this.tlppanel3.RowCount = 3;
+            this.tlppanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tlppanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
+            this.tlppanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tlppanel3.Size = new System.Drawing.Size(941, 195);
+            this.tlppanel3.TabIndex = 1;
             // 
-            // label1
+            // lblTitulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Agency FB", 63.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gold;
-            this.label1.Location = new System.Drawing.Point(159, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(621, 129);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Bienvenido ";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.Label1_Click);
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTitulo.Font = new System.Drawing.Font("Agency FB", 63.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.Gold;
+            this.lblTitulo.Location = new System.Drawing.Point(159, 32);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(621, 129);
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = "Bienvenido ";
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitulo.Click += new System.EventHandler(this.Label1_Click);
             // 
-            // tableLayoutPanel4
+            // tlppanel1
             // 
-            this.tableLayoutPanel4.ColumnCount = 3;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.70776F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.99788F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.400638F));
-            this.tableLayoutPanel4.Controls.Add(this.Btn_verCartelera, 1, 1);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(121, 265);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 3;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 79.83425F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.16575F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(941, 383);
-            this.tableLayoutPanel4.TabIndex = 2;
+            this.tlppanel1.ColumnCount = 3;
+            this.tlppanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.70776F));
+            this.tlppanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.99788F));
+            this.tlppanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.400638F));
+            this.tlppanel1.Controls.Add(this.Btn_verCartelera, 1, 1);
+            this.tlppanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlppanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tlppanel1.Location = new System.Drawing.Point(121, 265);
+            this.tlppanel1.Name = "tlppanel1";
+            this.tlppanel1.RowCount = 3;
+            this.tlppanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 79.83425F));
+            this.tlppanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.16575F));
+            this.tlppanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlppanel1.Size = new System.Drawing.Size(941, 383);
+            this.tlppanel1.TabIndex = 2;
             // 
             // Btn_verCartelera
             // 
@@ -170,34 +170,37 @@
             this.Btn_verCartelera.UseVisualStyleBackColor = false;
             this.Btn_verCartelera.Click += new System.EventHandler(this.Btn_verCartelera_Click);
             // 
-            // tableLayoutPanel5
+            // tlppanel2
             // 
-            this.tableLayoutPanel5.ColumnCount = 3;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel5.Controls.Add(this.button1, 1, 1);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 265);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 3;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.2963F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.51852F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.18518F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(112, 383);
-            this.tableLayoutPanel5.TabIndex = 3;
+            this.tlppanel2.ColumnCount = 3;
+            this.tlppanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.555555F));
+            this.tlppanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.88889F));
+            this.tlppanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.555555F));
+            this.tlppanel2.Controls.Add(this.button1, 1, 1);
+            this.tlppanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlppanel2.Location = new System.Drawing.Point(3, 265);
+            this.tlppanel2.Name = "tlppanel2";
+            this.tlppanel2.RowCount = 3;
+            this.tlppanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.2963F));
+            this.tlppanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.51852F));
+            this.tlppanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.18518F));
+            this.tlppanel2.Size = new System.Drawing.Size(112, 383);
+            this.tlppanel2.TabIndex = 3;
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(25, 276);
+            this.button1.Font = new System.Drawing.Font("Agency FB", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(9, 276);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(61, 64);
+            this.button1.Size = new System.Drawing.Size(93, 64);
             this.button1.TabIndex = 0;
             this.button1.Text = "Ayuda";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -208,7 +211,7 @@
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 651);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.tlppanel6);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
@@ -219,27 +222,27 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_menu_FormClosed);
             this.Load += new System.EventHandler(this.Frm_menu_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tlppanel6.ResumeLayout(false);
+            this.tlppanel4.ResumeLayout(false);
+            this.tlppanel3.ResumeLayout(false);
+            this.tlppanel3.PerformLayout();
+            this.tlppanel1.ResumeLayout(false);
+            this.tlppanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.ComboBox Cbo_seleccioneCiudad;
-        private System.Windows.Forms.ComboBox Cbo_seleccioneCine;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.TableLayoutPanel tlppanel6;
+        private System.Windows.Forms.TableLayoutPanel tlppanel4;
+        private System.Windows.Forms.ComboBox ComboSeleccioneCiudad;
+        private System.Windows.Forms.ComboBox ComboSeleccioneCine;
+        private System.Windows.Forms.TableLayoutPanel tlppanel3;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.TableLayoutPanel tlppanel1;
         private System.Windows.Forms.Button Btn_verCartelera;
-		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+		private System.Windows.Forms.TableLayoutPanel tlppanel2;
 		private System.Windows.Forms.Button button1;
 	}
 }

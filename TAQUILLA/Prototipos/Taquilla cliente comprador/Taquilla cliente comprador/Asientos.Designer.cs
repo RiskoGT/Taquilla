@@ -1876,7 +1876,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.21858F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.689546F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 144F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
             this.tableLayoutPanel4.Controls.Add(this.Btn_dis, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.Btn_selec, 5, 0);
             this.tableLayoutPanel4.Controls.Add(this.Btn_oc, 9, 0);
@@ -1902,7 +1902,7 @@
             this.Btn_dis.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_dis.Location = new System.Drawing.Point(10, 3);
             this.Btn_dis.Name = "Btn_dis";
-            this.Btn_dis.Size = new System.Drawing.Size(103, 34);
+            this.Btn_dis.Size = new System.Drawing.Size(102, 34);
             this.Btn_dis.TabIndex = 0;
             this.Btn_dis.Text = "Disponibles";
             this.Btn_dis.UseVisualStyleBackColor = false;
@@ -1915,9 +1915,9 @@
             this.Btn_selec.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
             this.Btn_selec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_selec.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_selec.Location = new System.Drawing.Point(305, 3);
+            this.Btn_selec.Location = new System.Drawing.Point(303, 3);
             this.Btn_selec.Name = "Btn_selec";
-            this.Btn_selec.Size = new System.Drawing.Size(99, 34);
+            this.Btn_selec.Size = new System.Drawing.Size(98, 34);
             this.Btn_selec.TabIndex = 1;
             this.Btn_selec.Text = "Selecionado";
             this.Btn_selec.UseVisualStyleBackColor = false;
@@ -1930,9 +1930,9 @@
             this.Btn_oc.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.Btn_oc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_oc.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_oc.Location = new System.Drawing.Point(601, 3);
+            this.Btn_oc.Location = new System.Drawing.Point(597, 3);
             this.Btn_oc.Name = "Btn_oc";
-            this.Btn_oc.Size = new System.Drawing.Size(94, 34);
+            this.Btn_oc.Size = new System.Drawing.Size(93, 34);
             this.Btn_oc.TabIndex = 2;
             this.Btn_oc.Text = "Ocupado";
             this.Btn_oc.UseVisualStyleBackColor = false;
@@ -1943,9 +1943,9 @@
             this.Lbl_dis.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Lbl_dis.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_dis.ForeColor = System.Drawing.Color.Gold;
-            this.Lbl_dis.Location = new System.Drawing.Point(128, 0);
+            this.Lbl_dis.Location = new System.Drawing.Point(127, 0);
             this.Lbl_dis.Name = "Lbl_dis";
-            this.Lbl_dis.Size = new System.Drawing.Size(160, 40);
+            this.Lbl_dis.Size = new System.Drawing.Size(159, 40);
             this.Lbl_dis.TabIndex = 3;
             this.Lbl_dis.Text = "Asientos Disponibles";
             this.Lbl_dis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1956,9 +1956,9 @@
             this.Lbl_selec.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Lbl_selec.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_selec.ForeColor = System.Drawing.Color.Gold;
-            this.Lbl_selec.Location = new System.Drawing.Point(429, 0);
+            this.Lbl_selec.Location = new System.Drawing.Point(426, 0);
             this.Lbl_selec.Name = "Lbl_selec";
-            this.Lbl_selec.Size = new System.Drawing.Size(154, 40);
+            this.Lbl_selec.Size = new System.Drawing.Size(153, 40);
             this.Lbl_selec.TabIndex = 4;
             this.Lbl_selec.Text = "Asientos Seleccionados";
             this.Lbl_selec.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1969,9 +1969,9 @@
             this.Lbl_oc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Lbl_oc.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_oc.ForeColor = System.Drawing.Color.Gold;
-            this.Lbl_oc.Location = new System.Drawing.Point(710, 0);
+            this.Lbl_oc.Location = new System.Drawing.Point(705, 0);
             this.Lbl_oc.Name = "Lbl_oc";
-            this.Lbl_oc.Size = new System.Drawing.Size(167, 40);
+            this.Lbl_oc.Size = new System.Drawing.Size(166, 40);
             this.Lbl_oc.TabIndex = 5;
             this.Lbl_oc.Text = "Asientos Ocupados";
             this.Lbl_oc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1980,7 +1980,7 @@
             // 
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button2.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(898, 3);
+            this.button2.Location = new System.Drawing.Point(892, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(138, 34);
             this.button2.TabIndex = 7;

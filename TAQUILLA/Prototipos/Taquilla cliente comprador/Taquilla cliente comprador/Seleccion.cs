@@ -21,9 +21,7 @@ namespace Taquilla_cliente_comprador
 			
         }
 
-
-
-		private void button9_Click(object sender, EventArgs e)
+               	private void button9_Click(object sender, EventArgs e)
 		{
 			Form formulariobol = new Frm_boletos();
 			formulariobol.Show();
@@ -54,8 +52,8 @@ namespace Taquilla_cliente_comprador
 		{
 			if (sala == 0) { button1.Enabled = false; button2.Enabled = true;
 				pictureBox1.BackgroundImage = global::Taquilla_cliente_comprador.Properties.Resources.Rey_leon;
-				pictureBox2.BackgroundImage = global::Taquilla_cliente_comprador.Properties.Resources.Rey_leon_Trailer;
-				label2.Text = "El Rey León(2019)";
+				/*pictureBox2.BackgroundImage = global::Taquilla_cliente_comprador.Properties.Resources.Rey_leon_Trailer;
+				*/label2.Text = "El Rey León(2019)";
 				label4.Text = "A";
 				label3.Text = "2D";
 				label5.Text = "EL REY LEÓN de Disney, dirigida por Jon Favreau, nos lleva a la sabana africana donde un futuro"+
@@ -68,8 +66,8 @@ namespace Taquilla_cliente_comprador
 			}
 			if (sala == 1) { button2.Enabled = false; button1.Enabled = true;
 				pictureBox1.BackgroundImage = global::Taquilla_cliente_comprador.Properties.Resources.Spiderman;
-				pictureBox2.BackgroundImage = global::Taquilla_cliente_comprador.Properties.Resources.Spiderman_Trailer;
-				label2.Text = "Spider-Man: Lejos de casa";
+				/*pictureBox2.BackgroundImage = global::Taquilla_cliente_comprador.Properties.Resources.Spiderman_Trailer;
+				*/label2.Text = "Spider-Man: Lejos de casa";
 				label4.Text = "B";
 				label3.Text = "3D";
 				label5.Text = "Peter Parker regresa en Spider-Man: Lejos de casa el siguiente capítulo en la serie de " +
@@ -84,6 +82,12 @@ namespace Taquilla_cliente_comprador
 		}
 
         private void Frm_cartelera_Load(object sender, EventArgs e)
+        {
+          /*  axvideo.Movie=("https://www.youtube.com/kg-z8JfOIKw");*/
+
+        }
+
+        private void TableLayoutPanel3_Paint(object sender, PaintEventArgs e)
         {
 
         }
