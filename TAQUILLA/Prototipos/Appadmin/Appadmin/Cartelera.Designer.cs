@@ -117,7 +117,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.05457F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.94543F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 141F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 142F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel7, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel8, 2, 2);
@@ -147,7 +147,7 @@
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(148, 111);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(147, 111);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
@@ -859,7 +859,7 @@
             this.tableLayoutPanel7.Controls.Add(this.button2, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.button1, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.IniciarSesion, 0, 0);
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(148, 452);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(147, 452);
             this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
@@ -921,7 +921,7 @@
             this.tableLayoutPanel8.Controls.Add(this.peliculaSiguiente, 2, 0);
             this.tableLayoutPanel8.Controls.Add(this.peliculaAnterior, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.pictureBox1, 1, 0);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(730, 111);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(729, 111);
             this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
@@ -978,11 +978,11 @@
             this.tableLayoutPanel9.ColumnCount = 3;
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.30343F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.69657F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 184F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 185F));
             this.tableLayoutPanel9.Controls.Add(this.buscarPelicula, 2, 0);
             this.tableLayoutPanel9.Controls.Add(this.textBox4, 1, 0);
             this.tableLayoutPanel9.Controls.Add(this.pictureBox3, 0, 0);
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(148, 57);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(147, 57);
             this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
@@ -997,10 +997,10 @@
             this.buscarPelicula.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.buscarPelicula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buscarPelicula.ForeColor = System.Drawing.Color.White;
-            this.buscarPelicula.Location = new System.Drawing.Point(395, 2);
+            this.buscarPelicula.Location = new System.Drawing.Point(394, 2);
             this.buscarPelicula.Margin = new System.Windows.Forms.Padding(2);
             this.buscarPelicula.Name = "buscarPelicula";
-            this.buscarPelicula.Size = new System.Drawing.Size(181, 44);
+            this.buscarPelicula.Size = new System.Drawing.Size(182, 44);
             this.buscarPelicula.TabIndex = 42;
             this.buscarPelicula.Text = "Buscar";
             this.buscarPelicula.UseVisualStyleBackColor = true;
@@ -1015,7 +1015,7 @@
             this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(329, 44);
+            this.textBox4.Size = new System.Drawing.Size(328, 44);
             this.textBox4.TabIndex = 41;
             // 
             // pictureBox3
@@ -1042,15 +1042,15 @@
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.41936F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.25806F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(140, 310);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(139, 310);
             this.tableLayoutPanel11.TabIndex = 54;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Appadmin.Properties.Resources.imagenPeli;
-            this.pictureBox2.Location = new System.Drawing.Point(10, 88);
+            this.pictureBox2.Location = new System.Drawing.Point(9, 88);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(120, 156);
+            this.pictureBox2.Size = new System.Drawing.Size(119, 156);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
