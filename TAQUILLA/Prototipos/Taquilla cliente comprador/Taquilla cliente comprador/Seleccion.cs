@@ -10,28 +10,27 @@ using System.Windows.Forms;
 
 namespace Taquilla_cliente_comprador
 {
-    public partial class Frm_cartelera : Form
+    public partial class frmCartelera : Form
     {
         /*Grupo 2  taquilla  cliente comprador
         Gustavo Perez 0901-16-420 y Juan José Gámez 0901-16-47  */
         int sala = 0;
-		public Frm_cartelera()
+    
+
+        public frmCartelera()
 		{
 			InitializeComponent();
-			
+            webPelicula.Navigate("https://www.youtube.com/watch?v=BfSAvH2fGkE&pbjreload=10");
         }
 
                	private void button9_Click(object sender, EventArgs e)
 		{
-			Form formulariobol = new Frm_boletos();
+            webPelicula.Navigate("");
+            Form formulariobol = new frmBoletos();
 			formulariobol.Show();
 			Visible = false;
 		}
 
-		private void label1_Click(object sender, EventArgs e)
-		{
-
-		}
 
 		private void Frm_cartelera_FormClosed(object sender, FormClosedEventArgs e)
 		{
@@ -41,7 +40,8 @@ namespace Taquilla_cliente_comprador
 		private void button2_Click(object sender, EventArgs e)
 		{
 			sala++;
-		}
+
+        }
 
 		private void button1_Click(object sender, EventArgs e)
 		{
@@ -50,10 +50,11 @@ namespace Taquilla_cliente_comprador
 
 		private void timer1_Tick(object sender, EventArgs e)
 		{
-			if (sala == 0) { button1.Enabled = false; button2.Enabled = true;
+           
+            if (sala == 0) { button1.Enabled = false; button2.Enabled = true;
 				pictureBox1.BackgroundImage = global::Taquilla_cliente_comprador.Properties.Resources.Rey_leon;
-				/*pictureBox2.BackgroundImage = global::Taquilla_cliente_comprador.Properties.Resources.Rey_leon_Trailer;
-				*/label2.Text = "El Rey León(2019)";
+                
+                label2.Text = "El Rey León(2019)";
 				label4.Text = "A";
 				label3.Text = "2D";
 				label5.Text = "EL REY LEÓN de Disney, dirigida por Jon Favreau, nos lleva a la sabana africana donde un futuro"+
@@ -66,8 +67,8 @@ namespace Taquilla_cliente_comprador
 			}
 			if (sala == 1) { button2.Enabled = false; button1.Enabled = true;
 				pictureBox1.BackgroundImage = global::Taquilla_cliente_comprador.Properties.Resources.Spiderman;
-				/*pictureBox2.BackgroundImage = global::Taquilla_cliente_comprador.Properties.Resources.Spiderman_Trailer;
-				*/label2.Text = "Spider-Man: Lejos de casa";
+                
+                label2.Text = "Spider-Man: Lejos de casa";
 				label4.Text = "B";
 				label3.Text = "3D";
 				label5.Text = "Peter Parker regresa en Spider-Man: Lejos de casa el siguiente capítulo en la serie de " +
@@ -81,15 +82,6 @@ namespace Taquilla_cliente_comprador
 			
 		}
 
-        private void Frm_cartelera_Load(object sender, EventArgs e)
-        {
-          /*  axvideo.Movie=("https://www.youtube.com/kg-z8JfOIKw");*/
-
-        }
-
-        private void TableLayoutPanel3_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
-}
+

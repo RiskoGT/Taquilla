@@ -16,7 +16,7 @@ namespace Taquilla_cliente_comprador
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_menu());
+            Application.Run(new frmMenu());
         }
     }
 }

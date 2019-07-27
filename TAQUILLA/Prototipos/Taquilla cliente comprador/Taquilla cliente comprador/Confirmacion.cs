@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace Taquilla_cliente_comprador
 {
-    public partial class Frm_Confirmasion : Form
+    public partial class frmConfirmasion : Form
     {
-        public Frm_Confirmasion()
+        public frmConfirmasion()
         {
             InitializeComponent();
         }
 
         private void Btn_acetar_Click(object sender, EventArgs e)
         {
-            Form formulariocon = new Frm_menu();
+            Form formulariocon = new frmMenu();
             formulariocon.Show();
             Visible = false;
         }
@@ -34,5 +34,7 @@ namespace Taquilla_cliente_comprador
 			
 			Visible = false;
 		}
-	}
+
+        
+    }
 }

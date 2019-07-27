@@ -41,25 +41,21 @@ namespace Taquilla_cliente_comprador
 
         }
 
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void Button1_Click(object sender, EventArgs e)
         {
-            Form formulariopago = new Frm_menu();
+            
+            if (txtCorreo.Text.Trim() == "" || txtNombre.Text.Trim() == ""|| txtCodigo.Text.Trim() == "" || txtTarjeta.Text.Trim() == ""|| txtTelefono.Text.Trim() == "" )
+            {
+                MessageBox.Show("Profavor llenar las casillas!!");
+            }
+            else { 
+            Form formulariopago = new frmMenu();
             formulariopago.Show();
             Visible = false;
-            Form formulariopago1 = new Frm_Confirmasion();
+            Form formulariopago1 = new frmConfirmasion();
             formulariopago1.Show();
+        }
             
-          
         }
 
 		private void Frm_pago_FormClosed(object sender, FormClosedEventArgs e)
@@ -70,40 +66,90 @@ namespace Taquilla_cliente_comprador
         private void Btn_ayuda_Click(object sender, EventArgs e)
         {
            
-
 			Process.Start("Manual.pdf");
 
 		}
 
-        private void Frm_pago_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TableLayoutPanel13_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void BtnCancelar_Click(object sender, EventArgs e)
-        {
-      
-
-        }
-
         private void BtnCancelar_Click_1(object sender, EventArgs e)
         {
            
-            Form formulariocal = new Frm_menu();
+            Form formulariocal = new frmMenu();
             MessageBox.Show("Su compra a sido cancelada, Gracias!!");
             formulariocal.Show();
             Visible = false;
-         
         }
 
-        private void Combomes_SelectedIndexChanged(object sender, EventArgs e)
+        private void TxtCorreo_Validated(object sender, EventArgs e)
         {
-          
+            if (txtCorreo.Text.Trim() == "")
+            {
+                Error.SetError(txtCorreo, "Por favor introduzca el correo electrónico ");
+               /* txtCorreo.Focus();*/
+                  }
+            else {
+                Error.Clear();
+               
+            }
         }
+
+        private void TxtNombre_Validated(object sender, EventArgs e)
+        {
+            if (txtNombre.Text.Trim() == "")
+            {
+                Error.SetError(txtNombre, "Por favor introduzca su nombre");
+                /* txtCorreo.Focus();*/
+            }
+            else
+            {
+                Error.Clear();
+
+            }
+
+        }
+
+        private void TxtTarjeta_Validated(object sender, EventArgs e)
+        {
+            if (txtTarjeta.Text.Trim() == "")
+            {
+                Error.SetError(txtTarjeta, "Por favor introduzca el numero de tarjeta");
+                /* txtCorreo.Focus();*/
+            }
+            else
+            {
+                Error.Clear();
+
+            }
+        }
+
+        private void TxtCodigo_Validated(object sender, EventArgs e)
+        {
+            if (txtCodigo.Text.Trim() == "")
+            {
+                Error.SetError(txtCodigo, "Por favor introduzca el CW de la tarjeta");
+                /* txtCorreo.Focus();*/
+            }
+            else
+            {
+                Error.Clear();
+
+            }
+
+        }
+
+        private void TxtTelefono_Validated(object sender, EventArgs e)
+        {
+            if (txtTelefono.Text.Trim() == "")
+            {
+                Error.SetError(txtTelefono, "Por favor introduzca su numero telefónico");
+                /* txtCorreo.Focus();*/
+            }
+            else
+            {
+                Error.Clear();
+
+            }
+        }
+
+        
     }
 }

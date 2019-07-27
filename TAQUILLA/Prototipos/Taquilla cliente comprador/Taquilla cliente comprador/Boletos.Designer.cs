@@ -1,6 +1,6 @@
 ﻿namespace Taquilla_cliente_comprador
 {
-    partial class Frm_boletos
+    partial class frmBoletos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_boletos));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBoletos));
             this.Tlp_boletos = new System.Windows.Forms.TableLayoutPanel();
             this.tlpPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnTerceraM = new System.Windows.Forms.Button();
@@ -756,7 +756,7 @@
             this.lbTitulo.Text = "Boletos";
             this.lbTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Frm_boletos
+            // frmBoletos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -765,7 +765,7 @@
             this.Controls.Add(this.Tlp_boletos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1200, 690);
-            this.Name = "Frm_boletos";
+            this.Name = "frmBoletos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Selección de Boletos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

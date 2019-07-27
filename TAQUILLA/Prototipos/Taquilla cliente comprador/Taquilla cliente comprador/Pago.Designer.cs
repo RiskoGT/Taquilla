@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_pago));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tlpPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -64,6 +65,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.tlpPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.lbData = new System.Windows.Forms.Label();
+            this.Error = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tlpPanel1.SuspendLayout();
             this.tlpPanel6.SuspendLayout();
@@ -77,6 +79,7 @@
             this.tlpPanel5.SuspendLayout();
             this.tlpPanel10.SuspendLayout();
             this.tlpPanel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Error)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -238,6 +241,7 @@
             this.txtTarjeta.Name = "txtTarjeta";
             this.txtTarjeta.Size = new System.Drawing.Size(389, 26);
             this.txtTarjeta.TabIndex = 0;
+            this.txtTarjeta.Validated += new System.EventHandler(this.TxtTarjeta_Validated);
             // 
             // tableLayoutPanel7
             // 
@@ -282,7 +286,6 @@
             this.Combomes.Name = "Combomes";
             this.Combomes.Size = new System.Drawing.Size(182, 28);
             this.Combomes.TabIndex = 2;
-            this.Combomes.SelectedIndexChanged += new System.EventHandler(this.Combomes_SelectedIndexChanged);
             // 
             // ComboAño
             // 
@@ -329,6 +332,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(389, 26);
             this.txtCodigo.TabIndex = 1;
+            this.txtCodigo.Validated += new System.EventHandler(this.TxtCodigo_Validated);
             // 
             // tableLayoutPanel10
             // 
@@ -375,6 +379,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(389, 26);
             this.txtTelefono.TabIndex = 0;
+            this.txtTelefono.Validated += new System.EventHandler(this.TxtTelefono_Validated);
             // 
             // tableLayoutPanel5
             // 
@@ -403,6 +408,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(389, 26);
             this.txtNombre.TabIndex = 0;
+            this.txtNombre.Validated += new System.EventHandler(this.TxtNombre_Validated);
             // 
             // tableLayoutPanel4
             // 
@@ -439,6 +445,7 @@
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(389, 26);
             this.txtCorreo.TabIndex = 1;
+            this.txtCorreo.Validated += new System.EventHandler(this.TxtCorreo_Validated);
             // 
             // lbCorreo
             // 
@@ -621,6 +628,10 @@
             this.lbData.Text = "Ingrese los datos para realizar pago";
             this.lbData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // Error
+            // 
+            this.Error.ContainerControl = this;
+            // 
             // Frm_pago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -635,7 +646,6 @@
             this.Text = "Datos de Cobro";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_pago_FormClosed);
-            this.Load += new System.EventHandler(this.Frm_pago_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tlpPanel1.ResumeLayout(false);
             this.tlpPanel1.PerformLayout();
@@ -658,6 +668,7 @@
             this.tlpPanel10.ResumeLayout(false);
             this.tlpPanel7.ResumeLayout(false);
             this.tlpPanel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Error)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -699,5 +710,6 @@
         private System.Windows.Forms.ComboBox ComboAño;
         private System.Windows.Forms.TableLayoutPanel tlpPanel10;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.ErrorProvider Error;
     }
 }

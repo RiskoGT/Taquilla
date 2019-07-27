@@ -11,46 +11,24 @@ using System.Diagnostics;
 
 namespace Taquilla_cliente_comprador
 {
-    public partial class Frm_menu : Form
+    public partial class frmMenu : Form
     {
         /*Grupo 2  taquilla  cliente comprador
          Gustavo Perez 0901-16-420 y Juan José Gámez 0901-16-47  */
-        public Frm_menu()
+        public frmMenu()
         {
             InitializeComponent();
+            ComboSeleccioneCiudad.Items.Add("Guatemala");
+            ComboSeleccioneCiudad.Items.Add("Xela");
         }
 
-        private void TableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+        
         private void Btn_verCartelera_Click(object sender, EventArgs e)
         {
-            Form formulario = new Frm_cartelera();
+            Form formulario = new frmCartelera();
             formulario.Show();
             Visible = false;
          
-        }
-
-        private void Frm_menu_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
         }
 
 		private void Frm_menu_FormClosed(object sender, FormClosedEventArgs e)
@@ -62,5 +40,6 @@ namespace Taquilla_cliente_comprador
 		{
 			Process.Start("Manual.pdf");
 		}
-	}
+
+    }
 }

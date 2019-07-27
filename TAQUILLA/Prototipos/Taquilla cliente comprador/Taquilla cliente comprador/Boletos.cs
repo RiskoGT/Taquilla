@@ -12,7 +12,7 @@ using System.Diagnostics;
 namespace Taquilla_cliente_comprador
 {
    
-    public partial class Frm_boletos : Form   
+    public partial class frmBoletos : Form   
     {
         /*Grupo 2  taquilla  cliente comprador
         Gustavo Perez 0901-16-420 y Juan José Gámez 0901-16-47  */
@@ -22,7 +22,7 @@ namespace Taquilla_cliente_comprador
         int count3 = 0;
         int count4 = 0;
         int count5 = 0;
-        public Frm_boletos()
+        public frmBoletos()
         {
             InitializeComponent();
         }
@@ -39,8 +39,8 @@ namespace Taquilla_cliente_comprador
             { MessageBox.Show("Por favor, seleccione al menos 1 boleto para continuar, Gracias!!"); }
             else {
 
-                Frm_asientos asi = new Frm_asientos();
-                asi.Txt_asientos.Text = txtTotalB.Text;
+                frmAsientos asi = new frmAsientos();
+                asi.txtAsientos.Text = txtTotalB.Text;
                   
 
             
@@ -208,7 +208,7 @@ namespace Taquilla_cliente_comprador
 
         private void Btn_regresar_Click(object sender, EventArgs e)
         {
-            Form formulariocar = new Frm_cartelera();
+            Form formulariocar = new frmCartelera();
             formulariocar.Show();
             Visible = false;
         }

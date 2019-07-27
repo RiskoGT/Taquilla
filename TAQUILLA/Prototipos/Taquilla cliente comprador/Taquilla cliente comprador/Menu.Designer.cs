@@ -1,6 +1,6 @@
 ﻿namespace Taquilla_cliente_comprador
 {
-    partial class Frm_menu
+    partial class frmMenu
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_menu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.tlppanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tlppanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.ComboSeleccioneCiudad = new System.Windows.Forms.ComboBox();
             this.ComboSeleccioneCine = new System.Windows.Forms.ComboBox();
             this.tlppanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblTitulo = new System.Windows.Forms.Label();
+            this.lbTitulo = new System.Windows.Forms.Label();
             this.tlppanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.Btn_verCartelera = new System.Windows.Forms.Button();
+            this.btnVerCartelera = new System.Windows.Forms.Button();
             this.tlppanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAyuda = new System.Windows.Forms.Button();
             this.tlppanel6.SuspendLayout();
             this.tlppanel4.SuspendLayout();
             this.tlppanel3.SuspendLayout();
@@ -112,7 +112,7 @@
             this.tlppanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tlppanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
             this.tlppanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tlppanel3.Controls.Add(this.lblTitulo, 1, 1);
+            this.tlppanel3.Controls.Add(this.lbTitulo, 1, 1);
             this.tlppanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlppanel3.Location = new System.Drawing.Point(121, 3);
             this.tlppanel3.Name = "tlppanel3";
@@ -123,19 +123,18 @@
             this.tlppanel3.Size = new System.Drawing.Size(941, 195);
             this.tlppanel3.TabIndex = 1;
             // 
-            // lblTitulo
+            // lbTitulo
             // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTitulo.Font = new System.Drawing.Font("Agency FB", 63.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.Gold;
-            this.lblTitulo.Location = new System.Drawing.Point(159, 32);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(621, 129);
-            this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Bienvenido ";
-            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblTitulo.Click += new System.EventHandler(this.Label1_Click);
+            this.lbTitulo.AutoSize = true;
+            this.lbTitulo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbTitulo.Font = new System.Drawing.Font("Agency FB", 63.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitulo.ForeColor = System.Drawing.Color.Gold;
+            this.lbTitulo.Location = new System.Drawing.Point(159, 32);
+            this.lbTitulo.Name = "lbTitulo";
+            this.lbTitulo.Size = new System.Drawing.Size(621, 129);
+            this.lbTitulo.TabIndex = 0;
+            this.lbTitulo.Text = "Bienvenido ";
+            this.lbTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tlppanel1
             // 
@@ -143,7 +142,7 @@
             this.tlppanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.70776F));
             this.tlppanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.99788F));
             this.tlppanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.400638F));
-            this.tlppanel1.Controls.Add(this.Btn_verCartelera, 1, 1);
+            this.tlppanel1.Controls.Add(this.btnVerCartelera, 1, 1);
             this.tlppanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlppanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlppanel1.Location = new System.Drawing.Point(121, 265);
@@ -155,20 +154,20 @@
             this.tlppanel1.Size = new System.Drawing.Size(941, 383);
             this.tlppanel1.TabIndex = 2;
             // 
-            // Btn_verCartelera
+            // btnVerCartelera
             // 
-            this.Btn_verCartelera.BackColor = System.Drawing.Color.Gold;
-            this.Btn_verCartelera.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn_verCartelera.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
-            this.Btn_verCartelera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_verCartelera.Font = new System.Drawing.Font("Agency FB", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_verCartelera.Location = new System.Drawing.Point(705, 292);
-            this.Btn_verCartelera.Name = "Btn_verCartelera";
-            this.Btn_verCartelera.Size = new System.Drawing.Size(200, 67);
-            this.Btn_verCartelera.TabIndex = 0;
-            this.Btn_verCartelera.Text = "Ver Cartelera";
-            this.Btn_verCartelera.UseVisualStyleBackColor = false;
-            this.Btn_verCartelera.Click += new System.EventHandler(this.Btn_verCartelera_Click);
+            this.btnVerCartelera.BackColor = System.Drawing.Color.Gold;
+            this.btnVerCartelera.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnVerCartelera.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
+            this.btnVerCartelera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerCartelera.Font = new System.Drawing.Font("Agency FB", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerCartelera.Location = new System.Drawing.Point(705, 292);
+            this.btnVerCartelera.Name = "btnVerCartelera";
+            this.btnVerCartelera.Size = new System.Drawing.Size(200, 67);
+            this.btnVerCartelera.TabIndex = 0;
+            this.btnVerCartelera.Text = "Ver Cartelera";
+            this.btnVerCartelera.UseVisualStyleBackColor = false;
+            this.btnVerCartelera.Click += new System.EventHandler(this.Btn_verCartelera_Click);
             // 
             // tlppanel2
             // 
@@ -176,7 +175,7 @@
             this.tlppanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.555555F));
             this.tlppanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.88889F));
             this.tlppanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.555555F));
-            this.tlppanel2.Controls.Add(this.button1, 1, 1);
+            this.tlppanel2.Controls.Add(this.btnAyuda, 1, 1);
             this.tlppanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlppanel2.Location = new System.Drawing.Point(3, 265);
             this.tlppanel2.Name = "tlppanel2";
@@ -187,24 +186,24 @@
             this.tlppanel2.Size = new System.Drawing.Size(112, 383);
             this.tlppanel2.TabIndex = 3;
             // 
-            // button1
+            // btnAyuda
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Agency FB", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(9, 276);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 64);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Ayuda";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAyuda.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnAyuda.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAyuda.BackgroundImage")));
+            this.btnAyuda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAyuda.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAyuda.Font = new System.Drawing.Font("Agency FB", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAyuda.Location = new System.Drawing.Point(9, 276);
+            this.btnAyuda.Name = "btnAyuda";
+            this.btnAyuda.Size = new System.Drawing.Size(93, 64);
+            this.btnAyuda.TabIndex = 0;
+            this.btnAyuda.Text = "Ayuda";
+            this.btnAyuda.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAyuda.UseVisualStyleBackColor = false;
+            this.btnAyuda.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Frm_menu
+            // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -216,12 +215,11 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.MinimumSize = new System.Drawing.Size(1200, 690);
-            this.Name = "Frm_menu";
+            this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cine";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_menu_FormClosed);
-            this.Load += new System.EventHandler(this.Frm_menu_Load);
             this.tlppanel6.ResumeLayout(false);
             this.tlppanel4.ResumeLayout(false);
             this.tlppanel3.ResumeLayout(false);
@@ -239,11 +237,11 @@
         private System.Windows.Forms.ComboBox ComboSeleccioneCiudad;
         private System.Windows.Forms.ComboBox ComboSeleccioneCine;
         private System.Windows.Forms.TableLayoutPanel tlppanel3;
-        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Label lbTitulo;
         private System.Windows.Forms.TableLayoutPanel tlppanel1;
-        private System.Windows.Forms.Button Btn_verCartelera;
+        private System.Windows.Forms.Button btnVerCartelera;
 		private System.Windows.Forms.TableLayoutPanel tlppanel2;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button btnAyuda;
 	}
 }
 
