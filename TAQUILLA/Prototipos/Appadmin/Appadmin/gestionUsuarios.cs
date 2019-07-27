@@ -65,6 +65,11 @@ namespace Appadmin
 
         private void button8_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void button8_Click_1(object sender, EventArgs e)
+        {
             this.Hide();
             MainMenu mainMenu = new MainMenu();
             mainMenu.Show();
