@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
+using System.Data.Odbc;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,19 +13,42 @@ namespace Taquilla_cliente_comprador
 {
     public partial class frmMenu : Form
     {
-        /*Grupo 2  taquilla  cliente comprador
+		/*Grupo 2  taquilla  cliente comprador
          Gustavo Perez 0901-16-420 y Juan José Gámez 0901-16-47  */
-        public frmMenu()
+		OdbcConnection conn = new OdbcConnection("Dsn=cine");
+		public frmMenu()
         {
             InitializeComponent();
-            ComboSeleccioneCiudad.Items.Add("Guatemala");
-            ComboSeleccioneCiudad.Items.Add("Xela");
+			llenarLista();
         }
 
-        
-        private void Btn_verCartelera_Click(object sender, EventArgs e)
+		void llenarLista()
+		{
+			try
+			{
+				ComboSeleccioneCiudad.Text = "Ciudades";
+				ComboSeleccioneCiudad.Items.Clear();
+
+				conn.Open();
+				OdbcCommand command = new OdbcCommand("SELECT * FROM ciudades", conn);
+				OdbcDataReader reader = command.ExecuteReader();
+				while (reader.Read())
+				{
+					ComboSeleccioneCiudad.Refresh();
+					ComboSeleccioneCiudad.Items.Add(reader.GetValue(0).ToString() + " - " + reader.GetValue(1).ToString());
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			conn.Close();
+		}
+
+
+		private void Btn_verCartelera_Click(object sender, EventArgs e)
         {
-            Form formulario = new frmCartelera();
+            Form formulario = new Filtro();
             formulario.Show();
             Visible = false;
          
@@ -41,5 +64,32 @@ namespace Taquilla_cliente_comprador
 			Process.Start("Manual.pdf");
 		}
 
-    }
+		private void tlppanel1_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void ComboSeleccioneCiudad_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			try
+			{
+				ComboSeleccioneCine.Text = "Cines";
+				ComboSeleccioneCine.Items.Clear();
+
+				conn.Open();
+				OdbcCommand command = new OdbcCommand("SELECT * FROM Cines Where idCiudad = "+ ComboSeleccioneCiudad.Text[0], conn);
+				OdbcDataReader reader = command.ExecuteReader();
+				while (reader.Read())
+				{
+					ComboSeleccioneCine.Refresh();
+					ComboSeleccioneCine.Items.Add(reader.GetValue(0).ToString() + " - " + reader.GetValue(2).ToString());
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			conn.Close();
+		}
+	}
 }

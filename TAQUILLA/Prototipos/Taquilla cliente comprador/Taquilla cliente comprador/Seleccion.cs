@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
+using System.Data.Odbc;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,15 +12,17 @@ namespace Taquilla_cliente_comprador
 {
     public partial class frmCartelera : Form
     {
-        /*Grupo 2  taquilla  cliente comprador
+		/*Grupo 2  taquilla  cliente comprador
         Gustavo Perez 0901-16-420 y Juan José Gámez 0901-16-47  */
-        int sala = 0;
+		OdbcConnection conn = new OdbcConnection("Dsn=cine"); 
+		int sala = 0;
     
 
         public frmCartelera()
 		{
 			InitializeComponent();
             webPelicula.Navigate("https://www.youtube.com/watch?v=BfSAvH2fGkE&pbjreload=10");
+			webPelicula.Stop();
         }
 
                	private void button9_Click(object sender, EventArgs e)
@@ -82,6 +84,10 @@ namespace Taquilla_cliente_comprador
 			
 		}
 
-        }
+		private void tableLayoutPanel12_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+	}
     }
 
