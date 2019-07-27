@@ -121,5 +121,10 @@ namespace Appadmin
             }
             conn.Close();
         }
+
+        private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
