@@ -8,15 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Odbc;
 
 namespace Appadmin
 {
     public partial class Cartelera : Form
     {
+        OdbcConnection conn = new OdbcConnection("Dsn=cine");
         public Cartelera()
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
+            llenarCombos();
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -90,5 +93,33 @@ namespace Appadmin
 			MainMenu mainMenu = new MainMenu();
 			mainMenu.Show();
 		}
-	}
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        void llenarCombos()
+        {
+            try
+            {
+                comboClas.Text = "Clasificacion";
+                comboClas.Items.Clear();
+
+                conn.Open();
+                OdbcCommand command = new OdbcCommand("SELECT * FROM clasificacion", conn);
+                OdbcDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    comboClas.Refresh();
+                    comboClas.Items.Add(reader.GetValue(1).ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            conn.Close();
+        }
+    }
 }
