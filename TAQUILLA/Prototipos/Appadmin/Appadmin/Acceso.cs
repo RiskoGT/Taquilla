@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Data.Odbc;
 namespace Appadmin
 {
     public partial class Acceso : Form
@@ -16,9 +17,15 @@ namespace Appadmin
         /* MySqlConnection databaseConnection = new MySqlConnection("datasource = 127.0.0.1; port=3306; username=root; " +
             "password=; database=taquilla");
             */
+        //establecemos la conexion con el nombre establecido en el origen de datos (ODBC)
+        OdbcConnection conn = new OdbcConnection("Dsn=cine");
         public Acceso()
         {
             InitializeComponent();
+            //inicializacion de elementos
+            txtUser.Clear();
+            txtPass.Clear();
+            txtUser.Focus();
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -46,15 +53,26 @@ namespace Appadmin
 
         private void button1_Click(object sender, EventArgs e)
         {
-            System.Data.SqlClient.SqlConnection con;
-            con = new System.Data.SqlClient.SqlConnection();
-            con.ConnectionString = "Data Source = .\\SQL";
-
-
-            this.Hide();
-            MainMenu frm = new MainMenu();
-            frm.Show();
-            
+            conn.Open(); //Abrimos la conexion creada.
+            //Realizamos una selecion de la tabla usuarios.
+            OdbcCommand cmd = new OdbcCommand("SELECT * FROM ususarios WHERE Usuario='" + txtUser.Text + "' AND password= md5('"
+                + txtPass.Text + "') ", conn);
+            OdbcDataReader leer = cmd.ExecuteReader();
+            if (leer.Read()) //Si el usuario es correcto nos abrira la otra ventana.
+            {
+                this.Hide();
+                MainMenu ss = new MainMenu();
+                ss.Show();
+            }
+            else //Si no lo es mostrara este mensaje.
+            {
+                MessageBox.Show("Ingrese sus datos correctamente", "ERROR AL INGRESAR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtUser.Clear();
+                txtPass.Clear();
+                txtUser.Focus();
+            }
+              
+            conn.Close(); //Cerramos la conexion.
         }
 
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
@@ -82,5 +100,10 @@ namespace Appadmin
 		{
 			Application.Exit();
 		}
-	}
+
+        private void Acceso_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
