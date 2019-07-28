@@ -26,16 +26,15 @@ namespace Appadmin
             txtApellido.Clear();
             txtBusqueda.Clear();
             txtContra.Clear();
-            txtDir.Clear();
+      
             txtDpi.Focus();
             txtNombre.Clear();
-            txtSexo.Clear();
             txtTel.Clear();
-            txtTelCasa.Clear();
+            btnModif.Enabled = false;
             txtUsuario.Clear();
 
             llenartbl();
-            llenarCombos();
+            //llenarCombos();
            }
 
         void llenartbl() {
@@ -162,29 +161,26 @@ namespace Appadmin
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            string query = "INSERT INTO usuarios (Usuario, Password, idPerfil, DPI, Nombres, Apellidos, Telefono , Correo, Sexo , fechaNac, fechaInicio) VALUES ('" + txtUsuario.Text
-               + "," + comboPerfil.SelectedIndex + "," + txtContra.Text + "," + txtDpi.Text + "," + txtNombre.Text + ","
-               + txtApellido.Text + "," + txtTel.Text + "," + txtCorreo.Text + "," + txtSexo.Text + "," +dtpFechaNac.Value + ","+dtpFechaInicio.Value + "')";
+            string query = "INSERT INTO usuarios (Usuario,  idPerfil, Password, DPI, Nombres, Apellidos, Telefono , Correo, Sexo , fechaNac, fechaInicio) VALUES ('" + txtUsuario.Text
+               + "','" + comboPerfil.SelectedItem + "','" + txtContra.Text + "','" + txtDpi.Text + "','" + txtNombre.Text + "','"
+               + txtApellido.Text + "','" + txtTel.Text + "','" + txtCorreo.Text + "','" + comboSexo.Text[0] + "','" + dtpFechaNac.Text + "','"+ dtpFechaInicio.Text + "')";
             conn.Open();
             OdbcCommand consulta = new OdbcCommand(query, conn);
             try
             {
-                if (txtUsuario.Text != "" &&  txtContra.Text != "" && txtDpi.Text != "" && txtNombre.Text!= "" && txtApellido.Text != "" && txtTel.Text != "" && txtCorreo.Text != "" && txtSexo.Text != "")
+                if (txtUsuario.Text != "" &&  txtContra.Text != "" && txtDpi.Text != "" && txtNombre.Text!= "" && txtApellido.Text != "" && txtTel.Text != "" && txtCorreo.Text != "")
                 {
                     consulta.ExecuteNonQuery();
                     MessageBox.Show("INGRESO CORRECTO");
                     txtApellido.Text = "";
                     txtContra.Text = "";
                     txtCorreo.Text = "";
-                    txtDir.Text = "";
                     txtDpi.Text = "";
                     txtNombre.Text = "";
-                    txtSexo.Text = "";
                     txtTel.Text = "";
-                    txtTelCasa.Text = "";
                     txtUsuario.Text = "";
                     conn.Close();
-                    llenartbl(); //llenamos el DataGridView de Ciudades
+                    llenartbl(); 
                 }
                 else { MessageBox.Show("POR FAVOR LLENE TODOS LOS CAMPOS.\n\tGRACIAS!!"); conn.Close(); }
             }
@@ -199,5 +195,116 @@ namespace Appadmin
         {
 
         }
+        string codaux;
+        private void BtnModif_Click(object sender, EventArgs e)
+        {
+            string query = "UPDATE usuarios SET Usuario= '" + txtUsuario.Text + "'," +
+           "idPerfil='" + comboPerfil.Text + "',password='" + txtContra.Text + "',DPI='" + txtDpi.Text + "'," +
+           "Nombres='" + txtNombre.Text + "',Apellidos='" + txtApellido.Text + "',Telefono='" + txtTel.Text + "',Correo='" + txtCorreo.Text + "',Sexo='" +
+            comboSexo+ "',fechaNac='" + dtpFechaNac+"',fechaInicio='"+ dtpFechaInicio + "'" + " WHERE Usuario =" + txtUsuario.Text;//+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
+
+            conn.Open();
+            OdbcCommand consulta = new OdbcCommand(query, conn);
+            try
+            {
+                if (txtUsuario.Text != "" && txtContra.Text != "" && txtDpi.Text != "" && txtNombre.Text != "" && txtApellido.Text != "" && txtTel.Text != "" && txtCorreo.Text != "")
+                {
+                    consulta.ExecuteNonQuery();
+                    MessageBox.Show("Actualizacion Correcta");
+                    txtApellido.Text = "";
+                    txtContra.Text = "";
+                    txtCorreo.Text = "";
+                    txtDpi.Text = "";
+                    txtNombre.Text = "";
+                    txtTel.Text = "";
+                    txtUsuario.Text = "";
+                    conn.Close();
+                    llenartbl();
+                }
+                else { MessageBox.Show("POR FAVOR LLENE TODOS LOS CAMPOS.\n\tGRACIAS!!"); conn.Close(); }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("\tERROR!!\nVerifique: Los datos.\n\tGRACIAS!!" + ex.ToString());
+                conn.Close();
+            }
+
+
+
+
+
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            
+            if (tblContenido.SelectedRows.Count == 1)
+            {
+                btnModif.Enabled = true;
+                btnAgregar.Enabled = false;
+                btnEliminar.Enabled = true;
+                txtUsuario.Text = tblContenido.CurrentRow.Cells[0].Value.ToString();
+                comboPerfil.Text = tblContenido.CurrentRow.Cells[1].Value.ToString();
+                txtContra.Text = tblContenido.CurrentRow.Cells[2].Value.ToString();
+                txtDpi.Text = tblContenido.CurrentRow.Cells[3].Value.ToString();
+                txtNombre.Text = tblContenido.CurrentRow.Cells[4].Value.ToString();
+                txtApellido.Text = tblContenido.CurrentRow.Cells[5].Value.ToString();
+                txtTel.Text = tblContenido.CurrentRow.Cells[6].Value.ToString();
+                txtCorreo.Text = tblContenido.CurrentRow.Cells[7].Value.ToString();
+                comboSexo.Text = tblContenido.CurrentRow.Cells[8].Value.ToString();
+                dtpFechaNac.Text = tblContenido.CurrentRow.Cells[9].Value.ToString();
+                dtpFechaInicio.Text = tblContenido.CurrentRow.Cells[10].Value.ToString();
+                btnModif.Enabled = true;
+            }
+            else { MessageBox.Show("Porfavor Seleccione un registro de la tabla");
+                btnAgregar.Enabled = true;
+                btnEliminar.Enabled = true;
+                btnModif.Enabled = false;
+                txtApellido.Text = "";
+                txtContra.Text = "";
+                txtCorreo.Text = "";
+
+                txtDpi.Text = "";
+                txtNombre.Text = "";
+                txtTel.Text = "";
+
+                txtUsuario.Text = "";
+            }
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            string query = "DELETE FROM usuarios  WHERE  Usuario =" + tblContenido.CurrentRow.Cells[0].Value.ToString();
+           
+            conn.Open();
+
+            OdbcCommand consulta = new OdbcCommand(query, conn);
+            try
+            {
+                if (tblContenido.SelectedRows.Count == 1)
+                {
+                    consulta.ExecuteNonQuery();
+                    MessageBox.Show("Eliminar");
+                    txtApellido.Text = "";
+                    txtContra.Text = "";
+                    txtCorreo.Text = "";
+                    txtDpi.Text = "";
+                    txtNombre.Text = "";
+                    txtTel.Text = "";
+                    txtUsuario.Text = "";
+                    conn.Close();
+                    llenartbl();
+                }
+                else { MessageBox.Show("POR FAVOR LLENE TODOS LOS CAMPOS.\n\tGRACIAS!!"); conn.Close(); }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("\tERROR!!\nVerifique: Los datos.\n\tGRACIAS!!" + ex.ToString());
+                conn.Close();
+            }
+
+        }
     }
-}
+    }
+
