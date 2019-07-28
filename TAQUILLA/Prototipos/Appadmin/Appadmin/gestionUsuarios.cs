@@ -99,7 +99,24 @@ namespace Appadmin
             }
             conn.Close();
         }
-            private void GestionUsuarios_Load(object sender, EventArgs e)
+        void log(string queryin)
+        {
+            string query =/*es bitacora uno no es una letra l de leon*/ "INSERT INTO bitacora1  (Usuario,operacion,fecha) VALUES ('" + txtUsuario + "','" + queryin + "','" + DateTime.Now.ToString("G") + "')";
+            OdbcCommand consulta = new OdbcCommand(query, conn);
+            try
+            {
+
+                consulta.ExecuteNonQuery();
+                conn.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR" + ex.ToString());
+                conn.Close();
+            }
+        }
+        private void GestionUsuarios_Load(object sender, EventArgs e)
         {
 
         }
