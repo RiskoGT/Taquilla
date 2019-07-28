@@ -190,22 +190,18 @@ namespace Appadmin
         private void Button4_Click(object sender, EventArgs e)
         {
             
-        }
-
-        private void Button8_Click(object sender, EventArgs e)
-        {
-            /*
-            this.Hide();
-            Cine ciu = new Cine();
-            ciu.Show();
-            */
-        }
+        }        
 
         private void BtnAgregarCiudad_Click(object sender, EventArgs e)
         {
             this.Hide();
             Ciudad ciu = new Ciudad();
             ciu.Show();
+        }
+
+        private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -43,7 +43,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.btnAgregarCiudad = new System.Windows.Forms.Button();
-            this.btnAgregarCine = new System.Windows.Forms.Button();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -190,7 +189,6 @@
             this.tableLayoutPanel4.Controls.Add(this.button1, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel6, 0, 2);
-            this.tableLayoutPanel4.Controls.Add(this.btnAgregarCine, 1, 2);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel7, 0, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(46, 109);
@@ -306,16 +304,6 @@
             this.btnAgregarCiudad.Text = "Agregar Ciudad";
             this.btnAgregarCiudad.UseVisualStyleBackColor = true;
             this.btnAgregarCiudad.Click += new System.EventHandler(this.BtnAgregarCiudad_Click);
-            // 
-            // btnAgregarCine
-            // 
-            this.btnAgregarCine.Location = new System.Drawing.Point(624, 356);
-            this.btnAgregarCine.Name = "btnAgregarCine";
-            this.btnAgregarCine.Size = new System.Drawing.Size(144, 23);
-            this.btnAgregarCine.TabIndex = 3;
-            this.btnAgregarCine.Text = "Agregar Cine";
-            this.btnAgregarCine.UseVisualStyleBackColor = true;
-            this.btnAgregarCine.Click += new System.EventHandler(this.Button8_Click);
             // 
             // tableLayoutPanel6
             // 
@@ -746,6 +734,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(180, 30);
             this.dateTimePicker1.TabIndex = 1;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.DateTimePicker1_ValueChanged);
             // 
             // dateTimePicker2
             // 
@@ -858,7 +847,6 @@
 		private System.Windows.Forms.Button button7;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button btnAgregarCine;
         private System.Windows.Forms.Button btnAgregarCiudad;
     }
 }

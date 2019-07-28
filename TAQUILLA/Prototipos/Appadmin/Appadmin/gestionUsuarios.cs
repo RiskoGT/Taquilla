@@ -8,16 +8,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Data.Odbc;
 namespace Appadmin
 {
     public partial class gestionUsuarios : Form
     {
+
+        /* MySqlConnection databaseConnection = new MySqlConnection("datasource = 127.0.0.1; port=3306; username=root; " +
+            "password=; database=taquilla");
+            */
+        //establecemos la conexion con el nombre establecido en el origen de datos (ODBC)
+        OdbcConnection conn = new OdbcConnection("Dsn=cine");
         public gestionUsuarios()
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
-        }
+            txtApellido.Clear();
+            txtBusqueda.Clear();
+            txtContra.Clear();
+            txtDir.Clear();
+            txtDpi.Focus();
+            txtEmail.Clear();
+            txtNombre.Clear();
+            txtSexo.Clear();
+            txtTel.Clear();
+            txtTelCasa.Clear();
+            txtUsuario.Clear();
+           }
 
         private void GestionUsuarios_Load(object sender, EventArgs e)
         {
