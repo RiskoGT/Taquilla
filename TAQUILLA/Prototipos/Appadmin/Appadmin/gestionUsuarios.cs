@@ -28,7 +28,6 @@ namespace Appadmin
             txtContra.Clear();
             txtDir.Clear();
             txtDpi.Focus();
-            txtEmail.Clear();
             txtNombre.Clear();
             txtSexo.Clear();
             txtTel.Clear();
@@ -36,6 +35,7 @@ namespace Appadmin
             txtUsuario.Clear();
 
             llenartbl();
+            llenarCombos();
            }
 
         void llenartbl() {
@@ -74,7 +74,30 @@ namespace Appadmin
 
 
         }
-        private void GestionUsuarios_Load(object sender, EventArgs e)
+        void llenarCombos()
+        {
+            //llenado de comboBox CLASIFICACION
+            try
+            {
+                comboPerfil.Text = "Perfiles";
+                comboPerfil.Items.Clear();
+
+                conn.Open();
+                OdbcCommand command = new OdbcCommand("SELECT * FROM perfiles", conn);
+                OdbcDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    comboPerfil.Refresh();
+                    comboPerfil.Items.Add(reader.GetValue(1).ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            conn.Close();
+        }
+            private void GestionUsuarios_Load(object sender, EventArgs e)
         {
 
         }
@@ -135,6 +158,46 @@ namespace Appadmin
             
           
             
+        }
+
+        private void BtnAgregar_Click(object sender, EventArgs e)
+        {
+            string query = "INSERT INTO usuarios (Usuario, Password, idPerfil, DPI, Nombres, Apellidos, Telefono , Correo, Sexo , fechaNac, fechaInicio) VALUES ('" + txtUsuario.Text
+               + "," + comboPerfil.SelectedIndex + "," + txtContra.Text + "," + txtDpi.Text + "," + txtNombre.Text + ","
+               + txtApellido.Text + "," + txtTel.Text + "," + txtCorreo.Text + "," + txtSexo.Text + "," +dtpFechaNac.Value + ","+dtpFechaInicio.Value + "')";
+            conn.Open();
+            OdbcCommand consulta = new OdbcCommand(query, conn);
+            try
+            {
+                if (txtUsuario.Text != "" &&  txtContra.Text != "" && txtDpi.Text != "" && txtNombre.Text!= "" && txtApellido.Text != "" && txtTel.Text != "" && txtCorreo.Text != "" && txtSexo.Text != "")
+                {
+                    consulta.ExecuteNonQuery();
+                    MessageBox.Show("INGRESO CORRECTO");
+                    txtApellido.Text = "";
+                    txtContra.Text = "";
+                    txtCorreo.Text = "";
+                    txtDir.Text = "";
+                    txtDpi.Text = "";
+                    txtNombre.Text = "";
+                    txtSexo.Text = "";
+                    txtTel.Text = "";
+                    txtTelCasa.Text = "";
+                    txtUsuario.Text = "";
+                    conn.Close();
+                    llenartbl(); //llenamos el DataGridView de Ciudades
+                }
+                else { MessageBox.Show("POR FAVOR LLENE TODOS LOS CAMPOS.\n\tGRACIAS!!"); conn.Close(); }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("\tERROR!!\nVerifique: Los datos.\n\tGRACIAS!!" + ex.ToString());
+                conn.Close();
+            }
+        }
+
+        private void TxtContra_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
