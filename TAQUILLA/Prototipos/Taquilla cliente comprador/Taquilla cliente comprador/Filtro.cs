@@ -16,9 +16,12 @@ namespace Taquilla_cliente_comprador
 		/*Grupo 2  taquilla  cliente comprador
          Gustavo Perez 0901-16-420 y Juan José Gámez 0901-16-47  */
 		OdbcConnection conn = new OdbcConnection("Dsn=cine");
-		public Filtro()
+		string cineSeleccionado;
+		public Filtro(string cine)
         {
+
             InitializeComponent();
+			cineSeleccionado = cine;
      
         }
 		void llenarLista()
@@ -46,7 +49,7 @@ namespace Taquilla_cliente_comprador
         
         private void Btn_verCartelera_Click(object sender, EventArgs e)
         {
-            Form formulario = new frmCartelera();
+            Form formulario = new frmCartelera(cineSeleccionado);
             formulario.Show();
             Visible = false;
          
@@ -69,9 +72,16 @@ namespace Taquilla_cliente_comprador
 
 		private void button1_Click_1(object sender, EventArgs e)
 		{
-			Form formulario = new frmCartelera();
+			Form formulario = new frmCartelera(cineSeleccionado);
 			formulario.Show();
 			Visible = false;
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			Form formulario = new frmMenu();
+			formulario.Show();
+			this.Visible = false;
 		}
 	}
 }

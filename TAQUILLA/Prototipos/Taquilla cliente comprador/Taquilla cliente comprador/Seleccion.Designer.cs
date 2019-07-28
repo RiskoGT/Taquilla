@@ -53,6 +53,7 @@
 			this.btnMas = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.button9 = new System.Windows.Forms.Button();
+			this.button1 = new System.Windows.Forms.Button();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.tableLayoutPanel1.SuspendLayout();
 			this.tableLayoutPanel2.SuspendLayout();
@@ -79,6 +80,7 @@
 			this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 2);
 			this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
 			this.tableLayoutPanel1.Controls.Add(this.button9, 1, 3);
+			this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -426,6 +428,21 @@
 			this.button9.UseVisualStyleBackColor = false;
 			this.button9.Click += new System.EventHandler(this.button9_Click);
 			// 
+			// button1
+			// 
+			this.button1.BackColor = System.Drawing.Color.White;
+			this.button1.BackgroundImage = global::Taquilla_cliente_comprador.Properties.Resources.izquierda;
+			this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button1.Location = new System.Drawing.Point(3, 3);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(46, 97);
+			this.button1.TabIndex = 3;
+			this.button1.UseVisualStyleBackColor = false;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
+			// 
 			// timer1
 			// 
 			this.timer1.Enabled = true;
@@ -492,5 +509,6 @@
         private System.Windows.Forms.WebBrowser webPelicula;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
 		private System.Windows.Forms.Label lbHora;
+		private System.Windows.Forms.Button button1;
 	}
 }

@@ -19,12 +19,15 @@ namespace Taquilla_cliente_comprador
 		int sala = 1;
 		int numSalas = 0;
 		string[] salas = new string[140];
+		string cineSeleccionado;
 
-		public frmCartelera()
+		public frmCartelera( string cine)
 		{
 			InitializeComponent();
+			cineSeleccionado = cine;
             webPelicula.Navigate("https://www.youtube.com/watch?v=BfSAvH2fGkE&pbjreload=10");
 			webPelicula.Stop();
+
 			Cartelera();
 	
 		}
@@ -36,6 +39,83 @@ namespace Taquilla_cliente_comprador
 			lbSinopsis.Text = salas[d];//sinopsis 5
 			lbHora.Text = salas[e];//hora 6
 		}
+
+		void cambiarCartelera(int sala)
+		{
+			switch (sala)
+			{
+				case 1:
+					picAfiche.BackgroundImage = new Bitmap("Multimedia/Reyleon.png");
+					picAfiche.BackgroundImageLayout = ImageLayout.Stretch;
+					llenarCartelera(2, 3, 4, 5, 6);
+					break;
+				case 2:
+					picAfiche.BackgroundImage = new Bitmap("Multimedia/HotelMumbai.jpg");
+					picAfiche.BackgroundImageLayout = ImageLayout.Stretch;
+					llenarCartelera(8, 9, 10, 11, 12);
+					break;
+				case 3:
+					llenarCartelera(14, 15, 16, 17, 18);
+					break;
+				case 4:
+					llenarCartelera(20, 21, 22, 23, 24);
+					break;
+				case 5:
+					llenarCartelera(26, 27, 28, 29, 30);
+					break;
+				case 6:
+					llenarCartelera(32, 33, 34, 35, 36);
+					break;
+				case 7:
+					llenarCartelera(38, 39, 40, 41, 42);
+					break;
+				case 8:
+					llenarCartelera(43, 44, 45, 46, 47);
+					break;
+				case 9:
+					llenarCartelera(49, 50, 51, 52, 53);
+					break;
+				case 10:
+					llenarCartelera(55, 56, 57, 58, 59);
+					break;
+				case 11:
+					llenarCartelera(60, 61, 62, 63, 64);
+					break;
+				case 12:
+					llenarCartelera(66, 67, 68, 69, 70);
+					break;
+				case 13:
+					llenarCartelera(72, 73, 74, 75, 76);
+					break;
+				case 14:
+					llenarCartelera(78, 79, 80, 81, 82);
+					break;
+				case 15:
+					llenarCartelera(84, 85, 86, 87, 88);
+					break;
+				case 16:
+					llenarCartelera(90, 91, 92, 93, 94);
+					break;
+				case 17:
+					llenarCartelera(96, 97, 98, 99, 100);
+					break;
+				case 18:
+					llenarCartelera(102, 103, 104, 105, 106);
+					break;
+				case 19:
+					llenarCartelera(108, 109, 110, 111, 112);
+					break;
+				case 20:
+					llenarCartelera(102, 103, 104, 105, 106);
+					break;
+			}
+		}
+
+		void Multimedia(int num)
+		{
+
+		}
+
 		void Cartelera()
 		{
 			conn.Open();
@@ -45,7 +125,7 @@ namespace Taquilla_cliente_comprador
 			"(SELECT formato FROM peliculas WHERE idPelicula = A.idPelicula) formato ,"+
 			"(SELECT clasificación FROM peliculas WHERE idPelicula = A.idPelicula) clasificacion,"+
 			"(SELECT sinopsis FROM peliculas WHERE idPelicula = A.idPelicula) sinopsis, A.horaFuncion "+
-			"from funciones A where a.cine = '"+"Portales'", conn);
+			"from funciones A where a.cine = '"+cineSeleccionado+"'", conn);
 			OdbcDataReader funciones = command.ExecuteReader();
 
 			int pos = 1;
@@ -87,77 +167,31 @@ namespace Taquilla_cliente_comprador
 		{
 			if (sala == 1)
 			{
+				picAfiche.BackgroundImage = new Bitmap("Multimedia/Reyleon.png");
+				picAfiche.BackgroundImageLayout = ImageLayout.Stretch;
 				llenarCartelera(2, 3, 4, 5, 6);
 				btnMenos.Enabled = false;
+				btnMas.Enabled = true;
+			}
+			if (numSalas==1)
+			{
+				picAfiche.BackgroundImage = new Bitmap("Multimedia/Reyleon.png");
+				picAfiche.BackgroundImageLayout = ImageLayout.Stretch;
+				llenarCartelera(2, 3, 4, 5, 6);
+				btnMenos.Enabled = false;
+				btnMas.Enabled = false;
 			}
 
 			if (sala > 1 && sala < numSalas)
 			{
 				btnMenos.Enabled = true;
 				btnMas.Enabled = true;
-				switch (sala)
-				{
-					case 1:
-						llenarCartelera(2,3,4,5,6);
-						break;
-					case 2:
-						llenarCartelera(8,9,10,11,12);
-						break;
-					case 3:
-						llenarCartelera(14, 15, 16, 17, 18);
-						break;
-					case 4:
-						llenarCartelera(20,21,22,23,24);
-						break;
-					case 5:
-						llenarCartelera(26,27,28,29,30);
-						break;
-					case 6:
-						llenarCartelera(32,33,34,35,36);
-						break;
-					case 7:
-						llenarCartelera(38,39,40,41,42);
-						break;
-					case 8:
-						llenarCartelera(43,44,45,46,47);
-						break;
-					case 9:
-						llenarCartelera(49,50,51,52,53);
-						break;
-				}
+				cambiarCartelera(sala);
 			} else if (sala == numSalas)
 			{
 				btnMas.Enabled = false;
-				switch (sala)
-				{
-					case 1:
-						llenarCartelera(2, 3, 4, 5, 6);
-						break;
-					case 2:
-						llenarCartelera(8, 9, 10, 11, 12);
-						break;
-					case 3:
-						llenarCartelera(14, 15, 16, 17, 18);
-						break;
-					case 4:
-						llenarCartelera(20, 21, 22, 23, 24);
-						break;
-					case 5:
-						llenarCartelera(26, 27, 28, 29, 30);
-						break;
-					case 6:
-						llenarCartelera(32, 33, 34, 35, 36);
-						break;
-					case 7:
-						llenarCartelera(38, 39, 40, 41, 42);
-						break;
-					case 8:
-						llenarCartelera(43, 44, 45, 46, 47);
-						break;
-					case 9:
-						llenarCartelera(49, 50, 51, 52, 53);
-						break;
-				}
+				btnMenos.Enabled = true;
+				cambiarCartelera(sala);
 			}
 			
 
@@ -185,6 +219,13 @@ namespace Taquilla_cliente_comprador
 		private void btnMenos_Click(object sender, EventArgs e)
 		{
 			sala--;
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			Form formulario = new Filtro(cineSeleccionado);
+			formulario.Show();
+			Visible = false;
 		}
 	}
     }

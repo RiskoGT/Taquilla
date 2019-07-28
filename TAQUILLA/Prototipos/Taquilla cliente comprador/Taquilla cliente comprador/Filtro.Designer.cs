@@ -43,10 +43,14 @@
 			this.comboBox5 = new System.Windows.Forms.ComboBox();
 			this.comboBox6 = new System.Windows.Forms.ComboBox();
 			this.button1 = new System.Windows.Forms.Button();
+			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+			this.button2 = new System.Windows.Forms.Button();
+			this.label1 = new System.Windows.Forms.Label();
 			this.tlppanel6.SuspendLayout();
 			this.tlppanel3.SuspendLayout();
 			this.tlppanel2.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
+			this.tableLayoutPanel2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tlppanel6
@@ -92,6 +96,8 @@
 			this.tlppanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
 			this.tlppanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
 			this.tlppanel3.Controls.Add(this.lbTitulo, 1, 1);
+			this.tlppanel3.Controls.Add(this.tableLayoutPanel2, 0, 1);
+			this.tlppanel3.Controls.Add(this.label1, 1, 2);
 			this.tlppanel3.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tlppanel3.Location = new System.Drawing.Point(121, 3);
 			this.tlppanel3.Name = "tlppanel3";
@@ -271,6 +277,49 @@
 			this.button1.UseVisualStyleBackColor = false;
 			this.button1.Click += new System.EventHandler(this.button1_Click_1);
 			// 
+			// tableLayoutPanel2
+			// 
+			this.tableLayoutPanel2.ColumnCount = 3;
+			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+			this.tableLayoutPanel2.Controls.Add(this.button2, 1, 1);
+			this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 35);
+			this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+			this.tableLayoutPanel2.RowCount = 3;
+			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.38767F));
+			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.898F));
+			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.71433F));
+			this.tableLayoutPanel2.Size = new System.Drawing.Size(150, 123);
+			this.tableLayoutPanel2.TabIndex = 1;
+			// 
+			// button2
+			// 
+			this.button2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+			this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button2.Font = new System.Drawing.Font("Agency FB", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button2.Location = new System.Drawing.Point(18, 17);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(114, 44);
+			this.button2.TabIndex = 0;
+			this.button2.Text = "Atras";
+			this.button2.UseVisualStyleBackColor = false;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.label1.Location = new System.Drawing.Point(159, 161);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(621, 34);
+			this.label1.TabIndex = 2;
+			this.label1.Text = "*Filtros no disponibles aun*";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
 			// Filtro
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
@@ -293,6 +342,7 @@
 			this.tlppanel3.PerformLayout();
 			this.tlppanel2.ResumeLayout(false);
 			this.tableLayoutPanel1.ResumeLayout(false);
+			this.tableLayoutPanel2.ResumeLayout(false);
 			this.ResumeLayout(false);
 
         }
@@ -313,6 +363,9 @@
 		private System.Windows.Forms.ComboBox comboBox5;
 		private System.Windows.Forms.ComboBox comboBox6;
 		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Label label1;
 	}
 }
 
