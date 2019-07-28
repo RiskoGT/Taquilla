@@ -66,11 +66,6 @@ namespace Appadmin
 
         }
 
-        private void Label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Label19_Click(object sender, EventArgs e)
         {
 
@@ -101,6 +96,7 @@ namespace Appadmin
 
         void llenarCombos()
         {
+            //llenado de comboBox CLASIFICACION
             try
             {
                 comboClas.Text = "Clasificacion";
@@ -120,6 +116,96 @@ namespace Appadmin
                 MessageBox.Show(ex.Message);
             }
             conn.Close();
+            //llenado de comboBox SALA
+            try
+            {
+                comboSala.Text = "Sala";
+                comboSala.Items.Clear();
+
+                conn.Open();
+                OdbcCommand command = new OdbcCommand("SELECT * FROM salas", conn);
+                OdbcDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    comboSala.Refresh();
+                    comboSala.Items.Add(reader.GetValue(0).ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            conn.Close();
+            //llenado de comboBox CIUDAD
+            try
+            {
+                comboCiudad.Text = "Ciudad";
+                comboCiudad.Items.Clear();
+
+                conn.Open();
+                OdbcCommand command = new OdbcCommand("SELECT * FROM ciudades", conn);
+                OdbcDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    comboCiudad.Refresh();
+                    comboCiudad.Items.Add(reader.GetValue(0).ToString() + " - " + reader.GetValue(1).ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            conn.Close();             
+        }
+
+        private void Cartelera_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ComboCiudad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                comboCine.Text = "Cine";
+                comboCine.Items.Clear();
+
+                conn.Open();
+                OdbcCommand command = new OdbcCommand("SELECT * FROM cines where idCiudad = "
+                    + comboCiudad.Text[0], conn);
+                OdbcDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    comboCine.Refresh();
+                    comboCine.Items.Add(reader.GetValue(2).ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            conn.Close();
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Button8_Click(object sender, EventArgs e)
+        {
+            /*
+            this.Hide();
+            Cine ciu = new Cine();
+            ciu.Show();
+            */
+        }
+
+        private void BtnAgregarCiudad_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Ciudad ciu = new Ciudad();
+            ciu.Show();
         }
     }
 }
