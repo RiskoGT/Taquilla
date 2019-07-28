@@ -195,44 +195,43 @@
 			this.comboBox1.Items.AddRange(new object[] {
             "2D",
             "3D"});
-            this.comboBox1.Location = new System.Drawing.Point(97, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(370, 42);
-            this.comboBox1.TabIndex = 0;
-            this.comboBox1.Text = "Formato";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox2.Font = new System.Drawing.Font("Agency FB", 20.25F, System.Drawing.FontStyle.Bold);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+			this.comboBox1.Location = new System.Drawing.Point(97, 3);
+			this.comboBox1.Name = "comboBox1";
+			this.comboBox1.Size = new System.Drawing.Size(370, 42);
+			this.comboBox1.TabIndex = 0;
+			this.comboBox1.Text = "Formato";
+			// 
+			// comboBox2
+			// 
+			this.comboBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.comboBox2.Font = new System.Drawing.Font("Agency FB", 20.25F, System.Drawing.FontStyle.Bold);
+			this.comboBox2.FormattingEnabled = true;
+			this.comboBox2.Items.AddRange(new object[] {
             "Español",
             "Subtitulada"});
-            this.comboBox2.Location = new System.Drawing.Point(473, 3);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(370, 42);
-            this.comboBox2.TabIndex = 1;
-            this.comboBox2.Text = "idioma";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox3.Font = new System.Drawing.Font("Agency FB", 20.25F, System.Drawing.FontStyle.Bold);
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(97, 79);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(370, 42);
-            this.comboBox3.TabIndex = 2;
-            this.comboBox3.Text = "Horario";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox4.Font = new System.Drawing.Font("Agency FB", 20.25F, System.Drawing.FontStyle.Bold);
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+			this.comboBox2.Location = new System.Drawing.Point(473, 3);
+			this.comboBox2.Name = "comboBox2";
+			this.comboBox2.Size = new System.Drawing.Size(370, 42);
+			this.comboBox2.TabIndex = 1;
+			this.comboBox2.Text = "idioma";
+			// 
+			// comboBox3
+			// 
+			this.comboBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.comboBox3.Font = new System.Drawing.Font("Agency FB", 20.25F, System.Drawing.FontStyle.Bold);
+			this.comboBox3.FormattingEnabled = true;
+			this.comboBox3.Location = new System.Drawing.Point(97, 79);
+			this.comboBox3.Name = "comboBox3";
+			this.comboBox3.Size = new System.Drawing.Size(370, 42);
+			this.comboBox3.TabIndex = 2;
+			this.comboBox3.Text = "Horario";
+			// 
+			// comboBox4
+			// 
+			this.comboBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.comboBox4.Font = new System.Drawing.Font("Agency FB", 20.25F, System.Drawing.FontStyle.Bold);
+			this.comboBox4.FormattingEnabled = true;
+			this.comboBox4.Items.AddRange(new object[] {
             "IMAX",
             "4DX",
             "VIP"});
