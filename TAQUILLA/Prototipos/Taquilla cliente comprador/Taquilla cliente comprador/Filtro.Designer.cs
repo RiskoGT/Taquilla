@@ -30,11 +30,11 @@
         {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Filtro));
 			this.tlppanel6 = new System.Windows.Forms.TableLayoutPanel();
+			this.tlppanel4 = new System.Windows.Forms.TableLayoutPanel();
 			this.tlppanel3 = new System.Windows.Forms.TableLayoutPanel();
 			this.lbTitulo = new System.Windows.Forms.Label();
 			this.tlppanel2 = new System.Windows.Forms.TableLayoutPanel();
 			this.btnAyuda = new System.Windows.Forms.Button();
-			this.tlppanel4 = new System.Windows.Forms.TableLayoutPanel();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -69,6 +69,21 @@
 			this.tlppanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 388F));
 			this.tlppanel6.Size = new System.Drawing.Size(1184, 651);
 			this.tlppanel6.TabIndex = 0;
+			// 
+			// tlppanel4
+			// 
+			this.tlppanel4.ColumnCount = 4;
+			this.tlppanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+			this.tlppanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+			this.tlppanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+			this.tlppanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+			this.tlppanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tlppanel4.Location = new System.Drawing.Point(121, 204);
+			this.tlppanel4.Name = "tlppanel4";
+			this.tlppanel4.RowCount = 1;
+			this.tlppanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tlppanel4.Size = new System.Drawing.Size(941, 55);
+			this.tlppanel4.TabIndex = 0;
 			// 
 			// tlppanel3
 			// 
@@ -133,21 +148,6 @@
 			this.btnAyuda.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnAyuda.UseVisualStyleBackColor = false;
 			this.btnAyuda.Click += new System.EventHandler(this.button1_Click);
-			// 
-			// tlppanel4
-			// 
-			this.tlppanel4.ColumnCount = 4;
-			this.tlppanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-			this.tlppanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-			this.tlppanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-			this.tlppanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-			this.tlppanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tlppanel4.Location = new System.Drawing.Point(121, 204);
-			this.tlppanel4.Name = "tlppanel4";
-			this.tlppanel4.RowCount = 1;
-			this.tlppanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tlppanel4.Size = new System.Drawing.Size(941, 55);
-			this.tlppanel4.TabIndex = 0;
 			// 
 			// tableLayoutPanel1
 			// 

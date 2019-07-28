@@ -10,22 +10,64 @@ using System.Windows.Forms;
 
 namespace Taquilla_cliente_comprador
 {
-    public partial class frmCartelera : Form
-    {
+
+	public partial class frmCartelera : Form
+	{
 		/*Grupo 2  taquilla  cliente comprador
         Gustavo Perez 0901-16-420 y Juan José Gámez 0901-16-47  */
-		OdbcConnection conn = new OdbcConnection("Dsn=cine"); 
+		OdbcConnection conn = new OdbcConnection("Dsn=cine");
+		OdbcConnection conn2 = new OdbcConnection("Dsn=cine");
+		OdbcConnection conn3 = new OdbcConnection("Dsn=cine");
 		int sala = 0;
-    
+		int numSalas = 0;
+		string[] salas = new string[140];
 
-        public frmCartelera()
+		public frmCartelera()
 		{
 			InitializeComponent();
             webPelicula.Navigate("https://www.youtube.com/watch?v=BfSAvH2fGkE&pbjreload=10");
 			webPelicula.Stop();
-        }
+			Cartelera();
+	
+		}
 
-               	private void button9_Click(object sender, EventArgs e)
+		void Cartelera()
+		{
+			conn.Open();
+			OdbcCommand command = new OdbcCommand(""
+			+ "select A.idfuncion,"+
+			"(SELECT titulo FROM peliculas WHERE idPelicula = A.idPelicula) titulo,"+
+			"(SELECT formato FROM peliculas WHERE idPelicula = A.idPelicula) formato ,"+
+			"(SELECT clasificación FROM peliculas WHERE idPelicula = A.idPelicula) clasificacion,"+
+			"(SELECT sinopsis FROM peliculas WHERE idPelicula = A.idPelicula) sinopsis, A.horaFuncion "+
+			//"(SELECT afiche FROM multimedia WHERE noRegistro = (SELECT multimedia FROM peliculas WHERE A.idPelicula = idPelicula)) afiche,"+
+			//"(SELECT trailer FROM multimedia WHERE noRegistro = (SELECT multimedia FROM peliculas WHERE A.idPelicula = idPelicula)) video"+
+			"from funciones A where a.cine = '"+"Portales'", conn);
+			OdbcDataReader funciones = command.ExecuteReader();
+
+			int pos = 1;
+			while (funciones.Read())
+			{
+		
+				salas[pos] = funciones.GetValue(0).ToString(); // titulo
+				pos++;
+				salas[pos] = funciones.GetValue(1).ToString();//formato
+				pos++;
+				salas[pos] = funciones.GetValue(2).ToString();//clasificacion
+				pos++;
+				salas[pos] = funciones.GetValue(3).ToString(); // titulo
+				pos++;
+				salas[pos] = funciones.GetValue(4).ToString();//formato
+				pos++;
+				salas[pos] = funciones.GetValue(5).ToString();//clasificacion
+				pos++;
+				numSalas++;
+
+			}
+			conn.Close();
+			label1.Text = salas[2];
+		}
+		private void button9_Click(object sender, EventArgs e)
 		{
             webPelicula.Navigate("");
             Form formulariobol = new frmBoletos();
