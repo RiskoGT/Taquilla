@@ -165,7 +165,7 @@ namespace Appadmin
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             string query = "INSERT INTO usuarios (Usuario,  idPerfil, Password, DPI, Nombres, Apellidos, Telefono , Correo, Sexo , fechaNac, fechaInicio) VALUES ('" + txtUsuario.Text
-               + "','" + comboPerfil.SelectedItem + "','" + txtContra.Text + "','" + txtDpi.Text + "','" + txtNombre.Text + "','"
+               + "','" + comboPerfil.SelectedItem + "', MD5('" + txtContra.Text + "'),'" + txtDpi.Text + "','" + txtNombre.Text + "','"
                + txtApellido.Text + "','" + txtTel.Text + "','" + txtCorreo.Text + "','" + comboSexo.Text[0] + "','" + dtpFechaNac.Text + "','"+ dtpFechaInicio.Text + "')";
             conn.Open();
             OdbcCommand consulta = new OdbcCommand(query, conn);
@@ -202,7 +202,7 @@ namespace Appadmin
         private void BtnModif_Click(object sender, EventArgs e)
         {
 			string query = "UPDATE usuarios SET " +
-			"idPerfil='" + comboPerfil.Text + "',password='" + txtContra.Text + "',DPI='" + txtDpi.Text + "'," +
+			"idPerfil='" + comboPerfil.Text + "',password= MD5('" + txtContra.Text + "'),DPI='" + txtDpi.Text + "'," +
 			"Nombres='" + txtNombre.Text + "',Apellidos='" + txtApellido.Text + "',Telefono='" + txtTel.Text + "',Correo='" + txtCorreo.Text + "',Sexo='" +
 			 comboSexo.Text + "',fechaNac='" + dtpFechaNac.Text + "',fechaInicio='" + dtpFechaInicio.Text + "'" + " WHERE Usuario ='" + txtUsuario.Text +"'";//+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
 
