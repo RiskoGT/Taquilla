@@ -32,8 +32,11 @@ namespace Appadmin
             txtTel.Clear();
             btnModif.Enabled = false;
             txtUsuario.Clear();
-
-            llenartbl();
+			dtpFechaInicio.Format = DateTimePickerFormat.Custom;
+			dtpFechaInicio.CustomFormat = "yyyy-MM-dd";
+			dtpFechaNac.Format = DateTimePickerFormat.Custom;
+			dtpFechaNac.CustomFormat = "yyyy-MM-dd";
+			llenartbl();
             //llenarCombos();
            }
 
@@ -198,43 +201,38 @@ namespace Appadmin
         string codaux;
         private void BtnModif_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE usuarios SET Usuario= '" + txtUsuario.Text + "'," +
-           "idPerfil='" + comboPerfil.Text + "',password='" + txtContra.Text + "',DPI='" + txtDpi.Text + "'," +
-           "Nombres='" + txtNombre.Text + "',Apellidos='" + txtApellido.Text + "',Telefono='" + txtTel.Text + "',Correo='" + txtCorreo.Text + "',Sexo='" +
-            comboSexo+ "',fechaNac='" + dtpFechaNac+"',fechaInicio='"+ dtpFechaInicio + "'" + " WHERE Usuario =" + txtUsuario.Text;//+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
+			string query = "UPDATE usuarios SET " +
+			"idPerfil='" + comboPerfil.Text + "',password='" + txtContra.Text + "',DPI='" + txtDpi.Text + "'," +
+			"Nombres='" + txtNombre.Text + "',Apellidos='" + txtApellido.Text + "',Telefono='" + txtTel.Text + "',Correo='" + txtCorreo.Text + "',Sexo='" +
+			 comboSexo.Text + "',fechaNac='" + dtpFechaNac.Text + "',fechaInicio='" + dtpFechaInicio.Text + "'" + " WHERE Usuario ='" + txtUsuario.Text +"'";//+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
 
-            conn.Open();
-            OdbcCommand consulta = new OdbcCommand(query, conn);
-            try
-            {
-                if (txtUsuario.Text != "" && txtContra.Text != "" && txtDpi.Text != "" && txtNombre.Text != "" && txtApellido.Text != "" && txtTel.Text != "" && txtCorreo.Text != "")
-                {
-                    consulta.ExecuteNonQuery();
-                    MessageBox.Show("Actualizacion Correcta");
-                    txtApellido.Text = "";
-                    txtContra.Text = "";
-                    txtCorreo.Text = "";
-                    txtDpi.Text = "";
-                    txtNombre.Text = "";
-                    txtTel.Text = "";
-                    txtUsuario.Text = "";
-                    conn.Close();
-                    llenartbl();
-                }
-                else { MessageBox.Show("POR FAVOR LLENE TODOS LOS CAMPOS.\n\tGRACIAS!!"); conn.Close(); }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("\tERROR!!\nVerifique: Los datos.\n\tGRACIAS!!" + ex.ToString());
-                conn.Close();
-            }
+			conn.Open();
+			OdbcCommand consulta = new OdbcCommand(query, conn);
+			try
+			{
+				if (txtUsuario.Text != "" && txtContra.Text != "" && txtDpi.Text != "" && txtNombre.Text != "" && txtApellido.Text != "" && txtTel.Text != "" && txtCorreo.Text != "")
+				{
+					consulta.ExecuteNonQuery();
+					MessageBox.Show("Actualizacion Correcta");
+					txtApellido.Text = "";
+					txtContra.Text = "";
+					txtCorreo.Text = "";
+					txtDpi.Text = "";
+					txtNombre.Text = "";
+					txtTel.Text = "";
+					txtUsuario.Text = "";
+					conn.Close();
+					llenartbl();
+				}
+				else { MessageBox.Show("POR FAVOR LLENE TODOS LOS CAMPOS.\n\tGRACIAS!!"); conn.Close(); }
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("\tERROR!!\nVerifique: Los datos.\n\tGRACIAS!!" + ex.ToString());
+				conn.Close();
+			}
 
-
-
-
-
-
-        }
+		}
 
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -275,7 +273,7 @@ namespace Appadmin
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
-            string query = "DELETE FROM usuarios  WHERE  Usuario =" + tblContenido.CurrentRow.Cells[0].Value.ToString();
+            string query = "DELETE FROM usuarios  WHERE  Usuario ='" + tblContenido.CurrentRow.Cells[0].Value.ToString()+ "'";
            
             conn.Open();
 
@@ -305,6 +303,11 @@ namespace Appadmin
             }
 
         }
-    }
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
     }
 
