@@ -203,5 +203,10 @@ namespace Appadmin
         {
 
         }
+
+        private void Label13_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

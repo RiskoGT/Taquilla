@@ -34,8 +34,46 @@ namespace Appadmin
             txtTel.Clear();
             txtTelCasa.Clear();
             txtUsuario.Clear();
+
+            llenartbl();
            }
 
+        void llenartbl() {
+
+            OdbcCommand cod = new OdbcCommand();
+            cod.Connection = conn;
+            cod.CommandText = ("SELECT * FROM usuarios");
+
+            try
+            {
+                OdbcDataAdapter eje = new OdbcDataAdapter();
+                eje.SelectCommand = cod;
+                DataTable datos = new DataTable();
+                eje.Fill(datos);
+                tblContenido.DataSource = datos;
+                eje.Update(datos);
+                conn.Close();
+
+
+
+            }
+
+            catch (Exception e)
+            {
+
+                MessageBox.Show("ERROR" + e.ToString());
+                conn.Close();
+
+
+
+
+            }
+
+
+
+
+
+        }
         private void GestionUsuarios_Load(object sender, EventArgs e)
         {
 
@@ -90,6 +128,13 @@ namespace Appadmin
             this.Hide();
             MainMenu mainMenu = new MainMenu();
             mainMenu.Show();
+        }
+
+        private void TblContenido_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+          
+            
         }
     }
 }
