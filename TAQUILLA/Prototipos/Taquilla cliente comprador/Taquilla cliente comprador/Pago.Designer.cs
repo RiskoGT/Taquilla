@@ -66,6 +66,9 @@
             this.tlpPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.lbData = new System.Windows.Forms.Label();
             this.Error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtConC = new System.Windows.Forms.TextBox();
+            this.txtRepc = new System.Windows.Forms.TextBox();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tlpPanel1.SuspendLayout();
             this.tlpPanel6.SuspendLayout();
@@ -91,6 +94,8 @@
             this.tableLayoutPanel1.Controls.Add(this.tlpPanel1, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.tlpPanel2, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.tlpPanel7, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.txtConC, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.txtRepc, 0, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -632,6 +637,26 @@
             // 
             this.Error.ContainerControl = this;
             // 
+            // txtConC
+            // 
+            this.txtConC.Location = new System.Drawing.Point(1162, 93);
+            this.txtConC.Name = "txtConC";
+            this.txtConC.Size = new System.Drawing.Size(19, 20);
+            this.txtConC.TabIndex = 4;
+            // 
+            // txtRepc
+            // 
+            this.txtRepc.Location = new System.Drawing.Point(3, 93);
+            this.txtRepc.Name = "txtRepc";
+            this.txtRepc.Size = new System.Drawing.Size(17, 20);
+            this.txtRepc.TabIndex = 5;
+            // 
+            // timer2
+            // 
+            this.timer2.Enabled = true;
+            this.timer2.Interval = 500;
+            this.timer2.Tick += new System.EventHandler(this.Timer2_Tick);
+            // 
             // Frm_pago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -646,7 +671,9 @@
             this.Text = "Datos de Cobro";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_pago_FormClosed);
+            this.Load += new System.EventHandler(this.Frm_pago_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.tlpPanel1.ResumeLayout(false);
             this.tlpPanel1.PerformLayout();
             this.tlpPanel6.ResumeLayout(false);
@@ -711,5 +738,8 @@
         private System.Windows.Forms.TableLayoutPanel tlpPanel10;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ErrorProvider Error;
+        public System.Windows.Forms.TextBox txtConC;
+        public System.Windows.Forms.TextBox txtRepc;
+        private System.Windows.Forms.Timer timer2;
     }
 }

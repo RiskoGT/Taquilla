@@ -138,14 +138,18 @@
             this.lbOc = new System.Windows.Forms.Label();
             this.btnConfir = new System.Windows.Forms.Button();
             this.tplPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtrepA = new System.Windows.Forms.TextBox();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.txtcontA = new System.Windows.Forms.TextBox();
             this.tplPanel2.SuspendLayout();
             this.tplPanel4.SuspendLayout();
             this.tplPanel3.SuspendLayout();
             this.tplPanel8.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tplPanel1.SuspendLayout();
+            this.tplPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -155,6 +159,7 @@
             this.tplPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
             this.tplPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 94F));
             this.tplPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
+            this.tplPanel2.Controls.Add(this.txtrepA, 0, 1);
             this.tplPanel2.Controls.Add(this.tplPanel4, 1, 3);
             this.tplPanel2.Controls.Add(this.tplPanel3, 1, 2);
             this.tplPanel2.Controls.Add(this.tplPanel1, 1, 1);
@@ -171,6 +176,7 @@
             this.tplPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.002645F));
             this.tplPanel2.Size = new System.Drawing.Size(1184, 651);
             this.tplPanel2.TabIndex = 0;
+            this.tplPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.TplPanel2_Paint);
             // 
             // tplPanel4
             // 
@@ -1875,7 +1881,7 @@
             this.tplPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.21858F));
             this.tplPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.689546F));
             this.tplPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 144F));
-            this.tplPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95F));
+            this.tplPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 127F));
             this.tplPanel1.Controls.Add(this.btndispinible, 1, 0);
             this.tplPanel1.Controls.Add(this.btnSeleccion, 5, 0);
             this.tplPanel1.Controls.Add(this.btnOc, 9, 0);
@@ -1901,7 +1907,7 @@
             this.btndispinible.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndispinible.Location = new System.Drawing.Point(10, 3);
             this.btndispinible.Name = "btndispinible";
-            this.btndispinible.Size = new System.Drawing.Size(99, 34);
+            this.btndispinible.Size = new System.Drawing.Size(95, 34);
             this.btndispinible.TabIndex = 0;
             this.btndispinible.Text = "Disponibles";
             this.btndispinible.UseVisualStyleBackColor = false;
@@ -1914,9 +1920,9 @@
             this.btnSeleccion.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
             this.btnSeleccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeleccion.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSeleccion.Location = new System.Drawing.Point(294, 3);
+            this.btnSeleccion.Location = new System.Drawing.Point(283, 3);
             this.btnSeleccion.Name = "btnSeleccion";
-            this.btnSeleccion.Size = new System.Drawing.Size(95, 34);
+            this.btnSeleccion.Size = new System.Drawing.Size(91, 34);
             this.btnSeleccion.TabIndex = 1;
             this.btnSeleccion.Text = "Selecionado";
             this.btnSeleccion.UseVisualStyleBackColor = false;
@@ -1929,9 +1935,9 @@
             this.btnOc.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.btnOc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOc.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOc.Location = new System.Drawing.Point(578, 3);
+            this.btnOc.Location = new System.Drawing.Point(557, 3);
             this.btnOc.Name = "btnOc";
-            this.btnOc.Size = new System.Drawing.Size(90, 34);
+            this.btnOc.Size = new System.Drawing.Size(87, 34);
             this.btnOc.TabIndex = 2;
             this.btnOc.Text = "Ocupado";
             this.btnOc.UseVisualStyleBackColor = false;
@@ -1942,9 +1948,9 @@
             this.lbDis.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbDis.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDis.ForeColor = System.Drawing.Color.Gold;
-            this.lbDis.Location = new System.Drawing.Point(124, 0);
+            this.lbDis.Location = new System.Drawing.Point(119, 0);
             this.lbDis.Name = "lbDis";
-            this.lbDis.Size = new System.Drawing.Size(154, 40);
+            this.lbDis.Size = new System.Drawing.Size(148, 40);
             this.lbDis.TabIndex = 3;
             this.lbDis.Text = "Asientos Disponibles";
             this.lbDis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1955,9 +1961,9 @@
             this.lbSelec.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbSelec.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSelec.ForeColor = System.Drawing.Color.Gold;
-            this.lbSelec.Location = new System.Drawing.Point(413, 0);
+            this.lbSelec.Location = new System.Drawing.Point(398, 0);
             this.lbSelec.Name = "lbSelec";
-            this.lbSelec.Size = new System.Drawing.Size(148, 40);
+            this.lbSelec.Size = new System.Drawing.Size(142, 40);
             this.lbSelec.TabIndex = 4;
             this.lbSelec.Text = "Asientos Seleccionados";
             this.lbSelec.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1968,9 +1974,9 @@
             this.lbOc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbOc.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbOc.ForeColor = System.Drawing.Color.Gold;
-            this.lbOc.Location = new System.Drawing.Point(683, 0);
+            this.lbOc.Location = new System.Drawing.Point(658, 0);
             this.lbOc.Name = "lbOc";
-            this.lbOc.Size = new System.Drawing.Size(160, 40);
+            this.lbOc.Size = new System.Drawing.Size(154, 40);
             this.lbOc.TabIndex = 5;
             this.lbOc.Text = "Asientos Ocupados";
             this.lbOc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1979,7 +1985,7 @@
             // 
             this.btnConfir.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnConfir.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfir.Location = new System.Drawing.Point(863, 3);
+            this.btnConfir.Location = new System.Drawing.Point(832, 3);
             this.btnConfir.Name = "btnConfir";
             this.btnConfir.Size = new System.Drawing.Size(138, 34);
             this.btnConfir.TabIndex = 7;
@@ -1991,6 +1997,7 @@
             // 
             this.tplPanel5.ColumnCount = 1;
             this.tplPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tplPanel5.Controls.Add(this.txtcontA, 0, 1);
             this.tplPanel5.Location = new System.Drawing.Point(3, 62);
             this.tplPanel5.Name = "tplPanel5";
             this.tplPanel5.RowCount = 3;
@@ -1999,6 +2006,13 @@
             this.tplPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tplPanel5.Size = new System.Drawing.Size(29, 65);
             this.tplPanel5.TabIndex = 3;
+            // 
+            // txtrepA
+            // 
+            this.txtrepA.Location = new System.Drawing.Point(3, 16);
+            this.txtrepA.Name = "txtrepA";
+            this.txtrepA.Size = new System.Drawing.Size(23, 20);
+            this.txtrepA.TabIndex = 4;
             // 
             // fileSystemWatcher1
             // 
@@ -2010,6 +2024,19 @@
             this.timer1.Enabled = true;
             this.timer1.Interval = 10;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // timer2
+            // 
+            this.timer2.Enabled = true;
+            this.timer2.Interval = 500;
+            this.timer2.Tick += new System.EventHandler(this.Timer2_Tick);
+            // 
+            // txtcontA
+            // 
+            this.txtcontA.Location = new System.Drawing.Point(3, 16);
+            this.txtcontA.Name = "txtcontA";
+            this.txtcontA.Size = new System.Drawing.Size(23, 20);
+            this.txtcontA.TabIndex = 0;
             // 
             // frmAsientos
             // 
@@ -2025,7 +2052,9 @@
             this.Text = "Selección de Asientos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_asientos_FormClosed);
+            this.Load += new System.EventHandler(this.FrmAsientos_Load);
             this.tplPanel2.ResumeLayout(false);
+            this.tplPanel2.PerformLayout();
             this.tplPanel4.ResumeLayout(false);
             this.tplPanel3.ResumeLayout(false);
             this.tplPanel3.PerformLayout();
@@ -2034,6 +2063,8 @@
             this.tableLayoutPanel6.PerformLayout();
             this.tplPanel1.ResumeLayout(false);
             this.tplPanel1.PerformLayout();
+            this.tplPanel5.ResumeLayout(false);
+            this.tplPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
 
@@ -2151,5 +2182,8 @@
 		private System.Windows.Forms.Label lbPantalla;
 		private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TableLayoutPanel tplPanel5;
+        public System.Windows.Forms.TextBox txtrepA;
+        private System.Windows.Forms.Timer timer2;
+        public System.Windows.Forms.TextBox txtcontA;
     }
 }
