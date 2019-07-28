@@ -10,66 +10,22 @@ using System.Windows.Forms;
 
 namespace Taquilla_cliente_comprador
 {
-
-	public partial class frmCartelera : Form
-	{
+    public partial class frmCartelera : Form
+    {
 		/*Grupo 2  taquilla  cliente comprador
         Gustavo Perez 0901-16-420 y Juan José Gámez 0901-16-47  */
-		OdbcConnection conn = new OdbcConnection("Dsn=cine");
-		int sala = 1;
-		int numSalas = 0;
-		string[] salas = new string[140];
+		OdbcConnection conn = new OdbcConnection("Dsn=cine"); 
+		int sala = 0;
+    
 
-		public frmCartelera()
+        public frmCartelera()
 		{
 			InitializeComponent();
             webPelicula.Navigate("https://www.youtube.com/watch?v=BfSAvH2fGkE&pbjreload=10");
 			webPelicula.Stop();
-			Cartelera();
-	
-		}
-		void llenarCartelera(int a, int b, int c, int d, int e)
-		{
-			lbtitulo.Text = salas[a];//titulo 2
-			lbFormato.Text = salas[b];//formato 3
-			lbClasificacion.Text = salas[c];//clasificacion 4
-			lbSinopsis.Text = salas[d];//sinopsis 5
-			lbHora.Text = salas[e];//hora 6
-		}
-		void Cartelera()
-		{
-			conn.Open();
-			OdbcCommand command = new OdbcCommand(""
-			+ "select A.idfuncion,"+
-			"(SELECT titulo FROM peliculas WHERE idPelicula = A.idPelicula) titulo,"+
-			"(SELECT formato FROM peliculas WHERE idPelicula = A.idPelicula) formato ,"+
-			"(SELECT clasificación FROM peliculas WHERE idPelicula = A.idPelicula) clasificacion,"+
-			"(SELECT sinopsis FROM peliculas WHERE idPelicula = A.idPelicula) sinopsis, A.horaFuncion "+
-			"from funciones A where a.cine = '"+"Portales'", conn);
-			OdbcDataReader funciones = command.ExecuteReader();
+        }
 
-			int pos = 1;
-			while (funciones.Read())
-			{
-		
-				salas[pos] = funciones.GetValue(0).ToString(); // funcion
-				pos++;
-				salas[pos] = funciones.GetValue(1).ToString();//titulo
-				pos++;
-				salas[pos] = funciones.GetValue(2).ToString();//formato
-				pos++;
-				salas[pos] = funciones.GetValue(3).ToString(); // clasificacion
-				pos++;
-				salas[pos] = funciones.GetValue(4).ToString();//sinopsis
-				pos++;
-				salas[pos] = funciones.GetValue(5).ToString();//hora
-				pos++;
-				numSalas++;
-
-			}
-			conn.Close();
-		}
-		private void button9_Click(object sender, EventArgs e)
+               	private void button9_Click(object sender, EventArgs e)
 		{
             webPelicula.Navigate("");
             Form formulariobol = new frmBoletos();
@@ -83,108 +39,54 @@ namespace Taquilla_cliente_comprador
 			Application.Exit();
 		}
 
+		private void button2_Click(object sender, EventArgs e)
+		{
+			sala++;
+
+        }
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			sala--;
+		}
+
 		private void timer1_Tick(object sender, EventArgs e)
 		{
-			if (sala == 1)
-			{
-				llenarCartelera(2, 3, 4, 5, 6);
-				btnMenos.Enabled = false;
+           
+            if (sala == 0) { button1.Enabled = false; button2.Enabled = true;
+				pictureBox1.BackgroundImage = global::Taquilla_cliente_comprador.Properties.Resources.Rey_leon;
+                
+                label2.Text = "El Rey León(2019)";
+				label4.Text = "A";
+				label3.Text = "2D";
+				label5.Text = "EL REY LEÓN de Disney, dirigida por Jon Favreau, nos lleva a la sabana africana donde un futuro"+
+				" rey ha nacido. Simba idolatra a su padre, el rey Mufasa, y está entusiasmado con su destino real. Pero no todos"+
+				" en el reino celebran la llegada del nuevo cachorro. Scar, el hermano de Mufasa y antiguo heredero al trono, tiene"+
+				" sus propios planes. La batalla de La Roca del Rey se ve teñida de traición, tragedia y drama, y acaba forzando a Simba"+
+				" al exilio. Con la ayuda de una curiosa pareja de amigos nuevos, Simba tendrá que arreglárselas para crecer y recuperar lo"+
+				" que legítimamente le corresponde. El estelar reparto incluye a: Donald Glover como Simba, Beyoncé Knowles-Carter en el papel"+
+				" de Nala, James Earl Jones como Mufasa, Chiwetel Ejiofor como Scar, Seth Rogen como Pumba y Billy Eichner en el papel de Timón.";
+			}
+			if (sala == 1) { button2.Enabled = false; button1.Enabled = true;
+				pictureBox1.BackgroundImage = global::Taquilla_cliente_comprador.Properties.Resources.Spiderman;
+                
+                label2.Text = "Spider-Man: Lejos de casa";
+				label4.Text = "B";
+				label3.Text = "3D";
+				label5.Text = "Peter Parker regresa en Spider-Man: Lejos de casa el siguiente capítulo en la serie de " +
+					"Spider-Man: Homecoming. Nuestro amistoso vecino superhéroe decide unirse a sus mejores amigos Ned, MJ," +
+					" y el resto del grupo a unas vacaciones europeas. Aunque, el plan de Peter sea dejar sus heroicidades atrás" +
+					" durante unas pocas semanas, pronto desecha esas ideas para ayudar a regañadientes a Nick Furia a desentrañar " +
+					"el misterio de los ataques de varias criaturas elementales, que están creando el caos en el mundo.";
 			}
 
-			if (sala > 1 && sala < numSalas)
-			{
-				btnMenos.Enabled = true;
-				btnMas.Enabled = true;
-				switch (sala)
-				{
-					case 1:
-						llenarCartelera(2,3,4,5,6);
-						break;
-					case 2:
-						llenarCartelera(8,9,10,11,12);
-						break;
-					case 3:
-						llenarCartelera(14, 15, 16, 17, 18);
-						break;
-					case 4:
-						llenarCartelera(20,21,22,23,24);
-						break;
-					case 5:
-						llenarCartelera(26,27,28,29,30);
-						break;
-					case 6:
-						llenarCartelera(32,33,34,35,36);
-						break;
-					case 7:
-						llenarCartelera(38,39,40,41,42);
-						break;
-					case 8:
-						llenarCartelera(43,44,45,46,47);
-						break;
-					case 9:
-						llenarCartelera(49,50,51,52,53);
-						break;
-				}
-			} else if (sala == numSalas)
-			{
-				btnMas.Enabled = false;
-				switch (sala)
-				{
-					case 1:
-						llenarCartelera(2, 3, 4, 5, 6);
-						break;
-					case 2:
-						llenarCartelera(8, 9, 10, 11, 12);
-						break;
-					case 3:
-						llenarCartelera(14, 15, 16, 17, 18);
-						break;
-					case 4:
-						llenarCartelera(20, 21, 22, 23, 24);
-						break;
-					case 5:
-						llenarCartelera(26, 27, 28, 29, 30);
-						break;
-					case 6:
-						llenarCartelera(32, 33, 34, 35, 36);
-						break;
-					case 7:
-						llenarCartelera(38, 39, 40, 41, 42);
-						break;
-					case 8:
-						llenarCartelera(43, 44, 45, 46, 47);
-						break;
-					case 9:
-						llenarCartelera(49, 50, 51, 52, 53);
-						break;
-				}
-			}
 			
-
-
-
-
-
+			
 		}
 
 		private void tableLayoutPanel12_Paint(object sender, PaintEventArgs e)
 		{
 
-		}
-
-		private void tableLayoutPanel11_Paint(object sender, PaintEventArgs e)
-		{
-
-		}
-
-		private void btnMas_Click(object sender, EventArgs e)
-		{
-			sala++;
-		}
-
-		private void btnMenos_Click(object sender, EventArgs e)
-		{
-			sala--;
 		}
 	}
     }

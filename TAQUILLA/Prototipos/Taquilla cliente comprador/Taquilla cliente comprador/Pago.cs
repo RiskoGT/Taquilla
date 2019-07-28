@@ -15,7 +15,7 @@ namespace Taquilla_cliente_comprador
     {
         /*Grupo 2  taquilla  cliente comprador
         Gustavo Perez 0901-16-420 y Juan José Gámez 0901-16-47  */
-        
+        int tiempo = 0;
         public Frm_pago()
         {
             InitializeComponent();
@@ -43,19 +43,29 @@ namespace Taquilla_cliente_comprador
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            
-            if (txtCorreo.Text.Trim() == "" || txtNombre.Text.Trim() == ""|| txtCodigo.Text.Trim() == "" || txtTarjeta.Text.Trim() == ""|| txtTelefono.Text.Trim() == "" )
+            if (tiempo == 0)
             {
-                MessageBox.Show("Profavor llenar las casillas!!");
+                MessageBox.Show("El tiempo de seleccion a terminado!");
+                Form formularioca = new frmMenu();
+                formularioca.Show();
+                Visible = false;
+
             }
-            else { 
-            Form formulariopago = new frmMenu();
-            formulariopago.Show();
-            Visible = false;
-            Form formulariopago1 = new frmConfirmasion();
-            formulariopago1.Show();
-        }
-            
+            else
+            {
+                if (txtCorreo.Text.Trim() == "" || txtNombre.Text.Trim() == "" || txtCodigo.Text.Trim() == "" || txtTarjeta.Text.Trim() == "" || txtTelefono.Text.Trim() == "")
+                {
+                    MessageBox.Show("Profavor llenar las casillas!!");
+                }
+                else
+                {
+                    Form formulariopago = new frmMenu();
+                    formulariopago.Show();
+                    Visible = false;
+                    Form formulariopago1 = new frmConfirmasion();
+                    formulariopago1.Show();
+                }
+            }
         }
 
 		private void Frm_pago_FormClosed(object sender, FormClosedEventArgs e)
@@ -150,6 +160,21 @@ namespace Taquilla_cliente_comprador
             }
         }
 
-        
+        private void Frm_pago_Load(object sender, EventArgs e)
+        {
+            tiempo = Int32.Parse(txtRepc.Text);
+        }
+
+        private void Timer2_Tick(object sender, EventArgs e)
+        {
+       
+           
+                
+            if (tiempo > 0)
+            {
+                tiempo = tiempo - 1;
+               txtConC.Text = tiempo.ToString();
+            }
+        }
     }
 }

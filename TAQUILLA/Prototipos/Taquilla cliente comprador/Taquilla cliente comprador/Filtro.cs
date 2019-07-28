@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.Odbc;
+using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,11 +17,11 @@ namespace Taquilla_cliente_comprador
     {
 		/*Grupo 2  taquilla  cliente comprador
          Gustavo Perez 0901-16-420 y Juan José Gámez 0901-16-47  */
-		OdbcConnection conn = new OdbcConnection("Dsn=cine");
+		OdbcConnection conn = new OdbcConnection("Dsn=Cine");
 		public Filtro()
         {
             InitializeComponent();
-     
+            
         }
 		void llenarLista()
 		{
@@ -73,5 +75,10 @@ namespace Taquilla_cliente_comprador
 			formulario.Show();
 			Visible = false;
 		}
-	}
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

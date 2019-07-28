@@ -22,11 +22,15 @@ namespace Taquilla_cliente_comprador
         int count3 = 0;
         int count4 = 0;
         int count5 = 0;
+        int tiempo = 30;
+
+
         public frmBoletos()
         {
             InitializeComponent();
+         
         }
-
+        
         private void Txt_niño_TextChanged(object sender, EventArgs e)
         {
 
@@ -34,21 +38,29 @@ namespace Taquilla_cliente_comprador
 
         private void Btn_Siguente_Click(object sender, EventArgs e)
         {
-
+            if (tiempo == 0)
+            {
+                MessageBox.Show("El tiempo de seleccion a terminado!");
+                Form formularioca = new frmMenu();
+                formularioca.Show();
+                Visible = false;
+              
+            }
+            else { 
             if (count4 == 0)
             { MessageBox.Show("Por favor, seleccione al menos 1 boleto para continuar, Gracias!!"); }
             else {
 
                 frmAsientos asi = new frmAsientos();
                 asi.txtAsientos.Text = txtTotalB.Text;
-                  
-
-            
-            asi.Show();
+                asi.txtrepA.Text = txtContB.Text;
+                    
+                    asi.Show();
             Visible = false;
 
 
         }
+            }
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -195,16 +207,7 @@ namespace Taquilla_cliente_comprador
            
         }
 
-        private void Txt_total_TextChanged(object sender, EventArgs e)
-        {
-            
-
-        }
-
-        private void Txt_3raT_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void Btn_regresar_Click(object sender, EventArgs e)
         {
@@ -218,27 +221,18 @@ namespace Taquilla_cliente_comprador
 			Application.Exit();
 		}
 
-		private void Btn_canTBoletos_Click(object sender, EventArgs e)
-		{
+		
 
-		}
-
-        private void Btn_ayuda_Click(object sender, EventArgs e)
+        private void Timer1_Tick(object sender, EventArgs e)
         {
-
-		}
-
-        private void Frm_boletos_Load(object sender, EventArgs e)
-        {
-
+            if (tiempo> 0)
+            {
+                tiempo = tiempo - 1;
+                txtContB.Text = tiempo.ToString();
+            }
         }
 
-        private void TableLayoutPanel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void TlpPanel2_Paint(object sender, PaintEventArgs e)
+        private void TextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

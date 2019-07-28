@@ -54,3 +54,4 @@ C:\Users\gganp\Desktop\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\T
 C:\Users\gganp\Desktop\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla_cliente_comprador.frmCartelera.resources
 C:\Users\gganp\Desktop\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla_cliente_comprador.frmAsientos.resources
 C:\Users\gganp\Desktop\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla_cliente_comprador.Filtro.resources
+C:\Users\juan_\Documents\Taquilla\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla_cliente_comprador.Filtro.resources
