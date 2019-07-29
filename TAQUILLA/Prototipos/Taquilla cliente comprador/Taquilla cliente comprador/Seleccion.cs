@@ -45,12 +45,12 @@ namespace Taquilla_cliente_comprador
 			switch (sala)
 			{
 				case 1:
-					picAfiche.BackgroundImage = new Bitmap("Multimedia/Reyleon.png");
+					picAfiche.BackgroundImage = new Bitmap("Multimedia/Spiderman.jpg");
 					picAfiche.BackgroundImageLayout = ImageLayout.Stretch;
 					llenarCartelera(2, 3, 4, 5, 6);
 					break;
 				case 2:
-					picAfiche.BackgroundImage = new Bitmap("Multimedia/Spiderman.jpg");
+					picAfiche.BackgroundImage = new Bitmap("Multimedia/HotelMumbai.jpg");
 					picAfiche.BackgroundImageLayout = ImageLayout.Stretch;
 					llenarCartelera(8, 9, 10, 11, 12);
 					break;
