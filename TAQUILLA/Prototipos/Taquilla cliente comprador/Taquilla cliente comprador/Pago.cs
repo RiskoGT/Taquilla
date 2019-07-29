@@ -13,9 +13,10 @@ namespace Taquilla_cliente_comprador
 {
     public partial class Frm_pago : Form
     {
-        /*Grupo 2  taquilla  cliente comprador
+
+		/*Grupo 2  taquilla  cliente comprador
         Gustavo Perez 0901-16-420 y Juan José Gámez 0901-16-47  */
-        
+		int tiempo = 6;// tiempo será extraible desde base de datos y de modificara desde la app de administrador
         public Frm_pago()
         {
             InitializeComponent();
@@ -54,7 +55,8 @@ namespace Taquilla_cliente_comprador
             Visible = false;
             Form formulariopago1 = new frmConfirmasion();
             formulariopago1.Show();
-        }
+			timer1.Enabled = false;
+			}
             
         }
 
@@ -150,6 +152,23 @@ namespace Taquilla_cliente_comprador
             }
         }
 
-        
-    }
+		private void timer1_Tick(object sender, EventArgs e)
+		{
+			
+			label3.Text = tiempo.ToString();
+
+			if (tiempo == 0)
+			{
+				timer1.Enabled = false;
+				MessageBox.Show("El tiempo de Pago a terminado!");
+				Form formularioca = new frmMenu();
+				formularioca.Show();
+				Visible = false;
+			}
+			if (tiempo > 0) {
+				tiempo--;
+			}
+			
+		}
+	}
 }

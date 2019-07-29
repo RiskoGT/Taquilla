@@ -50,14 +50,16 @@ namespace Taquilla_cliente_comprador
 					llenarCartelera(2, 3, 4, 5, 6);
 					break;
 				case 2:
-					picAfiche.BackgroundImage = new Bitmap("Multimedia/HotelMumbai.jpg");
+					picAfiche.BackgroundImage = new Bitmap("Multimedia/Spiderman.jpg");
 					picAfiche.BackgroundImageLayout = ImageLayout.Stretch;
 					llenarCartelera(8, 9, 10, 11, 12);
 					break;
 				case 3:
+					picAfiche.BackgroundImage = new Bitmap("Multimedia/Reyleon.png");
 					llenarCartelera(14, 15, 16, 17, 18);
 					break;
 				case 4:
+					picAfiche.BackgroundImage = new Bitmap("Multimedia/HotelMumbai.jpg");
 					llenarCartelera(20, 21, 22, 23, 24);
 					break;
 				case 5:

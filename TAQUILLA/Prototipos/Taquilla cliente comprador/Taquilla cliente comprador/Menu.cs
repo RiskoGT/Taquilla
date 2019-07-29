@@ -22,6 +22,7 @@ namespace Taquilla_cliente_comprador
             InitializeComponent();
 			llenarLista();
 			ComboSeleccioneCine.Enabled = false;
+			btnVerCartelera.Enabled = false;
 			
 
         }
@@ -95,6 +96,11 @@ namespace Taquilla_cliente_comprador
 				MessageBox.Show(ex.Message);
 			}
 			conn.Close();
+		}
+
+		private void ComboSeleccioneCine_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			btnVerCartelera.Enabled = true;
 		}
 	}
 }

@@ -106,6 +106,7 @@
 			this.ComboSeleccioneCine.Size = new System.Drawing.Size(370, 42);
 			this.ComboSeleccioneCine.TabIndex = 1;
 			this.ComboSeleccioneCine.Text = "Seleccione un cine";
+			this.ComboSeleccioneCine.SelectedIndexChanged += new System.EventHandler(this.ComboSeleccioneCine_SelectedIndexChanged);
 			// 
 			// tlppanel3
 			// 
