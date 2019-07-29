@@ -16,10 +16,14 @@ namespace Taquilla_cliente_comprador
 		/*Grupo 2  taquilla  cliente comprador
          Gustavo Perez 0901-16-420 y Juan José Gámez 0901-16-47  */
 		OdbcConnection conn = new OdbcConnection("Dsn=cine");
+
 		public frmMenu()
         {
             InitializeComponent();
 			llenarLista();
+			ComboSeleccioneCine.Enabled = false;
+			
+
         }
 
 		void llenarLista()
@@ -48,7 +52,7 @@ namespace Taquilla_cliente_comprador
 
 		private void Btn_verCartelera_Click(object sender, EventArgs e)
         {
-            Form formulario = new Filtro();
+            Form formulario = new Filtro(ComboSeleccioneCine.Text);
             formulario.Show();
             Visible = false;
          
@@ -71,6 +75,7 @@ namespace Taquilla_cliente_comprador
 
 		private void ComboSeleccioneCiudad_SelectedIndexChanged(object sender, EventArgs e)
 		{
+			ComboSeleccioneCine.Enabled = true;
 			try
 			{
 				ComboSeleccioneCine.Text = "Cines";
@@ -82,7 +87,7 @@ namespace Taquilla_cliente_comprador
 				while (reader.Read())
 				{
 					ComboSeleccioneCine.Refresh();
-					ComboSeleccioneCine.Items.Add(reader.GetValue(0).ToString() + " - " + reader.GetValue(2).ToString());
+					ComboSeleccioneCine.Items.Add(reader.GetValue(2).ToString());
 				}
 			}
 			catch (Exception ex)
