@@ -18,5 +18,6 @@ namespace Appadmin
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Acceso());
         }
+
     }
 }

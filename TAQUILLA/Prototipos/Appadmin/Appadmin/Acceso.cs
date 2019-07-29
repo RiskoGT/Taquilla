@@ -26,7 +26,7 @@ namespace Appadmin
             txtUser.Clear();
             txtPass.Clear();
             txtUser.Focus();
-        }
+        }        
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -59,9 +59,10 @@ namespace Appadmin
                 + txtPass.Text + "') ", conn); 
             OdbcDataReader leer = cmd.ExecuteReader();
             if (leer.Read()) //Si el usuario es correcto nos abrira la otra ventana.
-            {
+            {                
                 this.Hide();
                 MainMenu ss = new MainMenu();
+                string aux = Convert.ToString(txtUser.Text);                
                 ss.Show();
             }
             else //Si no lo es mostrara este mensaje.

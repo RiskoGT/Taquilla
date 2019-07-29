@@ -13,7 +13,8 @@ namespace Appadmin
 {
     public partial class Ciudad : Form
     {
-        OdbcConnection conn = new OdbcConnection("Dsn=cine");        
+        OdbcConnection conn = new OdbcConnection("Dsn=cine");     
+        
         public Ciudad()
         {
             InitializeComponent();
@@ -53,7 +54,7 @@ namespace Appadmin
             {
                 MessageBox.Show("\tERROR!!\nVerifique: Los datos.\n\tGRACIAS!!" + ex.ToString());
                 conn.Close();
-            }
+            }            
         }
 
         void llenartabla()
@@ -76,6 +77,15 @@ namespace Appadmin
                 MessageBox.Show("ERROR" + e.ToString());
                 conn.Close();
             }
+        }
+
+        private void Ciudad_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+        }
+
+        private void BtnRegresar_Click(object sender, EventArgs e)
+        {                        
         }
     }
 }

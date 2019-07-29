@@ -36,10 +36,10 @@ namespace Appadmin
 			dtpFechaInicio.CustomFormat = "yyyy-MM-dd";
 			dtpFechaNac.Format = DateTimePickerFormat.Custom;
 			dtpFechaNac.CustomFormat = "yyyy-MM-dd";
-			llenartbl();
+			llenartbl();            
             //llenarCombos();
            }
-
+     
         void llenartbl() {
 
             OdbcCommand cod = new OdbcCommand();
@@ -55,26 +55,13 @@ namespace Appadmin
                 tblContenido.DataSource = datos;
                 eje.Update(datos);
                 conn.Close();
-
-
-
             }
-
             catch (Exception e)
             {
 
                 MessageBox.Show("ERROR" + e.ToString());
                 conn.Close();
-
-
-
-
             }
-
-
-
-
-
         }
         void llenarCombos()
         {

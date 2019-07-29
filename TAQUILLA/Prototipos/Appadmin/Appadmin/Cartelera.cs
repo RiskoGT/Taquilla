@@ -14,14 +14,13 @@ namespace Appadmin
 {
     public partial class Cartelera : Form
     {
-        OdbcConnection conn = new OdbcConnection("Dsn=cine");
+        OdbcConnection conn = new OdbcConnection("Dsn=cine");        
         public Cartelera()
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
-            llenarCombos();
-        }
-
+            llenarCombos();            
+        }        
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -188,15 +187,41 @@ namespace Appadmin
         }
 
         private void Button4_Click(object sender, EventArgs e)
-        {
-            
+        {            
+            string queryPeli = "INSERT INTO peliculas (Titulo, Multimedia, Formato, Clasificación, " 
+                + "semanaEstrenoInicio, semanaEstrenoFin, Usuario)" + "VALUES ('" + txtTitulo.Text + "',1,'" +  
+                comboFormato.Text + "','" + comboClas.Text + "','" + dateTimePicker1.Text + "','" + dateTimePicker2.Text + 
+                "', 'rchocm')";
+
+            /*string queryFun = "INSERT INTO funciones (idSala, horaFuncion)" + "VALUES "
+                + "('" + comboSala.Text + "', '" + txtHorario.Text + "')"; */
+            conn.Open();
+            OdbcCommand consultaPeli = new OdbcCommand(queryPeli, conn);
+            // OdbcCommand consultaFun = new OdbcCommand(queryFun, conn);
+            try
+            {
+                if (txtTitulo.Text != "" && txtHorario.Text != "")
+                {
+                    consultaPeli.ExecuteNonQuery();
+                    //consultaFun.ExecuteNonQuery();
+                    MessageBox.Show("INGRESO CORRECTO");                    
+                    txtTitulo.Text = "";
+                    txtHorario.Text = "";
+                    conn.Close();                    
+                }
+                else { MessageBox.Show("POR FAVOR LLENE TODOS LOS CAMPOS.\n\tGRACIAS!!"); conn.Close(); }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("\tERROR!!\nVerifique: Los datos.\n\tGRACIAS!!" + ex.ToString());
+                conn.Close();
+            }
         }        
 
         private void BtnAgregarCiudad_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Ciudad ciu = new Ciudad();
-            ciu.Show();
+            ciu.Show();            
         }
 
         private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -211,12 +236,22 @@ namespace Appadmin
 
         private void Button5_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Cartelera_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+        }
+
+        private void BtnUsuarioAct_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

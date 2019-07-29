@@ -16,9 +16,8 @@ namespace Appadmin
     {
         public MainMenu()
         {
-            InitializeComponent();
-            
-        }
+            InitializeComponent();            
+        }        
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -110,5 +109,10 @@ namespace Appadmin
 		{
 			Application.Exit();
 		}
-	}
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

@@ -16,7 +16,7 @@ namespace Appadmin
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
-        }
+        }        
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
