@@ -61,7 +61,7 @@ namespace Appadmin
             if (leer.Read()) //Si el usuario es correcto nos abrira la otra ventana.
             {                
                 this.Hide();
-                MainMenu ss = new MainMenu();
+                MainMenu ss = new MainMenu(txtUser.Text);
                 string aux = Convert.ToString(txtUser.Text);                
                 ss.Show();
             }

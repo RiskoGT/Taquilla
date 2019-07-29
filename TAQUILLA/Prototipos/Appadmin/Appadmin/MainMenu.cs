@@ -14,9 +14,11 @@ namespace Appadmin
 {
     public partial class MainMenu : Form
     {
-        public MainMenu()
+        string user;
+        public MainMenu(string usuario)
         {
-            InitializeComponent();            
+            InitializeComponent();
+            user = usuario;
         }        
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -79,7 +81,7 @@ namespace Appadmin
 
         private void GestionUsuarios_Click(object sender, EventArgs e)
         {
-            gestionUsuarios frm = new gestionUsuarios();
+            gestionUsuarios frm = new gestionUsuarios(user);
             frm.Show();
             this.Hide();
         }
@@ -100,7 +102,7 @@ namespace Appadmin
 
 		private void button3_Click(object sender, EventArgs e)
 		{
-			gestionUsuarios frm = new gestionUsuarios();
+            gestionUsuarios frm = new gestionUsuarios(user);
 			frm.Show();
 			this.Hide();
 		}

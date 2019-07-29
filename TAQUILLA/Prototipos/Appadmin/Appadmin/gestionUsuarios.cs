@@ -19,9 +19,12 @@ namespace Appadmin
             */
         //establecemos la conexion con el nombre establecido en el origen de datos (ODBC)
         OdbcConnection conn = new OdbcConnection("Dsn=cine");
-        public gestionUsuarios()
+        string user;
+        public gestionUsuarios(string usuario)
         {
             InitializeComponent();
+            user = usuario;
+            label14.Text = user;
             this.WindowState = FormWindowState.Maximized;
             txtApellido.Clear();
             txtBusqueda.Clear();
@@ -108,9 +111,9 @@ namespace Appadmin
 
         }
 
-        private void RegresarMenu_Click(object sender, EventArgs e)
+         private void RegresarMenu_Click(object sender, EventArgs e)
         {
-            MainMenu frm = new MainMenu();
+            MainMenu frm = new MainMenu("");
             frm.Show();
             this.Hide();
         }
@@ -137,7 +140,7 @@ namespace Appadmin
 
         private void regresarMenu_Click_1(object sender, EventArgs e)
         {
-            MainMenu frm = new MainMenu();
+            MainMenu frm = new MainMenu("");
             frm.Show();
             this.Hide();
         }
@@ -155,7 +158,7 @@ namespace Appadmin
         private void button8_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            MainMenu mainMenu = new MainMenu();
+            MainMenu mainMenu = new MainMenu("");
             mainMenu.Show();
         }
 
@@ -169,8 +172,8 @@ namespace Appadmin
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             string query = "INSERT INTO usuarios (Usuario,  idPerfil, Password, DPI, Nombres, Apellidos, Telefono , Correo, Sexo , fechaNac, fechaInicio) VALUES ('" + txtUsuario.Text
-               + "','" + comboPerfil.SelectedItem + "', MD5('" + txtContra.Text + "'),'" + txtDpi.Text + "','" + txtNombre.Text + "','"
-               + txtApellido.Text + "','" + txtTel.Text + "','" + txtCorreo.Text + "','" + comboSexo.Text[0] + "','" + dtpFechaNac.Text + "','"+ dtpFechaInicio.Text + "')";
+               + "','" + comboPerfil.Text[0] + "', MD5('" + txtContra.Text + "'),'" + txtDpi.Text + "','" + txtNombre.Text + "','"
+               + txtApellido.Text + "','" + txtTel.Text + "','" + txtCorreo.Text + "','" + comboSexo.Text + "','" + dtpFechaNac.Text + "','"+ dtpFechaInicio.Text + "')";
             conn.Open();
             OdbcCommand consulta = new OdbcCommand(query, conn);
             try
@@ -312,6 +315,11 @@ namespace Appadmin
 		{
 
 		}
-	}
+
+        private void GestionUsuarios_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+    }
     }
 
