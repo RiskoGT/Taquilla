@@ -28,14 +28,14 @@ namespace Appadmin
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Cartelera frm = new Cartelera();
+            Cartelera frm = new Cartelera(user);
             frm.Show();
             this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            controlInformes frm = new controlInformes();
+            controlInformes frm = new controlInformes(user);
             frm.Show();
             this.Hide();
         }
@@ -88,14 +88,14 @@ namespace Appadmin
 
 		private void button1_Click_1(object sender, EventArgs e)
 		{
-			MenuCartelera frm = new MenuCartelera("");
+			MenuCartelera frm = new MenuCartelera(user);
 			frm.Show();
 			this.Hide();
 		}
 
 		private void button2_Click_1(object sender, EventArgs e)
 		{
-			controlInformes frm = new controlInformes();
+			controlInformes frm = new controlInformes(user);
 			frm.Show();
 			this.Hide();
 		}
@@ -113,6 +113,11 @@ namespace Appadmin
 		}
 
         private void MainMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
         {
 
         }

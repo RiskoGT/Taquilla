@@ -12,10 +12,12 @@ namespace Appadmin
 {
     public partial class controlInformes : Form
     {
-        public controlInformes()
+        string usuario;
+        public controlInformes(string user)
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
+            usuario = user;
         }        
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -39,7 +41,7 @@ namespace Appadmin
 
         private void regresarMenu_Click(object sender, EventArgs e)
         {
-             MainMenu frm = new MainMenu("");
+            MainMenu frm = new MainMenu(usuario);
             frm.Show();
             this.Hide();
         }
@@ -55,6 +57,11 @@ namespace Appadmin
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TableLayoutPanel4_Paint(object sender, PaintEventArgs e)
         {
 
         }
