@@ -1,7 +1,7 @@
 ﻿namespace Appadmin
 {
-    partial class MainMenu
-    {
+    partial class MenuCartelera
+	{
         /// <summary>
         /// Variable del diseñador necesaria.
         /// </summary>
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuCartelera));
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
 			this.label1 = new System.Windows.Forms.Label();
@@ -123,7 +123,7 @@
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(160, 333);
 			this.button1.TabIndex = 0;
-			this.button1.Text = "Cartelera";
+			this.button1.Text = "Peliculas";
 			this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.button1.UseVisualStyleBackColor = false;
 			this.button1.Click += new System.EventHandler(this.button1_Click_1);
@@ -141,7 +141,7 @@
 			this.button2.Name = "button2";
 			this.button2.Size = new System.Drawing.Size(160, 333);
 			this.button2.TabIndex = 1;
-			this.button2.Text = "Reportes";
+			this.button2.Text = "Multimedia";
 			this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.button2.UseVisualStyleBackColor = false;
 			this.button2.Click += new System.EventHandler(this.button2_Click_1);
@@ -159,7 +159,7 @@
 			this.button3.Name = "button3";
 			this.button3.Size = new System.Drawing.Size(160, 333);
 			this.button3.TabIndex = 2;
-			this.button3.Text = "Usuarios";
+			this.button3.Text = "Funciones";
 			this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.button3.UseVisualStyleBackColor = false;
 			this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -177,11 +177,11 @@
 			this.button4.Name = "button4";
 			this.button4.Size = new System.Drawing.Size(163, 333);
 			this.button4.TabIndex = 3;
-			this.button4.Text = "Ayuda";
+			this.button4.Text = "Ciudades y cines";
 			this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.button4.UseVisualStyleBackColor = false;
 			// 
-			// MainMenu
+			// MenuCartelera
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -193,9 +193,9 @@
 			this.MaximizeBox = false;
 			this.MaximumSize = new System.Drawing.Size(764, 532);
 			this.MinimumSize = new System.Drawing.Size(764, 532);
-			this.Name = "MainMenu";
+			this.Name = "MenuCartelera";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Menu";
+			this.Text = "MenuCartelera";
 			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainMenu_FormClosed);
 			this.Load += new System.EventHandler(this.MainMenu_Load);
 			this.tableLayoutPanel1.ResumeLayout(false);

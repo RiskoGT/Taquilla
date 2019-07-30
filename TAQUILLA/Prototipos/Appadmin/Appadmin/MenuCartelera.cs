@@ -12,10 +12,10 @@ using System.Runtime.InteropServices;
 
 namespace Appadmin
 {
-    public partial class MainMenu : Form
+    public partial class MenuCartelera : Form
     {
         string user;
-        public MainMenu(string usuario)
+        public MenuCartelera(string usuario)
         {
             InitializeComponent();
             user = usuario;
@@ -88,7 +88,7 @@ namespace Appadmin
 
 		private void button1_Click_1(object sender, EventArgs e)
 		{
-			MenuCartelera frm = new MenuCartelera("");
+			peliculas frm = new peliculas();
 			frm.Show();
 			this.Hide();
 		}

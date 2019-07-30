@@ -169,7 +169,7 @@ namespace Taquilla_cliente_comprador
 		{
 			if (sala == 1)
 			{
-				picAfiche.BackgroundImage = new Bitmap("Multimedia/Reyleon.png");
+				picAfiche.BackgroundImage = new Bitmap("Multimedia/Spiderman.jpg");
 				picAfiche.BackgroundImageLayout = ImageLayout.Stretch;
 				llenarCartelera(2, 3, 4, 5, 6);
 				btnMenos.Enabled = false;
