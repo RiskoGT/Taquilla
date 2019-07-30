@@ -65,8 +65,8 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnModif = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -96,6 +96,7 @@
             this.label2.TabIndex = 37;
             this.label2.Text = "Usuarios";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label2.Click += new System.EventHandler(this.Label2_Click_1);
             // 
             // btnRegresar
             // 
@@ -618,8 +619,8 @@
             // 
             this.tableLayoutPanel10.ColumnCount = 1;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.Controls.Add(this.btnModif, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.button1, 0, 1);
+            this.tableLayoutPanel10.Controls.Add(this.btnActualizar, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.btnModificar, 0, 1);
             this.tableLayoutPanel10.Controls.Add(this.btnAgregar, 0, 2);
             this.tableLayoutPanel10.Controls.Add(this.btnEliminar, 0, 3);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -634,39 +635,39 @@
             this.tableLayoutPanel10.Size = new System.Drawing.Size(219, 311);
             this.tableLayoutPanel10.TabIndex = 10;
             // 
-            // btnModif
+            // btnActualizar
             // 
-            this.btnModif.BackColor = System.Drawing.Color.Gold;
-            this.btnModif.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnModif.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
-            this.btnModif.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModif.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnModif.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnModif.Location = new System.Drawing.Point(4, 4);
-            this.btnModif.Margin = new System.Windows.Forms.Padding(4);
-            this.btnModif.Name = "btnModif";
-            this.btnModif.Size = new System.Drawing.Size(211, 43);
-            this.btnModif.TabIndex = 3;
-            this.btnModif.Text = "Modificar";
-            this.btnModif.UseVisualStyleBackColor = false;
-            this.btnModif.Click += new System.EventHandler(this.BtnModif_Click);
+            this.btnActualizar.BackColor = System.Drawing.Color.Gold;
+            this.btnActualizar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnActualizar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnActualizar.Location = new System.Drawing.Point(4, 4);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(211, 43);
+            this.btnActualizar.TabIndex = 3;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.BtnModif_Click);
             // 
-            // button1
+            // btnModificar
             // 
-            this.button1.BackColor = System.Drawing.Color.Gold;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(4, 55);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(211, 43);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Seleccionar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.btnModificar.BackColor = System.Drawing.Color.Gold;
+            this.btnModificar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnModificar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnModificar.Location = new System.Drawing.Point(4, 55);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(211, 43);
+            this.btnModificar.TabIndex = 4;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.Button1_Click);
             // 
             // btnAgregar
             // 
@@ -791,7 +792,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnModif;
+        private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.DataGridView tblContenido;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtUsuario;
@@ -806,7 +807,7 @@
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox comboPerfil;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.ComboBox comboSexo;
 		private System.Windows.Forms.Button btnAgregar;
 	}

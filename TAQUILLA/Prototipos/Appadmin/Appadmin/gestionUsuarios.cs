@@ -33,7 +33,7 @@ namespace Appadmin
             txtDpi.Focus();
             txtNombre.Clear();
             txtTel.Clear();
-            btnModif.Enabled = false;
+            btnActualizar.Enabled = false;
             txtUsuario.Clear();
 			dtpFechaInicio.Format = DateTimePickerFormat.Custom;
 			dtpFechaInicio.CustomFormat = "yyyy-MM-dd";
@@ -246,7 +246,7 @@ namespace Appadmin
             
             if (tblContenido.SelectedRows.Count == 1)
             {
-                btnModif.Enabled = true;
+                btnActualizar.Enabled = true;
                 btnAgregar.Enabled = false;
                 btnEliminar.Enabled = true;
                 txtUsuario.Text = tblContenido.CurrentRow.Cells[0].Value.ToString();
@@ -260,12 +260,12 @@ namespace Appadmin
                 comboSexo.Text = tblContenido.CurrentRow.Cells[8].Value.ToString();
                 dtpFechaNac.Text = tblContenido.CurrentRow.Cells[9].Value.ToString();
                 dtpFechaInicio.Text = tblContenido.CurrentRow.Cells[10].Value.ToString();
-                btnModif.Enabled = true;
+                btnActualizar.Enabled = true;
             }
             else { MessageBox.Show("Porfavor Seleccione un registro de la tabla");
                 btnAgregar.Enabled = true;
                 btnEliminar.Enabled = true;
-                btnModif.Enabled = false;
+                btnActualizar.Enabled = false;
                 txtApellido.Text = "";
                 txtContra.Text = "";
                 txtCorreo.Text = "";
@@ -319,6 +319,11 @@ namespace Appadmin
         private void GestionUsuarios_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Label2_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
     }
