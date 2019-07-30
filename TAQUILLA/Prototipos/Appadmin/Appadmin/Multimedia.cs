@@ -104,7 +104,23 @@ namespace Appadmin
 
 
 		}
-	}
+
+        private void TextBox1_StyleChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextBox1_StyleChanged_1(object sender, EventArgs e)
+        {
+            webPeli.Navigate(txtPeli.Text);
+
+        }
+
+        private void TxtPeli_TextChanged(object sender, EventArgs e)
+        {
+            webPeli.Navigate(txtPeli.Text);
+        }
+    }
 
        
 	
