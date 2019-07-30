@@ -25,9 +25,6 @@ namespace Taquilla_cliente_comprador
 		{
 			InitializeComponent();
 			cineSeleccionado = cine;
-            webPelicula.Navigate("https://www.youtube.com/watch?v=BfSAvH2fGkE&pbjreload=10");
-			webPelicula.Stop();
-
 			Cartelera();
 	
 		}
@@ -40,22 +37,71 @@ namespace Taquilla_cliente_comprador
 			lbHora.Text = salas[e];//hora 6
 		}
 
+		string MultimediaPeli()
+		{
+			string idMulti;
+			string imagen;
+			conn.Open();
+			OdbcCommand command = new OdbcCommand(""
+			+ "SELECT multimedia FROM peliculas WHERE titulo = '"+ lbtitulo.Text+"'", conn);
+			OdbcDataReader funciones = command.ExecuteReader();
+
+			funciones.Read();
+			
+				idMulti = funciones.GetValue(0).ToString();
+
+			conn.Close();
+
+			conn.Open();
+			OdbcCommand command2 = new OdbcCommand(""
+			+ "SELECT Afiche FROM multimedia WHERE NoRegistro = " + idMulti , conn);
+			OdbcDataReader funciones2 = command2.ExecuteReader();
+
+			funciones2.Read();
+			imagen = funciones2.GetValue(0).ToString();
+			conn.Close();
+
+			return imagen;
+		}
+		string MultimediaTrailer()
+		{
+			string idMulti;
+			string imagen;
+			conn.Open();
+			OdbcCommand command = new OdbcCommand(""
+			+ "SELECT multimedia FROM peliculas WHERE titulo = '" + lbtitulo.Text + "'", conn);
+			OdbcDataReader funciones = command.ExecuteReader();
+
+			funciones.Read();
+
+			idMulti = funciones.GetValue(0).ToString();
+
+			conn.Close();
+
+			conn.Open();
+			OdbcCommand command2 = new OdbcCommand(""
+			+ "SELECT Trailer FROM multimedia WHERE NoRegistro = " + idMulti, conn);
+			OdbcDataReader funciones2 = command2.ExecuteReader();
+
+			funciones2.Read();
+			imagen = funciones2.GetValue(0).ToString();
+			conn.Close();
+
+			return imagen;
+		}
 		void cambiarCartelera(int sala)
 		{
+			picAfiche.BackgroundImage = new Bitmap(MultimediaPeli());
+			picAfiche.BackgroundImageLayout = ImageLayout.Stretch;
 			switch (sala)
 			{
 				case 1:
-					picAfiche.BackgroundImage = new Bitmap("Multimedia/Spiderman.jpg");
-					picAfiche.BackgroundImageLayout = ImageLayout.Stretch;
 					llenarCartelera(2, 3, 4, 5, 6);
 					break;
 				case 2:
-					picAfiche.BackgroundImage = new Bitmap("Multimedia/HotelMumbai.jpg");
-					picAfiche.BackgroundImageLayout = ImageLayout.Stretch;
 					llenarCartelera(8, 9, 10, 11, 12);
 					break;
 				case 3:
-					picAfiche.BackgroundImage = new Bitmap("Multimedia/Reyleon.png");
 					llenarCartelera(14, 15, 16, 17, 18);
 					break;
 				case 4:
@@ -167,18 +213,15 @@ namespace Taquilla_cliente_comprador
 
 		private void timer1_Tick(object sender, EventArgs e)
 		{
+			
 			if (sala == 1)
 			{
-				picAfiche.BackgroundImage = new Bitmap("Multimedia/Spiderman.jpg");
-				picAfiche.BackgroundImageLayout = ImageLayout.Stretch;
 				llenarCartelera(2, 3, 4, 5, 6);
 				btnMenos.Enabled = false;
 				btnMas.Enabled = true;
 			}
 			if (numSalas==1)
 			{
-				picAfiche.BackgroundImage = new Bitmap("Multimedia/Reyleon.png");
-				picAfiche.BackgroundImageLayout = ImageLayout.Stretch;
 				llenarCartelera(2, 3, 4, 5, 6);
 				btnMenos.Enabled = false;
 				btnMas.Enabled = false;
@@ -195,11 +238,8 @@ namespace Taquilla_cliente_comprador
 				btnMenos.Enabled = true;
 				cambiarCartelera(sala);
 			}
-			
-
-
-
-
+			picAfiche.BackgroundImage = new Bitmap(MultimediaPeli());
+			picAfiche.BackgroundImageLayout = ImageLayout.Stretch;
 
 		}
 
@@ -228,6 +268,13 @@ namespace Taquilla_cliente_comprador
 			Form formulario = new Filtro(cineSeleccionado);
 			formulario.Show();
 			Visible = false;
+		}
+
+		private void lbtitulo_TextChanged(object sender, EventArgs e)
+		{
+			webPelicula.Stop();
+			webPelicula.Navigate(MultimediaTrailer());
+	
 		}
 	}
     }
