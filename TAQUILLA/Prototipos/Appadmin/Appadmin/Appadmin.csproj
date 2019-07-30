@@ -73,6 +73,18 @@
     <Compile Include="MenuCartelera.Designer.cs">
       <DependentUpon>MenuCartelera.cs</DependentUpon>
     </Compile>
+    <Compile Include="Multimedia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Multimedia.Designer.cs">
+      <DependentUpon>Multimedia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Funciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funciones.Designer.cs">
+      <DependentUpon>Funciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Peliculas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +139,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuCartelera.resx">
       <DependentUpon>MenuCartelera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Multimedia.resx">
+      <DependentUpon>Multimedia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Funciones.resx">
+      <DependentUpon>Funciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Peliculas.resx">
       <DependentUpon>Peliculas.cs</DependentUpon>
