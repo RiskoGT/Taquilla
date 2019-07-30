@@ -14,11 +14,13 @@ namespace Appadmin
 {
     public partial class Cartelera : Form
     {
-        OdbcConnection conn = new OdbcConnection("Dsn=cine");        
-        public Cartelera()
+        OdbcConnection conn = new OdbcConnection("Dsn=cine");
+        string usuario;
+        public Cartelera(string user)
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
+            usuario = user;
             llenarCombos();            
         }        
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -33,7 +35,7 @@ namespace Appadmin
 
         private void regresarMenu_Click_1(object sender, EventArgs e)
         {
-            MainMenu frm = new MainMenu(" ");
+            MainMenu frm = new MainMenu(usuario);
             frm.Show();
             this.Hide();
         }
@@ -84,7 +86,7 @@ namespace Appadmin
 		private void button7_Click(object sender, EventArgs e)
 		{
 			this.Hide();
-			MainMenu mainMenu = new MainMenu("");
+			MainMenu mainMenu = new MainMenu(usuario);
 			mainMenu.Show();
 		}
 
@@ -191,7 +193,7 @@ namespace Appadmin
             string queryPeli = "INSERT INTO peliculas (Titulo, Multimedia, Formato, Clasificación, " 
                 + "semanaEstrenoInicio, semanaEstrenoFin, Usuario)" + "VALUES ('" + txtTitulo.Text + "',1,'" +  
                 comboFormato.Text + "','" + comboClas.Text + "','" + dateTimePicker1.Text + "','" + dateTimePicker2.Text + 
-                "', 'rchocm')";
+                "','" + usuario + "')";
 
             /*string queryFun = "INSERT INTO funciones (idSala, horaFuncion)" + "VALUES "
                 + "('" + comboSala.Text + "', '" + txtHorario.Text + "')"; */

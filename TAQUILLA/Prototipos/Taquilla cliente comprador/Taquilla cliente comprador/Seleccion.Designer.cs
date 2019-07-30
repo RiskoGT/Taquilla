@@ -152,7 +152,6 @@
 			// 
 			// picAfiche
 			// 
-			this.picAfiche.BackgroundImage = global::Taquilla_cliente_comprador.Properties.Resources.Rey_leon;
 			this.picAfiche.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.picAfiche.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.picAfiche.Location = new System.Drawing.Point(85, 14);
@@ -264,7 +263,6 @@
 			this.lbFormato.Name = "lbFormato";
 			this.lbFormato.Size = new System.Drawing.Size(130, 77);
 			this.lbFormato.TabIndex = 0;
-			this.lbFormato.Text = "2D";
 			this.lbFormato.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// lbClasificacion
@@ -277,7 +275,6 @@
 			this.lbClasificacion.Name = "lbClasificacion";
 			this.lbClasificacion.Size = new System.Drawing.Size(131, 77);
 			this.lbClasificacion.TabIndex = 1;
-			this.lbClasificacion.Text = "A";
 			this.lbClasificacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// tableLayoutPanel11
@@ -308,7 +305,6 @@
 			this.lbHora.Name = "lbHora";
 			this.lbHora.Size = new System.Drawing.Size(239, 53);
 			this.lbHora.TabIndex = 0;
-			this.lbHora.Text = "Horario";
 			this.lbHora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// lbtitulo
@@ -321,8 +317,8 @@
 			this.lbtitulo.Name = "lbtitulo";
 			this.lbtitulo.Size = new System.Drawing.Size(279, 57);
 			this.lbtitulo.TabIndex = 2;
-			this.lbtitulo.Text = "El Rey León (2019)";
 			this.lbtitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.lbtitulo.TextChanged += new System.EventHandler(this.lbtitulo_TextChanged);
 			// 
 			// lbSinopsis
 			// 
@@ -334,7 +330,6 @@
 			this.lbSinopsis.Name = "lbSinopsis";
 			this.lbSinopsis.Size = new System.Drawing.Size(317, 236);
 			this.lbSinopsis.TabIndex = 2;
-			this.lbSinopsis.Text = resources.GetString("lbSinopsis.Text");
 			this.lbSinopsis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// tableLayoutPanel6
