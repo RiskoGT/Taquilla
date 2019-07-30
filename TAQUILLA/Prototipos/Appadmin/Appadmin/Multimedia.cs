@@ -14,12 +14,13 @@ namespace Appadmin
 {
     public partial class Multimedia : Form
     {
-        OdbcConnection conn = new OdbcConnection("Dsn=cine");        
-        public Multimedia()
+        OdbcConnection conn = new OdbcConnection("Dsn=cine");
+        string user;
+        public Multimedia(string usuario)
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
-                        
+            user = usuario;
+            this.WindowState = FormWindowState.Maximized;                        
         }        
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -33,7 +34,7 @@ namespace Appadmin
 
         private void regresarMenu_Click_1(object sender, EventArgs e)
         {
-            MainMenu frm = new MainMenu(" ");
+            MainMenu frm = new MainMenu(user);
             frm.Show();
             this.Hide();
         }
@@ -84,7 +85,7 @@ namespace Appadmin
 		private void button7_Click(object sender, EventArgs e)
 		{
 			this.Hide();
-			MainMenu mainMenu = new MainMenu("");
+			MainMenu mainMenu = new MainMenu(user);
 			mainMenu.Show();
 		}
 
@@ -119,6 +120,11 @@ namespace Appadmin
         private void TxtPeli_TextChanged(object sender, EventArgs e)
         {
             webPeli.Navigate(txtPeli.Text);
+        }
+
+        private void Multimedia_Load(object sender, EventArgs e)
+        {
+
         }
     }
 

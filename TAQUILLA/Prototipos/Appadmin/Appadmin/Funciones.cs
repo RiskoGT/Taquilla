@@ -15,7 +15,7 @@ namespace Appadmin
     public partial class Funciones : Form
     {
         OdbcConnection conn = new OdbcConnection("Dsn=cine");
-
+        string usuario;
         void llenarCombos()
         {
             //llenado de comboBox CLASIFICACION
@@ -103,13 +103,13 @@ namespace Appadmin
                 conn.Close();
             }
         }
-        public Funciones()
+        public Funciones(string user)
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
             llenarCombos();
             llenartbl();
-
+            usuario = user;
         }        
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -123,7 +123,7 @@ namespace Appadmin
 
         private void regresarMenu_Click_1(object sender, EventArgs e)
         {
-            MainMenu frm = new MainMenu(" ");
+            MainMenu frm = new MainMenu(usuario);
             frm.Show();
             this.Hide();
         }
@@ -174,7 +174,7 @@ namespace Appadmin
 		private void button7_Click(object sender, EventArgs e)
 		{
 			this.Hide();
-			MainMenu mainMenu = new MainMenu("");
+			MainMenu mainMenu = new MainMenu(usuario);
 			mainMenu.Show();
 		}
 
@@ -320,6 +320,11 @@ namespace Appadmin
             }
             llenarCombos();
            
+        }
+
+        private void Funciones_Load(object sender, EventArgs e)
+        {
+
         }
     }
 

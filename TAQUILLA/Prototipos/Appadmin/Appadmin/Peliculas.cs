@@ -39,7 +39,7 @@ namespace Appadmin
 
         private void regresarMenu_Click_1(object sender, EventArgs e)
         {            
-            MainMenu frm = new MainMenu(" ");
+            MainMenu frm = new MainMenu(usuario);
             frm.Show();
             this.Hide();
         }

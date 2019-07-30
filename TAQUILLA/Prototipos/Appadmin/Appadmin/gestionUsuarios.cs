@@ -113,7 +113,7 @@ namespace Appadmin
 
          private void RegresarMenu_Click(object sender, EventArgs e)
         {
-            MainMenu frm = new MainMenu("");
+            MainMenu frm = new MainMenu(user);
             frm.Show();
             this.Hide();
         }
@@ -140,7 +140,7 @@ namespace Appadmin
 
         private void regresarMenu_Click_1(object sender, EventArgs e)
         {
-            MainMenu frm = new MainMenu("");
+            MainMenu frm = new MainMenu(user);
             frm.Show();
             this.Hide();
         }

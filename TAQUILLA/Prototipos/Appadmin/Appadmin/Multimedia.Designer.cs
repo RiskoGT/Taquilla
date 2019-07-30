@@ -46,9 +46,9 @@
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPeli = new System.Windows.Forms.TextBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.webPeli = new System.Windows.Forms.WebBrowser();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -306,10 +306,6 @@
             this.txtPeli.TextChanged += new System.EventHandler(this.TxtPeli_TextChanged);
             this.txtPeli.StyleChanged += new System.EventHandler(this.TextBox1_StyleChanged_1);
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
             // tableLayoutPanel9
             // 
             this.tableLayoutPanel9.ColumnCount = 3;
@@ -337,6 +333,10 @@
             this.webPeli.Size = new System.Drawing.Size(279, 191);
             this.webPeli.TabIndex = 0;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Multimedia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -350,6 +350,7 @@
             this.Name = "Multimedia";
             this.Text = "Multimedia";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Cartelera_FormClosed);
+            this.Load += new System.EventHandler(this.Multimedia_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
