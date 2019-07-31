@@ -22,6 +22,7 @@ namespace Taquilla_cliente_comprador
         int count3 = 0;
         int count4 = 0;
         int count5 = 0;
+        int tiempo = 30;
         public frmBoletos()
         {
             InitializeComponent();
@@ -34,21 +35,32 @@ namespace Taquilla_cliente_comprador
 
         private void Btn_Siguente_Click(object sender, EventArgs e)
         {
+            if (tiempo == 0)
+            {
+                MessageBox.Show("El tiempo de seleccion a terminado!");
+                Form formularioca = new frmMenu();
+                formularioca.Show();
+                Visible = false;
 
-            if (count4 == 0)
-            { MessageBox.Show("Por favor, seleccione al menos 1 boleto para continuar, Gracias!!"); }
-            else {
+            }
+            else
+            {
+                if (count4 == 0)
+                { MessageBox.Show("Por favor, seleccione al menos 1 boleto para continuar, Gracias!!"); }
+                else
+                {
 
-                frmAsientos asi = new frmAsientos();
-                asi.txtAsientos.Text = txtTotalB.Text;
-                  
-
-            
-            asi.Show();
-            Visible = false;
+                    frmAsientos asi = new frmAsientos(tiempo);
+                    asi.txtAsientos.Text = txtTotalB.Text;
 
 
-        }
+
+                    asi.Show();
+                    Visible = false;
+
+
+                }
+            }
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -241,6 +253,15 @@ namespace Taquilla_cliente_comprador
         private void TlpPanel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            if (tiempo > 0)
+            {
+                tiempo = tiempo - 1;
+                lbTiempo.Text = tiempo.ToString();
+            }
         }
     }
 }

@@ -22,12 +22,7 @@ C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente co
 C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\bin\Debug\Taquilla cliente comprador.exe
 C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\bin\Debug\Taquilla cliente comprador.pdb
 C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla cliente comprador.csprojAssemblyReference.cache
-C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla_cliente_comprador.Frm_boletos.resources
-C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla_cliente_comprador.Frm_Confirmasion.resources
-C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla_cliente_comprador.Frm_menu.resources
 C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla_cliente_comprador.Frm_pago.resources
-C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla_cliente_comprador.Frm_cartelera.resources
-C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla_cliente_comprador.Frm_asientos.resources
 C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla_cliente_comprador.Properties.Resources.resources
 C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla cliente comprador.csproj.GenerateResource.cache
 C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla cliente comprador.csproj.CoreCompileInputs.cache
@@ -75,3 +70,14 @@ C:\Users\Randy\Desktop\UMG\8.vo Semestre\Análisis de Sistemas II\Proyecto Taqui
 C:\Users\Randy\Desktop\UMG\8.vo Semestre\Análisis de Sistemas II\Proyecto Taquilla\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla cliente comprador.csproj.CoreCompileInputs.cache
 C:\Users\Randy\Desktop\UMG\8.vo Semestre\Análisis de Sistemas II\Proyecto Taquilla\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla cliente comprador.exe
 C:\Users\Randy\Desktop\UMG\8.vo Semestre\Análisis de Sistemas II\Proyecto Taquilla\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla cliente comprador.pdb
+C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\bin\Debug\Interop.ShockwaveFlashObjects.dll
+C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\bin\Debug\AxInterop.ShockwaveFlashObjects.dll
+C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Interop.ShockwaveFlashObjects.dll
+C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\AxInterop.ShockwaveFlashObjects.dll
+C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla cliente comprador.csproj.ResolveComReference.cache
+C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla_cliente_comprador.frmBoletos.resources
+C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla_cliente_comprador.frmConfirmasion.resources
+C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla_cliente_comprador.Filtro.resources
+C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla_cliente_comprador.frmMenu.resources
+C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla_cliente_comprador.frmCartelera.resources
+C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla_cliente_comprador.frmAsientos.resources

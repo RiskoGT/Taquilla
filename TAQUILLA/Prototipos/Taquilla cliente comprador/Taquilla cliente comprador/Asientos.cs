@@ -19,6 +19,7 @@ namespace Taquilla_cliente_comprador
         int b1, b2, b3, b4, b5, b6, b7, b8, b9, b10 = 0;
         int c1, c2, c3, c4, c5, c6, c7, c8, c9, c10 = 0;
         int d1, d2, d3, d4, d5, d6, d7, d8, d9, d10 = 0;
+        int tiempo=0;
 
         private void Btn_B7_Click(object sender, EventArgs e)
         {
@@ -1045,7 +1046,16 @@ namespace Taquilla_cliente_comprador
             }
         }
 
-		private void Frm_asientos_FormClosed(object sender, FormClosedEventArgs e)
+        private void Timer2_Tick(object sender, EventArgs e)
+        {
+            if (tiempo > 0)
+            {
+                tiempo = tiempo - 1;
+                lbTiempo.Text = tiempo.ToString();
+            }
+        }
+
+        private void Frm_asientos_FormClosed(object sender, FormClosedEventArgs e)
 		{
 			Application.Exit();
 		}
@@ -1453,9 +1463,10 @@ namespace Taquilla_cliente_comprador
             }
         }
 
-        public frmAsientos()
+        public frmAsientos(int dato)
         {
             InitializeComponent();
+            tiempo = dato;
         }
 
         private void Button16_Click(object sender, EventArgs e)
@@ -1493,45 +1504,55 @@ namespace Taquilla_cliente_comprador
 
             private void Btn_confirmar_Click(object sender, EventArgs e)
         {
-           int prueba= int.Parse(txtAsientos.Text);
-
-            if (contador > 0 && contador == prueba)
+            if (tiempo == 0)
             {
-                Form formulariopag = new Frm_pago();
-                formulariopag.Show();
+                MessageBox.Show("El tiempo de seleccion a terminado!");
+                Form formularioca = new frmMenu();
+                formularioca.Show();
                 Visible = false;
+
             }
             else
             {
-                MessageBox.Show("Asientos no seleccionados");
-                contador = 0;
-                 a1 = 0; a2 = 0; a3 = 0; a4 = 0; a5 = 0; a6 = 0; a7 = 0; a8 = 0; a9 = 0; a10 = 0;
-                 b1 = 0; b2 = 0; b3 = 0; b4 = 0; b5 = 0; b6 = 0; b7 = 0; b8 = 0; b9 = 0; b10 = 0;
-                 c1 = 0; c2 = 0; c3 = 0; c4 = 0; c5 = 0; c6 = 0; c7 = 0; c8 = 0; c9 = 0; c10 = 0;
-                 d1 = 0; d2 = 0; d3 = 0; d4 = 0; d5 = 0; d6 = 0; d7 = 0; d8 = 0; d9 = 0; d10 = 0;
-                 e1 = 0; e2 = 0; e3 = 0; e4 = 0; e5 = 0; e6 = 0; e7 = 0; e8 = 0; e9 = 0; e10 = 0;
-                 f1 = 0; f2 = 0; f3 = 0; f4 = 0; f5 = 0; f6 = 0; f7 = 0; f8 = 0; f9 = 0; f10 = 0;
-                 g1 = 0; g2 = 0; g3 = 0; g4 = 0; g5 = 0; g6 = 0; g7 = 0; g8 = 0; g9 = 0; g10 = 0;
-                 h1 = 0; h2 = 0; h3 = 0; h4 = 0; h5 = 0; h6 = 0; h7 = 0; h8 = 0; h9 = 0; h10 = 0;
-                 i1 = 0; i2 = 0; i3 = 0; i4 = 0; i5 = 0; i6 = 0; i7 = 0; i8 = 0; i9 = 0; i10 = 0;
-                btnA1.BackColor = Color.White; btnA2.BackColor = Color.White; btnA3.BackColor = Color.White; btnA4.BackColor = Color.White; btnA5.BackColor = Color.White;
-                btnA6.BackColor = Color.White; btnA7.BackColor = Color.White; btnA8.BackColor = Color.White; btnA9.BackColor = Color.White; btnA10.BackColor = Color.White;
-                btnB1.BackColor = Color.White; btnB2.BackColor = Color.White; btnB3.BackColor = Color.White; btnB4.BackColor = Color.White; btnB5.BackColor = Color.White;
-                btnB6.BackColor = Color.White; btnB7.BackColor = Color.White; btnB8.BackColor = Color.White; btnB9.BackColor = Color.White; btnB10.BackColor = Color.White;
-                btnC1.BackColor = Color.White; btnC2.BackColor = Color.White; btnC3.BackColor = Color.White; btnC4.BackColor = Color.White; btnC5.BackColor = Color.White;
-                btnC6.BackColor = Color.White; btnC7.BackColor = Color.White; btnC8.BackColor = Color.White; btnC9.BackColor = Color.White; btnC10.BackColor = Color.White;
-                btnD1.BackColor = Color.White; btnD2.BackColor = Color.White; btnD3.BackColor = Color.White; btnD4.BackColor = Color.White; btnD5.BackColor = Color.White;
-                btnD6.BackColor = Color.White; btnD7.BackColor = Color.White; btnD8.BackColor = Color.White; btnD9.BackColor = Color.White; btnD10.BackColor = Color.White;
-                btnE1.BackColor = Color.White; btnE2.BackColor = Color.White; btnE3.BackColor = Color.White; btnE4.BackColor = Color.White; btnE5.BackColor = Color.White;
-                btnE6.BackColor = Color.White; btnE7.BackColor = Color.White; btnE8.BackColor = Color.White; btnE9.BackColor = Color.White; btnE10.BackColor = Color.White;
-                btnF1.BackColor = Color.White; btnF2.BackColor = Color.White; btnF3.BackColor = Color.White; btnF4.BackColor = Color.White; btnF5.BackColor = Color.White;
-                btnE10.BackColor = Color.White; btnF7.BackColor = Color.White; btnF8.BackColor = Color.White; btnF9.BackColor = Color.White; btnF10.BackColor = Color.White;
-                btnH1.BackColor = Color.White; btnH2.BackColor = Color.White; btnH3.BackColor = Color.White; btnH4.BackColor = Color.White; btnH5.BackColor = Color.White;
-                btnH6.BackColor = Color.White; btnH7.BackColor = Color.White; btnH8.BackColor = Color.White; btnH9.BackColor = Color.White; btnH10.BackColor = Color.White;
-                btnI1.BackColor = Color.White; btnI2.BackColor = Color.White; btnI3.BackColor = Color.White; btnI4.BackColor = Color.White; btnI5.BackColor = Color.White;
-                btnI6.BackColor = Color.White; btnI7.BackColor = Color.White; btnI8.BackColor = Color.White; btnI9.BackColor = Color.White; btnI10.BackColor = Color.White;
+                int prueba = int.Parse(txtAsientos.Text);
+
+                if (contador > 0 && contador == prueba)
+                {
+                    Form formulariopag = new Frm_pago(tiempo);
+                    formulariopag.Show();
+                    Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Asientos no seleccionados");
+                    contador = 0;
+                    a1 = 0; a2 = 0; a3 = 0; a4 = 0; a5 = 0; a6 = 0; a7 = 0; a8 = 0; a9 = 0; a10 = 0;
+                    b1 = 0; b2 = 0; b3 = 0; b4 = 0; b5 = 0; b6 = 0; b7 = 0; b8 = 0; b9 = 0; b10 = 0;
+                    c1 = 0; c2 = 0; c3 = 0; c4 = 0; c5 = 0; c6 = 0; c7 = 0; c8 = 0; c9 = 0; c10 = 0;
+                    d1 = 0; d2 = 0; d3 = 0; d4 = 0; d5 = 0; d6 = 0; d7 = 0; d8 = 0; d9 = 0; d10 = 0;
+                    e1 = 0; e2 = 0; e3 = 0; e4 = 0; e5 = 0; e6 = 0; e7 = 0; e8 = 0; e9 = 0; e10 = 0;
+                    f1 = 0; f2 = 0; f3 = 0; f4 = 0; f5 = 0; f6 = 0; f7 = 0; f8 = 0; f9 = 0; f10 = 0;
+                    g1 = 0; g2 = 0; g3 = 0; g4 = 0; g5 = 0; g6 = 0; g7 = 0; g8 = 0; g9 = 0; g10 = 0;
+                    h1 = 0; h2 = 0; h3 = 0; h4 = 0; h5 = 0; h6 = 0; h7 = 0; h8 = 0; h9 = 0; h10 = 0;
+                    i1 = 0; i2 = 0; i3 = 0; i4 = 0; i5 = 0; i6 = 0; i7 = 0; i8 = 0; i9 = 0; i10 = 0;
+                    btnA1.BackColor = Color.White; btnA2.BackColor = Color.White; btnA3.BackColor = Color.White; btnA4.BackColor = Color.White; btnA5.BackColor = Color.White;
+                    btnA6.BackColor = Color.White; btnA7.BackColor = Color.White; btnA8.BackColor = Color.White; btnA9.BackColor = Color.White; btnA10.BackColor = Color.White;
+                    btnB1.BackColor = Color.White; btnB2.BackColor = Color.White; btnB3.BackColor = Color.White; btnB4.BackColor = Color.White; btnB5.BackColor = Color.White;
+                    btnB6.BackColor = Color.White; btnB7.BackColor = Color.White; btnB8.BackColor = Color.White; btnB9.BackColor = Color.White; btnB10.BackColor = Color.White;
+                    btnC1.BackColor = Color.White; btnC2.BackColor = Color.White; btnC3.BackColor = Color.White; btnC4.BackColor = Color.White; btnC5.BackColor = Color.White;
+                    btnC6.BackColor = Color.White; btnC7.BackColor = Color.White; btnC8.BackColor = Color.White; btnC9.BackColor = Color.White; btnC10.BackColor = Color.White;
+                    btnD1.BackColor = Color.White; btnD2.BackColor = Color.White; btnD3.BackColor = Color.White; btnD4.BackColor = Color.White; btnD5.BackColor = Color.White;
+                    btnD6.BackColor = Color.White; btnD7.BackColor = Color.White; btnD8.BackColor = Color.White; btnD9.BackColor = Color.White; btnD10.BackColor = Color.White;
+                    btnE1.BackColor = Color.White; btnE2.BackColor = Color.White; btnE3.BackColor = Color.White; btnE4.BackColor = Color.White; btnE5.BackColor = Color.White;
+                    btnE6.BackColor = Color.White; btnE7.BackColor = Color.White; btnE8.BackColor = Color.White; btnE9.BackColor = Color.White; btnE10.BackColor = Color.White;
+                    btnF1.BackColor = Color.White; btnF2.BackColor = Color.White; btnF3.BackColor = Color.White; btnF4.BackColor = Color.White; btnF5.BackColor = Color.White;
+                    btnE10.BackColor = Color.White; btnF7.BackColor = Color.White; btnF8.BackColor = Color.White; btnF9.BackColor = Color.White; btnF10.BackColor = Color.White;
+                    btnH1.BackColor = Color.White; btnH2.BackColor = Color.White; btnH3.BackColor = Color.White; btnH4.BackColor = Color.White; btnH5.BackColor = Color.White;
+                    btnH6.BackColor = Color.White; btnH7.BackColor = Color.White; btnH8.BackColor = Color.White; btnH9.BackColor = Color.White; btnH10.BackColor = Color.White;
+                    btnI1.BackColor = Color.White; btnI2.BackColor = Color.White; btnI3.BackColor = Color.White; btnI4.BackColor = Color.White; btnI5.BackColor = Color.White;
+                    btnI6.BackColor = Color.White; btnI7.BackColor = Color.White; btnI8.BackColor = Color.White; btnI9.BackColor = Color.White; btnI10.BackColor = Color.White;
+                }
             }
-           
         }
         private void Btn_A1_Click(object sender, EventArgs e)
         {

@@ -265,9 +265,7 @@ namespace Taquilla_cliente_comprador
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			Form formulario = new Filtro(cineSeleccionado);
-			formulario.Show();
-			Visible = false;
+			
 		}
 
 		private void lbtitulo_TextChanged(object sender, EventArgs e)
@@ -276,6 +274,18 @@ namespace Taquilla_cliente_comprador
 			webPelicula.Navigate(MultimediaTrailer());
 	
 		}
-	}
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            Form formulario = new Filtro(cineSeleccionado);
+            formulario.Show();
+            Visible = false;
+        }
+
+        private void FrmCartelera_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
     }
 

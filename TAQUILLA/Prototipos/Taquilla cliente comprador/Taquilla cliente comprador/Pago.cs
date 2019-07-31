@@ -16,10 +16,11 @@ namespace Taquilla_cliente_comprador
 
 		/*Grupo 2  taquilla  cliente comprador
         Gustavo Perez 0901-16-420 y Juan José Gámez 0901-16-47  */
-		int tiempo = 6;// tiempo será extraible desde base de datos y de modificara desde la app de administrador
-        public Frm_pago()
+		int tiempo = 0;// tiempo será extraible desde base de datos y de modificara desde la app de administrador
+        public Frm_pago(int dato)
         {
             InitializeComponent();
+            tiempo = dato;
             Combomes.Items.Add("1");
             Combomes.Items.Add("2");
             Combomes.Items.Add("3");
@@ -44,20 +45,30 @@ namespace Taquilla_cliente_comprador
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            
-            if (txtCorreo.Text.Trim() == "" || txtNombre.Text.Trim() == ""|| txtCodigo.Text.Trim() == "" || txtTarjeta.Text.Trim() == ""|| txtTelefono.Text.Trim() == "" )
+            if (tiempo == 0)
             {
-                MessageBox.Show("Profavor llenar las casillas!!");
+                MessageBox.Show("El tiempo de Compra a terminado!");
+                Form formularioca = new frmMenu();
+                formularioca.Show();
+                Visible = false;
+
             }
-            else { 
-            Form formulariopago = new frmMenu();
-            formulariopago.Show();
-            Visible = false;
-            Form formulariopago1 = new frmConfirmasion();
-            formulariopago1.Show();
-			timer1.Enabled = false;
-			}
-            
+            else
+            {
+                if (txtCorreo.Text.Trim() == "" || txtNombre.Text.Trim() == "" || txtCodigo.Text.Trim() == "" || txtTarjeta.Text.Trim() == "" || txtTelefono.Text.Trim() == "")
+                {
+                    MessageBox.Show("Profavor llenar las casillas!!");
+                }
+                else
+                {
+                    Form formulariopago = new frmMenu();
+                    formulariopago.Show();
+                    Visible = false;
+                    Form formulariopago1 = new frmConfirmasion();
+                    formulariopago1.Show();
+                    timer1.Enabled = false;
+                }
+            }
         }
 
 		private void Frm_pago_FormClosed(object sender, FormClosedEventArgs e)
@@ -154,21 +165,18 @@ namespace Taquilla_cliente_comprador
 
 		private void timer1_Tick(object sender, EventArgs e)
 		{
-			
-			label3.Text = tiempo.ToString();
 
-			if (tiempo == 0)
-			{
-				timer1.Enabled = false;
-				MessageBox.Show("El tiempo de Pago a terminado!");
-				Form formularioca = new frmMenu();
-				formularioca.Show();
-				Visible = false;
-			}
-			if (tiempo > 0) {
-				tiempo--;
-			}
-			
-		}
-	}
+            if (tiempo > 0)
+            {
+                tiempo = tiempo - 1;
+                lbtiempo.Text = tiempo.ToString();
+            }
+
+        }
+
+        private void Frm_pago_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
