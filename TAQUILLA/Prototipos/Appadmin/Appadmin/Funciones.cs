@@ -59,25 +59,7 @@ namespace Appadmin
             }
             conn.Close();
 
-            try
-            {
-                comboSala.Text = "Sala";
-                comboSala.Items.Clear();
-
-                conn.Open();
-                OdbcCommand command = new OdbcCommand("SELECT * FROM salas", conn);
-                OdbcDataReader reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    comboSala.Refresh();
-                    comboSala.Items.Add(reader.GetValue(1).ToString());
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            conn.Close();
+            
         }
         void llenartbl()
         {
@@ -326,7 +308,30 @@ namespace Appadmin
         {
 
         }
-    }
+
+		private void comboCine_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			try
+			{
+				comboSala.Text = "Sala";
+				comboSala.Items.Clear();
+
+				conn.Open();
+				OdbcCommand command = new OdbcCommand("SELECT * FROM salas WHERE salas.idCine = (SELECT idCine FROM cines WHERE nombreCine='"+comboCine.Text+"')", conn);
+				OdbcDataReader reader = command.ExecuteReader();
+				while (reader.Read())
+				{
+					comboSala.Refresh();
+					comboSala.Items.Add(reader.GetValue(0).ToString());
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			conn.Close();
+		}
+	}
 
        
 	
