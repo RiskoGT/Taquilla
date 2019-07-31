@@ -173,7 +173,7 @@ namespace Taquilla_cliente_comprador
 			"(SELECT formato FROM peliculas WHERE idPelicula = A.idPelicula) formato ,"+
 			"(SELECT clasificación FROM peliculas WHERE idPelicula = A.idPelicula) clasificacion,"+
 			"(SELECT sinopsis FROM peliculas WHERE idPelicula = A.idPelicula) sinopsis, A.horaFuncion "+
-			"from funciones A where a.cine = '"+cineSeleccionado+"'", conn);
+			"from funciones A where A.Cine = '"+cineSeleccionado+"'", conn);
 			OdbcDataReader funciones = command.ExecuteReader();
 
 			int pos = 1;
