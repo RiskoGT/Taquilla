@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Odbc;
+using System.IO;
 
 namespace Appadmin
 {
@@ -20,7 +21,9 @@ namespace Appadmin
         {
             InitializeComponent();
             user = usuario;
-            this.WindowState = FormWindowState.Maximized;                        
+            this.WindowState = FormWindowState.Maximized;
+			textBox1.Enabled = false;
+			button2.Enabled = false;
         }        
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -102,7 +105,7 @@ namespace Appadmin
 				pictureBox1.BackgroundImage = new Bitmap(openFileDialog1.FileName);
 				pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
 			}
-
+			textBox1.Enabled = true;
 
 		}
 
@@ -120,13 +123,41 @@ namespace Appadmin
         private void TxtPeli_TextChanged(object sender, EventArgs e)
         {
             webPeli.Navigate(txtPeli.Text);
+			button2.Enabled = true;
         }
 
         private void Multimedia_Load(object sender, EventArgs e)
         {
 
         }
-    }
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			string destino = @"C:\Users\gganp\Desktop\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\bin\Debug\Multimedia\"+textBox1.Text+".jpg";
+			File.Copy(textBox2.Text, destino);
+
+			string query = "INSERT INTO multimedia (Afiche, Trailer) VALUES ('Multimedia/"+textBox1.Text+".jpg', '"+txtPeli.Text+"')";
+			conn.Open();
+			OdbcCommand consulta = new OdbcCommand(query, conn);
+			try
+			{
+					consulta.ExecuteNonQuery();
+					MessageBox.Show("Datos Registrados Correctamente");
+					
+					conn.Close();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("\t Error! \n\n " + ex.ToString());
+				conn.Close();
+			}
+			textBox1.Text = "";
+			txtPeli.Text = "";
+			textBox2.Text="";
+			pictureBox1.BackgroundImage = global::Appadmin.Properties.Resources.fondopic;
+
+		}
+	}
 
        
 	
