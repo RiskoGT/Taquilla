@@ -89,6 +89,72 @@ namespace Appadmin
             }
             conn.Close();
         }
+        void letra(KeyPressEventArgs e) {
+            if (char.IsLetter(e.KeyChar))
+            {
+
+                e.Handled = false;
+
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+
+            }
+            else
+            {
+                e.Handled = true;
+
+            }
+
+        }
+
+        void letrasimbolo(KeyPressEventArgs e) {
+
+
+            if (char.IsLetter(e.KeyChar))
+            {
+
+                e.Handled = false;
+
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+
+            }
+         else if (char.IsPunctuation(e.KeyChar))
+            {
+
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+
+            }
+
+        }
+        void numero(KeyPressEventArgs e) {
+
+            if (char.IsNumber(e.KeyChar))
+            {
+
+                e.Handled = false;
+
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+
+            }
+            else
+            {
+                e.Handled = true;
+
+            }
+        }
+
         void log(string queryin)
         {
             string query =/*es bitacora uno no es una letra l de leon*/ "INSERT INTO bitacora1  (Usuario,operacion,fecha) VALUES ('" + txtUsuario + "','" + queryin + "','" + DateTime.Now.ToString("G") + "')";
@@ -242,39 +308,7 @@ namespace Appadmin
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            
-            if (tblContenido.SelectedRows.Count == 1)
-            {
-                btnActualizar.Enabled = true;
-                btnAgregar.Enabled = false;
-                btnEliminar.Enabled = true;
-                txtUsuario.Text = tblContenido.CurrentRow.Cells[0].Value.ToString();
-                comboPerfil.Text = tblContenido.CurrentRow.Cells[1].Value.ToString();
-                txtContra.Text = tblContenido.CurrentRow.Cells[2].Value.ToString();
-                txtDpi.Text = tblContenido.CurrentRow.Cells[3].Value.ToString();
-                txtNombre.Text = tblContenido.CurrentRow.Cells[4].Value.ToString();
-                txtApellido.Text = tblContenido.CurrentRow.Cells[5].Value.ToString();
-                txtTel.Text = tblContenido.CurrentRow.Cells[6].Value.ToString();
-                txtCorreo.Text = tblContenido.CurrentRow.Cells[7].Value.ToString();
-                comboSexo.Text = tblContenido.CurrentRow.Cells[8].Value.ToString();
-                dtpFechaNac.Text = tblContenido.CurrentRow.Cells[9].Value.ToString();
-                dtpFechaInicio.Text = tblContenido.CurrentRow.Cells[10].Value.ToString();
-                btnActualizar.Enabled = true;
-            }
-            else { MessageBox.Show("Porfavor Seleccione un registro de la tabla");
-                btnAgregar.Enabled = true;
-                btnEliminar.Enabled = true;
-                btnActualizar.Enabled = false;
-                txtApellido.Text = "";
-                txtContra.Text = "";
-                txtCorreo.Text = "";
-
-                txtDpi.Text = "";
-                txtNombre.Text = "";
-                txtTel.Text = "";
-
-                txtUsuario.Text = "";
-            }
+          
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
@@ -323,6 +357,90 @@ namespace Appadmin
         private void Label2_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void ComboPerfil_KeyPress(object sender, KeyPressEventArgs e)
+        {
+        }
+
+        private void TblContenido_DoubleClick(object sender, EventArgs e)
+        {
+
+            if (tblContenido.SelectedRows.Count == 1)
+            {
+                btnActualizar.Enabled = true;
+                btnAgregar.Enabled = false;
+                btnEliminar.Enabled = true;
+                txtUsuario.Text = tblContenido.CurrentRow.Cells[0].Value.ToString();
+                comboPerfil.Text = tblContenido.CurrentRow.Cells[1].Value.ToString();
+                txtContra.Text = tblContenido.CurrentRow.Cells[2].Value.ToString();
+                txtDpi.Text = tblContenido.CurrentRow.Cells[3].Value.ToString();
+                txtNombre.Text = tblContenido.CurrentRow.Cells[4].Value.ToString();
+                txtApellido.Text = tblContenido.CurrentRow.Cells[5].Value.ToString();
+                txtTel.Text = tblContenido.CurrentRow.Cells[6].Value.ToString();
+                txtCorreo.Text = tblContenido.CurrentRow.Cells[7].Value.ToString();
+                comboSexo.Text = tblContenido.CurrentRow.Cells[8].Value.ToString();
+                dtpFechaNac.Text = tblContenido.CurrentRow.Cells[9].Value.ToString();
+                dtpFechaInicio.Text = tblContenido.CurrentRow.Cells[10].Value.ToString();
+                btnActualizar.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Porfavor Seleccione un registro de la tabla");
+                btnAgregar.Enabled = true;
+                btnEliminar.Enabled = true;
+                btnActualizar.Enabled = false;
+                txtApellido.Text = "";
+                txtContra.Text = "";
+                txtCorreo.Text = "";
+
+                txtDpi.Text = "";
+                txtNombre.Text = "";
+                txtTel.Text = "";
+
+                txtUsuario.Text = "";
+            }
+        }
+
+        private void TxtDpi_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void TxtDpi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+            numero(e);
+        }
+
+        private void TxtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            letra(e);
+        }
+
+        private void TxtApellido_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void TxtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            letra(e);
+        }
+
+        private void TxtTel_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void TxtTel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            numero(e);
+        }
+
+        private void TxtCorreo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            letrasimbolo(e);
         }
     }
     }

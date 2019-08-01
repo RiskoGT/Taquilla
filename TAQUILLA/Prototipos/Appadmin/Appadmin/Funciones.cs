@@ -85,6 +85,52 @@ namespace Appadmin
                 conn.Close();
             }
         }
+        void letra(KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+
+                e.Handled = false;
+
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+
+            }
+            else
+            {
+                e.Handled = true;
+
+            }
+
+        }
+        void numero(KeyPressEventArgs e)
+        {
+
+            if (char.IsNumber(e.KeyChar))
+            {
+
+                e.Handled = false;
+
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+
+            }
+            else if (char.IsPunctuation(e.KeyChar)) {
+
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+
+            }
+        }
+      
+
         public Funciones(string user)
         {
             InitializeComponent();
@@ -331,7 +377,13 @@ namespace Appadmin
 			}
 			conn.Close();
 		}
-	}
+
+        private void TxtDuracion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            numero(e);
+            //simbolo(e);
+        }
+    }
 
        
 	
