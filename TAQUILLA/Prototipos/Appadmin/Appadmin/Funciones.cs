@@ -129,7 +129,58 @@ namespace Appadmin
 
             }
         }
-      
+        void letrasimbolo(KeyPressEventArgs e)
+        {
+
+
+            if (char.IsLetter(e.KeyChar))
+            {
+
+                e.Handled = false;
+
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+
+            }
+            else if (char.IsPunctuation(e.KeyChar))
+            {
+
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+
+            }
+
+        }
+
+        void numerosimbolo(KeyPressEventArgs e) {
+
+            if (char.IsNumber(e.KeyChar))
+            {
+
+                e.Handled = false;
+
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+
+            }
+            else if (char.IsPunctuation(e.KeyChar))
+            {
+
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+
+            }
+        }
 
         public Funciones(string user)
         {
