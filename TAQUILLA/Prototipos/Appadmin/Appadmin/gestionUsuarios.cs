@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Odbc;
+using System.Net;
+
 namespace Appadmin
 {
     public partial class gestionUsuarios : Form
@@ -27,7 +29,6 @@ namespace Appadmin
             label14.Text = user;
             this.WindowState = FormWindowState.Maximized;
             txtApellido.Clear();
-            txtBusqueda.Clear();
             txtContra.Clear();
       
             txtDpi.Focus();
@@ -42,8 +43,22 @@ namespace Appadmin
 			llenartbl();            
             //llenarCombos();
            }
-     
-        void llenartbl() {
+		void Bitacora(string Accion, string ip, string Afectado)
+		{
+			string query = "INSERT INTO Bitacora (Usuario,Accion,Afectado,ipAddress,fechaHora) VALUES ('" + user + "','" + Accion + "',' " + Afectado + "','" + ip + "','" + DateTime.Now.ToString("G") + "')";
+			OdbcCommand consulta = new OdbcCommand(query, conn);
+			try
+			{
+
+				consulta.ExecuteNonQuery();
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.ToString());
+			}
+		}
+		void llenartbl() {
 
             OdbcCommand cod = new OdbcCommand();
             cod.Connection = conn;
@@ -255,7 +270,16 @@ namespace Appadmin
                     txtNombre.Text = "";
                     txtTel.Text = "";
                     txtUsuario.Text = "";
-                    conn.Close();
+					//BITACORA
+					String IP = "";
+					IPAddress[] localIPs = Dns.GetHostAddresses(Dns.GetHostName());
+					foreach (IPAddress addr in localIPs)
+					{
+						IP += "   |   " + addr.ToString();
+					}
+					Bitacora("INSERT", IP, "USUARIOS");
+					// FIN BITACORA
+					conn.Close();
                     llenartbl(); 
                 }
                 else { MessageBox.Show("POR FAVOR LLENE TODOS LOS CAMPOS.\n\tGRACIAS!!"); conn.Close(); }
@@ -293,6 +317,15 @@ namespace Appadmin
 					txtNombre.Text = "";
 					txtTel.Text = "";
 					txtUsuario.Text = "";
+					//BITACORA
+					String IP = "";
+					IPAddress[] localIPs = Dns.GetHostAddresses(Dns.GetHostName());
+					foreach (IPAddress addr in localIPs)
+					{
+						IP += "   |   " + addr.ToString();
+					}
+					Bitacora("UPDATE", IP, "USUARIOS");
+					// FIN BITACORA
 					conn.Close();
 					llenartbl();
 				}
@@ -331,7 +364,16 @@ namespace Appadmin
                     txtNombre.Text = "";
                     txtTel.Text = "";
                     txtUsuario.Text = "";
-                    conn.Close();
+					//BITACORA
+					String IP = "";
+					IPAddress[] localIPs = Dns.GetHostAddresses(Dns.GetHostName());
+					foreach (IPAddress addr in localIPs)
+					{
+						IP += "   |   " + addr.ToString();
+					}
+					Bitacora("DELETE", IP, "USUARIOS");
+					// FIN BITACORA
+					conn.Close();
                     llenartbl();
                 }
                 else { MessageBox.Show("POR FAVOR LLENE TODOS LOS CAMPOS.\n\tGRACIAS!!"); conn.Close(); }

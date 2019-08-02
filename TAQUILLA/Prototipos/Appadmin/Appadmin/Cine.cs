@@ -8,20 +8,37 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Odbc;
+using System.Net;
 
 namespace Appadmin
 {
     public partial class Cine : Form
     {
-        OdbcConnection conn = new OdbcConnection("Dns=Cine");
-        public Cine()
+		OdbcConnection conn = new OdbcConnection("Dsn=cine");
+		string user = "";
+        public Cine(string usuario)
         {
             InitializeComponent();
-            //llenarCombos();
-            //llenartabla();
+			llenarCombos();
+			llenartabla();
+			user = usuario;
         }
+		void Bitacora(string Accion, string ip, string Afectado)
+		{
+			string query = "INSERT INTO Bitacora (Usuario,Accion,Afectado,ipAddress,fechaHora) VALUES ('" + user + "','" + Accion + "',' " + Afectado + "','" + ip + "','" + DateTime.Now.ToString("G") + "')";
+			OdbcCommand consulta = new OdbcCommand(query, conn);
+			try
+			{
 
-        private void Label1_Click(object sender, EventArgs e)
+				consulta.ExecuteNonQuery();
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.ToString());
+			}
+		}
+		private void Label1_Click(object sender, EventArgs e)
         {
 
         }
@@ -66,7 +83,16 @@ namespace Appadmin
                     MessageBox.Show("INGRESO CORRECTO");
                     txtCine.Text = "";
                     comboCiudad.Text = "";
-                    conn.Close();
+					//BITACORA
+					String IP = "";
+					IPAddress[] localIPs = Dns.GetHostAddresses(Dns.GetHostName());
+					foreach (IPAddress addr in localIPs)
+					{
+						IP += "   |   " + addr.ToString();
+					}
+					Bitacora("INSERT", IP, "Cines");
+					// FIN BITACORA
+					conn.Close();
                     llenartabla(); //llenamos el DataGridView de Ciudades
                 }
                 else { MessageBox.Show("POR FAVOR LLENE TODOS LOS CAMPOS.\n\tGRACIAS!!"); conn.Close(); }
@@ -101,5 +127,126 @@ namespace Appadmin
             }
             conn.Close();
         }
-    }
+
+		private void btnModificarCine_Click(object sender, EventArgs e)
+		{
+			if (txtCine.Text != "" && comboCiudad.Text != "")
+			{
+
+				string query = "UPDATE cines SET " +
+				"nombreCine='" + txtCine.Text + "',idCiudad='" + comboCiudad.Text[0] + "'" + " WHERE idCine =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+				conn.Open();
+				OdbcCommand consulta = new OdbcCommand(query, conn);
+				try
+				{
+					consulta.ExecuteNonQuery();
+					MessageBox.Show("Datos Actualizados Correctamente");
+					dataGridView1.Enabled = true;
+					//BITACORA
+					String IP = "";
+					IPAddress[] localIPs = Dns.GetHostAddresses(Dns.GetHostName());
+					foreach (IPAddress addr in localIPs)
+					{
+						IP += "   |   " + addr.ToString();
+					}
+					Bitacora("UPDATE", IP, "CINES");
+					// FIN BITACORA
+					llenartabla();
+					conn.Close();
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show("\t Error! \n\n " + ex.ToString());
+					conn.Close();
+				}
+				txtCine.Text = "";
+				llenarCombos();
+
+			}
+			else
+			{
+				MessageBox.Show("Por favor, llene los campos para ingresar");
+
+			}
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			if (dataGridView1.SelectedRows.Count == 1)
+			{
+				string query = "DELETE  from cines " +
+				" WHERE idCine =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+				conn.Open();
+				OdbcCommand consulta = new OdbcCommand(query, conn);
+				try
+				{
+					consulta.ExecuteNonQuery();
+					MessageBox.Show("Registro eliminado Correctamente");
+					dataGridView1.Enabled = true;
+					//BITACORA
+					String IP = "";
+					IPAddress[] localIPs = Dns.GetHostAddresses(Dns.GetHostName());
+					foreach (IPAddress addr in localIPs)
+					{
+						IP += "   |   " + addr.ToString();
+					}
+					Bitacora("DELETE", IP, "CINES");
+					// FIN BITACORA
+					llenartabla();
+					conn.Close();
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show("\t Error! \n\n " + ex.ToString());
+					conn.Close();
+				}
+
+
+
+			}
+			else
+			{
+				MessageBox.Show("Porfavor Seleccione un registro de la tabla");
+
+			}
+		}
+
+		private void Cine_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			MenuCartelera nuevo = new MenuCartelera(user);
+			nuevo.Show();
+			this.Hide();
+		}
+
+		private void dataGridView1_DoubleClick(object sender, EventArgs e)
+		{
+			btnAgregarCine.Enabled = false;
+			button2.Enabled = false;
+			if (dataGridView1.SelectedRows.Count == 1)
+			{
+				txtCine.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+
+
+				string ciudadId;
+				conn.Open();
+				OdbcCommand command = new OdbcCommand(""
+				+ "SELECT nombreCiudad FROM ciudades WHERE idCiudad = '" + dataGridView1.CurrentRow.Cells[1].Value.ToString() + "'", conn);
+				OdbcDataReader funciones = command.ExecuteReader();
+
+				funciones.Read();
+
+				ciudadId = funciones.GetValue(0).ToString();
+
+				conn.Close();
+				comboCiudad.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString() + " - "+ ciudadId;
+			}
+			else
+			{
+				MessageBox.Show("Porfavor Seleccione un registro de la tabla");
+
+			}
+
+			
+		}
+	}
 }

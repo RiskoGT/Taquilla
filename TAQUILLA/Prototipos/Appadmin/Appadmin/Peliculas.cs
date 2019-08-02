@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Odbc;
+using System.Net;
 
 namespace Appadmin
 {
@@ -27,7 +28,22 @@ namespace Appadmin
             dateTimePicker1.ResetText();
             dateTimePicker2.ResetText();            
         }
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+		void Bitacora(string Accion, string ip, string Afectado)
+		{
+			string query = "INSERT INTO Bitacora (Usuario,Accion,Afectado,ipAddress,fechaHora) VALUES ('" + usuario + "','" + Accion + "',' " + Afectado + "','" + ip + "','" + DateTime.Now.ToString("G") + "')";
+			OdbcCommand consulta = new OdbcCommand(query, conn);
+			try
+			{
+
+				consulta.ExecuteNonQuery();
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.ToString());
+			}
+		}
+		private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -49,17 +65,7 @@ namespace Appadmin
 
         }
 
-        private void BtnCiudad_Click(object sender, EventArgs e)
-        {
-            Ciudad frm = new Ciudad();
-            frm.Show();
-        }
-
-        private void BtnCine_Click(object sender, EventArgs e)
-        {
-            Cine frm = new Cine();
-            frm.Show();
-        }
+       
 
         private void Label4_Click(object sender, EventArgs e)
         {
@@ -127,8 +133,17 @@ namespace Appadmin
                     txtSinopsis.Text = "";
                     txtDuracion.Text = "";
                     txtEstreno.Text = "";
-                    txtFin.Text = "";                    
-                    llenarTabla();
+                    txtFin.Text = "";
+					//BITACORA
+					String IP = "";
+					IPAddress[] localIPs = Dns.GetHostAddresses(Dns.GetHostName());
+					foreach (IPAddress addr in localIPs)
+					{
+						IP += "   |   " + addr.ToString();
+					}
+					Bitacora("INSERT", IP, "PELICULAS");
+					// FIN BITACORA
+					llenarTabla();
                     llenarCombos();
                     conn.Close();
                     comboFormato.Text = "Formato";
@@ -223,7 +238,16 @@ namespace Appadmin
                 {
                     consulta.ExecuteNonQuery();
                     MessageBox.Show(" Eliminado Correctamente! ");
-                    llenarTabla();
+					//BITACORA
+					String IP = "";
+					IPAddress[] localIPs = Dns.GetHostAddresses(Dns.GetHostName());
+					foreach (IPAddress addr in localIPs)
+					{
+						IP += "   |   " + addr.ToString();
+					}
+					Bitacora("DELETE", IP, "PELICULAS");
+					// FIN BITACORA
+					llenarTabla();
                     conn.Close();                    
                     txtTitulo.Focus();
                     //conn.Open();
@@ -241,5 +265,10 @@ namespace Appadmin
                 conn.Close();
             }
         }
-    }
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

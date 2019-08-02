@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Odbc;
+using System.Net;
 
 namespace Appadmin
 {
@@ -21,8 +22,9 @@ namespace Appadmin
             //llenado de comboBox CLASIFICACION
             try
             {
-                ComboPelicula.Text = "Peliculas";
-                ComboPelicula.Items.Clear();
+				ComboPelicula.Items.Clear();
+				ComboPelicula.Text = "Peliculas";
+   
 
                 conn.Open();
                 OdbcCommand command = new OdbcCommand("SELECT * FROM peliculas", conn);
@@ -85,7 +87,22 @@ namespace Appadmin
                 conn.Close();
             }
         }
-        void letra(KeyPressEventArgs e)
+		void Bitacora(string Accion, string ip, string Afectado)
+		{
+			string query = "INSERT INTO Bitacora (Usuario,Accion,Afectado,ipAddress,fechaHora) VALUES ('" + usuario + "','" + Accion + "',' " + Afectado + "','" + ip + "','" + DateTime.Now.ToString("G") + "')";
+			OdbcCommand consulta = new OdbcCommand(query, conn);
+			try
+			{
+
+				consulta.ExecuteNonQuery();
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.ToString());
+			}
+		}
+		void letra(KeyPressEventArgs e)
         {
             if (char.IsLetter(e.KeyChar))
             {
@@ -212,18 +229,6 @@ namespace Appadmin
 
         }
 
-        private void BtnCiudad_Click(object sender, EventArgs e)
-        {            
-            Ciudad frm = new Ciudad();
-            frm.Show();
-        }
-
-        private void BtnCine_Click(object sender, EventArgs e)
-        {
-            Cine frm = new Cine();
-            frm.Show();
-        }
-
         private void Label4_Click(object sender, EventArgs e)
         {
 
@@ -280,7 +285,16 @@ namespace Appadmin
                     consulta.ExecuteNonQuery();
                     MessageBox.Show("INGRESO CORRECTO");
                     txtDuracion.Text=" ";
-                    conn.Close();
+					//BITACORA
+					String IP = "";
+					IPAddress[] localIPs = Dns.GetHostAddresses(Dns.GetHostName());
+					foreach (IPAddress addr in localIPs)
+					{
+						IP += "   |   " + addr.ToString();
+					}
+					Bitacora("INSERT", IP, "FUNCIONES");
+					// FIN BITACORA
+					conn.Close();
                     llenartbl();
                 }
                 else { MessageBox.Show("POR FAVOR LLENE TODOS LOS CAMPOS.\n\tGRACIAS!!"); conn.Close(); }
@@ -298,48 +312,6 @@ namespace Appadmin
             
          
 
-            if (dtgFunciones.SelectedRows.Count == 1)
-            {
-                string nomPelicula= " ";
-
-                try
-                {
-
-                    conn.Open();
-                    OdbcCommand command = new OdbcCommand("SELECT titulo FROM peliculas WHERE idPelicula ="+ dtgFunciones.CurrentRow.Cells[1].Value.ToString(), conn);
-                    OdbcDataReader reader = command.ExecuteReader();
-                    while (reader.Read())
-                    {
-
-                        nomPelicula = reader.GetValue(0).ToString();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                conn.Close();
-
-                btnActualizar.Enabled = true;
-                btnIngresar.Enabled = false;
-                btnEliminar.Enabled = true;
-                ComboPelicula.Text = dtgFunciones.CurrentRow.Cells[1].Value.ToString() + " - "+ nomPelicula;
-                comboSala.Text = dtgFunciones.CurrentRow.Cells[2].Value.ToString();
-                comboCine.Text = dtgFunciones.CurrentRow.Cells[3].Value.ToString(); 
-                txtDuracion.Text = dtgFunciones.CurrentRow.Cells[4].Value.ToString();
-                btnActualizar.Enabled = true;
-            }
-            else
-            {
-                MessageBox.Show("Porfavor Seleccione un registro de la tabla");
-                btnIngresar.Enabled = true;
-                btnEliminar.Enabled = true;
-                btnActualizar.Enabled = false;
-                comboSala.Refresh();
-                ComboPelicula.Refresh();
-                comboCine.Refresh();
-                txtDuracion.Text = "";
-            }
         }
 
         private void BtnActualizar_Click(object sender, EventArgs e)
@@ -357,7 +329,16 @@ namespace Appadmin
                     consulta.ExecuteNonQuery();
                     MessageBox.Show("ACTUALIZADO");
                     txtDuracion.Text = " ";
-                    conn.Close();
+					//BITACORA
+					String IP = "";
+					IPAddress[] localIPs = Dns.GetHostAddresses(Dns.GetHostName());
+					foreach (IPAddress addr in localIPs)
+					{
+						IP += "   |   " + addr.ToString();
+					}
+					Bitacora("UPDATE", IP, "FUNCIONES");
+					// FIN BITACORA
+					conn.Close();
                     llenartbl();
                 }
                 else { MessageBox.Show("POR FAVOR LLENE TODOS LOS CAMPOS.\n\tGRACIAS!!"); conn.Close(); }
@@ -386,7 +367,16 @@ namespace Appadmin
                     MessageBox.Show("ELIMINADO");
                     
                     txtDuracion.Text = " ";
-                    conn.Close();
+					//BITACORA
+					String IP = "";
+					IPAddress[] localIPs = Dns.GetHostAddresses(Dns.GetHostName());
+					foreach (IPAddress addr in localIPs)
+					{
+						IP += "   |   " + addr.ToString();
+					}
+					Bitacora("DELETE", IP, "FUNCIONES");
+					// FIN BITACORA
+					conn.Close();
                     llenartbl();
 
                 }
@@ -434,7 +424,54 @@ namespace Appadmin
             numero(e);
             //simbolo(e);
         }
-    }
+
+		private void dtgFunciones_DoubleClick(object sender, EventArgs e)
+		{
+
+			if (dtgFunciones.SelectedRows.Count == 1)
+			{
+				string nomPelicula = " ";
+
+				try
+				{
+
+					conn.Open();
+					OdbcCommand command = new OdbcCommand("SELECT titulo FROM peliculas WHERE idPelicula =" + dtgFunciones.CurrentRow.Cells[1].Value.ToString(), conn);
+					OdbcDataReader reader = command.ExecuteReader();
+					while (reader.Read())
+					{
+
+						nomPelicula = reader.GetValue(0).ToString();
+					}
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message);
+				}
+				conn.Close();
+
+				btnActualizar.Enabled = true;
+				btnIngresar.Enabled = false;
+				btnEliminar.Enabled = true;
+				ComboPelicula.Text = dtgFunciones.CurrentRow.Cells[1].Value.ToString() + " - " + nomPelicula;
+				comboSala.Text = dtgFunciones.CurrentRow.Cells[2].Value.ToString();
+				comboCine.Text = dtgFunciones.CurrentRow.Cells[3].Value.ToString();
+				txtDuracion.Text = dtgFunciones.CurrentRow.Cells[4].Value.ToString();
+				btnActualizar.Enabled = true;
+			}
+			else
+			{
+				MessageBox.Show("Porfavor Seleccione un registro de la tabla");
+				btnIngresar.Enabled = true;
+				btnEliminar.Enabled = true;
+				btnActualizar.Enabled = false;
+				comboSala.Refresh();
+				ComboPelicula.Refresh();
+				comboCine.Refresh();
+				txtDuracion.Text = "";
+			}
+		}
+	}
 
        
 	

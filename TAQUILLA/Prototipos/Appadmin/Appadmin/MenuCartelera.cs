@@ -26,12 +26,7 @@ namespace Appadmin
         private extern static void sendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Cartelera frm = new Cartelera(user);
-            frm.Show();
-            this.Hide();
-        }
+ 
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -121,5 +116,19 @@ namespace Appadmin
         {
 
         }
-    }
+
+		private void button4_Click_1(object sender, EventArgs e)
+		{
+			Ciudad nuevo = new Ciudad(user);
+			nuevo.Show();
+			this.Hide();
+		}
+
+		private void button5_Click(object sender, EventArgs e)
+		{
+			Cine nuevo = new Cine(user);
+			nuevo.Show();
+			this.Hide();
+		}
+	}
 }
