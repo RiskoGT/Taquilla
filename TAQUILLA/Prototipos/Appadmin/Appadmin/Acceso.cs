@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.Odbc;
+using System.Net;
+
 namespace Appadmin
 {
     public partial class Acceso : Form
@@ -31,7 +33,23 @@ namespace Appadmin
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void sendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
-        private void Accesotext_TextChanged(object sender, EventArgs e)
+
+		void Bitacora(string Accion, string ip)
+		{
+			string query = "INSERT INTO Bitacora (Usuario,Accion,Afectado,ipAddress,fechaHora) VALUES ('" + txtUser.Text + "','" + Accion +"','LOGIN "+ "','" + ip + "','" + DateTime.Now.ToString("G") + "')";
+			OdbcCommand consulta = new OdbcCommand(query, conn);
+			try
+			{
+
+				consulta.ExecuteNonQuery();
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.ToString());
+			}
+		}
+		private void Accesotext_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -61,7 +79,14 @@ namespace Appadmin
             if (leer.Read()) //Si el usuario es correcto nos abrira la otra ventana.
             {                
                 this.Hide();
-                MainMenu ss = new MainMenu(txtUser.Text);
+				string IP = "";
+				IPAddress[] localIPs = Dns.GetHostAddresses(Dns.GetHostName());
+				foreach (IPAddress addr in localIPs)
+				{
+					IP += "   |   " + addr.ToString();
+				}
+				Bitacora("LOG IN", IP);
+				MainMenu ss = new MainMenu(txtUser.Text);
                 string aux = Convert.ToString(txtUser.Text);                
                 ss.Show();
             }

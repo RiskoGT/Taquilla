@@ -95,14 +95,14 @@ namespace Appadmin
 
 		private void button2_Click_1(object sender, EventArgs e)
 		{
-			controlInformes frm = new controlInformes(user);
+			Multimedia frm = new Multimedia(user);
 			frm.Show();
 			this.Hide();
 		}
 
 		private void button3_Click(object sender, EventArgs e)
 		{
-            gestionUsuarios frm = new gestionUsuarios(user);
+            Funciones frm = new Funciones(user);
 			frm.Show();
 			this.Hide();
 		}
