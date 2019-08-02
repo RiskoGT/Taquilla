@@ -270,5 +270,19 @@ namespace Appadmin
 		{
 
 		}
-	}
+
+        private void TxtDuracion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsPunctuation(e.KeyChar))
+            {
+
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+
+            }
+        }
+    }
 }
