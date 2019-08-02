@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-07-2019 a las 03:50:49
+-- Tiempo de generación: 02-08-2019 a las 02:43:42
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.3.1
 
@@ -100,11 +100,29 @@ CREATE TABLE `bitacora` (
   `Usuario` varchar(45) COLLATE utf8mb4_bin DEFAULT NULL,
   `Accion` varchar(20) COLLATE utf8mb4_bin NOT NULL,
   `Afectado` varchar(45) COLLATE utf8mb4_bin NOT NULL,
-  `Operacion` text COLLATE utf8mb4_bin NOT NULL,
-  `ipAddress` varchar(45) COLLATE utf8mb4_bin DEFAULT NULL,
-  `Fecha` date DEFAULT NULL,
-  `Hora` time DEFAULT NULL
+  `ipAddress` text COLLATE utf8mb4_bin,
+  `fechaHora` text COLLATE utf8mb4_bin
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+--
+-- Volcado de datos para la tabla `bitacora`
+--
+
+INSERT INTO `bitacora` (`noReg`, `Usuario`, `Accion`, `Afectado`, `ipAddress`, `fechaHora`) VALUES
+(1, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 18:28:44'),
+(2, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 18:31:12'),
+(3, 'Risko', 'INSERT', 'MULTIMEDIA ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 18:31:25'),
+(4, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 18:33:24'),
+(5, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 18:34:18'),
+(6, 'Risko', 'UPDATE', ' MULTIMEDIA', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 18:34:23'),
+(7, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 18:35:50'),
+(8, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 18:36:30'),
+(9, 'Risko', 'INSERT', ' MULTIMEDIA', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 18:36:40'),
+(10, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 18:36:51'),
+(11, 'Risko', 'DELETE', ' MULTIMEDIA', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 18:36:57'),
+(12, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 18:39:55'),
+(13, 'Risko', 'INSERT', ' MULTIMEDIA', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 18:40:07'),
+(14, 'Risko', 'DELETE', ' MULTIMEDIA', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 18:40:12');
 
 -- --------------------------------------------------------
 
@@ -252,7 +270,8 @@ INSERT INTO `funciones` (`idFuncion`, `idPelicula`, `idSala`, `cine`, `horaFunci
 (7, 2, 1, 'Naranjo', '11:00:00'),
 (9, 3, 4, 'Portales', '16:50:00'),
 (10, 2, 3, 'Interplaza', '16:00:00'),
-(11, 2, 4, 'Plaza Americas', '13:00:00');
+(11, 3, 4, 'Plaza Americas', '13:00:00'),
+(13, 6, 5, 'Portales', '16:05:00');
 
 -- --------------------------------------------------------
 
@@ -271,9 +290,10 @@ CREATE TABLE `multimedia` (
 --
 
 INSERT INTO `multimedia` (`NoRegistro`, `Afiche`, `Trailer`) VALUES
-(1, 'Multimedia/Reyleon.png', 'https://www.youtube.com/watch?v=BfSAvH2fGkE&pbjreload=10'),
-(2, 'Multimedia/Spiderman.jpg', 'https://www.youtube.com/watch?v=s1OxOBPWBeU'),
-(3, 'Multimedia/HotelMumbai.jpg', 'https://www.youtube.com/watch?v=td03ewyR9LI');
+(1, 'https://as01.epimg.net/meristation/imagenes/2019/04/11/noticias/1554973254_299218_1554973314_noticia_normal.jpg', 'https://www.youtube.com/watch?v=8foZzQf1L9o&t=3s'),
+(2, 'https://img-cdn.hipertextual.com/files/2019/06/hipertextual-4-trajes-spider-man-lejos-casa-nuevo-trailer-2019196176.jpg?strip=all&lossy=1&quality=57&resize=740%2C490&ssl=1', 'https://www.youtube.com/watch?v=s1OxOBPWBeU'),
+(3, 'https://pulpfictioncine.com/download/multimedia.normal.b334e3361b9ef553.6d756d626169706f72746164615f70756c7066696374696f696e63696e655f6e6f726d616c2e6a7067.jpg', 'https://www.youtube.com/watch?v=td03ewyR9LI'),
+(5, 'https://www.ruizhealytimes.com/sites/default/files/styles/articles_horizontal/public/articles/2019/06/desastre-en-paris-perdiendose-en-la-bruma-de-la-memoria_1.png?itok=XGSjeRll', 'https://www.youtube.com/watch?v=WPEgVaz9j2g');
 
 -- --------------------------------------------------------
 
@@ -299,9 +319,10 @@ CREATE TABLE `peliculas` (
 --
 
 INSERT INTO `peliculas` (`idPelicula`, `Titulo`, `Multimedia`, `Formato`, `Clasificación`, `Sinopsis`, `Duracion`, `semanaEstrenoInicio`, `semanaEstrenoFin`, `Usuario`) VALUES
-(2, 'Spider-Man: Lejos de casa', 1, '3D', 'B', 'Peter Parker regresa en Spider-Man: Lejos de casa el siguiente capítulo en la serie de Spider-Man: Homecoming. Nuestro amistoso vecino superhéroe decide unirse a sus mejores amigos Ned, MJ, y el resto del grupo a unas vacaciones europeas. Aunque, el plan de Peter sea dejar sus heroicidades atrás durante unas pocas semanas, pronto desecha esas ideas para ayudar a regañadientes a Nick Furia a desentrañar el misterio de los ataques de varias criaturas elementales, que están creando el caos en el mundo', '1 hora 30 minutos', '2019-07-07', '2019-07-14', 'rchocm'),
-(3, 'Hotel Mumbai', 1, '3D', 'B15', 'Una apasionante historia sobre humanidad y heroísmo, HOTEL MUMBAI cuenta vividamente el cerco de 2008 al Taj Hotel por un grupo de terroristas en Mumbai, India. Entre el personal del hotel se encuentra el renombrado chef Hemant Oberoi (Anupam Kher) y un camarero (Dev Patel) quienes eligen arriesgar sus vidas para proteger a los huéspedes, Mientras la situación avanza, una pareja desesperada (Armie Hammer y Nazanin Boniadi) se ve obligada hacer sacrificios impensables para proteger a su hijo recién nacido.', '1 hora 30 minutos', '2019-07-14', '2019-07-21', 'gus657'),
-(4, 'Prueba', 1, NULL, 'A', '', NULL, NULL, NULL, 'gus657');
+(2, 'Spider-Man: Lejos de casa', 2, '3D', 'B', 'Peter Parker regresa en Spider-Man: Lejos de casa el siguiente capítulo en la serie de Spider-Man: Homecoming. Nuestro amistoso vecino superhéroe decide unirse a sus mejores amigos Ned, MJ, y el resto del grupo a unas vacaciones europeas. Aunque, el plan de Peter sea dejar sus heroicidades atrás durante unas pocas semanas, pronto desecha esas ideas para ayudar a regañadientes a Nick Furia a desentrañar el misterio de los ataques de varias criaturas elementales, que están creando el caos en el mundo', '1 hora 30 minutos', '2019-07-07', '2019-07-14', 'rchocm'),
+(3, 'Hotel Mumbai', 3, '3D', 'B15', 'Una apasionante historia sobre humanidad y heroísmo, HOTEL MUMBAI cuenta vividamente el cerco de 2008 al Taj Hotel por un grupo de terroristas en Mumbai, India. Entre el personal del hotel se encuentra el renombrado chef Hemant Oberoi (Anupam Kher) y un camarero (Dev Patel) quienes eligen arriesgar sus vidas para proteger a los huéspedes, Mientras la situación avanza, una pareja desesperada (Armie Hammer y Nazanin Boniadi) se ve obligada hacer sacrificios impensables para proteger a su hijo recién nacido.', '1 hora 30 minutos', '2019-07-14', '2019-07-21', 'gus657'),
+(5, 'El rey león', 1, '2D', 'A', 'EL REY LEÓN de Disney, dirigida por Jon Favreau, nos lleva a la sabana africana donde un futuro rey ha nacido. Simba idolatra a su padre, el rey Mufasa, y está entusiasmado con su destino real. Pero no todos en el reino celebran la llegada del nuevo cachorro. Scar, el hermano de Mufasa y antiguo heredero al trono, tiene sus propios planes. La batalla de La Roca del Rey se ve teñida de traición, tragedia y drama, y acaba forzando a Simba al exilio. Con la ayuda de una curiosa pareja de amigos nuevos, Simba tendrá que arreglárselas para crecer y recuperar lo que legítimamente le corresponde. El estelar reparto incluye a: Donald Glover como Simba, Beyoncé Knowles-Carter en el papel de Nala, James Earl Jones como Mufasa, Chiwetel Ejiofor como Scar, Seth Rogen como Pumba y Billy Eichner en el papel de Timón.', '1 hora 30 minutos', '2019-07-10', '2019-07-19', 'rchocm'),
+(6, 'Desastre en París', 5, '2D', 'B', 'El día que una extraña niebla letal sumerge París, los supervivientes encuentran refugio en los pisos superiores de los edificios y en los tejados de la capital. Sin información, sin electricidad, sin agua ni comida, una pequeña familia trata de sobrevivir a este desastre. Pero pasan las horas y una cosa está clara: la ayuda no llegará y será necesario para poder salir, probar suerte en la niebla.', '1 hora 30 minutos', '2019-07-01', '2019-07-17', 'Risko');
 
 -- --------------------------------------------------------
 
@@ -354,7 +375,8 @@ INSERT INTO `salas` (`idSala`, `idCine`) VALUES
 (2, 4),
 (3, 5),
 (4, 3),
-(5, 2);
+(5, 2),
+(6, 1);
 
 -- --------------------------------------------------------
 
@@ -364,7 +386,7 @@ INSERT INTO `salas` (`idSala`, `idCine`) VALUES
 
 CREATE TABLE `timer` (
   `noRegistro` int(11) NOT NULL,
-  `Tiempo` time NOT NULL,
+  `Tiempo` int(10) NOT NULL,
   `Fecha` date NOT NULL,
   `Usuario` varchar(45) COLLATE utf8mb4_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
@@ -374,7 +396,7 @@ CREATE TABLE `timer` (
 --
 
 INSERT INTO `timer` (`noRegistro`, `Tiempo`, `Fecha`, `Usuario`) VALUES
-(1, '01:00:00', '2019-07-27', 'gus657');
+(1, 10000, '2019-07-27', 'gus657');
 
 -- --------------------------------------------------------
 
@@ -580,7 +602,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `bitacora`
 --
 ALTER TABLE `bitacora`
-  MODIFY `noReg` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `noReg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `boletos`
@@ -622,19 +644,19 @@ ALTER TABLE `encabezadosfactura`
 -- AUTO_INCREMENT de la tabla `funciones`
 --
 ALTER TABLE `funciones`
-  MODIFY `idFuncion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `idFuncion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `multimedia`
 --
 ALTER TABLE `multimedia`
-  MODIFY `NoRegistro` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `NoRegistro` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `peliculas`
 --
 ALTER TABLE `peliculas`
-  MODIFY `idPelicula` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idPelicula` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `perfiles`
@@ -646,7 +668,7 @@ ALTER TABLE `perfiles`
 -- AUTO_INCREMENT de la tabla `salas`
 --
 ALTER TABLE `salas`
-  MODIFY `idSala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idSala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `timer`
