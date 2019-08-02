@@ -14,6 +14,26 @@ namespace Appadmin
 {
     public partial class Ciudad : Form
     {
+        void letra(KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+
+                e.Handled = false;
+
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+
+            }
+            else
+            {
+                e.Handled = true;
+
+            }
+
+        }
         OdbcConnection conn = new OdbcConnection("Dsn=cine");
 		string user = "";
         public Ciudad(string usuario)
@@ -219,5 +239,10 @@ namespace Appadmin
 
 			}
 		}
-	}
+
+        private void TxtCiudad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            letra(e);
+        }
+    }
 }
