@@ -62,6 +62,7 @@
     <Compile Include="Confirmacion.Designer.cs">
       <DependentUpon>Confirmacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Correo.cs" />
     <Compile Include="Filtro.cs">
       <SubType>Form</SubType>
     </Compile>

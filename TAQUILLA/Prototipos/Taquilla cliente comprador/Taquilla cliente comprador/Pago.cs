@@ -13,10 +13,11 @@ namespace Taquilla_cliente_comprador
 {
     public partial class Frm_pago : Form
     {
+        Correo c = new Correo();
 
-		/*Grupo 2  taquilla  cliente comprador
+        /*Grupo 2  taquilla  cliente comprador
         Gustavo Perez 0901-16-420 y Juan José Gámez 0901-16-47  */
-		int tiempo = 0;// tiempo será extraible desde base de datos y de modificara desde la app de administrador
+        int tiempo = 0;// tiempo será extraible desde base de datos y de modificara desde la app de administrador
         public Frm_pago(int dato)
         {
             InitializeComponent();
@@ -61,6 +62,8 @@ namespace Taquilla_cliente_comprador
                 }
                 else
                 {
+                    c.enviarCorreo(rtbMensaje.Text, txtCorreo.Text, txtRutaArchivo.Text);
+
                     Form formulariopago = new frmMenu();
                     formulariopago.Show();
                     Visible = false;
