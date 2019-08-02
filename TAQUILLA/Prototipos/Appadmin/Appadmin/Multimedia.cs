@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Odbc;
 using System.IO;
+using System.Net;
 
 namespace Appadmin
 {
@@ -22,10 +23,50 @@ namespace Appadmin
             InitializeComponent();
             user = usuario;
             this.WindowState = FormWindowState.Maximized;
-			textBox1.Enabled = false;
-			button2.Enabled = false;
-        }        
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+			llenartbl();
+			btnActualizar.Enabled = false;
+			
+        }
+		void Bitacora(string Accion, string ip, string Afectado)
+		{
+			string query = "INSERT INTO Bitacora (Usuario,Accion,Afectado,ipAddress,fechaHora) VALUES ('" + user + "','" + Accion + "',' "+Afectado + "','" + ip + "','" + DateTime.Now.ToString("G") + "')";
+			OdbcCommand consulta = new OdbcCommand(query, conn);
+			try
+			{
+
+				consulta.ExecuteNonQuery();
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.ToString());
+			}
+		}
+		void llenartbl()
+		{
+
+			OdbcCommand cod = new OdbcCommand();
+			cod.Connection = conn;
+			cod.CommandText = ("SELECT * FROM multimedia");
+
+			try
+			{
+				OdbcDataAdapter eje = new OdbcDataAdapter();
+				eje.SelectCommand = cod;
+				DataTable datos = new DataTable();
+				eje.Fill(datos);
+				tblMulitimedia.DataSource = datos;
+				eje.Update(datos);
+				conn.Close();
+			}
+			catch (Exception e)
+			{
+
+				MessageBox.Show("ERROR" + e.ToString());
+				conn.Close();
+			}
+		}
+		private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -97,17 +138,7 @@ namespace Appadmin
 
         }
 
-		private void button1_Click(object sender, EventArgs e)
-		{
-			if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-			{
-				textBox2.Text = openFileDialog1.FileName;
-				pictureBox1.BackgroundImage = new Bitmap(openFileDialog1.FileName);
-				pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-			}
-			textBox1.Enabled = true;
-
-		}
+		
 
         private void TextBox1_StyleChanged(object sender, EventArgs e)
         {
@@ -123,7 +154,7 @@ namespace Appadmin
         private void TxtPeli_TextChanged(object sender, EventArgs e)
         {
             webPeli.Navigate(txtPeli.Text);
-			button2.Enabled = true;
+			btnVer.Enabled = true;
         }
 
         private void Multimedia_Load(object sender, EventArgs e)
@@ -133,10 +164,9 @@ namespace Appadmin
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-			string destino = @"C:\Users\gganp\Desktop\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\bin\Debug\Multimedia\"+textBox1.Text+".jpg";
-			File.Copy(textBox2.Text, destino);
+			
 
-			string query = "INSERT INTO multimedia (Afiche, Trailer) VALUES ('Multimedia/"+textBox1.Text+".jpg', '"+txtPeli.Text+"')";
+			string query = "INSERT INTO multimedia (Afiche, Trailer) VALUES ('"+txtAfiche.Text+"', '"+txtPeli.Text+"')";
 			conn.Open();
 			OdbcCommand consulta = new OdbcCommand(query, conn);
 			try
@@ -151,11 +181,182 @@ namespace Appadmin
 				MessageBox.Show("\t Error! \n\n " + ex.ToString());
 				conn.Close();
 			}
-			textBox1.Text = "";
 			txtPeli.Text = "";
-			textBox2.Text="";
-			pictureBox1.BackgroundImage = global::Appadmin.Properties.Resources.fondopic;
+			txtAfiche.Text="";
+			picAfiche.BackgroundImage = global::Appadmin.Properties.Resources.fondopic;
 
+		}
+
+
+		private void button2_Click_1(object sender, EventArgs e)
+		{
+			WebRequest request = WebRequest.Create(txtAfiche.Text); //Initializes an instance with the given URL
+			using (var response = request.GetResponse()) //Tries to access the object
+			{
+				using (var str = response.GetResponseStream()) //Returns the metadata of the image
+				{
+					picAfiche.BackgroundImage = Bitmap.FromStream(str); //Creates a bitmap based on the loaded metadata, in the sequence inserts into the image property.
+					picAfiche.BackgroundImageLayout = ImageLayout.Stretch;
+				}
+			}
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			if (txtPeli.Text !="" && txtAfiche.Text!="")
+			{
+
+				string query = "INSERT INTO multimedia (Afiche, Trailer) VALUES ('" + txtAfiche.Text + "', '" + txtPeli.Text + "')";
+				conn.Open();
+				OdbcCommand consulta = new OdbcCommand(query, conn);
+				try
+				{
+					consulta.ExecuteNonQuery();
+					MessageBox.Show("Datos Registrados Correctamente");
+					//BITACORA
+					String IP = "";
+					IPAddress[] localIPs = Dns.GetHostAddresses(Dns.GetHostName());
+					foreach (IPAddress addr in localIPs)
+					{
+						IP += "   |   " + addr.ToString();
+					}
+					Bitacora("INSERT", IP,"MULTIMEDIA");
+					// FIN BITACORA
+					llenartbl();
+					conn.Close();
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show("\t Error! \n\n " + ex.ToString());
+					conn.Close();
+				}
+				txtPeli.Text = "";
+				txtAfiche.Text = "";
+				picAfiche.BackgroundImage = global::Appadmin.Properties.Resources.fondopic;
+
+			}
+			else
+			{
+				MessageBox.Show("Por favor, llene los campos para ingresar");
+
+			}
+			
+		}
+
+		private void textBox1_TextChanged(object sender, EventArgs e)
+		{
+
+			webPeli.Navigate(txtPeli.Text);
+			btnVer.Enabled = true;
+		}
+
+		private void dataGridView1_DoubleClick(object sender, EventArgs e)
+		{
+			btnGuardar.Enabled = false;
+			btnEliminar.Enabled = false;
+			btnActualizar.Enabled = true;
+			tblMulitimedia.Enabled = false;
+			if (tblMulitimedia.SelectedRows.Count == 1)
+			{
+				
+				
+				txtAfiche.Text = tblMulitimedia.CurrentRow.Cells[1].Value.ToString();
+				txtPeli.Text = tblMulitimedia.CurrentRow.Cells[2].Value.ToString();
+			
+			}
+			else
+			{
+				MessageBox.Show("Porfavor Seleccione un registro de la tabla");
+
+			}
+		}
+
+		private void btnActualizar_Click(object sender, EventArgs e)
+		{
+			btnGuardar.Enabled = true;
+			btnEliminar.Enabled = true;
+			btnActualizar.Enabled = false;
+			if (txtPeli.Text != "" && txtAfiche.Text != "")
+			{
+
+				string query = "UPDATE multimedia SET " +
+			"Afiche='" + txtAfiche.Text + "',Trailer='" + txtPeli.Text + "'" + " WHERE NoRegistro =" + tblMulitimedia.CurrentRow.Cells[0].Value.ToString();
+				conn.Open();
+				OdbcCommand consulta = new OdbcCommand(query, conn);
+				try
+				{
+					consulta.ExecuteNonQuery();
+					MessageBox.Show("Datos Actualizados Correctamente");
+					tblMulitimedia.Enabled = true;
+					//BITACORA
+					String IP = "";
+					IPAddress[] localIPs = Dns.GetHostAddresses(Dns.GetHostName());
+					foreach (IPAddress addr in localIPs)
+					{
+						IP += "   |   " + addr.ToString();
+					}
+					Bitacora("UPDATE", IP, "MULTIMEDIA");
+					// FIN BITACORA
+					llenartbl();
+					conn.Close();
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show("\t Error! \n\n " + ex.ToString());
+					conn.Close();
+				}
+				txtPeli.Text = "";
+				txtAfiche.Text = "";
+				picAfiche.BackgroundImage = global::Appadmin.Properties.Resources.fondopic;
+
+			}
+			else
+			{
+				MessageBox.Show("Por favor, llene los campos para ingresar");
+
+			}
+		}
+
+		private void btnEliminar_Click(object sender, EventArgs e)
+		{
+			tblMulitimedia.Enabled = false;
+			if (tblMulitimedia.SelectedRows.Count == 1)
+			{
+				string query = "DELETE FROM multimedia WHERE NoRegistro=" + tblMulitimedia.CurrentRow.Cells[0].Value.ToString();
+				conn.Open();
+				OdbcCommand consulta = new OdbcCommand(query, conn);
+				try
+				{
+					consulta.ExecuteNonQuery();
+					MessageBox.Show("Datos Eliminados Correctamente");
+					tblMulitimedia.Enabled = true;
+					//BITACORA
+					String IP = "";
+					IPAddress[] localIPs = Dns.GetHostAddresses(Dns.GetHostName());
+					foreach (IPAddress addr in localIPs)
+					{
+						IP += "   |   " + addr.ToString();
+					}
+					Bitacora("DELETE", IP, "MULTIMEDIA");
+					// FIN BITACORA
+					llenartbl();
+					conn.Close();
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show("\t Error! \n\n " + ex.ToString());
+					conn.Close();
+				}
+				txtPeli.Text = "";
+				txtAfiche.Text = "";
+				picAfiche.BackgroundImage = global::Appadmin.Properties.Resources.fondopic;
+
+			}
+			else
+			{
+				MessageBox.Show("Porfavor Seleccione un registro de la tabla");
+
+			}
 		}
 	}
 
