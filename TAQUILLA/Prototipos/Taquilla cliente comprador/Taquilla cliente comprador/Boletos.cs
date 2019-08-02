@@ -220,7 +220,7 @@ namespace Taquilla_cliente_comprador
 
         private void Btn_regresar_Click(object sender, EventArgs e)
         {
-            Form formulariocar = new frmCartelera("Portales");
+            Form formulariocar = new frmCartelera("Portales","Formato","idioma");
             formulariocar.Show();
             Visible = false;
         }

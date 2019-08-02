@@ -24,36 +24,9 @@ namespace Taquilla_cliente_comprador
 			cineSeleccionado = cine;
      
         }
-		void llenarLista()
-		{
-			try
-			{
-				comboBox1.Text = "EMPLEADOS";
-				comboBox1.Items.Clear();
-
-				conn.Open();
-				OdbcCommand command = new OdbcCommand("SELECT * FROM empleados", conn);
-				OdbcDataReader reader = command.ExecuteReader();
-				while (reader.Read())
-				{
-					comboBox1.Refresh();
-					comboBox1.Items.Add(reader.GetValue(0).ToString() + " - " + reader.GetValue(1).ToString() + " " + reader.GetValue(3).ToString());
-				}
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show(ex.Message);
-			}
-			conn.Close();
-		}
+		
         
-        private void Btn_verCartelera_Click(object sender, EventArgs e)
-        {
-            Form formulario = new frmCartelera(cineSeleccionado);
-            formulario.Show();
-            Visible = false;
-         
-        }
+    
 
 		private void Filtro_FormClosed(object sender, FormClosedEventArgs e)
 		{
@@ -72,7 +45,8 @@ namespace Taquilla_cliente_comprador
 
 		private void button1_Click_1(object sender, EventArgs e)
 		{
-			Form formulario = new frmCartelera(cineSeleccionado);
+			
+			Form formulario = new frmCartelera(cineSeleccionado, comboBox1.Text, comboBox2.Text);
 			formulario.Show();
 			Visible = false;
 		}

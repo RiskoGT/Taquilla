@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data.Odbc;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,13 +21,17 @@ namespace Taquilla_cliente_comprador
 		int numSalas = 0;
 		string[] salas = new string[140];
 		string cineSeleccionado;
+		string formatoPeli;
+		string idiomaPeli;
 
-		public frmCartelera( string cine)
+		public frmCartelera( string cine, string Formato, string idioma)
 		{
 			InitializeComponent();
 			cineSeleccionado = cine;
+			formatoPeli = Formato;
+			idiomaPeli = idioma;
 			Cartelera();
-	
+			
 		}
 		void llenarCartelera(int a, int b, int c, int d, int e)
 		{
@@ -91,8 +96,15 @@ namespace Taquilla_cliente_comprador
 		}
 		void cambiarCartelera(int sala)
 		{
-			picAfiche.BackgroundImage = new Bitmap(MultimediaPeli());
-			picAfiche.BackgroundImageLayout = ImageLayout.Stretch;
+			WebRequest request = WebRequest.Create(MultimediaPeli()); //Initializes an instance with the given URL
+			using (var response = request.GetResponse()) //Tries to access the object
+			{
+				using (var str = response.GetResponseStream()) //Returns the metadata of the image
+				{
+					picAfiche.BackgroundImage = Bitmap.FromStream(str); //Creates a bitmap based on the loaded metadata, in the sequence inserts into the image property.
+					picAfiche.BackgroundImageLayout = ImageLayout.Stretch;
+				}
+			}
 			switch (sala)
 			{
 				case 1:
@@ -105,7 +117,7 @@ namespace Taquilla_cliente_comprador
 					llenarCartelera(14, 15, 16, 17, 18);
 					break;
 				case 4:
-					picAfiche.BackgroundImage = new Bitmap("Multimedia/HotelMumbai.jpg");
+
 					llenarCartelera(20, 21, 22, 23, 24);
 					break;
 				case 5:
@@ -166,36 +178,138 @@ namespace Taquilla_cliente_comprador
 
 		void Cartelera()
 		{
-			conn.Open();
-			OdbcCommand command = new OdbcCommand(""
-			+ "select A.idfuncion,"+
-			"(SELECT titulo FROM peliculas WHERE idPelicula = A.idPelicula) titulo,"+
-			"(SELECT formato FROM peliculas WHERE idPelicula = A.idPelicula) formato ,"+
-			"(SELECT clasificación FROM peliculas WHERE idPelicula = A.idPelicula) clasificacion,"+
-			"(SELECT sinopsis FROM peliculas WHERE idPelicula = A.idPelicula) sinopsis, A.horaFuncion "+
-			"from funciones A where A.Cine = '"+cineSeleccionado+"'", conn);
-			OdbcDataReader funciones = command.ExecuteReader();
-
-			int pos = 1;
-			while (funciones.Read())
+			if (formatoPeli == "Formato" && idiomaPeli == "Idioma")// sin ningun flitro
 			{
-		
-				salas[pos] = funciones.GetValue(0).ToString(); // funcion
-				pos++;
-				salas[pos] = funciones.GetValue(1).ToString();//titulo
-				pos++;
-				salas[pos] = funciones.GetValue(2).ToString();//formato
-				pos++;
-				salas[pos] = funciones.GetValue(3).ToString(); // clasificacion
-				pos++;
-				salas[pos] = funciones.GetValue(4).ToString();//sinopsis
-				pos++;
-				salas[pos] = funciones.GetValue(5).ToString();//hora
-				pos++;
-				numSalas++;
+				conn.Open();
+				OdbcCommand command = new OdbcCommand(""
+				+ "select A.idfuncion," +
+				"(SELECT titulo FROM peliculas WHERE idPelicula = A.idPelicula) titulo," +
+				"(SELECT formato FROM peliculas WHERE idPelicula = A.idPelicula) formato ," +
+				"(SELECT clasificación FROM peliculas WHERE idPelicula = A.idPelicula) clasificacion," +
+				"(SELECT sinopsis FROM peliculas WHERE idPelicula = A.idPelicula) sinopsis, A.horaFuncion " +
+				"from funciones A where A.Cine = '" + cineSeleccionado + "'", conn);
+				OdbcDataReader funciones = command.ExecuteReader();
 
+				int pos = 1;
+				while (funciones.Read())
+				{
+
+					salas[pos] = funciones.GetValue(0).ToString(); // funcion
+					pos++;
+					salas[pos] = funciones.GetValue(1).ToString();//titulo
+					pos++;
+					salas[pos] = funciones.GetValue(2).ToString();//formato
+					pos++;
+					salas[pos] = funciones.GetValue(3).ToString(); // clasificacion
+					pos++;
+					salas[pos] = funciones.GetValue(4).ToString();//sinopsis
+					pos++;
+					salas[pos] = funciones.GetValue(5).ToString();//hora
+					pos++;
+					numSalas++;
+
+				}
+				conn.Close();
+			}else if (formatoPeli != "Formato" && idiomaPeli == "Idioma") // filtrando formato
+			{
+				conn.Open();
+				OdbcCommand command = new OdbcCommand(""
+				+ "select A.idfuncion," +
+				"(SELECT titulo FROM peliculas WHERE idPelicula = A.idPelicula) titulo," +
+				"(SELECT formato FROM peliculas WHERE idPelicula = A.idPelicula) formato ," +
+				"(SELECT clasificación FROM peliculas WHERE idPelicula = A.idPelicula) clasificacion," +
+				"(SELECT sinopsis FROM peliculas WHERE idPelicula = A.idPelicula) sinopsis, A.horaFuncion " +
+				"from funciones A, peliculas where A.Cine = '" + cineSeleccionado + "'AND A.idPelicula = peliculas.idPelicula AND formato ='" + formatoPeli + "'", conn);
+				OdbcDataReader funciones = command.ExecuteReader();
+
+				int pos = 1;
+				while (funciones.Read())
+				{
+
+					salas[pos] = funciones.GetValue(0).ToString(); // funcion
+					pos++;
+					salas[pos] = funciones.GetValue(1).ToString();//titulo
+					pos++;
+					salas[pos] = funciones.GetValue(2).ToString();//formato
+					pos++;
+					salas[pos] = funciones.GetValue(3).ToString(); // clasificacion
+					pos++;
+					salas[pos] = funciones.GetValue(4).ToString();//sinopsis
+					pos++;
+					salas[pos] = funciones.GetValue(5).ToString();//hora
+					pos++;
+					numSalas++;
+
+				}
+				conn.Close();
+			}else if (formatoPeli == "Formato" && idiomaPeli != "Idioma") // filtrando idioma
+			{
+				conn.Open();
+				OdbcCommand command = new OdbcCommand(""
+				+ "select A.idfuncion," +
+				"(SELECT titulo FROM peliculas WHERE idPelicula = A.idPelicula) titulo," +
+				"(SELECT formato FROM peliculas WHERE idPelicula = A.idPelicula) formato ," +
+				"(SELECT clasificación FROM peliculas WHERE idPelicula = A.idPelicula) clasificacion," +
+				"(SELECT sinopsis FROM peliculas WHERE idPelicula = A.idPelicula) sinopsis, A.horaFuncion " +
+				"from funciones A, peliculas where A.Cine = '" + cineSeleccionado + "'AND A.idPelicula = peliculas.idPelicula AND idioma ='" + idiomaPeli + "'", conn);
+				OdbcDataReader funciones = command.ExecuteReader();
+
+				int pos = 1;
+				while (funciones.Read())
+				{
+
+					salas[pos] = funciones.GetValue(0).ToString(); // funcion
+					pos++;
+					salas[pos] = funciones.GetValue(1).ToString();//titulo
+					pos++;
+					salas[pos] = funciones.GetValue(2).ToString();//formato
+					pos++;
+					salas[pos] = funciones.GetValue(3).ToString(); // clasificacion
+					pos++;
+					salas[pos] = funciones.GetValue(4).ToString();//sinopsis
+					pos++;
+					salas[pos] = funciones.GetValue(5).ToString();//hora
+					pos++;
+					numSalas++;
+
+				}
+				conn.Close();
 			}
-			conn.Close();
+			else if (formatoPeli != "Formato" && idiomaPeli != "Idioma") // filtrando idioma y formato
+			{
+				conn.Open();
+				OdbcCommand command = new OdbcCommand(""
+				+ "select A.idfuncion," +
+				"(SELECT titulo FROM peliculas WHERE idPelicula = A.idPelicula) titulo," +
+				"(SELECT formato FROM peliculas WHERE idPelicula = A.idPelicula) formato ," +
+				"(SELECT clasificación FROM peliculas WHERE idPelicula = A.idPelicula) clasificacion," +
+				"(SELECT sinopsis FROM peliculas WHERE idPelicula = A.idPelicula) sinopsis, A.horaFuncion " +
+				"from funciones A, peliculas where A.Cine = '" + cineSeleccionado + "'AND A.idPelicula = peliculas.idPelicula AND formato ='" + 
+				formatoPeli + "'"+ "AND idioma ='" + idiomaPeli + "'", conn);
+				OdbcDataReader funciones = command.ExecuteReader();
+
+				int pos = 1;
+				while (funciones.Read())
+				{
+
+					salas[pos] = funciones.GetValue(0).ToString(); // funcion
+					pos++;
+					salas[pos] = funciones.GetValue(1).ToString();//titulo
+					pos++;
+					salas[pos] = funciones.GetValue(2).ToString();//formato
+					pos++;
+					salas[pos] = funciones.GetValue(3).ToString(); // clasificacion
+					pos++;
+					salas[pos] = funciones.GetValue(4).ToString();//sinopsis
+					pos++;
+					salas[pos] = funciones.GetValue(5).ToString();//hora
+					pos++;
+					numSalas++;
+
+				}
+				conn.Close();
+			}
+
 		}
 		private void button9_Click(object sender, EventArgs e)
 		{
@@ -238,8 +352,15 @@ namespace Taquilla_cliente_comprador
 				btnMenos.Enabled = true;
 				cambiarCartelera(sala);
 			}
-			picAfiche.BackgroundImage = new Bitmap(MultimediaPeli());
-			picAfiche.BackgroundImageLayout = ImageLayout.Stretch;
+			WebRequest request = WebRequest.Create(MultimediaPeli()); //Initializes an instance with the given URL
+			using (var response = request.GetResponse()) //Tries to access the object
+			{
+				using (var str = response.GetResponseStream()) //Returns the metadata of the image
+				{
+					picAfiche.BackgroundImage = Bitmap.FromStream(str); //Creates a bitmap based on the loaded metadata, in the sequence inserts into the image property.
+					picAfiche.BackgroundImageLayout = ImageLayout.Stretch;
+				}
+			}
 
 		}
 
