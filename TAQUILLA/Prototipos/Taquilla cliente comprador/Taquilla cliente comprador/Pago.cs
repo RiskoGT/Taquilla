@@ -43,6 +43,74 @@ namespace Taquilla_cliente_comprador
             ComboAño.Items.Add("25");
 
         }
+        void letra(KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+
+                e.Handled = false;
+
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+
+            }
+            else
+            {
+                e.Handled = true;
+
+            }
+
+        }
+
+        void letrasimbolo(KeyPressEventArgs e)
+        {
+
+
+            if (char.IsLetter(e.KeyChar))
+            {
+
+                e.Handled = false;
+
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+
+            }
+            else if (char.IsPunctuation(e.KeyChar))
+            {
+
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+
+            }
+
+        }
+        void numero(KeyPressEventArgs e)
+        {
+
+            if (char.IsNumber(e.KeyChar))
+            {
+
+                e.Handled = false;
+
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+
+            }
+            else
+            {
+                e.Handled = true;
+
+            }
+        }
 
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -81,15 +149,12 @@ namespace Taquilla_cliente_comprador
 
         private void Btn_ayuda_Click(object sender, EventArgs e)
         {
-           
 			Process.Start("Manual.pdf");
-
 		}
 
         private void BtnCancelar_Click_1(object sender, EventArgs e)
         {
-           
-            Form formulariocal = new frmMenu();
+           Form formulariocal = new frmMenu();
             MessageBox.Show("Su compra a sido cancelada, Gracias!!");
             formulariocal.Show();
             Visible = false;
@@ -176,10 +241,36 @@ namespace Taquilla_cliente_comprador
             }
 
         }
-
-        private void Frm_pago_Load(object sender, EventArgs e)
+               
+        private void TxtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
+            numero(e);
+        }
+                
+        private void TxtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            letra(e);
+        }
 
+        private void TxtTarjeta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            numero(e);
+
+        }
+
+        private void TxtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            numero(e);
+        }
+
+        private void Combomes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Combomes.Text = "Mes";
+        }
+
+        private void ComboAño_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Combomes.Text = "Año";
         }
     }
 }
