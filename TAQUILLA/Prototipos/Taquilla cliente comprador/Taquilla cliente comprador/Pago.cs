@@ -62,7 +62,7 @@ namespace Taquilla_cliente_comprador
                 }
                 else
                 {
-                    c.enviarCorreo(rtbMensaje.Text, txtCorreo.Text, txtRutaArchivo.Text);
+                    c.enviarCorreo( txtCorreo.Text);
 
                     Form formulariopago = new frmMenu();
                     formulariopago.Show();
