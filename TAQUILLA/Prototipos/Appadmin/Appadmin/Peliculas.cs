@@ -17,6 +17,7 @@ namespace Appadmin
     {
         OdbcConnection conn = new OdbcConnection("Dsn=cine");
         string usuario;
+        int idGlobal;
         public peliculas(string user)
         {
             InitializeComponent();
@@ -266,22 +267,103 @@ namespace Appadmin
             }
         }
 
-		private void button2_Click(object sender, EventArgs e)
-		{
-
-		}
+		private void btnModificar_Click(object sender, EventArgs e)
+		{            
+            if (dataGridView1.SelectedRows.Count == 1)
+            {                
+                btnActualizar.Enabled = true;
+                btnIngresar.Enabled = false;
+                btnEliminar.Enabled = false; 
+                idGlobal = Int32.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                txtTitulo.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();                
+                //comboMulti.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                int aux = Int32.Parse(dataGridView1.CurrentRow.Cells[2].Value.ToString());
+                string auxi;
+                try
+                {
+                    conn.Open();
+                    OdbcCommand command = new OdbcCommand("SELECT * FROM multimedia WHERE NoRegistro=" + aux, conn);
+                    OdbcDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        comboMulti.Refresh();
+                        comboMulti.Items.Add(reader.GetValue(0).ToString() + " - " + reader.GetValue(1).ToString());
+                        auxi = reader.GetValue(0).ToString() + " - " + reader.GetValue(1).ToString();
+                        //MessageBox.Show(auxi);
+                        comboMulti.Text = auxi;
+                    }
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error mostrar registro multimedia: " + ex);
+                    conn.Close();
+                }
+                comboFormato.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();                
+                comboClas.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                txtSinopsis.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                txtDuracion.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                dateTimePicker2.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+            }
+            else { MessageBox.Show("Porfavor Seleccione un registro de la tabla"); }
+        }
 
         private void TxtDuracion_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsPunctuation(e.KeyChar))
             {
-
                 e.Handled = true;
             }
             else
             {
                 e.Handled = false;
+            }
+        }
 
+        private void BtnActualizar_Click(object sender, EventArgs e)
+        {
+            /* string auxem = comboBox1.Text;
+            string[] separarem;
+            separarem = auxem.Split(' ');
+
+            string auxve = comboBox2.Text;
+            string[] separarve;
+            separarve = auxve.Split(' '); */
+            txtEstreno.Text = dateTimePicker1.Value.Date.ToString("yyyy/MM/dd");
+            txtFin.Text = dateTimePicker2.Value.Date.ToString("yyyy/MM/dd");
+            string query = "UPDATE peliculas SET Titulo = '" + txtTitulo.Text
+                + "', Multimedia='" + comboMulti.Text + "'," + " Formato= '" + comboFormato.Text 
+                + "', Clasificación= '" + comboClas.Text + "' , Sinopsis= '" + txtSinopsis.Text 
+                + "', Duracion='" + txtDuracion.Text + "', semanaEstrenoInicio= '" + txtEstreno.Text 
+                + "', semanaEstrenoFin= '" + txtFin.Text + "' WHERE  idPelicula =" + idGlobal; 
+            //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();            
+            conn.Open();
+            OdbcCommand consulta = new OdbcCommand(query, conn);
+            try
+            {
+                if (txtTitulo.Text != "" && txtDuracion.Text != "" && txtSinopsis.Text != "")
+                {
+                    consulta.ExecuteNonQuery();
+                    MessageBox.Show("Actualizado");
+                    conn.Close();
+                    llenarTabla();
+                    llenarCombos();
+                    conn.Open();                    
+                    txtTitulo.Text = "";
+                    txtDuracion.Text = "";
+                    txtSinopsis.Text = "";                    
+                    btnActualizar.Enabled = false;
+                    btnIngresar.Enabled = true;
+                    btnEliminar.Enabled = true;
+                    conn.Close();
+                }
+                else { MessageBox.Show("POR FAVOR LLENE TODOS LOS CAMPOS.\n\tGRACIAS!!"); conn.Close(); }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("\tERROR!!\n\n " + ex.ToString());
+                conn.Close();
             }
         }
     }
