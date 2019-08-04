@@ -35,9 +35,7 @@ namespace Appadmin
 			OdbcCommand consulta = new OdbcCommand(query, conn);
 			try
 			{
-
 				consulta.ExecuteNonQuery();
-
 			}
 			catch (Exception ex)
 			{
@@ -112,58 +110,117 @@ namespace Appadmin
 
         private void BtnIngresar_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(usuario);  //mensaje para determinar si el usuario sigue activo en el sistema
+            //mensaje para determinar si el usuario sigue activo en el sistema
+            try
+            {
+                txtEstreno.Text = dateTimePicker1.Value.Date.ToString("yyyy/MM/dd");
+                txtFin.Text = dateTimePicker2.Value.Date.ToString("yyyy/MM/dd");
+                string query = "INSERT INTO peliculas (Titulo, Multimedia, Formato, Clasificación, Sinopsis,"
+                    + " Idioma, semanaEstrenoInicio, semanaEstrenoFin) VALUES " +
+                    "('" + txtTitulo.Text + "'," + comboMulti.Text[0] + ",'" + comboFormato.Text +
+                    "','" + comboClas.Text + "','" + txtSinopsis.Text + "','" + comboIdioma.Text +
+                    "','" + txtEstreno.Text + "','" + txtFin.Text + "')";
+                conn.Open();
+                OdbcCommand consulta = new OdbcCommand(query, conn);
+                try
+                {
+                    if (txtTitulo.Text != "" && txtSinopsis.Text != "" && comboIdioma.Text != "" &&
+                        comboMulti.Text != "" && comboClas.Text != "" &&
+                        comboFormato.Text != " " && comboIdioma.Text != " ")
+                    {
+                        consulta.ExecuteNonQuery();
+                        MessageBox.Show("Datos Registrados Correctamente");
+                        txtTitulo.Text = "";
+                        txtSinopsis.Text = "";
+                        txtEstreno.Text = "";
+                        txtFin.Text = "";
+                        //BITACORA
+                        String IP = "";
+                        IPAddress[] localIPs = Dns.GetHostAddresses(Dns.GetHostName());
+                        foreach (IPAddress addr in localIPs)
+                        {
+                            IP += "   |   " + addr.ToString();
+                        }
+                        Bitacora("INSERT", IP, "PELICULAS");
+                        // FIN BITACORA
+                        llenarTabla();
+                        llenarCombos();
+                        conn.Close();
+                        comboIdioma.SelectedIndex = 0;
+                        comboFormato.SelectedIndex = 0;
+                        txtTitulo.Focus();
+                        dateTimePicker1.ResetText();
+                        dateTimePicker2.ResetText();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Por favor verifique que todo los campos esten llenos. \n\n GRACIAS", 
+                            "FORMULARIO INCOMPLETO", MessageBoxButtons.OK,MessageBoxIcon.Warning);                        
+                        conn.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("\t Error! \n\n " + ex.ToString());
+                    conn.Close();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Por favor verifique que todo los campos esten llenos. \n\n GRACIAS", 
+                            "FORMULARIO INCOMPLETO", MessageBoxButtons.OK,MessageBoxIcon.Warning);                   
+            }            
+        }
+
+        private void BtnActualizar_Click(object sender, EventArgs e)
+        {
             txtEstreno.Text = dateTimePicker1.Value.Date.ToString("yyyy/MM/dd");
-            txtFin.Text = dateTimePicker2.Value.Date.ToString("yyyy/MM/dd");            
-            string query = "INSERT INTO peliculas(Titulo, Multimedia, Formato, Clasificación, Sinopsis,"
-                + " Duracion, semanaEstrenoInicio, semanaEstrenoFin, Usuario) VALUES " +
-                "('" + txtTitulo.Text + "'," + comboMulti.Text[0] + ",'" + comboFormato.Text +
-                "','" + comboClas.Text + "','" + txtSinopsis.Text + "','" + txtDuracion.Text +
-                "','" + txtEstreno.Text + "','" + txtFin.Text + "','" + usuario + "')";            
+            txtFin.Text = dateTimePicker2.Value.Date.ToString("yyyy/MM/dd");
+            string query = "UPDATE peliculas SET Titulo = '" + txtTitulo.Text
+                + "', Multimedia='" + comboMulti.Text + "'," + " Formato= '" + comboFormato.Text
+                + "', Clasificación= '" + comboClas.Text + "' , Sinopsis= '" + txtSinopsis.Text
+                + "', Idioma='" + comboIdioma.Text + "', semanaEstrenoInicio= '" + txtEstreno.Text
+                + "', semanaEstrenoFin= '" + txtFin.Text + "' WHERE  idPelicula =" + idGlobal;
             conn.Open();
             OdbcCommand consulta = new OdbcCommand(query, conn);
             try
             {
-                if (txtTitulo.Text != "" && txtSinopsis.Text != "" && txtDuracion.Text != "" &&
-                    comboMulti.Text != "Multimedia" && comboClas.Text != "Clasificación" &&
-                    comboFormato.Text != "Formato")
+                if (txtTitulo.Text != "" && txtSinopsis.Text != "" & comboIdioma.Text != " "
+                    && comboFormato.Text != "")
                 {
                     consulta.ExecuteNonQuery();
-                    MessageBox.Show("Datos Registrados Correctamente");
+                    MessageBox.Show("Actualizado");
+                    //BITACORA
+                    String IP = "";
+                    IPAddress[] localIPs = Dns.GetHostAddresses(Dns.GetHostName());
+                    foreach (IPAddress addr in localIPs)
+                    {
+                        IP += "   |   " + addr.ToString();
+                    }
+                    Bitacora("UPDATE", IP, "PELICULAS");
+                    // FIN BITACORA
+                    conn.Close();
+                    llenarTabla();
+                    llenarCombos();
+                    conn.Open();
                     txtTitulo.Text = "";
                     txtSinopsis.Text = "";
-                    txtDuracion.Text = "";
-                    txtEstreno.Text = "";
-                    txtFin.Text = "";
-					//BITACORA
-					String IP = "";
-					IPAddress[] localIPs = Dns.GetHostAddresses(Dns.GetHostName());
-					foreach (IPAddress addr in localIPs)
-					{
-						IP += "   |   " + addr.ToString();
-					}
-					Bitacora("INSERT", IP, "PELICULAS");
-					// FIN BITACORA
-					llenarTabla();
-                    llenarCombos();
-                    conn.Close();
-                    comboFormato.Text = "Formato";
-                    txtTitulo.Focus();
-                    dateTimePicker1.ResetText();
-                    dateTimePicker2.ResetText();                    
-                }
-                else
-                {
-                    MessageBox.Show("Por favor llene todos los Campos! \n\n GRACIAS!!");
+                    comboIdioma.SelectedIndex = 0;
+                    comboFormato.SelectedIndex = 0;
+                    btnActualizar.Enabled = false;
+                    btnIngresar.Enabled = true;
+                    btnEliminar.Enabled = true;
                     conn.Close();
                 }
+                else { MessageBox.Show("POR FAVOR LLENE TODOS LOS CAMPOS. \n\n GRACIAS!!"); conn.Close(); }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("\t Error! \n\n " + ex.ToString());
+                MessageBox.Show("\tERROR!!\n\n " + ex.ToString());
                 conn.Close();
             }
         }
+
         void llenarTabla()
         {
             OdbcCommand codigo = new OdbcCommand();
@@ -251,8 +308,6 @@ namespace Appadmin
 					llenarTabla();
                     conn.Close();                    
                     txtTitulo.Focus();
-                    //conn.Open();
-                    //log(operacion);
                 }
                 else
                 {
@@ -267,46 +322,19 @@ namespace Appadmin
             }
         }
 
-		private void btnModificar_Click(object sender, EventArgs e)
+		private void btnLimpiar_Click(object sender, EventArgs e)
 		{            
-            if (dataGridView1.SelectedRows.Count == 1)
-            {                
-                btnActualizar.Enabled = true;
-                btnIngresar.Enabled = false;
-                btnEliminar.Enabled = false; 
-                idGlobal = Int32.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-                txtTitulo.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();                
-                //comboMulti.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                int aux = Int32.Parse(dataGridView1.CurrentRow.Cells[2].Value.ToString());
-                string auxi;
-                try
-                {
-                    conn.Open();
-                    OdbcCommand command = new OdbcCommand("SELECT * FROM multimedia WHERE NoRegistro=" + aux, conn);
-                    OdbcDataReader reader = command.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        comboMulti.Refresh();
-                        comboMulti.Items.Add(reader.GetValue(0).ToString() + " - " + reader.GetValue(1).ToString());
-                        auxi = reader.GetValue(0).ToString() + " - " + reader.GetValue(1).ToString();
-                        //MessageBox.Show(auxi);
-                        comboMulti.Text = auxi;
-                    }
-                    conn.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error mostrar registro multimedia: " + ex);
-                    conn.Close();
-                }
-                comboFormato.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();                
-                comboClas.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                txtSinopsis.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                txtDuracion.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                dateTimePicker2.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-            }
-            else { MessageBox.Show("Porfavor Seleccione un registro de la tabla"); }
+            llenarCombos();
+            llenarTabla();
+            dateTimePicker1.ResetText();
+            dateTimePicker2.ResetText();
+            txtTitulo.Text = "";
+            txtSinopsis.Text = "";
+            txtEstreno.Text = "";
+            txtFin.Text = "";                        
+            comboIdioma.SelectedIndex = 0;
+            comboFormato.SelectedIndex = 0;
+            txtTitulo.Focus();
         }
 
         private void TxtDuracion_KeyPress(object sender, KeyPressEventArgs e)
@@ -319,52 +347,53 @@ namespace Appadmin
             {
                 e.Handled = false;
             }
-        }
+        }        
 
-        private void BtnActualizar_Click(object sender, EventArgs e)
+        private void DataGridView1_DoubleClick(object sender, EventArgs e)
         {
-            /* string auxem = comboBox1.Text;
-            string[] separarem;
-            separarem = auxem.Split(' ');
+            if (dataGridView1.SelectedRows.Count == 1)
+            {                
+                llenarCombos();
 
-            string auxve = comboBox2.Text;
-            string[] separarve;
-            separarve = auxve.Split(' '); */
-            txtEstreno.Text = dateTimePicker1.Value.Date.ToString("yyyy/MM/dd");
-            txtFin.Text = dateTimePicker2.Value.Date.ToString("yyyy/MM/dd");
-            string query = "UPDATE peliculas SET Titulo = '" + txtTitulo.Text
-                + "', Multimedia='" + comboMulti.Text + "'," + " Formato= '" + comboFormato.Text 
-                + "', Clasificación= '" + comboClas.Text + "' , Sinopsis= '" + txtSinopsis.Text 
-                + "', Duracion='" + txtDuracion.Text + "', semanaEstrenoInicio= '" + txtEstreno.Text 
-                + "', semanaEstrenoFin= '" + txtFin.Text + "' WHERE  idPelicula =" + idGlobal; 
-            //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();            
-            conn.Open();
-            OdbcCommand consulta = new OdbcCommand(query, conn);
-            try
-            {
-                if (txtTitulo.Text != "" && txtDuracion.Text != "" && txtSinopsis.Text != "")
+                btnActualizar.Enabled = true;
+                btnIngresar.Enabled = false;
+                btnEliminar.Enabled = false;
+                idGlobal = Int32.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                txtTitulo.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                int aux = Int32.Parse(dataGridView1.CurrentRow.Cells[2].Value.ToString());
+                string auxi;
+                try
                 {
-                    consulta.ExecuteNonQuery();
-                    MessageBox.Show("Actualizado");
-                    conn.Close();
-                    llenarTabla();
-                    llenarCombos();
-                    conn.Open();                    
-                    txtTitulo.Text = "";
-                    txtDuracion.Text = "";
-                    txtSinopsis.Text = "";                    
-                    btnActualizar.Enabled = false;
-                    btnIngresar.Enabled = true;
-                    btnEliminar.Enabled = true;
+                    conn.Open();
+                    OdbcCommand command = new OdbcCommand("SELECT * FROM multimedia WHERE NoRegistro=" + aux, conn);
+                    OdbcDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        comboMulti.Refresh();
+                        comboMulti.Items.Add(reader.GetValue(0).ToString() + " - " + reader.GetValue(1).ToString());
+                        auxi = reader.GetValue(0).ToString() + " - " + reader.GetValue(1).ToString();
+                        comboMulti.Text = auxi;
+                    }
                     conn.Close();
                 }
-                else { MessageBox.Show("POR FAVOR LLENE TODOS LOS CAMPOS.\n\tGRACIAS!!"); conn.Close(); }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error mostrar registro multimedia: " + ex);
+                    conn.Close();
+                }
+                comboFormato.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                comboClas.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                txtSinopsis.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                comboIdioma.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                dateTimePicker2.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("\tERROR!!\n\n " + ex.ToString());
-                conn.Close();
-            }
+            else { MessageBox.Show("Porfavor Seleccione un registro de la tabla"); }
+        }
+
+        private void ComboFormato_KeyDown(object sender, KeyEventArgs e)
+        {
+            
         }
     }
 }

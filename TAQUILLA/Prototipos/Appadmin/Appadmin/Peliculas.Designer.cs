@@ -40,8 +40,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTitulo = new System.Windows.Forms.TextBox();
-            this.txtDuracion = new System.Windows.Forms.TextBox();
             this.comboFormato = new System.Windows.Forms.ComboBox();
+            this.comboMulti = new System.Windows.Forms.ComboBox();
+            this.comboIdioma = new System.Windows.Forms.ComboBox();
             this.comboClas = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
@@ -54,12 +55,11 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnIngresar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.txtEstreno = new System.Windows.Forms.TextBox();
             this.txtFin = new System.Windows.Forms.TextBox();
-            this.comboMulti = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -177,9 +177,9 @@
             this.tableLayoutPanel6.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.label4, 0, 3);
             this.tableLayoutPanel6.Controls.Add(this.txtTitulo, 1, 0);
-            this.tableLayoutPanel6.Controls.Add(this.txtDuracion, 1, 3);
             this.tableLayoutPanel6.Controls.Add(this.comboFormato, 0, 2);
             this.tableLayoutPanel6.Controls.Add(this.comboMulti, 1, 1);
+            this.tableLayoutPanel6.Controls.Add(this.comboIdioma, 1, 3);
             this.tableLayoutPanel6.Controls.Add(this.comboClas, 1, 2);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
@@ -228,7 +228,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(179, 51);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Duracion";
+            this.label4.Text = "Idioma";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // txtTitulo
@@ -240,16 +240,6 @@
             this.txtTitulo.Size = new System.Drawing.Size(179, 29);
             this.txtTitulo.TabIndex = 3;
             // 
-            // txtDuracion
-            // 
-            this.txtDuracion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDuracion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDuracion.Location = new System.Drawing.Point(188, 147);
-            this.txtDuracion.Name = "txtDuracion";
-            this.txtDuracion.Size = new System.Drawing.Size(179, 29);
-            this.txtDuracion.TabIndex = 4;
-            this.txtDuracion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDuracion_KeyPress);
-            // 
             // comboFormato
             // 
             this.comboFormato.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -257,6 +247,7 @@
             this.comboFormato.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboFormato.FormattingEnabled = true;
             this.comboFormato.Items.AddRange(new object[] {
+            " ",
             "2D",
             "3D",
             "4D"});
@@ -264,6 +255,34 @@
             this.comboFormato.Name = "comboFormato";
             this.comboFormato.Size = new System.Drawing.Size(179, 32);
             this.comboFormato.TabIndex = 6;
+            this.comboFormato.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ComboFormato_KeyDown);
+            // 
+            // comboMulti
+            // 
+            this.comboMulti.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboMulti.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboMulti.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboMulti.FormattingEnabled = true;
+            this.comboMulti.Location = new System.Drawing.Point(188, 51);
+            this.comboMulti.Name = "comboMulti";
+            this.comboMulti.Size = new System.Drawing.Size(179, 32);
+            this.comboMulti.TabIndex = 7;
+            // 
+            // comboIdioma
+            // 
+            this.comboIdioma.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboIdioma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboIdioma.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboIdioma.FormattingEnabled = true;
+            this.comboIdioma.Items.AddRange(new object[] {
+            " ",
+            "Español",
+            "Subtitulada",
+            "Doblada"});
+            this.comboIdioma.Location = new System.Drawing.Point(188, 147);
+            this.comboIdioma.Name = "comboIdioma";
+            this.comboIdioma.Size = new System.Drawing.Size(179, 32);
+            this.comboIdioma.TabIndex = 7;
             // 
             // comboClas
             // 
@@ -390,6 +409,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(753, 202);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.DataGridView1_DoubleClick);
             // 
             // tableLayoutPanel3
             // 
@@ -399,7 +419,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.Controls.Add(this.btnIngresar, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnModificar, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnLimpiar, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnActualizar, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnEliminar, 3, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -426,20 +446,20 @@
             this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.BtnIngresar_Click);
             // 
-            // btnModificar
+            // btnLimpiar
             // 
-            this.btnModificar.BackColor = System.Drawing.Color.Gold;
-            this.btnModificar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font = new System.Drawing.Font("Agency FB", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(192, 3);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(183, 49);
-            this.btnModificar.TabIndex = 1;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            this.btnLimpiar.BackColor = System.Drawing.Color.Gold;
+            this.btnLimpiar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Agency FB", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.Location = new System.Drawing.Point(192, 3);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(183, 49);
+            this.btnLimpiar.TabIndex = 1;
+            this.btnLimpiar.Text = "Limpiar Campos";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnActualizar
             // 
@@ -486,17 +506,6 @@
             this.txtFin.Size = new System.Drawing.Size(37, 20);
             this.txtFin.TabIndex = 6;
             this.txtFin.Visible = false;
-            // 
-            // comboMulti
-            // 
-            this.comboMulti.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboMulti.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboMulti.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboMulti.FormattingEnabled = true;
-            this.comboMulti.Location = new System.Drawing.Point(188, 51);
-            this.comboMulti.Name = "comboMulti";
-            this.comboMulti.Size = new System.Drawing.Size(179, 32);
-            this.comboMulti.TabIndex = 7;
             // 
             // peliculas
             // 
@@ -545,7 +554,6 @@
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.TextBox txtTitulo;
-		private System.Windows.Forms.TextBox txtDuracion;
 		private System.Windows.Forms.ComboBox comboFormato;
 		private System.Windows.Forms.ComboBox comboClas;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
@@ -559,11 +567,12 @@
 		private System.Windows.Forms.DataGridView dataGridView1;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
 		private System.Windows.Forms.Button btnIngresar;
-		private System.Windows.Forms.Button btnModificar;
+		private System.Windows.Forms.Button btnLimpiar;
 		private System.Windows.Forms.Button btnActualizar;
 		private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.TextBox txtEstreno;
         private System.Windows.Forms.TextBox txtFin;
         private System.Windows.Forms.ComboBox comboMulti;
+        private System.Windows.Forms.ComboBox comboIdioma;
     }
 }
