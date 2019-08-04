@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,11 +15,13 @@ namespace Taquilla_cliente_comprador
 
 	public partial class frmCartelera : Form
 	{
+		Thread th;
 		/*Grupo 2  taquilla  cliente comprador
         Gustavo Perez 0901-16-420 y Juan José Gámez 0901-16-47  */
 		OdbcConnection conn = new OdbcConnection("Dsn=cine");
 		int sala = 1;
 		int numSalas = 0;
+		int funcion = 0;
 		string[] salas = new string[140];
 		string cineSeleccionado;
 		string formatoPeli;
@@ -31,6 +34,7 @@ namespace Taquilla_cliente_comprador
 			formatoPeli = Formato;
 			idiomaPeli = idioma;
 			Cartelera();
+			funcion = Convert.ToInt32(salas[1]);
 			
 		}
 		void llenarCartelera(int a, int b, int c, int d, int e)
@@ -72,6 +76,7 @@ namespace Taquilla_cliente_comprador
 		{
 			string idMulti;
 			string imagen;
+			
 			conn.Open();
 			OdbcCommand command = new OdbcCommand(""
 			+ "SELECT multimedia FROM peliculas WHERE titulo = '" + lbtitulo.Text + "'", conn);
@@ -108,65 +113,84 @@ namespace Taquilla_cliente_comprador
 			switch (sala)
 			{
 				case 1:
+					funcion = Convert.ToInt32(salas[1]);
 					llenarCartelera(2, 3, 4, 5, 6);
 					break;
 				case 2:
+					funcion = Convert.ToInt32(salas[7]);
 					llenarCartelera(8, 9, 10, 11, 12);
 					break;
 				case 3:
+					funcion = Convert.ToInt32(salas[13]);
 					llenarCartelera(14, 15, 16, 17, 18);
 					break;
 				case 4:
-
+					funcion = Convert.ToInt32(salas[19]);
 					llenarCartelera(20, 21, 22, 23, 24);
 					break;
 				case 5:
+					funcion = Convert.ToInt32(salas[25]);
 					llenarCartelera(26, 27, 28, 29, 30);
 					break;
 				case 6:
+					funcion = Convert.ToInt32(salas[31]);
 					llenarCartelera(32, 33, 34, 35, 36);
 					break;
 				case 7:
+					funcion = Convert.ToInt32(salas[37]);
 					llenarCartelera(38, 39, 40, 41, 42);
 					break;
 				case 8:
+					funcion = Convert.ToInt32(salas[42]);
 					llenarCartelera(43, 44, 45, 46, 47);
 					break;
 				case 9:
+					funcion = Convert.ToInt32(salas[48]);
 					llenarCartelera(49, 50, 51, 52, 53);
 					break;
 				case 10:
+					funcion = Convert.ToInt32(salas[54]);
 					llenarCartelera(55, 56, 57, 58, 59);
 					break;
 				case 11:
-					llenarCartelera(60, 61, 62, 63, 64);
+					funcion = Convert.ToInt32(salas[60]);
+					llenarCartelera(61,62,63,64,65);
 					break;
 				case 12:
-					llenarCartelera(66, 67, 68, 69, 70);
+					funcion = Convert.ToInt32(salas[66]);
+					llenarCartelera(67,68,69,70,71);
 					break;
 				case 13:
-					llenarCartelera(72, 73, 74, 75, 76);
+					funcion = Convert.ToInt32(salas[72]);
+					llenarCartelera(73,74,75,76,77);
 					break;
 				case 14:
-					llenarCartelera(78, 79, 80, 81, 82);
+					funcion = Convert.ToInt32(salas[78]);
+					llenarCartelera(79,80,81,82,83);
 					break;
 				case 15:
-					llenarCartelera(84, 85, 86, 87, 88);
+					funcion = Convert.ToInt32(salas[84]);
+					llenarCartelera(85,86,87,88,89);
 					break;
 				case 16:
-					llenarCartelera(90, 91, 92, 93, 94);
+					funcion = Convert.ToInt32(salas[90]);
+					llenarCartelera(91,92,93,94,95);
 					break;
 				case 17:
-					llenarCartelera(96, 97, 98, 99, 100);
+					funcion = Convert.ToInt32(salas[96]);
+					llenarCartelera(97,98,99,100,101);
 					break;
 				case 18:
-					llenarCartelera(102, 103, 104, 105, 106);
+					funcion = Convert.ToInt32(salas[102]);
+					llenarCartelera(103,104,105,106,107);
 					break;
 				case 19:
-					llenarCartelera(108, 109, 110, 111, 112);
+					funcion = Convert.ToInt32(salas[108]);
+					llenarCartelera(109,110,111,112,113);
 					break;
 				case 20:
-					llenarCartelera(102, 103, 104, 105, 106);
+					funcion = Convert.ToInt32(salas[114]);
+					llenarCartelera(115,116,117,118,119);
 					break;
 			}
 		}
@@ -313,12 +337,16 @@ namespace Taquilla_cliente_comprador
 		}
 		private void button9_Click(object sender, EventArgs e)
 		{
-            webPelicula.Navigate("");
-            Form formulariobol = new frmBoletos();
-			formulariobol.Show();
-			Visible = false;
+			this.Close();
+			th = new Thread(opennewform);
+			th.SetApartmentState(ApartmentState.STA);
+			th.Start();
 		}
 
+		private void opennewform()
+		{
+			Application.Run(new frmBoletos(funcion));
+		}
 
 		private void Frm_cartelera_FormClosed(object sender, FormClosedEventArgs e)
 		{
@@ -329,7 +357,7 @@ namespace Taquilla_cliente_comprador
 		{
 			
 			if (sala == 1)
-			{
+			{	
 				llenarCartelera(2, 3, 4, 5, 6);
 				btnMenos.Enabled = false;
 				btnMas.Enabled = true;
@@ -352,12 +380,12 @@ namespace Taquilla_cliente_comprador
 				btnMenos.Enabled = true;
 				cambiarCartelera(sala);
 			}
-			WebRequest request = WebRequest.Create(MultimediaPeli()); //Initializes an instance with the given URL
-			using (var response = request.GetResponse()) //Tries to access the object
+			WebRequest request = WebRequest.Create(MultimediaPeli());
+			using (var response = request.GetResponse()) 
 			{
-				using (var str = response.GetResponseStream()) //Returns the metadata of the image
+				using (var str = response.GetResponseStream()) 
 				{
-					picAfiche.BackgroundImage = Bitmap.FromStream(str); //Creates a bitmap based on the loaded metadata, in the sequence inserts into the image property.
+					picAfiche.BackgroundImage = Bitmap.FromStream(str); 
 					picAfiche.BackgroundImageLayout = ImageLayout.Stretch;
 				}
 			}

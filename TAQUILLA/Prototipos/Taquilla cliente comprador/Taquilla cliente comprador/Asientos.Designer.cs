@@ -1879,7 +1879,7 @@
             this.tplPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.21858F));
             this.tplPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.689546F));
             this.tplPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 144F));
-            this.tplPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 108F));
+            this.tplPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 127F));
             this.tplPanel1.Controls.Add(this.btndispinible, 1, 0);
             this.tplPanel1.Controls.Add(this.btnSeleccion, 5, 0);
             this.tplPanel1.Controls.Add(this.btnOc, 9, 0);
@@ -1906,7 +1906,7 @@
             this.btndispinible.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndispinible.Location = new System.Drawing.Point(10, 3);
             this.btndispinible.Name = "btndispinible";
-            this.btndispinible.Size = new System.Drawing.Size(97, 34);
+            this.btndispinible.Size = new System.Drawing.Size(95, 34);
             this.btndispinible.TabIndex = 0;
             this.btndispinible.Text = "Disponibles";
             this.btndispinible.UseVisualStyleBackColor = false;
@@ -1919,9 +1919,9 @@
             this.btnSeleccion.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
             this.btnSeleccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeleccion.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSeleccion.Location = new System.Drawing.Point(289, 3);
+            this.btnSeleccion.Location = new System.Drawing.Point(283, 3);
             this.btnSeleccion.Name = "btnSeleccion";
-            this.btnSeleccion.Size = new System.Drawing.Size(94, 34);
+            this.btnSeleccion.Size = new System.Drawing.Size(91, 34);
             this.btnSeleccion.TabIndex = 1;
             this.btnSeleccion.Text = "Selecionado";
             this.btnSeleccion.UseVisualStyleBackColor = false;
@@ -1934,9 +1934,9 @@
             this.btnOc.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.btnOc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOc.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOc.Location = new System.Drawing.Point(570, 3);
+            this.btnOc.Location = new System.Drawing.Point(557, 3);
             this.btnOc.Name = "btnOc";
-            this.btnOc.Size = new System.Drawing.Size(89, 34);
+            this.btnOc.Size = new System.Drawing.Size(87, 34);
             this.btnOc.TabIndex = 2;
             this.btnOc.Text = "Ocupado";
             this.btnOc.UseVisualStyleBackColor = false;
@@ -1947,9 +1947,9 @@
             this.lbDis.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbDis.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDis.ForeColor = System.Drawing.Color.Gold;
-            this.lbDis.Location = new System.Drawing.Point(122, 0);
+            this.lbDis.Location = new System.Drawing.Point(119, 0);
             this.lbDis.Name = "lbDis";
-            this.lbDis.Size = new System.Drawing.Size(151, 40);
+            this.lbDis.Size = new System.Drawing.Size(148, 40);
             this.lbDis.TabIndex = 3;
             this.lbDis.Text = "Asientos Disponibles";
             this.lbDis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1960,9 +1960,9 @@
             this.lbSelec.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbSelec.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSelec.ForeColor = System.Drawing.Color.Gold;
-            this.lbSelec.Location = new System.Drawing.Point(407, 0);
+            this.lbSelec.Location = new System.Drawing.Point(398, 0);
             this.lbSelec.Name = "lbSelec";
-            this.lbSelec.Size = new System.Drawing.Size(146, 40);
+            this.lbSelec.Size = new System.Drawing.Size(142, 40);
             this.lbSelec.TabIndex = 4;
             this.lbSelec.Text = "Asientos Seleccionados";
             this.lbSelec.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1973,9 +1973,9 @@
             this.lbOc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbOc.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbOc.ForeColor = System.Drawing.Color.Gold;
-            this.lbOc.Location = new System.Drawing.Point(674, 0);
+            this.lbOc.Location = new System.Drawing.Point(658, 0);
             this.lbOc.Name = "lbOc";
-            this.lbOc.Size = new System.Drawing.Size(158, 40);
+            this.lbOc.Size = new System.Drawing.Size(154, 40);
             this.lbOc.TabIndex = 5;
             this.lbOc.Text = "Asientos Ocupados";
             this.lbOc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1984,7 +1984,7 @@
             // 
             this.btnConfir.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnConfir.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfir.Location = new System.Drawing.Point(852, 3);
+            this.btnConfir.Location = new System.Drawing.Point(832, 3);
             this.btnConfir.Name = "btnConfir";
             this.btnConfir.Size = new System.Drawing.Size(138, 34);
             this.btnConfir.TabIndex = 7;
@@ -1998,9 +1998,9 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(996, 0);
+            this.label1.Location = new System.Drawing.Point(976, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 40);
+            this.label1.Size = new System.Drawing.Size(127, 40);
             this.label1.TabIndex = 8;
             this.label1.Text = "Tiempo";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

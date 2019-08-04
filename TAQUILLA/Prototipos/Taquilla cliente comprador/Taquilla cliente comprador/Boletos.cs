@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Data.Odbc;
 
 namespace Taquilla_cliente_comprador
 {
@@ -22,10 +23,39 @@ namespace Taquilla_cliente_comprador
         int count3 = 0;
         int count4 = 0;
         int count5 = 0;
-        int tiempo = 30;
-        public frmBoletos()
+        int tiempo = 0;
+		int nofuncion;
+        OdbcConnection conn = new OdbcConnection("Dsn=cine");
+        public frmBoletos(int funcion)
         {
             InitializeComponent();
+			nofuncion = funcion;
+            tiempo1();
+            
+        }
+
+
+        void tiempo1()
+        {
+            try
+            {
+               
+
+                conn.Open();
+                OdbcCommand command = new OdbcCommand("SELECT * FROM timer", conn);
+                OdbcDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+
+                    tiempo = Int32.Parse(reader.GetValue(1).ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            conn.Close();
+
         }
 
         private void Txt_niño_TextChanged(object sender, EventArgs e)
@@ -50,7 +80,7 @@ namespace Taquilla_cliente_comprador
                 else
                 {
 
-                    frmAsientos asi = new frmAsientos(tiempo);
+                    frmAsientos asi = new frmAsientos(tiempo, nofuncion);
                     asi.txtAsientos.Text = txtTotalB.Text;
 
 
@@ -220,7 +250,7 @@ namespace Taquilla_cliente_comprador
 
         private void Btn_regresar_Click(object sender, EventArgs e)
         {
-            Form formulariocar = new frmCartelera("Portales","Formato","idioma");
+            Form formulariocar = new Filtro("Portales");
             formulariocar.Show();
             Visible = false;
         }

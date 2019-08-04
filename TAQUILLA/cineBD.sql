@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-08-2019 a las 02:43:42
+-- Tiempo de generación: 03-08-2019 a las 00:08:49
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.3.1
 
@@ -30,64 +30,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `asientos` (
   `idAsiento` varchar(5) COLLATE utf8mb4_bin NOT NULL,
-  `idSala` int(11) NOT NULL
+  `idFuncion` int(11) NOT NULL,
+  `estado` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
-
---
--- Volcado de datos para la tabla `asientos`
---
-
-INSERT INTO `asientos` (`idAsiento`, `idSala`) VALUES
-('A-1', 1),
-('A-1', 2),
-('A-1', 3),
-('A-1', 4),
-('A-1', 5),
-('A-10', 1),
-('A-10', 2),
-('A-10', 3),
-('A-10', 4),
-('A-10', 5),
-('A-2', 1),
-('A-2', 2),
-('A-2', 3),
-('A-2', 4),
-('A-2', 5),
-('A-3', 1),
-('A-3', 2),
-('A-3', 3),
-('A-3', 4),
-('A-3', 5),
-('A-4', 1),
-('A-4', 2),
-('A-4', 3),
-('A-4', 4),
-('A-4', 5),
-('A-5', 1),
-('A-5', 2),
-('A-5', 3),
-('A-5', 4),
-('A-5', 5),
-('A-6', 1),
-('A-6', 2),
-('A-6', 3),
-('A-6', 4),
-('A-6', 5),
-('A-7', 1),
-('A-7', 2),
-('A-7', 3),
-('A-7', 4),
-('A-7', 5),
-('A-8', 1),
-('A-8', 2),
-('A-8', 3),
-('A-8', 4),
-('A-8', 5),
-('A-9', 1),
-('A-9', 2),
-('A-9', 3),
-('A-9', 4),
-('A-9', 5);
 
 -- --------------------------------------------------------
 
@@ -122,7 +67,55 @@ INSERT INTO `bitacora` (`noReg`, `Usuario`, `Accion`, `Afectado`, `ipAddress`, `
 (11, 'Risko', 'DELETE', ' MULTIMEDIA', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 18:36:57'),
 (12, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 18:39:55'),
 (13, 'Risko', 'INSERT', ' MULTIMEDIA', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 18:40:07'),
-(14, 'Risko', 'DELETE', ' MULTIMEDIA', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 18:40:12');
+(14, 'Risko', 'DELETE', ' MULTIMEDIA', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 18:40:12'),
+(15, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:04:46'),
+(16, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:07:45'),
+(17, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:14:09'),
+(18, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:15:23'),
+(19, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:15:46'),
+(20, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:16:00'),
+(21, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:16:32'),
+(22, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:17:11'),
+(23, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:27:46'),
+(24, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:28:31'),
+(25, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:29:13'),
+(26, 'Risko', 'UPDATE', ' MULTIMEDIA', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:29:22'),
+(27, 'Risko', 'UPDATE', ' MULTIMEDIA', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:29:32'),
+(28, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:33:18'),
+(29, 'Risko', 'INSERT', ' Cines', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:33:30'),
+(30, 'Risko', 'DELETE', ' CINES', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:33:36'),
+(31, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:43:30'),
+(32, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:45:44'),
+(33, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:46:22'),
+(34, 'Risko', 'UPDATE', ' CIUDADES', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:46:38'),
+(35, 'Risko', 'INSERT', ' CIUDADES', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:46:56'),
+(36, 'Risko', 'DELETE', ' CIUDADES', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:47:01'),
+(37, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:48:24'),
+(38, 'Risko', 'INSERT', ' CIUDADES', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:48:31'),
+(39, 'Risko', 'UPDATE', ' CIUDADES', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:48:47'),
+(40, 'Risko', 'DELETE', ' CIUDADES', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:48:54'),
+(41, 'Risko', 'UPDATE', ' CIUDADES', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:49:05'),
+(42, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:57:29'),
+(43, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:58:10'),
+(44, 'Risko', 'INSERT', ' FUNCIONES', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:58:48'),
+(45, 'Risko', 'UPDATE', ' FUNCIONES', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:59:10'),
+(46, 'Risko', 'DELETE', ' FUNCIONES', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 21:59:15'),
+(47, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 22:03:46'),
+(48, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 22:04:49'),
+(49, 'Risko', 'DELETE', ' USUARIOS', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 22:05:05'),
+(50, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 22:08:21'),
+(51, 'Risko', 'DELETE', ' PELICULAS', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 22:08:54'),
+(52, 'Risko', 'DELETE', ' PELICULAS', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 22:09:02'),
+(53, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 23:33:43'),
+(54, 'Risko', 'INSERT', ' FUNCIONES', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 23:34:15'),
+(55, 'Risko', 'INSERT', ' PELICULAS', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 23:35:52'),
+(56, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 23:37:08'),
+(57, 'Risko', 'INSERT', ' FUNCIONES', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '1/08/2019 23:37:26'),
+(58, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.50.120', '2/08/2019 08:29:57'),
+(59, 'Risko', 'UPDATE', ' FUNCIONES', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.50.120', '2/08/2019 08:30:05'),
+(60, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.50.120', '2/08/2019 08:43:02'),
+(61, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.50.120', '2/08/2019 08:43:22'),
+(62, 'Risko', 'UPDATE', ' USUARIOS', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.50.120', '2/08/2019 08:44:16');
 
 -- --------------------------------------------------------
 
@@ -262,18 +255,126 @@ CREATE TABLE `funciones` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
+-- Disparadores `funciones`
+--
+DELIMITER $$
+CREATE TRIGGER `asientos funcion` AFTER INSERT ON `funciones` FOR EACH ROW BEGIN
+INSERT INTO `asientos` VALUES
+('A-1', new.idFuncion, 0),
+('A-2', new.idFuncion, 0),
+('A-3', new.idFuncion, 0),
+('A-4', new.idFuncion, 0),
+('A-5', new.idFuncion, 0),
+('A-6', new.idFuncion, 0),
+('A-7', new.idFuncion, 0),
+('A-8', new.idFuncion, 0),
+('A-9', new.idFuncion, 0),
+('A-10', new.idFuncion, 0),
+('B-1', new.idFuncion, 0),
+('B-2', new.idFuncion, 0),
+('B-3', new.idFuncion, 0),
+('B-4', new.idFuncion, 0),
+('B-5', new.idFuncion, 0),
+('B-6', new.idFuncion, 0),
+('B-7', new.idFuncion, 0),
+('B-8', new.idFuncion, 0),
+('B-9', new.idFuncion, 0),
+('B-10', new.idFuncion, 0),
+('C-1', new.idFuncion, 0),
+('C-2', new.idFuncion, 0),
+('C-3', new.idFuncion, 0),
+('C-4', new.idFuncion, 0),
+('C-5', new.idFuncion, 0),
+('C-6', new.idFuncion, 0),
+('C-7', new.idFuncion, 0),
+('C-8', new.idFuncion, 0),
+('C-9', new.idFuncion, 0),
+('C-10', new.idFuncion, 0),
+('D-1', new.idFuncion, 0),
+('D-2', new.idFuncion, 0),
+('D-3', new.idFuncion, 0),
+('D-4', new.idFuncion, 0),
+('D-5', new.idFuncion, 0),
+('D-6', new.idFuncion, 0),
+('D-7', new.idFuncion, 0),
+('D-8', new.idFuncion, 0),
+('D-9', new.idFuncion, 0),
+('D-10', new.idFuncion, 0),
+('E-1', new.idFuncion, 0),
+('E-2', new.idFuncion, 0),
+('E-3', new.idFuncion, 0),
+('E-4', new.idFuncion, 0),
+('E-5', new.idFuncion, 0),
+('E-6', new.idFuncion, 0),
+('E-7', new.idFuncion, 0),
+('E-8', new.idFuncion, 0),
+('E-9', new.idFuncion, 0),
+('E-10', new.idFuncion, 0),
+('F-1', new.idFuncion, 0),
+('F-2', new.idFuncion, 0),
+('F-3', new.idFuncion, 0),
+('F-4', new.idFuncion, 0),
+('F-5', new.idFuncion, 0),
+('F-6', new.idFuncion, 0),
+('F-7', new.idFuncion, 0),
+('F-8', new.idFuncion, 0),
+('F-9', new.idFuncion, 0),
+('F-10', new.idFuncion, 0),
+('G-1', new.idFuncion, 0),
+('G-2', new.idFuncion, 0),
+('G-3', new.idFuncion, 0),
+('G-4', new.idFuncion, 0),
+('G-5', new.idFuncion, 0),
+('G-6', new.idFuncion, 0),
+('G-7', new.idFuncion, 0),
+('G-8', new.idFuncion, 0),
+('G-9', new.idFuncion, 0),
+('G-10', new.idFuncion, 0),
+('H-1', new.idFuncion, 0),
+('H-2', new.idFuncion, 0),
+('H-3', new.idFuncion, 0),
+('H-4', new.idFuncion, 0),
+('H-5', new.idFuncion, 0),
+('H-6', new.idFuncion, 0),
+('H-7', new.idFuncion, 0),
+('H-8', new.idFuncion, 0),
+('H-9', new.idFuncion, 0),
+('H-10', new.idFuncion, 0),
+('I-1', new.idFuncion, 0),
+('I-2', new.idFuncion, 0),
+('I-3', new.idFuncion, 0),
+('I-4', new.idFuncion, 0),
+('I-5', new.idFuncion, 0),
+('I-6', new.idFuncion, 0),
+('I-7', new.idFuncion, 0),
+('I-8', new.idFuncion, 0),
+('I-9', new.idFuncion, 0),
+('I-10', new.idFuncion, 0);
+
+
+
+END
+$$
+DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
 -- Volcado de datos para la tabla `funciones`
 --
 
 INSERT INTO `funciones` (`idFuncion`, `idPelicula`, `idSala`, `cine`, `horaFuncion`) VALUES
-(6, 2, 5, 'Portales', '16:05:00'),
-(7, 2, 1, 'Naranjo', '11:00:00'),
-(9, 3, 4, 'Portales', '16:50:00'),
-(10, 2, 3, 'Interplaza', '16:00:00'),
-(11, 3, 4, 'Plaza Americas', '13:00:00'),
-(13, 6, 5, 'Portales', '16:05:00');
+(1, 2, 5, 'Portales', '16:05:00'),
+(2, 2, 4, 'Naranjo', '11:00:00'),
+(3, 2, 3, 'Interplaza', '16:00:00'),
+(4, 6, 5, 'Portales', '16:05:00'),
+(5, 5, 3, 'Interplaza', '10:25:00'),
+(6, 5, 1, 'Portales', '12:50:00'),
+(7, 8, 6, 'Portales', '01:00:00'),
+(8, 6, 2, 'Interplaza', '00:00:02'),
+(9, 2, 4, 'Plaza Americas', '10:20:00');
 
--- --------------------------------------------------------
+
 
 --
 -- Estructura de tabla para la tabla `multimedia`
@@ -290,10 +391,10 @@ CREATE TABLE `multimedia` (
 --
 
 INSERT INTO `multimedia` (`NoRegistro`, `Afiche`, `Trailer`) VALUES
-(1, 'https://as01.epimg.net/meristation/imagenes/2019/04/11/noticias/1554973254_299218_1554973314_noticia_normal.jpg', 'https://www.youtube.com/watch?v=8foZzQf1L9o&t=3s'),
+(1, 'https://img.europapress.es/fotoweb/fotonoticia_20190531140023_640.jpg', 'https://www.youtube.com/watch?v=8foZzQf1L9o&t=3s'),
 (2, 'https://img-cdn.hipertextual.com/files/2019/06/hipertextual-4-trajes-spider-man-lejos-casa-nuevo-trailer-2019196176.jpg?strip=all&lossy=1&quality=57&resize=740%2C490&ssl=1', 'https://www.youtube.com/watch?v=s1OxOBPWBeU'),
-(3, 'https://pulpfictioncine.com/download/multimedia.normal.b334e3361b9ef553.6d756d626169706f72746164615f70756c7066696374696f696e63696e655f6e6f726d616c2e6a7067.jpg', 'https://www.youtube.com/watch?v=td03ewyR9LI'),
-(5, 'https://www.ruizhealytimes.com/sites/default/files/styles/articles_horizontal/public/articles/2019/06/desastre-en-paris-perdiendose-en-la-bruma-de-la-memoria_1.png?itok=XGSjeRll', 'https://www.youtube.com/watch?v=WPEgVaz9j2g');
+(3, 'https://visitkearney.org/wp-content/uploads/hotel-mumbai.jpg', 'https://www.youtube.com/watch?v=td03ewyR9LI'),
+(5, 'http://www.endorfina.mx/wp-content/uploads/2019/06/4-360x290.jpg', 'https://www.youtube.com/watch?v=WPEgVaz9j2g');
 
 -- --------------------------------------------------------
 
@@ -308,21 +409,20 @@ CREATE TABLE `peliculas` (
   `Formato` varchar(45) COLLATE utf8mb4_bin DEFAULT NULL,
   `Clasificación` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `Sinopsis` text COLLATE utf8mb4_bin NOT NULL,
-  `Duracion` varchar(45) COLLATE utf8mb4_bin DEFAULT NULL,
+  `Idioma` varchar(45) COLLATE utf8mb4_bin DEFAULT NULL,
   `semanaEstrenoInicio` date DEFAULT NULL,
-  `semanaEstrenoFin` date DEFAULT NULL,
-  `Usuario` varchar(45) COLLATE utf8mb4_bin DEFAULT NULL
+  `semanaEstrenoFin` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
 -- Volcado de datos para la tabla `peliculas`
 --
 
-INSERT INTO `peliculas` (`idPelicula`, `Titulo`, `Multimedia`, `Formato`, `Clasificación`, `Sinopsis`, `Duracion`, `semanaEstrenoInicio`, `semanaEstrenoFin`, `Usuario`) VALUES
-(2, 'Spider-Man: Lejos de casa', 2, '3D', 'B', 'Peter Parker regresa en Spider-Man: Lejos de casa el siguiente capítulo en la serie de Spider-Man: Homecoming. Nuestro amistoso vecino superhéroe decide unirse a sus mejores amigos Ned, MJ, y el resto del grupo a unas vacaciones europeas. Aunque, el plan de Peter sea dejar sus heroicidades atrás durante unas pocas semanas, pronto desecha esas ideas para ayudar a regañadientes a Nick Furia a desentrañar el misterio de los ataques de varias criaturas elementales, que están creando el caos en el mundo', '1 hora 30 minutos', '2019-07-07', '2019-07-14', 'rchocm'),
-(3, 'Hotel Mumbai', 3, '3D', 'B15', 'Una apasionante historia sobre humanidad y heroísmo, HOTEL MUMBAI cuenta vividamente el cerco de 2008 al Taj Hotel por un grupo de terroristas en Mumbai, India. Entre el personal del hotel se encuentra el renombrado chef Hemant Oberoi (Anupam Kher) y un camarero (Dev Patel) quienes eligen arriesgar sus vidas para proteger a los huéspedes, Mientras la situación avanza, una pareja desesperada (Armie Hammer y Nazanin Boniadi) se ve obligada hacer sacrificios impensables para proteger a su hijo recién nacido.', '1 hora 30 minutos', '2019-07-14', '2019-07-21', 'gus657'),
-(5, 'El rey león', 1, '2D', 'A', 'EL REY LEÓN de Disney, dirigida por Jon Favreau, nos lleva a la sabana africana donde un futuro rey ha nacido. Simba idolatra a su padre, el rey Mufasa, y está entusiasmado con su destino real. Pero no todos en el reino celebran la llegada del nuevo cachorro. Scar, el hermano de Mufasa y antiguo heredero al trono, tiene sus propios planes. La batalla de La Roca del Rey se ve teñida de traición, tragedia y drama, y acaba forzando a Simba al exilio. Con la ayuda de una curiosa pareja de amigos nuevos, Simba tendrá que arreglárselas para crecer y recuperar lo que legítimamente le corresponde. El estelar reparto incluye a: Donald Glover como Simba, Beyoncé Knowles-Carter en el papel de Nala, James Earl Jones como Mufasa, Chiwetel Ejiofor como Scar, Seth Rogen como Pumba y Billy Eichner en el papel de Timón.', '1 hora 30 minutos', '2019-07-10', '2019-07-19', 'rchocm'),
-(6, 'Desastre en París', 5, '2D', 'B', 'El día que una extraña niebla letal sumerge París, los supervivientes encuentran refugio en los pisos superiores de los edificios y en los tejados de la capital. Sin información, sin electricidad, sin agua ni comida, una pequeña familia trata de sobrevivir a este desastre. Pero pasan las horas y una cosa está clara: la ayuda no llegará y será necesario para poder salir, probar suerte en la niebla.', '1 hora 30 minutos', '2019-07-01', '2019-07-17', 'Risko');
+INSERT INTO `peliculas` (`idPelicula`, `Titulo`, `Multimedia`, `Formato`, `Clasificación`, `Sinopsis`, `Idioma`, `semanaEstrenoInicio`, `semanaEstrenoFin`) VALUES
+(2, 'Spider-Man: Lejos de casa', 2, '3D', 'B', 'Peter Parker regresa en Spider-Man: Lejos de casa el siguiente capítulo en la serie de Spider-Man: Homecoming. Nuestro amistoso vecino superhéroe decide unirse a sus mejores amigos Ned, MJ, y el resto del grupo a unas vacaciones europeas. Aunque, el plan de Peter sea dejar sus heroicidades atrás durante unas pocas semanas, pronto desecha esas ideas para ayudar a regañadientes a Nick Furia a desentrañar el misterio de los ataques de varias criaturas elementales, que están creando el caos en el mundo', '1 hora 30 minutos', '2019-07-07', '2019-07-14'),
+(5, 'El rey león', 1, '2D', 'A', 'EL REY LEÓN de Disney, dirigida por Jon Favreau, nos lleva a la sabana africana donde un futuro rey ha nacido. Simba idolatra a su padre, el rey Mufasa, y está entusiasmado con su destino real. Pero no todos en el reino celebran la llegada del nuevo cachorro. Scar, el hermano de Mufasa y antiguo heredero al trono, tiene sus propios planes. La batalla de La Roca del Rey se ve teñida de traición, tragedia y drama, y acaba forzando a Simba al exilio. Con la ayuda de una curiosa pareja de amigos nuevos, Simba tendrá que arreglárselas para crecer y recuperar lo que legítimamente le corresponde. El estelar reparto incluye a: Donald Glover como Simba, Beyoncé Knowles-Carter en el papel de Nala, James Earl Jones como Mufasa, Chiwetel Ejiofor como Scar, Seth Rogen como Pumba y Billy Eichner en el papel de Timón.', '1 hora 30 minutos', '2019-07-10', '2019-07-19'),
+(6, 'Desastre en París', 5, '2D', 'B', 'El día que una extraña niebla letal sumerge París, los supervivientes encuentran refugio en los pisos superiores de los edificios y en los tejados de la capital. Sin información, sin electricidad, sin agua ni comida, una pequeña familia trata de sobrevivir a este desastre. Pero pasan las horas y una cosa está clara: la ayuda no llegará y será necesario para poder salir, probar suerte en la niebla.', '1 hora 30 minutos', '2019-07-01', '2019-07-17'),
+(8, 'Hotel Mumbai', 3, '2D', 'B15', 'Una apasionante historia sobre humanidad y heroísmo, HOTEL MUMBAI cuenta vividamente el cerco de 2008 al Taj Hotel por un grupo de terroristas en Mumbai, India. Entre el personal del hotel se encuentra el renombrado chef Hemant Oberoi (Anupam Kher) y un camarero (Dev Patel) quienes eligen arriesgar sus vidas para proteger a los huéspedes, Mientras la situación avanza, una pareja desesperada (Armie Hammer y Nazanin Boniadi) se ve obligada hacer sacrificios impensables para proteger a su hijo recién nacido.', '1 Hora 30 minutos', '2019-08-07', '2019-08-31');
 
 -- --------------------------------------------------------
 
@@ -391,13 +491,6 @@ CREATE TABLE `timer` (
   `Usuario` varchar(45) COLLATE utf8mb4_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
---
--- Volcado de datos para la tabla `timer`
---
-
-INSERT INTO `timer` (`noRegistro`, `Tiempo`, `Fecha`, `Usuario`) VALUES
-(1, 10000, '2019-07-27', 'gus657');
-
 -- --------------------------------------------------------
 
 --
@@ -445,8 +538,7 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`Usuario`, `idPerfil`, `password`, `DPI`, `Nombres`, `Apellidos`, `Telefono`, `Correo`, `Sexo`, `fechaNac`, `fechaInicio`) VALUES
 ('Risko', 1, 'dd3d7a65733c4e476c310d7cfd7a2460', '894652', 'Risko', 'Risko', '84651325354', 'risko@Risko.com', 'masculino', '2019-07-01', '2019-07-31'),
-('edgar', 1, 'cf55ada960dedf6154b0d6905b2748ff', '12365478', 'Edgar', 'Casasola', '22665544', 'edgar@risko.com', 'Masculino', '2018-07-31', '2019-06-27'),
-('gus657', 1, 'b4288d9c0ec0a1841b3b3728321e7088', '35621547', 'Gustavo', 'Perez', '455221', 'gus', 'Masculino', '2019-07-28', '2019-07-28'),
+('edgar', 1, '6d96ac0dba8fc4af98711a9f8622e804', '444541541', 'Edgar', 'Casasola', '22665544', 'edgar@risko.com', 'Masculino', '2018-07-31', '2019-06-27'),
 ('rchocm', 1, 'e9a529231e0c7e68bb358b0db3453c75', '4896513', 'Randy', 'Choc', '44558899', 'randy@risko.com', 'Masculino', '2017-12-16', '2019-07-25');
 
 --
@@ -457,8 +549,8 @@ INSERT INTO `usuarios` (`Usuario`, `idPerfil`, `password`, `DPI`, `Nombres`, `Ap
 -- Indices de la tabla `asientos`
 --
 ALTER TABLE `asientos`
-  ADD PRIMARY KEY (`idAsiento`,`idSala`),
-  ADD KEY `idSala` (`idSala`);
+  ADD PRIMARY KEY (`idAsiento`,`idFuncion`),
+  ADD KEY `idSala` (`idFuncion`);
 
 --
 -- Indices de la tabla `bitacora`
@@ -547,7 +639,6 @@ ALTER TABLE `multimedia`
 ALTER TABLE `peliculas`
   ADD PRIMARY KEY (`idPelicula`),
   ADD KEY `Clasificación` (`Clasificación`),
-  ADD KEY `Usuario` (`Usuario`),
   ADD KEY `Titulo` (`Titulo`(191)),
   ADD KEY `Multimedia` (`Multimedia`);
 
@@ -602,7 +693,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `bitacora`
 --
 ALTER TABLE `bitacora`
-  MODIFY `noReg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `noReg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT de la tabla `boletos`
@@ -644,19 +735,19 @@ ALTER TABLE `encabezadosfactura`
 -- AUTO_INCREMENT de la tabla `funciones`
 --
 ALTER TABLE `funciones`
-  MODIFY `idFuncion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idFuncion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `multimedia`
 --
 ALTER TABLE `multimedia`
-  MODIFY `NoRegistro` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `NoRegistro` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `peliculas`
 --
 ALTER TABLE `peliculas`
-  MODIFY `idPelicula` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idPelicula` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `perfiles`
@@ -674,7 +765,7 @@ ALTER TABLE `salas`
 -- AUTO_INCREMENT de la tabla `timer`
 --
 ALTER TABLE `timer`
-  MODIFY `noRegistro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `noRegistro` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
@@ -684,7 +775,7 @@ ALTER TABLE `timer`
 -- Filtros para la tabla `asientos`
 --
 ALTER TABLE `asientos`
-  ADD CONSTRAINT `asientos_ibfk_1` FOREIGN KEY (`idSala`) REFERENCES `salas` (`idSala`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `asientos_ibfk_1` FOREIGN KEY (`idFuncion`) REFERENCES `funciones` (`idFuncion`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `bitacora`
@@ -745,7 +836,6 @@ ALTER TABLE `funciones`
 --
 ALTER TABLE `peliculas`
   ADD CONSTRAINT `peliculas_ibfk_1` FOREIGN KEY (`Clasificación`) REFERENCES `clasificacion` (`clasificacion`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `peliculas_ibfk_2` FOREIGN KEY (`Usuario`) REFERENCES `usuarios` (`Usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `peliculas_ibfk_3` FOREIGN KEY (`Multimedia`) REFERENCES `multimedia` (`NoRegistro`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --

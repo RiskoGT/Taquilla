@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Odbc;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,8 +21,307 @@ namespace Taquilla_cliente_comprador
         int c1, c2, c3, c4, c5, c6, c7, c8, c9, c10 = 0;
         int d1, d2, d3, d4, d5, d6, d7, d8, d9, d10 = 0;
         int tiempo=0;
+		int nofuncion=0;
+		string[] Asientos = new string[90];
+		OdbcConnection conn = new OdbcConnection("Dsn=cine");
+		public frmAsientos(int dato, int funcion)
+		{
+			InitializeComponent();
+			tiempo = dato;
+			nofuncion = funcion;
+			estadoAsientos();
+		}
 
-        private void Btn_B7_Click(object sender, EventArgs e)
+		void estadoAsientos()
+		{
+			
+				conn.Open();
+				OdbcCommand command = new OdbcCommand(""
+				+ "SELECT  estado FROM asientos WHERE idFuncion= " + nofuncion + "", conn);
+				OdbcDataReader funciones = command.ExecuteReader();
+
+				int pos = 0;
+				while (funciones.Read())
+				{
+				switch (pos)
+				{
+					case 0:
+						if (funciones.GetValue(0).ToString() == "0") { btnA1.BackColor = Color.White; } else { btnA1.BackColor = Color.Red; btnA1.Enabled = false; }
+						break;
+					case 1:
+						if (funciones.GetValue(0).ToString() == "0") { btnA10.BackColor = Color.White; } else { btnA10.BackColor = Color.Red; btnA10.Enabled = false; }
+						break;
+					case 2:
+						if (funciones.GetValue(0).ToString() == "0") { btnA2.BackColor = Color.White; } else { btnA2.BackColor = Color.Red; btnA2.Enabled = false; }
+						break;
+					case 3:
+						if (funciones.GetValue(0).ToString() == "0") { btnA3.BackColor = Color.White; } else { btnA3.BackColor = Color.Red; btnA3.Enabled = false; }
+						break;
+					case 4:
+						if (funciones.GetValue(0).ToString() == "0") { btnA4.BackColor = Color.White; } else { btnA4.BackColor = Color.Red; btnA4.Enabled = false; }
+						break;
+					case 5:
+						if (funciones.GetValue(0).ToString() == "0") { btnA5.BackColor = Color.White; } else { btnA5.BackColor = Color.Red; btnA5.Enabled = false; }
+						break;
+					case 6:
+						if (funciones.GetValue(0).ToString() == "0") { btnA6.BackColor = Color.White; } else { btnA6.BackColor = Color.Red; btnA6.Enabled = false; }
+						break;
+					case 7:
+						if (funciones.GetValue(0).ToString() == "0") { btnA7.BackColor = Color.White; } else { btnA7.BackColor = Color.Red; btnA7.Enabled = false; }
+						break;
+					case 8:
+						if (funciones.GetValue(0).ToString() == "0") { btnA8.BackColor = Color.White; } else { btnA8.BackColor = Color.Red; btnA8.Enabled = false; }
+						break;
+					case 9:
+						if (funciones.GetValue(0).ToString() == "0") { btnA9.BackColor = Color.White; } else { btnA9.BackColor = Color.Red; btnA9.Enabled = false; }
+						break;
+					case 10:
+						if (funciones.GetValue(0).ToString() == "0") { btnB1.BackColor = Color.White; } else { btnB1.BackColor = Color.Red; btnB1.Enabled = false; }
+						break;
+					case 11:
+						if (funciones.GetValue(0).ToString() == "0") { btnB10.BackColor = Color.White; } else { btnB10.BackColor = Color.Red; btnB10.Enabled = false; }
+						break;
+					case 12:
+						if (funciones.GetValue(0).ToString() == "0") { btnB2.BackColor = Color.White; } else { btnB2.BackColor = Color.Red; btnB2.Enabled = false; }
+						break;
+					case 13:
+						if (funciones.GetValue(0).ToString() == "0") { btnB3.BackColor = Color.White; } else { btnB3.BackColor = Color.Red; btnB3.Enabled = false; }
+						break;
+					case 14:
+						if (funciones.GetValue(0).ToString() == "0") { btnB4.BackColor = Color.White; } else { btnB4.BackColor = Color.Red; btnB4.Enabled = false; }
+						break;
+					case 15:
+						if (funciones.GetValue(0).ToString() == "0") { btnB5.BackColor = Color.White; } else { btnB5.BackColor = Color.Red; btnB5.Enabled = false; }
+						break;
+					case 16:
+						if (funciones.GetValue(0).ToString() == "0") { btnB6.BackColor = Color.White; } else { btnB6.BackColor = Color.Red; btnB6.Enabled = false; }
+						break;
+					case 17:
+						if (funciones.GetValue(0).ToString() == "0") { btnB7.BackColor = Color.White; } else { btnB7.BackColor = Color.Red; btnB7.Enabled = false; }
+						break;
+					case 18:
+						if (funciones.GetValue(0).ToString() == "0") { btnB8.BackColor = Color.White; } else { btnB8.BackColor = Color.Red; btnB8.Enabled = false; }
+						break;
+					case 19:
+						if (funciones.GetValue(0).ToString() == "0") { btnB9.BackColor = Color.White; } else { btnB9.BackColor = Color.Red; btnB9.Enabled = false; }
+						break;
+					case 20:
+						if (funciones.GetValue(0).ToString() == "0") { btnC1.BackColor = Color.White; } else { btnC1.BackColor = Color.Red; btnC1.Enabled = false; }
+						break;
+					case 21:
+						if (funciones.GetValue(0).ToString() == "0") { btnC10.BackColor = Color.White; } else { btnC10.BackColor = Color.Red; btnC10.Enabled = false; }
+						break;
+					case 22:
+						if (funciones.GetValue(0).ToString() == "0") { btnC2.BackColor = Color.White; } else { btnC2.BackColor = Color.Red; btnC2.Enabled = false; }
+						break;
+					case 23:
+						if (funciones.GetValue(0).ToString() == "0") { btnC3.BackColor = Color.White; } else { btnC3.BackColor = Color.Red; btnC3.Enabled = false; }
+						break;
+					case 24:
+						if (funciones.GetValue(0).ToString() == "0") { btnC4.BackColor = Color.White; } else { btnC4.BackColor = Color.Red; btnC4.Enabled = false; }
+						break;
+					case 25:
+						if (funciones.GetValue(0).ToString() == "0") { btnC5.BackColor = Color.White; } else { btnC5.BackColor = Color.Red; btnC5.Enabled = false; }
+						break;
+					case 26:
+						if (funciones.GetValue(0).ToString() == "0") { btnC6.BackColor = Color.White; } else { btnC6.BackColor = Color.Red; btnC6.Enabled = false; }
+						break;
+					case 27:
+						if (funciones.GetValue(0).ToString() == "0") { btnC7.BackColor = Color.White; } else { btnC7.BackColor = Color.Red; btnC7.Enabled = false; }
+						break;
+					case 28:
+						if (funciones.GetValue(0).ToString() == "0") { btnC8.BackColor = Color.White; } else { btnC8.BackColor = Color.Red; btnC8.Enabled = false; }
+						break;
+					case 29:
+						if (funciones.GetValue(0).ToString() == "0") { btnC9.BackColor = Color.White; } else { btnC9.BackColor = Color.Red; btnC9.Enabled = false; }
+						break;
+					case 30:
+						if (funciones.GetValue(0).ToString() == "0") { btnD1.BackColor = Color.White; } else { btnD1.BackColor = Color.Red; btnD1.Enabled = false; }
+						break;
+					case 31:
+						if (funciones.GetValue(0).ToString() == "0") { btnD10.BackColor = Color.White; } else { btnD10.BackColor = Color.Red; btnD10.Enabled = false; }
+						break;
+					case 32:
+						if (funciones.GetValue(0).ToString() == "0") { btnD2.BackColor = Color.White; } else { btnD2.BackColor = Color.Red; btnD2.Enabled = false; }
+						break;
+					case 33:
+						if (funciones.GetValue(0).ToString() == "0") { btnD3.BackColor = Color.White; } else { btnD3.BackColor = Color.Red; btnD3.Enabled = false; }
+						break;
+					case 34:
+						if (funciones.GetValue(0).ToString() == "0") { btnD4.BackColor = Color.White; } else { btnD4.BackColor = Color.Red; btnD4.Enabled = false; }
+						break;
+					case 35:
+						if (funciones.GetValue(0).ToString() == "0") { btnD5.BackColor = Color.White; } else { btnD5.BackColor = Color.Red; btnD5.Enabled = false; }
+						break;
+					case 36:
+						if (funciones.GetValue(0).ToString() == "0") { btnD6.BackColor = Color.White; } else { btnD6.BackColor = Color.Red; btnD6.Enabled = false; }
+						break;
+					case 37:
+						if (funciones.GetValue(0).ToString() == "0") { btnD7.BackColor = Color.White; } else { btnD7.BackColor = Color.Red; btnD7.Enabled = false; }
+						break;
+					case 38:
+						if (funciones.GetValue(0).ToString() == "0") { btnD8.BackColor = Color.White; } else { btnD8.BackColor = Color.Red; btnD8.Enabled = false; }
+						break;
+					case 39:
+						if (funciones.GetValue(0).ToString() == "0") { btnD9.BackColor = Color.White; } else { btnD9.BackColor = Color.Red; btnD9.Enabled = false; }
+						break;
+					case 40:
+						if (funciones.GetValue(0).ToString() == "0") { btnE1.BackColor = Color.White; } else { btnE1.BackColor = Color.Red; btnE1.Enabled = false; }
+						break;
+					case 41:
+						if (funciones.GetValue(0).ToString() == "0") { btnE10.BackColor = Color.White; } else { btnE10.BackColor = Color.Red; btnE10.Enabled = false; }
+						break;
+					case 42:
+						if (funciones.GetValue(0).ToString() == "0") { btnE2.BackColor = Color.White; } else { btnE2.BackColor = Color.Red; btnE2.Enabled = false; }
+						break;
+					case 43:
+						if (funciones.GetValue(0).ToString() == "0") { btnE3.BackColor = Color.White; } else { btnE3.BackColor = Color.Red; btnE3.Enabled = false; }
+						break;
+					case 44:
+						if (funciones.GetValue(0).ToString() == "0") { btnE4.BackColor = Color.White; } else { btnE4.BackColor = Color.Red; btnE4.Enabled = false; }
+						break;
+					case 45:
+						if (funciones.GetValue(0).ToString() == "0") { btnE5.BackColor = Color.White; } else { btnE5.BackColor = Color.Red; btnE5.Enabled = false; }
+						break;
+					case 46:
+						if (funciones.GetValue(0).ToString() == "0") { btnE6.BackColor = Color.White; } else { btnE6.BackColor = Color.Red; btnE6.Enabled = false; }
+						break;
+					case 47:
+						if (funciones.GetValue(0).ToString() == "0") { btnE7.BackColor = Color.White; } else { btnE7.BackColor = Color.Red; btnE7.Enabled = false; }
+						break;
+					case 48:
+						if (funciones.GetValue(0).ToString() == "0") { btnE8.BackColor = Color.White; } else { btnE8.BackColor = Color.Red; btnE8.Enabled = false; }
+						break;
+					case 49:
+						if (funciones.GetValue(0).ToString() == "0") { btnE9.BackColor = Color.White; } else { btnE9.BackColor = Color.Red; btnE9.Enabled = false; }
+						break;
+					case 50:
+						if (funciones.GetValue(0).ToString() == "0") { btnF1.BackColor = Color.White; } else { btnF1.BackColor = Color.Red; btnF1.Enabled = false; }
+						break;
+					case 51:
+						if (funciones.GetValue(0).ToString() == "0") { btnF10.BackColor = Color.White; } else { btnF10.BackColor = Color.Red; btnF10.Enabled = false; }
+						break;
+					case 52:
+						if (funciones.GetValue(0).ToString() == "0") { btnF2.BackColor = Color.White; } else { btnF2.BackColor = Color.Red; btnF2.Enabled = false; }
+						break;
+					case 53:
+						if (funciones.GetValue(0).ToString() == "0") { btnF3.BackColor = Color.White; } else { btnF3.BackColor = Color.Red; btnF3.Enabled = false; }
+						break;
+					case 54:
+						if (funciones.GetValue(0).ToString() == "0") { btnF4.BackColor = Color.White; } else { btnF4.BackColor = Color.Red; btnF4.Enabled = false; }
+						break;
+					case 55:
+						if (funciones.GetValue(0).ToString() == "0") { btnF5.BackColor = Color.White; } else { btnF5.BackColor = Color.Red; btnF5.Enabled = false; }
+						break;
+					case 56:
+						if (funciones.GetValue(0).ToString() == "0") { btnF6.BackColor = Color.White; } else { btnF6.BackColor = Color.Red; btnF6.Enabled = false; }
+						break;
+					case 57:
+						if (funciones.GetValue(0).ToString() == "0") { btnF7.BackColor = Color.White; } else { btnF7.BackColor = Color.Red; btnF7.Enabled = false; }
+						break;
+					case 58:
+						if (funciones.GetValue(0).ToString() == "0") { btnF8.BackColor = Color.White; } else { btnF8.BackColor = Color.Red; btnF8.Enabled = false; }
+						break;
+					case 59:
+						if (funciones.GetValue(0).ToString() == "0") { btnF9.BackColor = Color.White; } else { btnF9.BackColor = Color.Red; btnF9.Enabled = false; }
+						break;
+					case 60:
+						if (funciones.GetValue(0).ToString() == "0") { btnG1.BackColor = Color.White; } else { btnG1.BackColor = Color.Red; btnG1.Enabled = false; }
+						break;
+					case 61:
+						if (funciones.GetValue(0).ToString() == "0") { btnG10.BackColor = Color.White; } else { btnG10.BackColor = Color.Red; btnG10.Enabled = false; }
+						break;
+					case 62:
+						if (funciones.GetValue(0).ToString() == "0") { btnG2.BackColor = Color.White; } else { btnG2.BackColor = Color.Red; btnG2.Enabled = false; }
+						break;
+					case 63:
+						if (funciones.GetValue(0).ToString() == "0") { btnG3.BackColor = Color.White; } else { btnG3.BackColor = Color.Red; btnG3.Enabled = false; }
+						break;
+					case 64:
+						if (funciones.GetValue(0).ToString() == "0") { btnG4.BackColor = Color.White; } else { btnG4.BackColor = Color.Red; btnG4.Enabled = false; }
+						break;
+					case 65:
+						if (funciones.GetValue(0).ToString() == "0") { btnG5.BackColor = Color.White; } else { btnG5.BackColor = Color.Red; btnG5.Enabled = false; }
+						break;
+					case 66:
+						if (funciones.GetValue(0).ToString() == "0") { btnG6.BackColor = Color.White; } else { btnG6.BackColor = Color.Red; btnG6.Enabled = false; }
+						break;
+					case 67:
+						if (funciones.GetValue(0).ToString() == "0") { btnG7.BackColor = Color.White; } else { btnG7.BackColor = Color.Red; btnG7.Enabled = false; }
+						break;
+					case 68:
+						if (funciones.GetValue(0).ToString() == "0") { btnG8.BackColor = Color.White; } else { btnG8.BackColor = Color.Red; btnG8.Enabled = false; }
+						break;
+					case 69:
+						if (funciones.GetValue(0).ToString() == "0") { btnG9.BackColor = Color.White; } else { btnG9.BackColor = Color.Red; btnG9.Enabled = false; }
+						break;
+					case 70:
+						if (funciones.GetValue(0).ToString() == "0") { btnH1.BackColor = Color.White; } else { btnH1.BackColor = Color.Red; btnH1.Enabled = false; }
+						break;
+					case 71:
+						if (funciones.GetValue(0).ToString() == "0") { btnH10.BackColor = Color.White; } else { btnH10.BackColor = Color.Red; btnH10.Enabled = false; }
+						break;
+					case 72:
+						if (funciones.GetValue(0).ToString() == "0") { btnH2.BackColor = Color.White; } else { btnH2.BackColor = Color.Red; btnH2.Enabled = false; }
+						break;
+					case 73:
+						if (funciones.GetValue(0).ToString() == "0") { btnH3.BackColor = Color.White; } else { btnH3.BackColor = Color.Red; btnH3.Enabled = false; }
+						break;
+					case 74:
+						if (funciones.GetValue(0).ToString() == "0") { btnH4.BackColor = Color.White; } else { btnH4.BackColor = Color.Red; btnH4.Enabled = false; }
+						break;
+					case 75:
+						if (funciones.GetValue(0).ToString() == "0") { btnH5.BackColor = Color.White; } else { btnH5.BackColor = Color.Red; btnH5.Enabled = false; }
+						break;
+					case 76:
+						if (funciones.GetValue(0).ToString() == "0") { btnH6.BackColor = Color.White; } else { btnH6.BackColor = Color.Red; btnH6.Enabled = false; }
+						break;
+					case 77:
+						if (funciones.GetValue(0).ToString() == "0") { btnH7.BackColor = Color.White; } else { btnH7.BackColor = Color.Red; btnH7.Enabled = false; }
+						break;
+					case 78:
+						if (funciones.GetValue(0).ToString() == "0") { btnH8.BackColor = Color.White; } else { btnH8.BackColor = Color.Red; btnH8.Enabled = false; }
+						break;
+					case 79:
+						if (funciones.GetValue(0).ToString() == "0") { btnH9.BackColor = Color.White; } else { btnH9.BackColor = Color.Red; btnH9.Enabled = false; }
+						break;
+					case 80:
+						if (funciones.GetValue(0).ToString() == "0") { btnI1.BackColor = Color.White; } else { btnI1.BackColor = Color.Red; btnI1.Enabled = false; }
+						break;
+					case 81:
+						if (funciones.GetValue(0).ToString() == "0") { btnI10.BackColor = Color.White; } else { btnI10.BackColor = Color.Red; btnI10.Enabled = false; }
+						break;
+					case 82:
+						if (funciones.GetValue(0).ToString() == "0") { btnI2.BackColor = Color.White; } else { btnI2.BackColor = Color.Red; btnI2.Enabled = false; }
+						break;
+					case 83:
+						if (funciones.GetValue(0).ToString() == "0") { btnI3.BackColor = Color.White; } else { btnI3.BackColor = Color.Red; btnI3.Enabled = false; }
+						break;
+					case 84:
+						if (funciones.GetValue(0).ToString() == "0") { btnI4.BackColor = Color.White; } else { btnI4.BackColor = Color.Red; btnI4.Enabled = false; }
+						break;
+					case 85:
+						if (funciones.GetValue(0).ToString() == "0") { btnI5.BackColor = Color.White; } else { btnI5.BackColor = Color.Red; btnI5.Enabled = false; }
+						break;
+					case 86:
+						if (funciones.GetValue(0).ToString() == "0") { btnI6.BackColor = Color.White; } else { btnI6.BackColor = Color.Red; btnI6.Enabled = false; }
+						break;
+					case 87:
+						if (funciones.GetValue(0).ToString() == "0") { btnI7.BackColor = Color.White; } else { btnI7.BackColor = Color.Red; btnI7.Enabled = false; }
+						break;
+					case 88:
+						if (funciones.GetValue(0).ToString() == "0") { btnI8.BackColor = Color.White; } else { btnI8.BackColor = Color.Red; btnI8.Enabled = false; }
+						break;
+					case 89:
+						if (funciones.GetValue(0).ToString() == "0") { btnI9.BackColor = Color.White; } else { btnI9.BackColor = Color.Red; btnI9.Enabled = false; }
+						break;
+				}
+					pos++;
+				}
+				conn.Close();
+
+			}
+		private void Btn_B7_Click(object sender, EventArgs e)
         {
             if (b7 == 0)
             {
@@ -1463,11 +1763,7 @@ namespace Taquilla_cliente_comprador
             }
         }
 
-        public frmAsientos(int dato)
-        {
-            InitializeComponent();
-            tiempo = dato;
-        }
+        
 
         private void Button16_Click(object sender, EventArgs e)
         {
@@ -1518,8 +1814,8 @@ namespace Taquilla_cliente_comprador
 
                 if (contador > 0 && contador == prueba)
                 {
-                    Form formulariopag = new Frm_pago(tiempo);
-                    formulariopag.Show();
+                    frmTipoPago tipoPago = new frmTipoPago(tiempo);
+                    tipoPago.Show();
                     Visible = false;
                 }
                 else
@@ -1588,7 +1884,7 @@ namespace Taquilla_cliente_comprador
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            Form formulariopag = new frmBoletos();
+            Form formulariopag = new frmBoletos(1);
             formulariopag.Show();
             Visible = false;
         }

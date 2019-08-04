@@ -12,9 +12,30 @@ using System.Net;
 
 namespace Appadmin
 {
+    
     public partial class Cine : Form
     {
-		OdbcConnection conn = new OdbcConnection("Dsn=cine");
+        void letra(KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+
+                e.Handled = false;
+
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+
+            }
+            else
+            {
+                e.Handled = true;
+
+            }
+
+        }
+        OdbcConnection conn = new OdbcConnection("Dsn=cine");
 		string user = "";
         public Cine(string usuario)
         {
@@ -248,5 +269,15 @@ namespace Appadmin
 
 			
 		}
-	}
+
+        private void TxtCine_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void TxtCine_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            letra(e);
+        }
+    }
 }
