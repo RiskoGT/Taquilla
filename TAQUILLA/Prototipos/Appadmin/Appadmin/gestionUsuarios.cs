@@ -30,7 +30,7 @@ namespace Appadmin
             this.WindowState = FormWindowState.Maximized;
             txtApellido.Clear();
             txtContra.Clear();
-      
+            comboSexo.SelectedText = "Sexo";
             txtDpi.Focus();
             txtNombre.Clear();
             txtTel.Clear();
@@ -40,9 +40,11 @@ namespace Appadmin
 			dtpFechaInicio.CustomFormat = "yyyy-MM-dd";
 			dtpFechaNac.Format = DateTimePickerFormat.Custom;
 			dtpFechaNac.CustomFormat = "yyyy-MM-dd";
-			llenartbl();            
+			llenartbl();
+            comboSexo.Items.Add("Sexo");
+            comboSexo.SelectedItem = "Sexo";
             //llenarCombos();
-           }
+        }
 		void Bitacora(string Accion, string ip, string Afectado)
 		{
 			string query = "INSERT INTO Bitacora (Usuario,Accion,Afectado,ipAddress,fechaHora) VALUES ('" + user + "','" + Accion + "',' " + Afectado + "','" + ip + "','" + DateTime.Now.ToString("G") + "')";
@@ -483,6 +485,17 @@ namespace Appadmin
         private void TxtCorreo_KeyPress(object sender, KeyPressEventArgs e)
         {
             letrasimbolo(e);
+        }
+
+        private void ComboSexo_DropDown(object sender, EventArgs e)
+        {
+            comboSexo.Items.Remove( "Sexo");
+        }
+
+        private void ComboSexo_DropDownClosed(object sender, EventArgs e)
+        {
+            comboSexo.Items.Add("Sexo");
+            comboSexo.SelectedItem = "Sexo";
         }
     }
     }

@@ -228,11 +228,11 @@
             // txtDuracion
             // 
             this.txtDuracion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDuracion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDuracion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.txtDuracion.Location = new System.Drawing.Point(250, 181);
             this.txtDuracion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDuracion.Name = "txtDuracion";
-            this.txtDuracion.Size = new System.Drawing.Size(239, 34);
+            this.txtDuracion.Size = new System.Drawing.Size(239, 37);
             this.txtDuracion.TabIndex = 4;
             this.txtDuracion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDuracion_KeyPress);
             // 
@@ -241,12 +241,12 @@
             this.comboCine.BackColor = System.Drawing.Color.White;
             this.comboCine.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboCine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboCine.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboCine.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.comboCine.FormattingEnabled = true;
             this.comboCine.Location = new System.Drawing.Point(250, 63);
             this.comboCine.Margin = new System.Windows.Forms.Padding(4);
             this.comboCine.Name = "comboCine";
-            this.comboCine.Size = new System.Drawing.Size(239, 37);
+            this.comboCine.Size = new System.Drawing.Size(239, 38);
             this.comboCine.TabIndex = 5;
             this.comboCine.SelectedIndexChanged += new System.EventHandler(this.comboCine_SelectedIndexChanged);
             // 
@@ -255,12 +255,12 @@
             this.comboSala.BackColor = System.Drawing.Color.White;
             this.comboSala.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboSala.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.comboSala.FormattingEnabled = true;
             this.comboSala.Location = new System.Drawing.Point(250, 122);
             this.comboSala.Margin = new System.Windows.Forms.Padding(4);
             this.comboSala.Name = "comboSala";
-            this.comboSala.Size = new System.Drawing.Size(239, 37);
+            this.comboSala.Size = new System.Drawing.Size(239, 38);
             this.comboSala.TabIndex = 7;
             // 
             // label1
@@ -298,6 +298,7 @@
             this.dtgFunciones.Location = new System.Drawing.Point(4, 259);
             this.dtgFunciones.Margin = new System.Windows.Forms.Padding(4);
             this.dtgFunciones.Name = "dtgFunciones";
+            this.dtgFunciones.ReadOnly = true;
             this.dtgFunciones.RowHeadersWidth = 51;
             this.dtgFunciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgFunciones.Size = new System.Drawing.Size(1003, 247);

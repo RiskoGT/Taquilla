@@ -459,17 +459,7 @@ namespace Appadmin
 				txtDuracion.Text = dtgFunciones.CurrentRow.Cells[4].Value.ToString();
 				btnActualizar.Enabled = true;
 			}
-			else
-			{
-				MessageBox.Show("Porfavor Seleccione un registro de la tabla");
-				btnIngresar.Enabled = true;
-				btnEliminar.Enabled = true;
-				btnActualizar.Enabled = false;
-				comboSala.Refresh();
-				ComboPelicula.Refresh();
-				comboCine.Refresh();
-				txtDuracion.Text = "";
-			}
+			
 		}
 	}
 
