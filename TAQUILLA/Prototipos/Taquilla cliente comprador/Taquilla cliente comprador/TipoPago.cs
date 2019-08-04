@@ -35,11 +35,6 @@ namespace Taquilla_cliente_comprador
             Visible = false;
         }
 
-        private void FrmTipoPago_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void Timer1_Tick(object sender, EventArgs e)
         {
             if (tiempo2 > 0)
@@ -49,9 +44,6 @@ namespace Taquilla_cliente_comprador
             }
         }
 
-        private void TableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+       
     }
 }

@@ -23,8 +23,6 @@ namespace Taquilla_cliente_comprador
 			llenarLista();
 			ComboSeleccioneCine.Enabled = false;
 			btnVerCartelera.Enabled = false;
-			
-
         }
 
 		void llenarLista()
@@ -50,13 +48,11 @@ namespace Taquilla_cliente_comprador
 			conn.Close();
 		}
 
-
 		private void Btn_verCartelera_Click(object sender, EventArgs e)
         {
             Form formulario = new Filtro(ComboSeleccioneCine.Text);
             formulario.Show();
-            Visible = false;
-         
+            Visible = false;    
         }
 
 		private void Frm_menu_FormClosed(object sender, FormClosedEventArgs e)
@@ -68,11 +64,7 @@ namespace Taquilla_cliente_comprador
 		{
 			Process.Start("Manual.pdf");
 		}
-
-		private void tlppanel1_Paint(object sender, PaintEventArgs e)
-		{
-
-		}
+	
 
 		private void ComboSeleccioneCiudad_SelectedIndexChanged(object sender, EventArgs e)
 		{
@@ -102,5 +94,7 @@ namespace Taquilla_cliente_comprador
 		{
 			btnVerCartelera.Enabled = true;
 		}
-	}
+
+        
+    }
 }
