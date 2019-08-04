@@ -165,7 +165,7 @@ namespace Taquilla_cliente_comprador
                 }
                 else
                 {
-                    c.enviarCorreo( txtCorreo.Text);
+                    c.enviarCorreo( txtCorreo.Text,txtNombre.Text);
 
                     Form formulariopago = new frmMenu();
                     formulariopago.Show();
@@ -282,10 +282,7 @@ namespace Taquilla_cliente_comprador
             numero(e);
         }
                 
-        private void TxtNombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            letra(e);
-        }
+       
 
         private void TxtTarjeta_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -308,9 +305,6 @@ namespace Taquilla_cliente_comprador
             Combomes.Text = "Año";
         }
 
-        private void Frm_pago_Load(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

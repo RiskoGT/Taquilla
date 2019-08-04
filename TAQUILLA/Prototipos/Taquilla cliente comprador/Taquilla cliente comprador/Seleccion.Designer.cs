@@ -177,7 +177,6 @@
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel12.Size = new System.Drawing.Size(411, 230);
             this.tableLayoutPanel12.TabIndex = 1;
-            this.tableLayoutPanel12.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel12_Paint);
             // 
             // webPelicula
             // 
@@ -296,7 +295,6 @@
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel11.Size = new System.Drawing.Size(273, 77);
             this.tableLayoutPanel11.TabIndex = 1;
-            this.tableLayoutPanel11.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel11_Paint);
             // 
             // lbHora
             // 
@@ -474,7 +472,6 @@
             this.Text = "Cartelera de Cine";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_cartelera_FormClosed);
-            this.Load += new System.EventHandler(this.FrmCartelera_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);

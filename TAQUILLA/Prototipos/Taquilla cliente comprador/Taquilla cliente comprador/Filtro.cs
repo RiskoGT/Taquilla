@@ -25,9 +25,6 @@ namespace Taquilla_cliente_comprador
      
         }
 		
-        
-    
-
 		private void Filtro_FormClosed(object sender, FormClosedEventArgs e)
 		{
 			Application.Exit();
@@ -38,11 +35,7 @@ namespace Taquilla_cliente_comprador
 			Process.Start("Manual.pdf");
 		}
 
-		private void tlppanel1_Paint(object sender, PaintEventArgs e)
-		{
-
-		}
-
+	
 		private void button1_Click_1(object sender, EventArgs e)
 		{
 			

@@ -73,6 +73,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbTitulo = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
             this.Tlp_boletos.SuspendLayout();
             this.tlpPanel1.SuspendLayout();
             this.tlpPanel4.SuspendLayout();
@@ -87,6 +89,7 @@
             this.tlpPanel7.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // Tlp_boletos
@@ -96,16 +99,16 @@
             this.Tlp_boletos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 96F));
             this.Tlp_boletos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2F));
             this.Tlp_boletos.Controls.Add(this.tlpPanel1, 1, 3);
-            this.Tlp_boletos.Controls.Add(this.lbTitulo, 1, 1);
+            this.Tlp_boletos.Controls.Add(this.tableLayoutPanel3, 1, 1);
             this.Tlp_boletos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Tlp_boletos.Location = new System.Drawing.Point(0, 0);
             this.Tlp_boletos.Name = "Tlp_boletos";
             this.Tlp_boletos.RowCount = 5;
-            this.Tlp_boletos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.12766F));
-            this.Tlp_boletos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.6383F));
-            this.Tlp_boletos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.06383F));
-            this.Tlp_boletos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 84.04256F));
-            this.Tlp_boletos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.12766F));
+            this.Tlp_boletos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.020408F));
+            this.Tlp_boletos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.30612F));
+            this.Tlp_boletos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.020408F));
+            this.Tlp_boletos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.63265F));
+            this.Tlp_boletos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.020408F));
             this.Tlp_boletos.Size = new System.Drawing.Size(1184, 651);
             this.Tlp_boletos.TabIndex = 0;
             // 
@@ -155,21 +158,21 @@
             this.tlpPanel1.Controls.Add(this.tableLayoutPanel2, 14, 0);
             this.tlpPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpPanel1.Font = new System.Drawing.Font("Agency FB", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tlpPanel1.Location = new System.Drawing.Point(26, 91);
+            this.tlpPanel1.Location = new System.Drawing.Point(26, 114);
             this.tlpPanel1.Name = "tlpPanel1";
             this.tlpPanel1.RowCount = 11;
-            this.tlpPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.60784F));
-            this.tlpPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.960784F));
-            this.tlpPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.7451F));
-            this.tlpPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.960784F));
-            this.tlpPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.7451F));
-            this.tlpPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.960784F));
-            this.tlpPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.7451F));
-            this.tlpPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.960784F));
-            this.tlpPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.7451F));
-            this.tlpPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.960784F));
-            this.tlpPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.60784F));
-            this.tlpPanel1.Size = new System.Drawing.Size(1130, 541);
+            this.tlpPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.72456F));
+            this.tlpPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.055498F));
+            this.tlpPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.36074F));
+            this.tlpPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.055498F));
+            this.tlpPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.36074F));
+            this.tlpPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.055498F));
+            this.tlpPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.36074F));
+            this.tlpPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.055498F));
+            this.tlpPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.36074F));
+            this.tlpPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.055498F));
+            this.tlpPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.55498F));
+            this.tlpPanel1.Size = new System.Drawing.Size(1130, 525);
             this.tlpPanel1.TabIndex = 0;
             // 
             // btnTerceraM
@@ -181,10 +184,10 @@
             this.btnTerceraM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTerceraM.Font = new System.Drawing.Font("Microsoft YaHei", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTerceraM.ForeColor = System.Drawing.Color.White;
-            this.btnTerceraM.Location = new System.Drawing.Point(364, 126);
+            this.btnTerceraM.Location = new System.Drawing.Point(364, 102);
             this.btnTerceraM.Margin = new System.Windows.Forms.Padding(10);
             this.btnTerceraM.Name = "btnTerceraM";
-            this.btnTerceraM.Size = new System.Drawing.Size(79, 48);
+            this.btnTerceraM.Size = new System.Drawing.Size(79, 50);
             this.btnTerceraM.TabIndex = 0;
             this.btnTerceraM.Text = "-";
             this.btnTerceraM.UseVisualStyleBackColor = false;
@@ -199,10 +202,10 @@
             this.btnTerceraMa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTerceraMa.Font = new System.Drawing.Font("Microsoft YaHei", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTerceraMa.ForeColor = System.Drawing.Color.White;
-            this.btnTerceraMa.Location = new System.Drawing.Point(584, 126);
+            this.btnTerceraMa.Location = new System.Drawing.Point(584, 102);
             this.btnTerceraMa.Margin = new System.Windows.Forms.Padding(10);
             this.btnTerceraMa.Name = "btnTerceraMa";
-            this.btnTerceraMa.Size = new System.Drawing.Size(79, 48);
+            this.btnTerceraMa.Size = new System.Drawing.Size(79, 50);
             this.btnTerceraMa.TabIndex = 1;
             this.btnTerceraMa.Text = "+";
             this.btnTerceraMa.UseVisualStyleBackColor = false;
@@ -217,10 +220,10 @@
             this.btnAdultoM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdultoM.Font = new System.Drawing.Font("Microsoft YaHei", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdultoM.ForeColor = System.Drawing.Color.White;
-            this.btnAdultoM.Location = new System.Drawing.Point(364, 204);
+            this.btnAdultoM.Location = new System.Drawing.Point(364, 182);
             this.btnAdultoM.Margin = new System.Windows.Forms.Padding(10);
             this.btnAdultoM.Name = "btnAdultoM";
-            this.btnAdultoM.Size = new System.Drawing.Size(79, 48);
+            this.btnAdultoM.Size = new System.Drawing.Size(79, 50);
             this.btnAdultoM.TabIndex = 2;
             this.btnAdultoM.Text = "-";
             this.btnAdultoM.UseVisualStyleBackColor = false;
@@ -235,10 +238,10 @@
             this.btnAdultoMa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdultoMa.Font = new System.Drawing.Font("Microsoft YaHei", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdultoMa.ForeColor = System.Drawing.Color.White;
-            this.btnAdultoMa.Location = new System.Drawing.Point(584, 204);
+            this.btnAdultoMa.Location = new System.Drawing.Point(584, 182);
             this.btnAdultoMa.Margin = new System.Windows.Forms.Padding(10);
             this.btnAdultoMa.Name = "btnAdultoMa";
-            this.btnAdultoMa.Size = new System.Drawing.Size(79, 48);
+            this.btnAdultoMa.Size = new System.Drawing.Size(79, 50);
             this.btnAdultoMa.TabIndex = 3;
             this.btnAdultoMa.Text = "+";
             this.btnAdultoMa.UseVisualStyleBackColor = false;
@@ -253,10 +256,10 @@
             this.btnNñoM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNñoM.Font = new System.Drawing.Font("Microsoft YaHei", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNñoM.ForeColor = System.Drawing.Color.White;
-            this.btnNñoM.Location = new System.Drawing.Point(364, 282);
+            this.btnNñoM.Location = new System.Drawing.Point(364, 262);
             this.btnNñoM.Margin = new System.Windows.Forms.Padding(10);
             this.btnNñoM.Name = "btnNñoM";
-            this.btnNñoM.Size = new System.Drawing.Size(79, 48);
+            this.btnNñoM.Size = new System.Drawing.Size(79, 50);
             this.btnNñoM.TabIndex = 4;
             this.btnNñoM.Text = "-";
             this.btnNñoM.UseVisualStyleBackColor = false;
@@ -271,10 +274,10 @@
             this.btnNiñoMa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNiñoMa.Font = new System.Drawing.Font("Microsoft YaHei", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNiñoMa.ForeColor = System.Drawing.Color.White;
-            this.btnNiñoMa.Location = new System.Drawing.Point(584, 282);
+            this.btnNiñoMa.Location = new System.Drawing.Point(584, 262);
             this.btnNiñoMa.Margin = new System.Windows.Forms.Padding(10);
             this.btnNiñoMa.Name = "btnNiñoMa";
-            this.btnNiñoMa.Size = new System.Drawing.Size(79, 48);
+            this.btnNiñoMa.Size = new System.Drawing.Size(79, 50);
             this.btnNiñoMa.TabIndex = 5;
             this.btnNiñoMa.Text = "+";
             this.btnNiñoMa.UseVisualStyleBackColor = false;
@@ -286,9 +289,9 @@
             this.lb3ra.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lb3ra.Font = new System.Drawing.Font("Agency FB", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb3ra.ForeColor = System.Drawing.Color.White;
-            this.lb3ra.Location = new System.Drawing.Point(180, 116);
+            this.lb3ra.Location = new System.Drawing.Point(180, 92);
             this.lb3ra.Name = "lb3ra";
-            this.lb3ra.Size = new System.Drawing.Size(160, 68);
+            this.lb3ra.Size = new System.Drawing.Size(160, 70);
             this.lb3ra.TabIndex = 6;
             this.lb3ra.Text = "Tercera Edad";
             this.lb3ra.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -299,9 +302,9 @@
             this.lbAdulto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbAdulto.Font = new System.Drawing.Font("Agency FB", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAdulto.ForeColor = System.Drawing.Color.White;
-            this.lbAdulto.Location = new System.Drawing.Point(180, 194);
+            this.lbAdulto.Location = new System.Drawing.Point(180, 172);
             this.lbAdulto.Name = "lbAdulto";
-            this.lbAdulto.Size = new System.Drawing.Size(160, 68);
+            this.lbAdulto.Size = new System.Drawing.Size(160, 70);
             this.lbAdulto.TabIndex = 7;
             this.lbAdulto.Text = "Adulto";
             this.lbAdulto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -312,9 +315,9 @@
             this.lbNiño.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbNiño.Font = new System.Drawing.Font("Agency FB", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNiño.ForeColor = System.Drawing.Color.White;
-            this.lbNiño.Location = new System.Drawing.Point(180, 272);
+            this.lbNiño.Location = new System.Drawing.Point(180, 252);
             this.lbNiño.Name = "lbNiño";
-            this.lbNiño.Size = new System.Drawing.Size(160, 68);
+            this.lbNiño.Size = new System.Drawing.Size(160, 70);
             this.lbNiño.TabIndex = 8;
             this.lbNiño.Text = "Niño";
             this.lbNiño.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -329,7 +332,7 @@
             this.tlpPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tlpPanel4.Controls.Add(this.txt3ra, 2, 2);
             this.tlpPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpPanel4.Location = new System.Drawing.Point(467, 119);
+            this.tlpPanel4.Location = new System.Drawing.Point(467, 95);
             this.tlpPanel4.Name = "tlpPanel4";
             this.tlpPanel4.RowCount = 5;
             this.tlpPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
@@ -337,7 +340,7 @@
             this.tlpPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66F));
             this.tlpPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
             this.tlpPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tlpPanel4.Size = new System.Drawing.Size(93, 62);
+            this.tlpPanel4.Size = new System.Drawing.Size(93, 64);
             this.tlpPanel4.TabIndex = 12;
             // 
             // txt3ra
@@ -361,7 +364,7 @@
             this.tlpPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tlpPanel5.Controls.Add(this.txtNiño, 2, 2);
             this.tlpPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpPanel5.Location = new System.Drawing.Point(467, 275);
+            this.tlpPanel5.Location = new System.Drawing.Point(467, 255);
             this.tlpPanel5.Name = "tlpPanel5";
             this.tlpPanel5.RowCount = 5;
             this.tlpPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
@@ -369,7 +372,7 @@
             this.tlpPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66F));
             this.tlpPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
             this.tlpPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tlpPanel5.Size = new System.Drawing.Size(93, 62);
+            this.tlpPanel5.Size = new System.Drawing.Size(93, 64);
             this.tlpPanel5.TabIndex = 15;
             this.tlpPanel5.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel6_Paint);
             // 
@@ -394,7 +397,7 @@
             this.tlpPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tlpPanel10.Controls.Add(this.txtAdultoT, 2, 2);
             this.tlpPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpPanel10.Location = new System.Drawing.Point(797, 197);
+            this.tlpPanel10.Location = new System.Drawing.Point(797, 175);
             this.tlpPanel10.Name = "tlpPanel10";
             this.tlpPanel10.RowCount = 5;
             this.tlpPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
@@ -402,7 +405,7 @@
             this.tlpPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66F));
             this.tlpPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
             this.tlpPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tlpPanel10.Size = new System.Drawing.Size(93, 62);
+            this.tlpPanel10.Size = new System.Drawing.Size(93, 64);
             this.tlpPanel10.TabIndex = 17;
             // 
             // txtAdultoT
@@ -426,7 +429,7 @@
             this.tlpPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tlpPanel11.Controls.Add(this.txtNiñoT, 2, 2);
             this.tlpPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpPanel11.Location = new System.Drawing.Point(797, 275);
+            this.tlpPanel11.Location = new System.Drawing.Point(797, 255);
             this.tlpPanel11.Name = "tlpPanel11";
             this.tlpPanel11.RowCount = 5;
             this.tlpPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
@@ -434,7 +437,7 @@
             this.tlpPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66F));
             this.tlpPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
             this.tlpPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tlpPanel11.Size = new System.Drawing.Size(93, 62);
+            this.tlpPanel11.Size = new System.Drawing.Size(93, 64);
             this.tlpPanel11.TabIndex = 18;
             // 
             // txtNiñoT
@@ -458,7 +461,7 @@
             this.tlpPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tlpPanel9.Controls.Add(this.txt3raT, 2, 2);
             this.tlpPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpPanel9.Location = new System.Drawing.Point(797, 119);
+            this.tlpPanel9.Location = new System.Drawing.Point(797, 95);
             this.tlpPanel9.Name = "tlpPanel9";
             this.tlpPanel9.RowCount = 5;
             this.tlpPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
@@ -466,7 +469,7 @@
             this.tlpPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66F));
             this.tlpPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
             this.tlpPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tlpPanel9.Size = new System.Drawing.Size(93, 62);
+            this.tlpPanel9.Size = new System.Drawing.Size(93, 64);
             this.tlpPanel9.TabIndex = 19;
             // 
             // txt3raT
@@ -491,7 +494,7 @@
             this.tlpPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tlpPanel3.Controls.Add(this.txtAdulto, 2, 2);
             this.tlpPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpPanel3.Location = new System.Drawing.Point(467, 197);
+            this.tlpPanel3.Location = new System.Drawing.Point(467, 175);
             this.tlpPanel3.Name = "tlpPanel3";
             this.tlpPanel3.RowCount = 5;
             this.tlpPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
@@ -499,7 +502,7 @@
             this.tlpPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66F));
             this.tlpPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
             this.tlpPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tlpPanel3.Size = new System.Drawing.Size(93, 62);
+            this.tlpPanel3.Size = new System.Drawing.Size(93, 64);
             this.tlpPanel3.TabIndex = 20;
             // 
             // txtAdulto
@@ -519,9 +522,9 @@
             this.lbV3ra.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbV3ra.Font = new System.Drawing.Font("Agency FB", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbV3ra.ForeColor = System.Drawing.Color.White;
-            this.lbV3ra.Location = new System.Drawing.Point(687, 116);
+            this.lbV3ra.Location = new System.Drawing.Point(687, 92);
             this.lbV3ra.Name = "lbV3ra";
-            this.lbV3ra.Size = new System.Drawing.Size(93, 68);
+            this.lbV3ra.Size = new System.Drawing.Size(93, 70);
             this.lbV3ra.TabIndex = 21;
             this.lbV3ra.Text = "Q35";
             this.lbV3ra.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -532,9 +535,9 @@
             this.lbVAdulto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbVAdulto.Font = new System.Drawing.Font("Agency FB", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbVAdulto.ForeColor = System.Drawing.Color.White;
-            this.lbVAdulto.Location = new System.Drawing.Point(687, 194);
+            this.lbVAdulto.Location = new System.Drawing.Point(687, 172);
             this.lbVAdulto.Name = "lbVAdulto";
-            this.lbVAdulto.Size = new System.Drawing.Size(93, 68);
+            this.lbVAdulto.Size = new System.Drawing.Size(93, 70);
             this.lbVAdulto.TabIndex = 22;
             this.lbVAdulto.Text = "Q38";
             this.lbVAdulto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -545,9 +548,9 @@
             this.lbVNiño.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbVNiño.Font = new System.Drawing.Font("Agency FB", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbVNiño.ForeColor = System.Drawing.Color.White;
-            this.lbVNiño.Location = new System.Drawing.Point(687, 272);
+            this.lbVNiño.Location = new System.Drawing.Point(687, 252);
             this.lbVNiño.Name = "lbVNiño";
-            this.lbVNiño.Size = new System.Drawing.Size(93, 68);
+            this.lbVNiño.Size = new System.Drawing.Size(93, 70);
             this.lbVNiño.TabIndex = 23;
             this.lbVNiño.Text = "Q30";
             this.lbVNiño.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -558,9 +561,9 @@
             this.lbTotalP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbTotalP.Font = new System.Drawing.Font("Agency FB", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotalP.ForeColor = System.Drawing.Color.Gold;
-            this.lbTotalP.Location = new System.Drawing.Point(687, 350);
+            this.lbTotalP.Location = new System.Drawing.Point(687, 332);
             this.lbTotalP.Name = "lbTotalP";
-            this.lbTotalP.Size = new System.Drawing.Size(93, 68);
+            this.lbTotalP.Size = new System.Drawing.Size(93, 70);
             this.lbTotalP.TabIndex = 24;
             this.lbTotalP.Text = "Total a Pagar ";
             this.lbTotalP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -575,7 +578,7 @@
             this.tlpPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tlpPanel12.Controls.Add(this.txtTotal, 2, 2);
             this.tlpPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpPanel12.Location = new System.Drawing.Point(797, 353);
+            this.tlpPanel12.Location = new System.Drawing.Point(797, 335);
             this.tlpPanel12.Name = "tlpPanel12";
             this.tlpPanel12.RowCount = 5;
             this.tlpPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
@@ -583,7 +586,7 @@
             this.tlpPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66F));
             this.tlpPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
             this.tlpPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tlpPanel12.Size = new System.Drawing.Size(93, 62);
+            this.tlpPanel12.Size = new System.Drawing.Size(93, 64);
             this.tlpPanel12.TabIndex = 25;
             // 
             // txtTotal
@@ -607,7 +610,7 @@
             this.tlpPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2F));
             this.tlpPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tlpPanel8.Controls.Add(this.btnSiguente, 2, 2);
-            this.tlpPanel8.Location = new System.Drawing.Point(907, 431);
+            this.tlpPanel8.Location = new System.Drawing.Point(907, 415);
             this.tlpPanel8.Name = "tlpPanel8";
             this.tlpPanel8.RowCount = 5;
             this.tlpPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
@@ -643,7 +646,7 @@
             this.tlpPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tlpPanel6.Controls.Add(this.txtTotalB, 2, 2);
             this.tlpPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpPanel6.Location = new System.Drawing.Point(467, 353);
+            this.tlpPanel6.Location = new System.Drawing.Point(467, 335);
             this.tlpPanel6.Name = "tlpPanel6";
             this.tlpPanel6.RowCount = 5;
             this.tlpPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
@@ -651,7 +654,7 @@
             this.tlpPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66F));
             this.tlpPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
             this.tlpPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tlpPanel6.Size = new System.Drawing.Size(93, 62);
+            this.tlpPanel6.Size = new System.Drawing.Size(93, 64);
             this.tlpPanel6.TabIndex = 27;
             // 
             // txtTotalB
@@ -671,9 +674,9 @@
             this.lbTotalb.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbTotalb.Font = new System.Drawing.Font("Agency FB", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotalb.ForeColor = System.Drawing.Color.Gold;
-            this.lbTotalb.Location = new System.Drawing.Point(357, 350);
+            this.lbTotalb.Location = new System.Drawing.Point(357, 332);
             this.lbTotalb.Name = "lbTotalb";
-            this.lbTotalb.Size = new System.Drawing.Size(93, 68);
+            this.lbTotalb.Size = new System.Drawing.Size(93, 70);
             this.lbTotalb.TabIndex = 28;
             this.lbTotalb.Text = "Total Boletos ";
             this.lbTotalb.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -687,7 +690,7 @@
             this.tlpPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2F));
             this.tlpPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tlpPanel7.Controls.Add(this.btnRegresar, 2, 2);
-            this.tlpPanel7.Location = new System.Drawing.Point(3, 431);
+            this.tlpPanel7.Location = new System.Drawing.Point(3, 415);
             this.tlpPanel7.Name = "tlpPanel7";
             this.tlpPanel7.RowCount = 5;
             this.tlpPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
@@ -727,7 +730,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(160, 100);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(160, 76);
             this.tableLayoutPanel1.TabIndex = 30;
             // 
             // btnAyuda
@@ -740,10 +743,10 @@
             this.btnAyuda.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAyuda.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAyuda.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAyuda.Location = new System.Drawing.Point(3, 10);
+            this.btnAyuda.Location = new System.Drawing.Point(3, 7);
             this.btnAyuda.Margin = new System.Windows.Forms.Padding(0);
             this.btnAyuda.Name = "btnAyuda";
-            this.btnAyuda.Size = new System.Drawing.Size(153, 80);
+            this.btnAyuda.Size = new System.Drawing.Size(153, 60);
             this.btnAyuda.TabIndex = 0;
             this.btnAyuda.Text = "Ayuda";
             this.btnAyuda.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -766,7 +769,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(200, 100);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(200, 76);
             this.tableLayoutPanel2.TabIndex = 31;
             // 
             // lbTiempo
@@ -774,9 +777,9 @@
             this.lbTiempo.AutoSize = true;
             this.lbTiempo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbTiempo.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTiempo.Location = new System.Drawing.Point(104, 34);
+            this.lbTiempo.Location = new System.Drawing.Point(104, 25);
             this.lbTiempo.Name = "lbTiempo";
-            this.lbTiempo.Size = new System.Drawing.Size(87, 37);
+            this.lbTiempo.Size = new System.Drawing.Size(87, 28);
             this.lbTiempo.TabIndex = 2;
             this.lbTiempo.Text = "0";
             this.lbTiempo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -787,9 +790,9 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(7, 34);
+            this.label1.Location = new System.Drawing.Point(7, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 37);
+            this.label1.Size = new System.Drawing.Size(87, 28);
             this.label1.TabIndex = 3;
             this.label1.Text = "Tiempo";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -800,9 +803,9 @@
             this.lbTitulo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbTitulo.Font = new System.Drawing.Font("Agency FB", 50.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitulo.ForeColor = System.Drawing.Color.Gold;
-            this.lbTitulo.Location = new System.Drawing.Point(26, 13);
+            this.lbTitulo.Location = new System.Drawing.Point(25, 0);
             this.lbTitulo.Name = "lbTitulo";
-            this.lbTitulo.Size = new System.Drawing.Size(1130, 69);
+            this.lbTitulo.Size = new System.Drawing.Size(1078, 74);
             this.lbTitulo.TabIndex = 1;
             this.lbTitulo.Text = "Boletos";
             this.lbTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -812,6 +815,35 @@
             this.timer1.Enabled = true;
             this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 96F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2F));
+            this.tableLayoutPanel3.Controls.Add(this.lbTitulo, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label2, 1, 1);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(26, 9);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1130, 93);
+            this.tableLayoutPanel3.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(25, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(1078, 19);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Seleccione un maximo de 10 boletos ";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmBoletos
             // 
@@ -829,7 +861,6 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_boletos_FormClosed);
             this.Load += new System.EventHandler(this.Frm_boletos_Load);
             this.Tlp_boletos.ResumeLayout(false);
-            this.Tlp_boletos.PerformLayout();
             this.tlpPanel1.ResumeLayout(false);
             this.tlpPanel1.PerformLayout();
             this.tlpPanel4.ResumeLayout(false);
@@ -853,6 +884,8 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -902,5 +935,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Label label2;
     }
 }

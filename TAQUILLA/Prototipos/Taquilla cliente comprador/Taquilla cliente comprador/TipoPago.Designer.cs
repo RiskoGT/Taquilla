@@ -29,17 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTipoPago));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btReservar = new System.Windows.Forms.Button();
-            this.btPago = new System.Windows.Forms.Button();
-            this.lbtiempo2 = new System.Windows.Forms.Label();
-            this.lbtipo = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.lbtiempo2 = new System.Windows.Forms.Label();
             this.lbltipo = new System.Windows.Forms.Label();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.btPago = new System.Windows.Forms.Button();
+            this.btReservar = new System.Windows.Forms.Button();
+            this.lbtipo = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -96,58 +97,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.673621F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(609, 291);
             this.tableLayoutPanel2.TabIndex = 0;
-            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel2_Paint);
-            // 
-            // btReservar
-            // 
-            this.btReservar.BackColor = System.Drawing.Color.Gold;
-            this.btReservar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btReservar.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btReservar.Location = new System.Drawing.Point(14, 5);
-            this.btReservar.Name = "btReservar";
-            this.btReservar.Size = new System.Drawing.Size(256, 99);
-            this.btReservar.TabIndex = 0;
-            this.btReservar.Text = "Reservar";
-            this.btReservar.UseVisualStyleBackColor = false;
-            this.btReservar.Click += new System.EventHandler(this.BtReservar_Click);
-            // 
-            // btPago
-            // 
-            this.btPago.BackColor = System.Drawing.Color.Gold;
-            this.btPago.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPago.Location = new System.Drawing.Point(305, 5);
-            this.btPago.Name = "btPago";
-            this.btPago.Size = new System.Drawing.Size(256, 99);
-            this.btPago.TabIndex = 1;
-            this.btPago.Text = "Pago";
-            this.btPago.UseVisualStyleBackColor = false;
-            this.btPago.Click += new System.EventHandler(this.BtPago_Click);
-            // 
-            // lbtiempo2
-            // 
-            this.lbtiempo2.AutoSize = true;
-            this.lbtiempo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbtiempo2.ForeColor = System.Drawing.Color.White;
-            this.lbtiempo2.Location = new System.Drawing.Point(305, 0);
-            this.lbtiempo2.Name = "lbtiempo2";
-            this.lbtiempo2.Size = new System.Drawing.Size(25, 25);
-            this.lbtiempo2.TabIndex = 3;
-            this.lbtiempo2.Text = "0";
-            this.lbtiempo2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbtipo
-            // 
-            this.lbtipo.AutoSize = true;
-            this.lbtipo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbtipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbtipo.ForeColor = System.Drawing.Color.Gold;
-            this.lbtipo.Location = new System.Drawing.Point(94, 8);
-            this.lbtipo.Name = "lbtipo";
-            this.lbtipo.Size = new System.Drawing.Size(609, 127);
-            this.lbtipo.TabIndex = 1;
-            this.lbtipo.Text = "Tipo de Pago";
-            this.lbtipo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button1
             // 
@@ -181,6 +130,30 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(578, 45);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
+            // lbtiempo2
+            // 
+            this.lbtiempo2.AutoSize = true;
+            this.lbtiempo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbtiempo2.ForeColor = System.Drawing.Color.White;
+            this.lbtiempo2.Location = new System.Drawing.Point(305, 0);
+            this.lbtiempo2.Name = "lbtiempo2";
+            this.lbtiempo2.Size = new System.Drawing.Size(25, 25);
+            this.lbtiempo2.TabIndex = 3;
+            this.lbtiempo2.Text = "0";
+            this.lbtiempo2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbltipo
+            // 
+            this.lbltipo.AutoSize = true;
+            this.lbltipo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbltipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltipo.Location = new System.Drawing.Point(14, 0);
+            this.lbltipo.Name = "lbltipo";
+            this.lbltipo.Size = new System.Drawing.Size(256, 43);
+            this.lbltipo.TabIndex = 4;
+            this.lbltipo.Text = "Tiempo";
+            this.lbltipo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 5;
@@ -201,17 +174,44 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(578, 110);
             this.tableLayoutPanel4.TabIndex = 6;
             // 
-            // lbltipo
+            // btPago
             // 
-            this.lbltipo.AutoSize = true;
-            this.lbltipo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbltipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltipo.Location = new System.Drawing.Point(14, 0);
-            this.lbltipo.Name = "lbltipo";
-            this.lbltipo.Size = new System.Drawing.Size(256, 43);
-            this.lbltipo.TabIndex = 4;
-            this.lbltipo.Text = "Tiempo";
-            this.lbltipo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btPago.BackColor = System.Drawing.Color.Gold;
+            this.btPago.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPago.Location = new System.Drawing.Point(305, 5);
+            this.btPago.Name = "btPago";
+            this.btPago.Size = new System.Drawing.Size(256, 99);
+            this.btPago.TabIndex = 1;
+            this.btPago.Text = "Pago";
+            this.btPago.UseVisualStyleBackColor = false;
+            this.btPago.Click += new System.EventHandler(this.BtPago_Click);
+            // 
+            // btReservar
+            // 
+            this.btReservar.BackColor = System.Drawing.Color.Gold;
+            this.btReservar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btReservar.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btReservar.Location = new System.Drawing.Point(14, 5);
+            this.btReservar.Name = "btReservar";
+            this.btReservar.Size = new System.Drawing.Size(256, 99);
+            this.btReservar.TabIndex = 0;
+            this.btReservar.Text = "Reservar";
+            this.btReservar.UseVisualStyleBackColor = false;
+            this.btReservar.Click += new System.EventHandler(this.BtReservar_Click);
+            // 
+            // lbtipo
+            // 
+            this.lbtipo.AutoSize = true;
+            this.lbtipo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbtipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbtipo.ForeColor = System.Drawing.Color.Gold;
+            this.lbtipo.Location = new System.Drawing.Point(94, 8);
+            this.lbtipo.Name = "lbtipo";
+            this.lbtipo.Size = new System.Drawing.Size(609, 127);
+            this.lbtipo.TabIndex = 1;
+            this.lbtipo.Text = "Tipo de Pago";
+            this.lbtipo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmTipoPago
             // 
@@ -220,11 +220,11 @@
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmTipoPago";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TipoPago";
+            this.Text = "Tipo de Pago";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FrmTipoPago_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);

@@ -392,16 +392,7 @@ namespace Taquilla_cliente_comprador
 
 		}
 
-		private void tableLayoutPanel12_Paint(object sender, PaintEventArgs e)
-		{
-
-		}
-
-		private void tableLayoutPanel11_Paint(object sender, PaintEventArgs e)
-		{
-
-		}
-
+	
 		private void btnMas_Click(object sender, EventArgs e)
 		{
 			sala++;
@@ -412,11 +403,7 @@ namespace Taquilla_cliente_comprador
 			sala--;
 		}
 
-		private void button1_Click(object sender, EventArgs e)
-		{
-			
-		}
-
+		
 		private void lbtitulo_TextChanged(object sender, EventArgs e)
 		{
 			webPelicula.Stop();
@@ -431,10 +418,7 @@ namespace Taquilla_cliente_comprador
             Visible = false;
         }
 
-        private void FrmCartelera_Load(object sender, EventArgs e)
-        {
-
-        }
+       
     }
     }
 

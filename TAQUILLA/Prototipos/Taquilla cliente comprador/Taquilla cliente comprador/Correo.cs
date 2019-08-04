@@ -16,16 +16,16 @@ namespace Taquilla_cliente_comprador
         string usu = "riskogt6@gmail.com";
         string pass = "Risgt657";
         string bol = " Risko   Boletos Comprados";
-        string men = "Gracias por su compra";
+        string men = "Gracias por su compra:";
         string ruta = "PDF/ARCHIVO.pdf";
-        public void enviarCorreo( string destinatario)
+        public void enviarCorreo( string destinatario,string nombre)
         {
             try
             {
                 correos.To.Clear();
                 correos.Body = "";
                 correos.Subject = "";
-                correos.Body = men;
+                correos.Body = men+nombre;
                 correos.Subject = bol;
                 correos.IsBodyHtml = true;
                 correos.To.Add(destinatario.Trim());

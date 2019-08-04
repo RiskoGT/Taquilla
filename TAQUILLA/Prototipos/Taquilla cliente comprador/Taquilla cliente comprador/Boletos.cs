@@ -95,26 +95,49 @@ namespace Taquilla_cliente_comprador
 
         private void Button2_Click(object sender, EventArgs e)
         {
-             int.Parse(txt3ra.Text);
-            cont1++;
-            txt3ra.Text = cont1.ToString();
-                       
-            count1 = count1 + 35;
-            int.Parse(txt3raT.Text);
-           
-            txt3raT.Text = count1.ToString();
-         
-            count4 = count4 + 35;
-            int.Parse(txtTotal.Text);
+            if (txtTotalB.Text == "10")
+            {
+                MessageBox.Show("No se pueden seleccionar mas de 10 boletos!! Gracias");
+                txtTotalB.Text = "0";
+                count1 = 0;
+                count2 = 0;
+                count3 = 0;
+                count4 = 0;
+                count5 = 0;
+                cont1 = 0;
+                txt3ra.Text = "0";
+                txtAdulto.Text = "0";
+                txtNiño.Text = "0";
+                txt3raT.Text = "0";
+                txtNiñoT.Text = "0";
+                txtAdultoT.Text = "0";
+                txtAdultoT.Text = "0";
+                txtTotal.Text = "0";
 
-            txtTotal.Text = count4.ToString();
+            }
+            else
+            {
+                int.Parse(txt3ra.Text);
+                cont1++;
+                txt3ra.Text = cont1.ToString();
 
-            count5 = count5 + 1;
-            int.Parse(txtTotalB.Text);
+                count1 = count1 + 35;
+                int.Parse(txt3raT.Text);
 
-            txtTotalB.Text = count5.ToString();
+                txt3raT.Text = count1.ToString();
+
+                count4 = count4 + 35;
+                int.Parse(txtTotal.Text);
+
+                txtTotal.Text = count4.ToString();
+
+                count5 = count5 + 1;
+                int.Parse(txtTotalB.Text);
+
+                txtTotalB.Text = count5.ToString();
 
 
+            }
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -147,19 +170,42 @@ namespace Taquilla_cliente_comprador
 
         private void Button4_Click(object sender, EventArgs e)
         {
-          int.Parse(txtAdulto.Text);
-            cont2++;
-            txtAdulto.Text = cont2.ToString();
-            count2 = count2 + 38;
-            int.Parse(txtAdultoT.Text);
-            txtAdultoT.Text = count2.ToString();
-            count4 = count4 + 38;
-            int.Parse(txtTotal.Text);
-            txtTotal.Text = count4.ToString();
-            count5 = count5 + 1;
-            int.Parse(txtTotalB.Text);
+            if (txtTotalB.Text == "10")
+            {
+                MessageBox.Show("No se pueden seleccionar mas de 10 boletos!! Gracias");
+                txtTotalB.Text = "0";
+                count1 = 0;
+                count2 = 0;
+                count3 = 0;
+                count4 = 0;
+                count5 = 0;
+                cont2 = 0;
+                txt3ra.Text = "0";
+                txtAdulto.Text = "0";
+                txtNiño.Text = "0";
+                txt3raT.Text = "0";
+                txtNiñoT.Text = "0";
+                txtAdultoT.Text = "0";
+                txtAdultoT.Text = "0";
+                txtTotal.Text = "0";
 
-            txtTotalB.Text = count5.ToString();
+            }
+            else
+            {
+                int.Parse(txtAdulto.Text);
+                cont2++;
+                txtAdulto.Text = cont2.ToString();
+                count2 = count2 + 38;
+                int.Parse(txtAdultoT.Text);
+                txtAdultoT.Text = count2.ToString();
+                count4 = count4 + 38;
+                int.Parse(txtTotal.Text);
+                txtTotal.Text = count4.ToString();
+                count5 = count5 + 1;
+                int.Parse(txtTotalB.Text);
+
+                txtTotalB.Text = count5.ToString();
+            }
         }
 
         private void Button3_Click(object sender, EventArgs e)
@@ -193,21 +239,43 @@ namespace Taquilla_cliente_comprador
 
         private void Button6_Click(object sender, EventArgs e)
         {
-             int.Parse(txtNiño.Text);
-            cont3++;
-            txtNiño.Text = cont3.ToString();
-            count3 = count3 + 30;
-            int.Parse(txtNiñoT.Text);
-            txtNiñoT.Text = count3.ToString();
-            count4 = count4 + 30;
-            int.Parse(txtTotal.Text);
-            txtTotal.Text = count4.ToString();
-            count5 = count5 + 1;
-            int.Parse(txtTotalB.Text);
+            if (txtTotalB.Text == "10")
+            {
+                MessageBox.Show("No se pueden seleccionar mas de 10 boletos!! Gracias");
+                txtTotalB.Text = "0";
+                count1 = 0;
+                count2 = 0;
+                count3 = 0;
+                count4 = 0;
+                count5 = 0;
+                cont3 = 0;
+                txt3ra.Text = "0";
+                txtAdulto.Text = "0";
+                txtNiño.Text = "0";
+                txt3raT.Text = "0";
+                txtNiñoT.Text = "0";
+                txtAdultoT.Text = "0";
+                txtAdultoT.Text = "0";
+                txtTotal.Text = "0";
 
-            txtTotalB.Text = count5.ToString();
+            }
+            else
+            {
+                int.Parse(txtNiño.Text);
+                cont3++;
+                txtNiño.Text = cont3.ToString();
+                count3 = count3 + 30;
+                int.Parse(txtNiñoT.Text);
+                txtNiñoT.Text = count3.ToString();
+                count4 = count4 + 30;
+                int.Parse(txtTotal.Text);
+                txtTotal.Text = count4.ToString();
+                count5 = count5 + 1;
+                int.Parse(txtTotalB.Text);
+
+                txtTotalB.Text = count5.ToString();
+            }
         }
-
         private void Button5_Click(object sender, EventArgs e)
         {
             int.Parse(txtNiño.Text);
