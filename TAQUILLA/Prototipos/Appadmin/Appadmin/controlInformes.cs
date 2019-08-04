@@ -19,10 +19,8 @@ namespace Appadmin
             this.WindowState = FormWindowState.Maximized;
             usuario = user;
         }        
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void sendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+        
+     
 
         private void controlInformes_Load(object sender, EventArgs e)
         {
@@ -64,6 +62,13 @@ namespace Appadmin
         private void TableLayoutPanel4_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void BtnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainMenu mainMenu = new MainMenu(usuario);
+            mainMenu.Show();
         }
     }
 }

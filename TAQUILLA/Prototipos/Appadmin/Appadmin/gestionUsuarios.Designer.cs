@@ -106,6 +106,7 @@
             this.tblContenido.Location = new System.Drawing.Point(71, 500);
             this.tblContenido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tblContenido.Name = "tblContenido";
+            this.tblContenido.ReadOnly = true;
             this.tblContenido.RowHeadersWidth = 51;
             this.tblContenido.RowTemplate.Height = 24;
             this.tblContenido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

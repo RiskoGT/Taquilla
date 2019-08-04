@@ -41,6 +41,7 @@ namespace Appadmin
 			dtpFechaNac.Format = DateTimePickerFormat.Custom;
 			dtpFechaNac.CustomFormat = "yyyy-MM-dd";
 			llenartbl();
+            llenarCombos();
             comboSexo.Items.Add("Sexo");
             comboSexo.SelectedItem = "Sexo";
             //llenarCombos();
@@ -97,7 +98,7 @@ namespace Appadmin
                 while (reader.Read())
                 {
                     comboPerfil.Refresh();
-                    comboPerfil.Items.Add(reader.GetValue(1).ToString());
+                    comboPerfil.Items.Add(reader.GetValue(0).ToString()+ " - "+ reader.GetValue(1).ToString());
                 }
             }
             catch (Exception ex)
@@ -412,11 +413,32 @@ namespace Appadmin
 
             if (tblContenido.SelectedRows.Count == 1)
             {
+
+                string nomPerfil = " ";
+
+                try
+                {
+
+                    conn.Open();
+                    OdbcCommand command = new OdbcCommand("SELECT Tipo FROM perfiles WHERE idPerfil =" + tblContenido.CurrentRow.Cells[1].Value.ToString(), conn);
+                    OdbcDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+
+                        comboPerfil.Text = reader.GetValue(0).ToString();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                conn.Close();
+
                 btnActualizar.Enabled = true;
                 btnAgregar.Enabled = false;
                 btnEliminar.Enabled = true;
                 txtUsuario.Text = tblContenido.CurrentRow.Cells[0].Value.ToString();
-                comboPerfil.Text = tblContenido.CurrentRow.Cells[1].Value.ToString();
+             
                 txtContra.Text = tblContenido.CurrentRow.Cells[2].Value.ToString();
                 txtDpi.Text = tblContenido.CurrentRow.Cells[3].Value.ToString();
                 txtNombre.Text = tblContenido.CurrentRow.Cells[4].Value.ToString();
@@ -428,22 +450,7 @@ namespace Appadmin
                 dtpFechaInicio.Text = tblContenido.CurrentRow.Cells[10].Value.ToString();
                 btnActualizar.Enabled = true;
             }
-            else
-            {
-                MessageBox.Show("Porfavor Seleccione un registro de la tabla");
-                btnAgregar.Enabled = true;
-                btnEliminar.Enabled = true;
-                btnActualizar.Enabled = false;
-                txtApellido.Text = "";
-                txtContra.Text = "";
-                txtCorreo.Text = "";
-
-                txtDpi.Text = "";
-                txtNombre.Text = "";
-                txtTel.Text = "";
-
-                txtUsuario.Text = "";
-            }
+        
         }
 
         private void TxtDpi_TextChanged(object sender, EventArgs e)
@@ -494,9 +501,9 @@ namespace Appadmin
 
         private void ComboSexo_DropDownClosed(object sender, EventArgs e)
         {
-            comboSexo.Items.Add("Sexo");
+            /*comboSexo.Items.Add("Sexo");
             comboSexo.SelectedItem = "Sexo";
-        }
+        */}
     }
     }
 
