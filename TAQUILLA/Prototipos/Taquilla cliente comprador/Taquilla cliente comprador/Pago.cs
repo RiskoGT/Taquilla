@@ -18,10 +18,45 @@ namespace Taquilla_cliente_comprador
         /*Grupo 2  taquilla  cliente comprador
         Gustavo Perez 0901-16-420 y Juan José Gámez 0901-16-47  */
         int tiempo = 0;// tiempo será extraible desde base de datos y de modificara desde la app de administrador
-        public Frm_pago(int dato)
+        int op=0;
+        public Frm_pago(int dato,int info)
         {
             InitializeComponent();
             tiempo = dato;
+            op = info;
+            if (info == 1)
+            {
+
+                lbPagoCompra.Text = "Reservación ";
+                txtTarjeta.Visible = false;
+                txtCodigo.Visible = false;
+                lbSeguridad.Visible = false;
+                lbVencimiento.Visible = false;
+                lbSeguridad.Visible = false;
+                ComboAño.Visible = false;
+                Combomes.Visible = false;
+                lbVencimiento.Visible = false;
+                LblGi.Visible = false;
+                lbTarjeta.Visible = false;
+
+            }
+            else if (info == 2)
+            {
+
+                lbPagoCompra.Text = "Pago";
+                txtTelefono.Visible = true;
+                txtTarjeta.Visible = true;
+                txtCodigo.Visible = true;
+                lbSeguridad.Visible = true;
+                lbVencimiento.Visible = true;
+                lbSeguridad.Visible = true;
+                ComboAño.Visible = true;
+                Combomes.Visible = true;
+                lbVencimiento.Visible = true;
+                LblGi.Visible = true;
+                lbTarjeta.Visible = true;
+
+            }
             Combomes.Items.Add("1");
             Combomes.Items.Add("2");
             Combomes.Items.Add("3");
@@ -124,7 +159,7 @@ namespace Taquilla_cliente_comprador
             }
             else
             {
-                if (txtCorreo.Text.Trim() == "" || txtNombre.Text.Trim() == "" || txtCodigo.Text.Trim() == "" || txtTarjeta.Text.Trim() == "" || txtTelefono.Text.Trim() == "")
+                if (txtCorreo.Text.Trim() == "" || txtNombre.Text.Trim() == ""  || txtTelefono.Text.Trim() == "")
                 {
                     MessageBox.Show("Profavor llenar las casillas!!");
                 }
@@ -271,6 +306,11 @@ namespace Taquilla_cliente_comprador
         private void ComboAño_SelectedIndexChanged(object sender, EventArgs e)
         {
             Combomes.Text = "Año";
+        }
+
+        private void Frm_pago_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

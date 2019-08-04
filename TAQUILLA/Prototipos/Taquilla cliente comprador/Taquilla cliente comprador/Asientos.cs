@@ -1814,8 +1814,8 @@ namespace Taquilla_cliente_comprador
 
                 if (contador > 0 && contador == prueba)
                 {
-                    Form formulariopag = new Frm_pago(tiempo);
-                    formulariopag.Show();
+                    frmTipoPago tipoPago = new frmTipoPago(tiempo);
+                    tipoPago.Show();
                     Visible = false;
                 }
                 else
