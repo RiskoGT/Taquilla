@@ -72,5 +72,11 @@ namespace Appadmin
             MainMenu mainMenu = new MainMenu(usuario, level);
             mainMenu.Show();
         }
+
+        private void BtnReporteTaquillera_Click(object sender, EventArgs e)
+        {
+            ReporteTaquillera taquis = new ReporteTaquillera();
+            taquis.Show();
+        }
     }
 }
