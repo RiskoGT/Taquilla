@@ -50,7 +50,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -58,6 +57,7 @@
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -65,7 +65,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -149,7 +148,7 @@
             this.Descarga1.BackColor = System.Drawing.Color.Gold;
             this.Descarga1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Descarga1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Descarga1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.Descarga1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.Descarga1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Descarga1.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold);
             this.Descarga1.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -166,7 +165,7 @@
             this.Descarga2.BackColor = System.Drawing.Color.Gold;
             this.Descarga2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Descarga2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Descarga2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.Descarga2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.Descarga2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Descarga2.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold);
             this.Descarga2.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -183,7 +182,7 @@
             this.button2.BackColor = System.Drawing.Color.Gold;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold);
             this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -218,10 +217,10 @@
             // 
             this.seleccionCine.Dock = System.Windows.Forms.DockStyle.Fill;
             this.seleccionCine.FormattingEnabled = true;
-            this.seleccionCine.Location = new System.Drawing.Point(3, 34);
+            this.seleccionCine.Location = new System.Drawing.Point(3, 36);
             this.seleccionCine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.seleccionCine.Name = "seleccionCine";
-            this.seleccionCine.Size = new System.Drawing.Size(188, 24);
+            this.seleccionCine.Size = new System.Drawing.Size(374, 24);
             this.seleccionCine.TabIndex = 1;
             this.seleccionCine.Text = "Seleccione un cine";
             // 
@@ -229,10 +228,10 @@
             // 
             this.seleccionCiudad.Dock = System.Windows.Forms.DockStyle.Fill;
             this.seleccionCiudad.FormattingEnabled = true;
-            this.seleccionCiudad.Location = new System.Drawing.Point(197, 34);
+            this.seleccionCiudad.Location = new System.Drawing.Point(383, 36);
             this.seleccionCiudad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.seleccionCiudad.Name = "seleccionCiudad";
-            this.seleccionCiudad.Size = new System.Drawing.Size(188, 24);
+            this.seleccionCiudad.Size = new System.Drawing.Size(374, 24);
             this.seleccionCiudad.TabIndex = 0;
             this.seleccionCiudad.Text = "Seleccione una ciudad";
             // 
@@ -242,10 +241,10 @@
             this.informeGeneral.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.informeGeneral.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold);
             this.informeGeneral.ForeColor = System.Drawing.Color.White;
-            this.informeGeneral.Location = new System.Drawing.Point(3, 37);
+            this.informeGeneral.Location = new System.Drawing.Point(3, 2);
             this.informeGeneral.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.informeGeneral.Name = "informeGeneral";
-            this.informeGeneral.Size = new System.Drawing.Size(188, 35);
+            this.informeGeneral.Size = new System.Drawing.Size(374, 30);
             this.informeGeneral.TabIndex = 45;
             this.informeGeneral.TabStop = true;
             this.informeGeneral.Text = "Informe General";
@@ -257,10 +256,10 @@
             this.informeEspecifico.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.informeEspecifico.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold);
             this.informeEspecifico.ForeColor = System.Drawing.Color.White;
-            this.informeEspecifico.Location = new System.Drawing.Point(197, 37);
+            this.informeEspecifico.Location = new System.Drawing.Point(383, 2);
             this.informeEspecifico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.informeEspecifico.Name = "informeEspecifico";
-            this.informeEspecifico.Size = new System.Drawing.Size(188, 35);
+            this.informeEspecifico.Size = new System.Drawing.Size(374, 30);
             this.informeEspecifico.TabIndex = 46;
             this.informeEspecifico.TabStop = true;
             this.informeEspecifico.Text = "Informe Especifico";
@@ -363,7 +362,7 @@
             this.button3.BackColor = System.Drawing.Color.Gold;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold);
             this.button3.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -381,7 +380,7 @@
             this.button4.BackColor = System.Drawing.Color.Gold;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold);
             this.button4.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -412,61 +411,47 @@
             // 
             // tableLayoutPanel6
             // 
-            this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.68421F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.31579F));
-            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel7, 1, 0);
-            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel8, 1, 1);
+            this.tableLayoutPanel6.ColumnCount = 1;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.33681F));
+            this.tableLayoutPanel6.Controls.Add(this.label5, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel8, 0, 1);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(9, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.125F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.875F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(766, 160);
             this.tableLayoutPanel6.TabIndex = 46;
-            // 
-            // tableLayoutPanel7
-            // 
-            this.tableLayoutPanel7.ColumnCount = 2;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Controls.Add(this.informeEspecifico, 1, 1);
-            this.tableLayoutPanel7.Controls.Add(this.informeGeneral, 0, 1);
-            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(375, 3);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 2;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.78378F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.21622F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(388, 74);
-            this.tableLayoutPanel7.TabIndex = 45;
             // 
             // tableLayoutPanel8
             // 
             this.tableLayoutPanel8.ColumnCount = 2;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.Controls.Add(this.informeEspecifico, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.informeGeneral, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.seleccionCine, 0, 1);
             this.tableLayoutPanel8.Controls.Add(this.seleccionCiudad, 1, 1);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(375, 83);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 80);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(388, 74);
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(760, 77);
             this.tableLayoutPanel8.TabIndex = 46;
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+            this.radioButton1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radioButton1.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold);
             this.radioButton1.ForeColor = System.Drawing.Color.White;
             this.radioButton1.Location = new System.Drawing.Point(307, 2);
             this.radioButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(100, 35);
+            this.radioButton1.Size = new System.Drawing.Size(259, 98);
             this.radioButton1.TabIndex = 46;
             this.radioButton1.Text = "Semanal";
             this.radioButton1.UseVisualStyleBackColor = true;
@@ -474,12 +459,13 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
+            this.radioButton2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radioButton2.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold);
             this.radioButton2.ForeColor = System.Drawing.Color.White;
             this.radioButton2.Location = new System.Drawing.Point(572, 2);
             this.radioButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(97, 35);
+            this.radioButton2.Size = new System.Drawing.Size(207, 98);
             this.radioButton2.TabIndex = 47;
             this.radioButton2.Text = "Mensual";
             this.radioButton2.UseVisualStyleBackColor = true;
@@ -487,12 +473,13 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
+            this.radioButton3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radioButton3.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold);
             this.radioButton3.ForeColor = System.Drawing.Color.White;
             this.radioButton3.Location = new System.Drawing.Point(307, 104);
             this.radioButton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(100, 35);
+            this.radioButton3.Size = new System.Drawing.Size(259, 98);
             this.radioButton3.TabIndex = 48;
             this.radioButton3.Text = "Semanal";
             this.radioButton3.UseVisualStyleBackColor = true;
@@ -500,12 +487,13 @@
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
+            this.radioButton4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radioButton4.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold);
             this.radioButton4.ForeColor = System.Drawing.Color.White;
             this.radioButton4.Location = new System.Drawing.Point(572, 104);
             this.radioButton4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(97, 35);
+            this.radioButton4.Size = new System.Drawing.Size(207, 98);
             this.radioButton4.TabIndex = 49;
             this.radioButton4.Text = "Mensual";
             this.radioButton4.UseVisualStyleBackColor = true;
@@ -513,12 +501,13 @@
             // radioButton5
             // 
             this.radioButton5.AutoSize = true;
+            this.radioButton5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radioButton5.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold);
             this.radioButton5.ForeColor = System.Drawing.Color.White;
             this.radioButton5.Location = new System.Drawing.Point(307, 206);
             this.radioButton5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(100, 35);
+            this.radioButton5.Size = new System.Drawing.Size(259, 100);
             this.radioButton5.TabIndex = 50;
             this.radioButton5.Text = "Semanal";
             this.radioButton5.UseVisualStyleBackColor = true;
@@ -526,15 +515,29 @@
             // radioButton6
             // 
             this.radioButton6.AutoSize = true;
+            this.radioButton6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radioButton6.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold);
             this.radioButton6.ForeColor = System.Drawing.Color.White;
             this.radioButton6.Location = new System.Drawing.Point(572, 206);
             this.radioButton6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(97, 35);
+            this.radioButton6.Size = new System.Drawing.Size(207, 100);
             this.radioButton6.TabIndex = 51;
             this.radioButton6.Text = "Mensual";
             this.radioButton6.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Font = new System.Drawing.Font("Agency FB", 36F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(3, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(760, 77);
+            this.label5.TabIndex = 47;
+            this.label5.Text = "Generar Reportes";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // controlInformes
             // 
@@ -556,9 +559,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel7.ResumeLayout(false);
-            this.tableLayoutPanel7.PerformLayout();
             this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -584,7 +586,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.PictureBox pictureBox5;
@@ -595,5 +596,6 @@
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Label label5;
     }
 }
