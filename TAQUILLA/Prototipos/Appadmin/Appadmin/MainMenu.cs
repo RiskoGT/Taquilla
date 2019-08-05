@@ -115,5 +115,12 @@ namespace Appadmin
         {
 
         }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            frmTiempo frm = new frmTiempo();
+            frm.Show();
+            this.Hide();
+        }
     }
 }
