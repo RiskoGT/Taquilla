@@ -134,7 +134,7 @@ namespace Appadmin
         }
         void numero(KeyPressEventArgs e)
         {
-
+            char dosp = (char)58;
             if (char.IsNumber(e.KeyChar))
             {
 
@@ -146,7 +146,7 @@ namespace Appadmin
                 e.Handled = false;
 
             }
-            else if (char.IsPunctuation(e.KeyChar))
+            else if (e.KeyChar == dosp)
             {
 
                 e.Handled = false;
