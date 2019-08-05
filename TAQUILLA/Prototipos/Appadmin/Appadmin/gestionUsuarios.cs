@@ -48,7 +48,7 @@ namespace Appadmin
         }
 		void Bitacora(string Accion, string ip, string Afectado)
 		{
-			string query = "INSERT INTO Bitacora (Usuario,Accion,Afectado,ipAddress,fechaHora) VALUES ('" + user + "','" + Accion + "',' " + Afectado + "','" + ip + "','" + DateTime.Now.ToString("G") + "')";
+			string query = "INSERT INTO bitacora (Usuario,Accion,Afectado,ipAddress,fechaHora) VALUES ('" + user + "','" + Accion + "',' " + Afectado + "','" + ip + "','" + DateTime.Now.ToString("G") + "')";
 			OdbcCommand consulta = new OdbcCommand(query, conn);
 			try
 			{
@@ -285,7 +285,7 @@ namespace Appadmin
         private void BtnModif_Click(object sender, EventArgs e)
         {
 			string query = "UPDATE usuarios SET " +
-			"idPerfil='" + comboPerfil.Text + "',password= MD5('" + txtContra.Text + "'),DPI='" + txtDpi.Text + "'," +
+			"idPerfil='" + comboPerfil.Text[0] + "',password= MD5('" + txtContra.Text + "'),DPI='" + txtDpi.Text + "'," +
 			"Nombres='" + txtNombre.Text + "',Apellidos='" + txtApellido.Text + "',Telefono='" + txtTel.Text + "',Correo='" + txtCorreo.Text + "',Sexo='" +
 			 comboSexo.Text + "',fechaNac='" + dtpFechaNac.Text + "',fechaInicio='" + dtpFechaInicio.Text + "'" + " WHERE Usuario ='" + txtUsuario.Text +"'";//+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
 

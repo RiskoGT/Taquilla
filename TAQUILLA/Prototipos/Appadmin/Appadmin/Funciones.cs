@@ -100,7 +100,7 @@ namespace Appadmin
         }
         void Bitacora(string Accion, string ip, string Afectado)
         {
-            string query = "INSERT INTO Bitacora (Usuario,Accion,Afectado,ipAddress,fechaHora) VALUES ('" + usuario + "','" + Accion + "',' " + Afectado + "','" + ip + "','" + DateTime.Now.ToString("G") + "')";
+            string query = "INSERT INTO bitacora (Usuario,Accion,Afectado,ipAddress,fechaHora) VALUES ('" + usuario + "','" + Accion + "',' " + Afectado + "','" + ip + "','" + DateTime.Now.ToString("G") + "')";
             OdbcCommand consulta = new OdbcCommand(query, conn);
             try
             {

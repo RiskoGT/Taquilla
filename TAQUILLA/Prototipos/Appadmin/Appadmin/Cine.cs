@@ -48,7 +48,7 @@ namespace Appadmin
         }
 		void Bitacora(string Accion, string ip, string Afectado)
 		{
-			string query = "INSERT INTO Bitacora (Usuario,Accion,Afectado,ipAddress,fechaHora) VALUES ('" + user + "','" + Accion + "',' " + Afectado + "','" + ip + "','" + DateTime.Now.ToString("G") + "')";
+			string query = "INSERT INTO bitacora (Usuario,Accion,Afectado,ipAddress,fechaHora) VALUES ('" + user + "','" + Accion + "',' " + Afectado + "','" + ip + "','" + DateTime.Now.ToString("G") + "')";
 			OdbcCommand consulta = new OdbcCommand(query, conn);
 			try
 			{
@@ -153,6 +153,8 @@ namespace Appadmin
 
 		private void btnModificarCine_Click(object sender, EventArgs e)
 		{
+            btnAgregarCine.Enabled = true;
+            button2.Enabled = true;
 			if (txtCine.Text != "" && comboCiudad.Text != "")
 			{
 

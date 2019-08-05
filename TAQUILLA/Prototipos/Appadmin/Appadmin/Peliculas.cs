@@ -33,7 +33,7 @@ namespace Appadmin
         }
 		void Bitacora(string Accion, string ip, string Afectado)
 		{
-			string query = "INSERT INTO Bitacora (Usuario,Accion,Afectado,ipAddress,fechaHora) VALUES ('" + usuario + "','" + Accion + "',' " + Afectado + "','" + ip + "','" + DateTime.Now.ToString("G") + "')";
+			string query = "INSERT INTO bitacora (Usuario,Accion,Afectado,ipAddress,fechaHora) VALUES ('" + usuario + "','" + Accion + "',' " + Afectado + "','" + ip + "','" + DateTime.Now.ToString("G") + "')";
 			OdbcCommand consulta = new OdbcCommand(query, conn);
 			try
 			{
@@ -179,7 +179,7 @@ namespace Appadmin
             txtEstreno.Text = dateTimePicker1.Value.Date.ToString("yyyy/MM/dd");
             txtFin.Text = dateTimePicker2.Value.Date.ToString("yyyy/MM/dd");
             string query = "UPDATE peliculas SET Titulo = '" + txtTitulo.Text
-                + "', Multimedia='" + comboMulti.Text + "'," + " Formato= '" + comboFormato.Text
+                + "', Multimedia='" + comboMulti.Text[0] + "'," + " Formato= '" + comboFormato.Text
                 + "', Clasificación= '" + comboClas.Text + "' , Sinopsis= '" + txtSinopsis.Text
                 + "', Idioma='" + comboIdioma.Text + "', semanaEstrenoInicio= '" + txtEstreno.Text
                 + "', semanaEstrenoFin= '" + txtFin.Text + "' WHERE  idPelicula =" + idGlobal;
