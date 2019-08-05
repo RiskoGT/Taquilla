@@ -22,7 +22,8 @@ namespace Appadmin
         //establecemos la conexion con el nombre establecido en el origen de datos (ODBC)
         OdbcConnection conn = new OdbcConnection("Dsn=cine");
         string user;
-        public gestionUsuarios(string usuario)
+		string nivel;
+        public gestionUsuarios(string usuario, string level)
         {
             InitializeComponent();
             user = usuario;
@@ -33,6 +34,7 @@ namespace Appadmin
             dtpFechaNac.Format = DateTimePickerFormat.Custom;
             dtpFechaNac.CustomFormat = "yyyy-MM-dd";
             txtApellido.Clear();
+			nivel = level;
             txtContra.Clear();
             txtDpi.Focus();
             txtNombre.Clear();
@@ -179,7 +181,7 @@ namespace Appadmin
 
          private void RegresarMenu_Click(object sender, EventArgs e)
         {
-            MainMenu frm = new MainMenu(user);
+            MainMenu frm = new MainMenu(user, nivel);
             frm.Show();
             this.Hide();
         }
@@ -206,7 +208,7 @@ namespace Appadmin
 
         private void regresarMenu_Click_1(object sender, EventArgs e)
         {
-            MainMenu frm = new MainMenu(user);
+            MainMenu frm = new MainMenu(user , nivel);
             frm.Show();
             this.Hide();
         }
@@ -224,7 +226,7 @@ namespace Appadmin
         private void button8_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            MainMenu mainMenu = new MainMenu(user);
+            MainMenu mainMenu = new MainMenu(user, nivel);
             mainMenu.Show();
         }
 

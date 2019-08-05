@@ -17,13 +17,14 @@ namespace Appadmin
     {
         OdbcConnection conn = new OdbcConnection("Dsn=cine");
        string usuario;
-
-        public Funciones(string user)
+		string nivel;
+        public Funciones(string user, string level)
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
             llenarCombos();
             llenartbl();
+			nivel = level;
             usuario = user;
         }
         
@@ -222,7 +223,7 @@ namespace Appadmin
 
         private void regresarMenu_Click_1(object sender, EventArgs e)
         {
-            MainMenu frm = new MainMenu(usuario);
+            MainMenu frm = new MainMenu(usuario, nivel);
             frm.Show();
             this.Hide();
         }
@@ -261,7 +262,7 @@ namespace Appadmin
 		private void button7_Click(object sender, EventArgs e)
 		{
 			this.Hide();
-			MainMenu mainMenu = new MainMenu(usuario);
+			MenuCartelera mainMenu = new MenuCartelera(usuario, nivel);
 			mainMenu.Show();
 		}
 

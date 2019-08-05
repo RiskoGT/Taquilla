@@ -77,7 +77,19 @@ namespace Appadmin
                 + txtPass.Text + "') ", conn); 
             OdbcDataReader leer = cmd.ExecuteReader();
             if (leer.Read()) //Si el usuario es correcto nos abrira la otra ventana.
-            {                
+            {
+
+				if (leer.GetValue(1).ToString() != "3")
+				{
+					MainMenu ss = new MainMenu(txtUser.Text, leer.GetValue(1).ToString());
+					string aux = Convert.ToString(txtUser.Text);
+					ss.Show();
+				}
+				else
+				{
+					Bita log = new Bita(txtUser.Text, leer.GetValue(1).ToString());
+					log.Show();
+				}
                 this.Hide();
 				string IP = "";
 				IPAddress[] localIPs = Dns.GetHostAddresses(Dns.GetHostName());
@@ -86,9 +98,7 @@ namespace Appadmin
 					IP += "   |   " + addr.ToString();
 				}
 				Bitacora("LOG IN", IP);
-				MainMenu ss = new MainMenu(txtUser.Text);
-                string aux = Convert.ToString(txtUser.Text);                
-                ss.Show();
+				
             }
             else //Si no lo es mostrara este mensaje.
             {

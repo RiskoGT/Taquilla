@@ -14,10 +14,14 @@ namespace Appadmin
     public partial class frmTiempo : Form
     {
         OdbcConnection conn = new OdbcConnection("Dsn=cine");
-        public frmTiempo()
+		string nivel;
+		string usuario;
+        public frmTiempo(string user, string level)
         {
             InitializeComponent();
             tiempo1();
+			usuario = user;
+			nivel = level;
         }
         void tiempo1()
         {
@@ -86,8 +90,8 @@ namespace Appadmin
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            string usuario = "usuario";
-            MainMenu frm = new MainMenu(usuario);
+ 
+            MainMenu frm = new MainMenu(usuario,nivel);
             frm.Show();
             this.Hide();
         }

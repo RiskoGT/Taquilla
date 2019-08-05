@@ -13,11 +13,13 @@ namespace Appadmin
     public partial class controlInformes : Form
     {
         string usuario;
-        public controlInformes(string user)
+		string level;
+		public controlInformes(string user, string nivel)
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
             usuario = user;
+			level = nivel;
         }        
         
      
@@ -39,7 +41,7 @@ namespace Appadmin
 
         private void regresarMenu_Click(object sender, EventArgs e)
         {
-            MainMenu frm = new MainMenu(usuario);
+            MainMenu frm = new MainMenu(usuario, level);
             frm.Show();
             this.Hide();
         }
@@ -67,7 +69,7 @@ namespace Appadmin
         private void BtnRegresar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MainMenu mainMenu = new MainMenu(usuario);
+            MainMenu mainMenu = new MainMenu(usuario, level);
             mainMenu.Show();
         }
     }

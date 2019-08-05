@@ -15,10 +15,19 @@ namespace Appadmin
     public partial class MainMenu : Form
     {
         string user;
-        public MainMenu(string usuario)
+		string level;
+
+        public MainMenu(string usuario, string nivel)
         {
             InitializeComponent();
             user = usuario;
+			level = nivel;
+			if (nivel == "1")
+			{
+				button2.Enabled = false;
+				button3.Enabled = false;
+				button5.Enabled = false;
+			}
         }        
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -29,7 +38,7 @@ namespace Appadmin
        
         private void button2_Click(object sender, EventArgs e)
         {
-            controlInformes frm = new controlInformes(user);
+            controlInformes frm = new controlInformes(user, level);
             frm.Show();
             this.Hide();
         }
@@ -75,28 +84,28 @@ namespace Appadmin
 
         private void GestionUsuarios_Click(object sender, EventArgs e)
         {
-            gestionUsuarios frm = new gestionUsuarios(user);
+            gestionUsuarios frm = new gestionUsuarios(user, level);
             frm.Show();
             this.Hide();
         }
 
 		private void button1_Click_1(object sender, EventArgs e)
 		{
-			MenuCartelera frm = new MenuCartelera(user);
+			MenuCartelera frm = new MenuCartelera(user, level);
 			frm.Show();
 			this.Hide();
 		}
 
 		private void button2_Click_1(object sender, EventArgs e)
 		{
-			controlInformes frm = new controlInformes(user);
+			controlInformes frm = new controlInformes(user,level);
 			frm.Show();
 			this.Hide();
 		}
 
 		private void button3_Click(object sender, EventArgs e)
 		{
-            gestionUsuarios frm = new gestionUsuarios(user);
+            gestionUsuarios frm = new gestionUsuarios(user, level);
 			frm.Show();
 			this.Hide();
 		}
@@ -118,7 +127,7 @@ namespace Appadmin
 
         private void Button5_Click(object sender, EventArgs e)
         {
-            frmTiempo frm = new frmTiempo();
+            frmTiempo frm = new frmTiempo(user, level);
             frm.Show();
             this.Hide();
         }

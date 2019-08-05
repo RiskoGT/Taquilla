@@ -37,12 +37,14 @@ namespace Appadmin
         }
         OdbcConnection conn = new OdbcConnection("Dsn=cine");
 		string user = "";
-        public Cine(string usuario)
+		string level;
+        public Cine(string usuario ,string nivel)
         {
             InitializeComponent();
 			llenarCombos();
 			llenartabla();
 			user = usuario;
+			level = nivel;
         }
 		void Bitacora(string Accion, string ip, string Afectado)
 		{
@@ -234,7 +236,7 @@ namespace Appadmin
 
 		private void Cine_FormClosed(object sender, FormClosedEventArgs e)
 		{
-			MenuCartelera nuevo = new MenuCartelera(user);
+			MenuCartelera nuevo = new MenuCartelera(user, level);
 			nuevo.Show();
 			this.Hide();
 		}

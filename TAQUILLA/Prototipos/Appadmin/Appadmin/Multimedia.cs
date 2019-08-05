@@ -18,13 +18,15 @@ namespace Appadmin
     {
         OdbcConnection conn = new OdbcConnection("Dsn=cine");
         string user;
-        public Multimedia(string usuario)
+		string level;
+        public Multimedia(string usuario, string nivel)
         {
             InitializeComponent();
             user = usuario;
             this.WindowState = FormWindowState.Maximized;
 			llenartbl();
 			btnActualizar.Enabled = false;
+			level = nivel;
 			
         }
 		void Bitacora(string Accion, string ip, string Afectado)
@@ -78,7 +80,7 @@ namespace Appadmin
 
         private void regresarMenu_Click_1(object sender, EventArgs e)
         {
-            MainMenu frm = new MainMenu(user);
+            MenuCartelera frm = new MenuCartelera(user,level);
             frm.Show();
             this.Hide();
         }
@@ -117,7 +119,7 @@ namespace Appadmin
 		private void button7_Click(object sender, EventArgs e)
 		{
 			this.Hide();
-			MainMenu mainMenu = new MainMenu(user);
+			MenuCartelera mainMenu = new MenuCartelera(user, level);
 			mainMenu.Show();
 		}
 

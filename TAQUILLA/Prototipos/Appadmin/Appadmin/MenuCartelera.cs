@@ -15,10 +15,12 @@ namespace Appadmin
     public partial class MenuCartelera : Form
     {
         string user;
-        public MenuCartelera(string usuario)
+		string level;
+        public MenuCartelera(string usuario, string nivel)
         {
             InitializeComponent();
             user = usuario;
+			level = nivel;
         }        
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -30,7 +32,7 @@ namespace Appadmin
 
         private void button2_Click(object sender, EventArgs e)
         {
-            controlInformes frm = new controlInformes(user);
+            controlInformes frm = new controlInformes(user, level);
             frm.Show();
             this.Hide();
         }
@@ -76,35 +78,37 @@ namespace Appadmin
 
         private void GestionUsuarios_Click(object sender, EventArgs e)
         {
-            gestionUsuarios frm = new gestionUsuarios(user);
+            gestionUsuarios frm = new gestionUsuarios(user,level);
             frm.Show();
             this.Hide();
         }
 
 		private void button1_Click_1(object sender, EventArgs e)
 		{
-			peliculas frm = new peliculas(user);
+			peliculas frm = new peliculas(user, level);
 			frm.Show();
 			this.Hide();
 		}
 
 		private void button2_Click_1(object sender, EventArgs e)
 		{
-			Multimedia frm = new Multimedia(user);
+			Multimedia frm = new Multimedia(user, level);
 			frm.Show();
 			this.Hide();
 		}
 
 		private void button3_Click(object sender, EventArgs e)
 		{
-            Funciones frm = new Funciones(user);
+            Funciones frm = new Funciones(user, level);
 			frm.Show();
 			this.Hide();
 		}
 
 		private void MainMenu_FormClosed(object sender, FormClosedEventArgs e)
 		{
-			Application.Exit();
+			MainMenu nuevo = new MainMenu(user, level);
+			nuevo.Show();
+			this.Hide();
 		}
 
         private void MainMenu_Load(object sender, EventArgs e)
@@ -119,14 +123,14 @@ namespace Appadmin
 
 		private void button4_Click_1(object sender, EventArgs e)
 		{
-			Ciudad nuevo = new Ciudad(user);
+			Ciudad nuevo = new Ciudad(user, level);
 			nuevo.Show();
 			this.Hide();
 		}
 
 		private void button5_Click(object sender, EventArgs e)
 		{
-			Cine nuevo = new Cine(user);
+			Cine nuevo = new Cine(user, level);
 			nuevo.Show();
 			this.Hide();
 		}

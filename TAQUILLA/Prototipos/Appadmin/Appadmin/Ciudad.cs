@@ -36,11 +36,14 @@ namespace Appadmin
         }
         OdbcConnection conn = new OdbcConnection("Dsn=cine");
 		string user = "";
-        public Ciudad(string usuario)
+		string level;
+
+		public Ciudad(string usuario, string nivel)
         {
             InitializeComponent();
             llenartabla();
 			user = usuario;
+			level = nivel;
 			button3.Enabled = false;
 		}
 		void Bitacora(string Accion, string ip, string Afectado)
@@ -136,7 +139,7 @@ namespace Appadmin
 
 		private void Ciudad_FormClosed(object sender, FormClosedEventArgs e)
 		{
-			MenuCartelera nuevo = new MenuCartelera(user);
+			MenuCartelera nuevo = new MenuCartelera(user, level);
 			nuevo.Show();
 			this.Hide();
 		}

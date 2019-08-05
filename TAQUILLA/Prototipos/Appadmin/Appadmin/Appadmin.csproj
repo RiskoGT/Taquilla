@@ -73,6 +73,12 @@
     <Compile Include="MenuCartelera.Designer.cs">
       <DependentUpon>MenuCartelera.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bita.Designer.cs">
+      <DependentUpon>Bita.cs</DependentUpon>
+    </Compile>
     <Compile Include="Multimedia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuCartelera.resx">
       <DependentUpon>MenuCartelera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bita.resx">
+      <DependentUpon>Bita.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Multimedia.resx">
       <DependentUpon>Multimedia.cs</DependentUpon>

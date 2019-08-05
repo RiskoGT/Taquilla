@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-08-2019 a las 03:54:45
--- Versión del servidor: 10.1.26-MariaDB
--- Versión de PHP: 7.1.9
+-- Tiempo de generación: 05-08-2019 a las 09:07:41
+-- Versión del servidor: 10.1.37-MariaDB
+-- Versión de PHP: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `taquilla`
+-- Base de datos: `cine`
 --
 
 -- --------------------------------------------------------
@@ -39,7 +39,7 @@ CREATE TABLE `asientos` (
 --
 
 INSERT INTO `asientos` (`idAsiento`, `idFuncion`, `estado`) VALUES
-('A-1', 1, 0),
+('A-1', 1, 1),
 ('A-1', 2, 1),
 ('A-1', 3, 0),
 ('A-1', 4, 0),
@@ -48,7 +48,7 @@ INSERT INTO `asientos` (`idAsiento`, `idFuncion`, `estado`) VALUES
 ('A-1', 7, 0),
 ('A-1', 8, 0),
 ('A-1', 9, 0),
-('A-10', 1, 0),
+('A-10', 1, 1),
 ('A-10', 2, 0),
 ('A-10', 3, 0),
 ('A-10', 4, 0),
@@ -57,7 +57,7 @@ INSERT INTO `asientos` (`idAsiento`, `idFuncion`, `estado`) VALUES
 ('A-10', 7, 0),
 ('A-10', 8, 0),
 ('A-10', 9, 0),
-('A-2', 1, 0),
+('A-2', 1, 1),
 ('A-2', 2, 0),
 ('A-2', 3, 0),
 ('A-2', 4, 0),
@@ -936,7 +936,26 @@ INSERT INTO `bitacora` (`noReg`, `Usuario`, `Accion`, `Afectado`, `ipAddress`, `
 (64, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::b841:8529:6db6:d7a6%9   |   fe80::b523:a454:a8ba:7157%15   |   2803:7000:2000:4f1:142e:1117:f87f:f7bc   |   2803:7000:2000:4f1:b523:a454:a8ba:7157   |   192.168.56.1   |   192.168.0.14', '3/08/2019 11:31:29'),
 (65, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::b841:8529:6db6:d7a6%9   |   fe80::b523:a454:a8ba:7157%15   |   2803:7000:2000:4f1:142e:1117:f87f:f7bc   |   2803:7000:2000:4f1:b523:a454:a8ba:7157   |   192.168.56.1   |   192.168.0.14', '3/08/2019 11:32:51'),
 (66, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::b841:8529:6db6:d7a6%9   |   fe80::b523:a454:a8ba:7157%15   |   2803:7000:2000:4f1:142e:1117:f87f:f7bc   |   2803:7000:2000:4f1:b523:a454:a8ba:7157   |   192.168.56.1   |   192.168.0.14', '3/08/2019 11:33:27'),
-(67, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::b841:8529:6db6:d7a6%9   |   fe80::b523:a454:a8ba:7157%15   |   2803:7000:2000:4f1:142e:1117:f87f:f7bc   |   2803:7000:2000:4f1:b523:a454:a8ba:7157   |   192.168.56.1   |   192.168.0.14', '3/08/2019 12:38:15');
+(67, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::b841:8529:6db6:d7a6%9   |   fe80::b523:a454:a8ba:7157%15   |   2803:7000:2000:4f1:142e:1117:f87f:f7bc   |   2803:7000:2000:4f1:b523:a454:a8ba:7157   |   192.168.56.1   |   192.168.0.14', '3/08/2019 12:38:15'),
+(68, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '5/08/2019 00:00:27'),
+(69, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '5/08/2019 00:01:10'),
+(70, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '5/08/2019 00:01:40'),
+(71, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '5/08/2019 00:03:30'),
+(72, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '5/08/2019 00:04:46'),
+(73, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '5/08/2019 00:05:31'),
+(74, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '5/08/2019 00:09:25'),
+(75, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '5/08/2019 00:11:37'),
+(76, 'Gus', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '5/08/2019 00:35:29'),
+(77, 'Gus', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '5/08/2019 00:36:04'),
+(78, 'Gus', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '5/08/2019 00:36:23'),
+(79, 'Gus', 'SELECT', ' BITACORA', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '5/08/2019 00:37:10'),
+(80, 'Gus', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '5/08/2019 00:37:10'),
+(81, 'Gus', 'SELECT', ' BITACORA', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '5/08/2019 00:37:27'),
+(82, 'Gus', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '5/08/2019 00:37:27'),
+(83, 'edgar', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '5/08/2019 00:53:00'),
+(84, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '5/08/2019 00:54:07'),
+(85, 'Gus', 'SELECT', ' BITACORA', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '5/08/2019 00:55:02'),
+(86, 'Gus', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '5/08/2019 00:55:02');
 
 -- --------------------------------------------------------
 
@@ -1238,8 +1257,8 @@ CREATE TABLE `peliculas` (
 --
 
 INSERT INTO `peliculas` (`idPelicula`, `Titulo`, `Multimedia`, `Formato`, `Clasificación`, `Sinopsis`, `Idioma`, `semanaEstrenoInicio`, `semanaEstrenoFin`) VALUES
-(2, 'Spider-Man: Lejos de casa', 2, '3D', 'B', 'Peter Parker regresa en Spider-Man: Lejos de casa el siguiente capítulo en la serie de Spider-Man: Homecoming. Nuestro amistoso vecino superhéroe decide unirse a sus mejores amigos Ned, MJ, y el resto del grupo a unas vacaciones europeas. Aunque, el plan de Peter sea dejar sus heroicidades atrás durante unas pocas semanas, pronto desecha esas ideas para ayudar a regañadientes a Nick Furia a desentrañar el misterio de los ataques de varias criaturas elementales, que están creando el caos en el mundo', '1 hora 30 minutos', '2019-07-07', '2019-07-14'),
-(5, 'El rey león', 1, '2D', 'A', 'EL REY LEÓN de Disney, dirigida por Jon Favreau, nos lleva a la sabana africana donde un futuro rey ha nacido. Simba idolatra a su padre, el rey Mufasa, y está entusiasmado con su destino real. Pero no todos en el reino celebran la llegada del nuevo cachorro. Scar, el hermano de Mufasa y antiguo heredero al trono, tiene sus propios planes. La batalla de La Roca del Rey se ve teñida de traición, tragedia y drama, y acaba forzando a Simba al exilio. Con la ayuda de una curiosa pareja de amigos nuevos, Simba tendrá que arreglárselas para crecer y recuperar lo que legítimamente le corresponde. El estelar reparto incluye a: Donald Glover como Simba, Beyoncé Knowles-Carter en el papel de Nala, James Earl Jones como Mufasa, Chiwetel Ejiofor como Scar, Seth Rogen como Pumba y Billy Eichner en el papel de Timón.', '1 hora 30 minutos', '2019-07-10', '2019-07-19'),
+(2, 'Spider-Man: Lejos de casa', 2, '3D', 'B', 'Peter Parker regresa en Spider-Man: Lejos de casa el siguiente capítulo en la serie de Spider-Man: Homecoming. Nuestro amistoso vecino superhéroe decide unirse a sus mejores amigos Ned, MJ, y el resto del grupo a unas vacaciones europeas. Aunque, el plan de Peter sea dejar sus heroicidades atrás durante unas pocas semanas, pronto desecha esas ideas para ayudar a regañadientes a Nick Furia a desentrañar el misterio de los ataques de varias criaturas elementales, que están creando el caos en el mundo', 'Español', '2019-07-07', '2019-07-14'),
+(5, 'El rey león', 1, '2D', 'A', 'EL REY LEÓN de Disney, dirigida por Jon Favreau, nos lleva a la sabana africana donde un futuro rey ha nacido. Simba idolatra a su padre, el rey Mufasa, y está entusiasmado con su destino real. Pero no todos en el reino celebran la llegada del nuevo cachorro. Scar, el hermano de Mufasa y antiguo heredero al trono, tiene sus propios planes. La batalla de La Roca del Rey se ve teñida de traición, tragedia y drama, y acaba forzando a Simba al exilio. Con la ayuda de una curiosa pareja de amigos nuevos, Simba tendrá que arreglárselas para crecer y recuperar lo que legítimamente le corresponde. El estelar reparto incluye a: Donald Glover como Simba, Beyoncé Knowles-Carter en el papel de Nala, James Earl Jones como Mufasa, Chiwetel Ejiofor como Scar, Seth Rogen como Pumba y Billy Eichner en el papel de Timón.', 'Subtitulada', '2019-07-10', '2019-07-19'),
 (6, 'Desastre en París', 5, '2D', 'B', 'El día que una extraña niebla letal sumerge París, los supervivientes encuentran refugio en los pisos superiores de los edificios y en los tejados de la capital. Sin información, sin electricidad, sin agua ni comida, una pequeña familia trata de sobrevivir a este desastre. Pero pasan las horas y una cosa está clara: la ayuda no llegará y será necesario para poder salir, probar suerte en la niebla.', '1 hora 30 minutos', '2019-07-01', '2019-07-17'),
 (8, 'Hotel Mumbai', 3, '2D', 'B15', 'Una apasionante historia sobre humanidad y heroísmo, HOTEL MUMBAI cuenta vividamente el cerco de 2008 al Taj Hotel por un grupo de terroristas en Mumbai, India. Entre el personal del hotel se encuentra el renombrado chef Hemant Oberoi (Anupam Kher) y un camarero (Dev Patel) quienes eligen arriesgar sus vidas para proteger a los huéspedes, Mientras la situación avanza, una pareja desesperada (Armie Hammer y Nazanin Boniadi) se ve obligada hacer sacrificios impensables para proteger a su hijo recién nacido.', '1 Hora 30 minutos', '2019-08-07', '2019-08-31');
 
@@ -1259,7 +1278,9 @@ CREATE TABLE `perfiles` (
 --
 
 INSERT INTO `perfiles` (`idPerfil`, `Tipo`) VALUES
-(1, 'administrador');
+(1, 'Usuario'),
+(2, 'Gerente'),
+(3, 'Administrador');
 
 -- --------------------------------------------------------
 
@@ -1363,8 +1384,9 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`Usuario`, `idPerfil`, `password`, `DPI`, `Nombres`, `Apellidos`, `Telefono`, `Correo`, `Sexo`, `fechaNac`, `fechaInicio`) VALUES
-('Risko', 1, 'dd3d7a65733c4e476c310d7cfd7a2460', '894652', 'Risko', 'Risko', '84651325354', 'risko@Risko.com', 'masculino', '2019-07-01', '2019-07-31'),
-('edgar', 1, '6d96ac0dba8fc4af98711a9f8622e804', '444541541', 'Edgar', 'Casasola', '22665544', 'edgar@risko.com', 'Masculino', '2018-07-31', '2019-06-27'),
+('Gus', 3, 'b4288d9c0ec0a1841b3b3728321e7088', '3525036592121', 'Gustavo', 'Perez', '455221155', 'gus657@gmail.com', 'Masculino', '1998-08-08', '2019-07-07'),
+('Risko', 2, 'dd3d7a65733c4e476c310d7cfd7a2460', '894652', 'Risko', 'Risko', '84651325354', 'risko@Risko.com', 'masculino', '2019-07-01', '2019-07-31'),
+('edgar', 1, 'cf55ada960dedf6154b0d6905b2748ff', '444541541', 'Edgar', 'Casasola', '22665544', 'edgar@risko.com', 'Masculino', '2018-07-31', '2019-06-27'),
 ('rchocm', 1, 'e9a529231e0c7e68bb358b0db3453c75', '4896513', 'Randy', 'Choc', '44558899', 'randy@risko.com', 'Masculino', '2017-12-16', '2019-07-25');
 
 --
@@ -1519,7 +1541,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `bitacora`
 --
 ALTER TABLE `bitacora`
-  MODIFY `noReg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `noReg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
 -- AUTO_INCREMENT de la tabla `boletos`
@@ -1579,7 +1601,7 @@ ALTER TABLE `peliculas`
 -- AUTO_INCREMENT de la tabla `perfiles`
 --
 ALTER TABLE `perfiles`
-  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `salas`
