@@ -307,14 +307,13 @@
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 4;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.Controls.Add(this.btnIngresar, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnActualizar, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnEliminar, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnActualizar, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnEliminar, 2, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(60, 670);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
@@ -335,7 +334,7 @@
             this.btnIngresar.Location = new System.Drawing.Point(4, 4);
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(4);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(244, 59);
+            this.btnIngresar.Size = new System.Drawing.Size(329, 59);
             this.btnIngresar.TabIndex = 0;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = false;
@@ -348,10 +347,10 @@
             this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Agency FB", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.Location = new System.Drawing.Point(508, 4);
+            this.btnActualizar.Location = new System.Drawing.Point(341, 4);
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(244, 59);
+            this.btnActualizar.Size = new System.Drawing.Size(329, 59);
             this.btnActualizar.TabIndex = 2;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
@@ -364,10 +363,10 @@
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Agency FB", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(760, 4);
+            this.btnEliminar.Location = new System.Drawing.Point(678, 4);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(247, 59);
+            this.btnEliminar.Size = new System.Drawing.Size(329, 59);
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;

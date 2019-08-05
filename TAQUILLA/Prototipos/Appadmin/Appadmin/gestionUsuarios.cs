@@ -28,23 +28,21 @@ namespace Appadmin
             user = usuario;
             label14.Text = user;
             this.WindowState = FormWindowState.Maximized;
+            dtpFechaInicio.Format = DateTimePickerFormat.Custom;
+            dtpFechaInicio.CustomFormat = "yyyy-MM-dd";
+            dtpFechaNac.Format = DateTimePickerFormat.Custom;
+            dtpFechaNac.CustomFormat = "yyyy-MM-dd";
             txtApellido.Clear();
             txtContra.Clear();
-            comboSexo.SelectedText = "Sexo";
             txtDpi.Focus();
             txtNombre.Clear();
             txtTel.Clear();
             btnActualizar.Enabled = false;
             txtUsuario.Clear();
-			dtpFechaInicio.Format = DateTimePickerFormat.Custom;
-			dtpFechaInicio.CustomFormat = "yyyy-MM-dd";
-			dtpFechaNac.Format = DateTimePickerFormat.Custom;
-			dtpFechaNac.CustomFormat = "yyyy-MM-dd";
 			llenartbl();
             llenarCombos();
-            comboSexo.Items.Add("Sexo");
-            comboSexo.SelectedItem = "Sexo";
-            //llenarCombos();
+           
+       
         }
 		void Bitacora(string Accion, string ip, string Afectado)
 		{
@@ -173,23 +171,7 @@ namespace Appadmin
             }
         }
 
-        void log(string queryin)
-        {
-            string query =/*es bitacora uno no es una letra l de leon*/ "INSERT INTO bitacora1  (Usuario,operacion,fecha) VALUES ('" + txtUsuario + "','" + queryin + "','" + DateTime.Now.ToString("G") + "')";
-            OdbcCommand consulta = new OdbcCommand(query, conn);
-            try
-            {
 
-                consulta.ExecuteNonQuery();
-                conn.Close();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("ERROR" + ex.ToString());
-                conn.Close();
-            }
-        }
         private void GestionUsuarios_Load(object sender, EventArgs e)
         {
 
@@ -425,7 +407,7 @@ namespace Appadmin
                     while (reader.Read())
                     {
 
-                        comboPerfil.Text = reader.GetValue(0).ToString();
+                        nomPerfil = reader.GetValue(0).ToString();
                     }
                 }
                 catch (Exception ex)
@@ -438,7 +420,7 @@ namespace Appadmin
                 btnAgregar.Enabled = false;
                 btnEliminar.Enabled = true;
                 txtUsuario.Text = tblContenido.CurrentRow.Cells[0].Value.ToString();
-             
+                comboPerfil.Text = tblContenido.CurrentRow.Cells[1].Value.ToString() + " - " + nomPerfil;
                 txtContra.Text = tblContenido.CurrentRow.Cells[2].Value.ToString();
                 txtDpi.Text = tblContenido.CurrentRow.Cells[3].Value.ToString();
                 txtNombre.Text = tblContenido.CurrentRow.Cells[4].Value.ToString();

@@ -16,15 +16,25 @@ namespace Appadmin
     public partial class Funciones : Form
     {
         OdbcConnection conn = new OdbcConnection("Dsn=cine");
-        string usuario;
+       string usuario;
+
+        public Funciones(string user)
+        {
+            InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
+            llenarCombos();
+            llenartbl();
+            usuario = user;
+        }
+        
         void llenarCombos()
         {
             //llenado de comboBox CLASIFICACION
             try
             {
-				ComboPelicula.Items.Clear();
-				ComboPelicula.Text = "Peliculas";
-   
+                ComboPelicula.Items.Clear();
+                ComboPelicula.Text = "Peliculas";
+
 
                 conn.Open();
                 OdbcCommand command = new OdbcCommand("SELECT * FROM peliculas", conn);
@@ -32,7 +42,7 @@ namespace Appadmin
                 while (reader.Read())
                 {
                     ComboPelicula.Refresh();
-                    ComboPelicula.Items.Add(reader.GetValue(0).ToString()+ " - "+ reader.GetValue(1).ToString());
+                    ComboPelicula.Items.Add(reader.GetValue(0).ToString() + " - " + reader.GetValue(1).ToString());
                 }
             }
             catch (Exception ex)
@@ -61,7 +71,7 @@ namespace Appadmin
             }
             conn.Close();
 
-            
+
         }
         void llenartbl()
         {
@@ -87,22 +97,22 @@ namespace Appadmin
                 conn.Close();
             }
         }
-		void Bitacora(string Accion, string ip, string Afectado)
-		{
-			string query = "INSERT INTO Bitacora (Usuario,Accion,Afectado,ipAddress,fechaHora) VALUES ('" + usuario + "','" + Accion + "',' " + Afectado + "','" + ip + "','" + DateTime.Now.ToString("G") + "')";
-			OdbcCommand consulta = new OdbcCommand(query, conn);
-			try
-			{
+        void Bitacora(string Accion, string ip, string Afectado)
+        {
+            string query = "INSERT INTO Bitacora (Usuario,Accion,Afectado,ipAddress,fechaHora) VALUES ('" + usuario + "','" + Accion + "',' " + Afectado + "','" + ip + "','" + DateTime.Now.ToString("G") + "')";
+            OdbcCommand consulta = new OdbcCommand(query, conn);
+            try
+            {
 
-				consulta.ExecuteNonQuery();
+                consulta.ExecuteNonQuery();
 
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show(ex.ToString());
-			}
-		}
-		void letra(KeyPressEventArgs e)
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        void letra(KeyPressEventArgs e)
         {
             if (char.IsLetter(e.KeyChar))
             {
@@ -136,7 +146,8 @@ namespace Appadmin
                 e.Handled = false;
 
             }
-            else if (char.IsPunctuation(e.KeyChar)) {
+            else if (char.IsPunctuation(e.KeyChar))
+            {
 
                 e.Handled = false;
             }
@@ -174,7 +185,8 @@ namespace Appadmin
 
         }
 
-        void numerosimbolo(KeyPressEventArgs e) {
+        void numerosimbolo(KeyPressEventArgs e)
+        {
 
             if (char.IsNumber(e.KeyChar))
             {
@@ -198,15 +210,6 @@ namespace Appadmin
 
             }
         }
-
-        public Funciones(string user)
-        {
-            InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
-            llenarCombos();
-            llenartbl();
-            usuario = user;
-        }        
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -431,7 +434,7 @@ namespace Appadmin
 			if (dtgFunciones.SelectedRows.Count == 1)
 			{
 				string nomPelicula = " ";
-
+                string sala = "";
 				try
 				{
 
@@ -449,12 +452,29 @@ namespace Appadmin
 					MessageBox.Show(ex.Message);
 				}
 				conn.Close();
+                try
+                {
 
-				btnActualizar.Enabled = true;
+                    conn.Open();
+                    OdbcCommand command = new OdbcCommand("SELECT * FROM funciones ", conn);
+                    OdbcDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+
+                        sala = reader.GetValue(2).ToString();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                conn.Close();
+
+                btnActualizar.Enabled = true;
 				btnIngresar.Enabled = false;
 				btnEliminar.Enabled = true;
 				ComboPelicula.Text = dtgFunciones.CurrentRow.Cells[1].Value.ToString() + " - " + nomPelicula;
-				comboSala.Text = dtgFunciones.CurrentRow.Cells[2].Value.ToString();
+                comboSala.Text = sala;
 				comboCine.Text = dtgFunciones.CurrentRow.Cells[3].Value.ToString();
 				txtDuracion.Text = dtgFunciones.CurrentRow.Cells[4].Value.ToString();
 				btnActualizar.Enabled = true;
