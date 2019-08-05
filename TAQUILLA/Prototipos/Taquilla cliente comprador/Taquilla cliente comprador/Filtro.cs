@@ -24,7 +24,8 @@ namespace Taquilla_cliente_comprador
 			cineSeleccionado = cine;
      
         }
-		
+	
+
 		private void Filtro_FormClosed(object sender, FormClosedEventArgs e)
 		{
 			Application.Exit();
@@ -49,6 +50,18 @@ namespace Taquilla_cliente_comprador
 			Form formulario = new frmMenu();
 			formulario.Show();
 			this.Visible = false;
+
+
+		}
+
+		private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			e.Handled = true;
+		}
+
+		private void comboBox2_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			e.Handled = true;
 		}
 	}
 }

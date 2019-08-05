@@ -411,14 +411,24 @@ namespace Taquilla_cliente_comprador
 	
 		}
 
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            Form formulario = new Filtro(cineSeleccionado);
-            formulario.Show();
-            Visible = false;
-        }
+		private void Button2_Click(object sender, EventArgs e)
+		{
+		
 
-       
-    }
+			
+				this.Close();
+				th = new Thread(opennewform2);
+				th.SetApartmentState(ApartmentState.STA);
+				th.Start();
+	
+			
+		}
+		private void opennewform2()
+		{
+			Application.Run(new Filtro(cineSeleccionado));
+		}
+
+
+	}
     }
 

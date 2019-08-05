@@ -1375,7 +1375,9 @@ namespace Taquilla_cliente_comprador
 				btnE1.Enabled = false; btnE2.Enabled = false; btnE3.Enabled = false; btnE4.Enabled = false; btnE5.Enabled = false;
 				btnE6.Enabled = false; btnE7.Enabled = false; btnE8.Enabled = false; btnE9.Enabled = false; btnE10.Enabled = false;
 				btnF1.Enabled = false; btnF2.Enabled = false; btnF3.Enabled = false; btnF4.Enabled = false; btnF5.Enabled = false;
-				btnE10.Enabled = false; btnF7.Enabled = false; btnF8.Enabled = false; btnF9.Enabled = false; btnF10.Enabled = false;
+				btnF6.Enabled = false; btnF7.Enabled = false; btnF8.Enabled = false; btnF9.Enabled = false; btnF10.Enabled = false;
+				btnG1.Enabled = false; btnG2.Enabled = false; btnG3.Enabled = false; btnG4.Enabled = false; btnG5.Enabled = false;
+				btnG6.Enabled = false; btnG7.Enabled = false; btnG8.Enabled = false; btnG9.Enabled = false; btnG10.Enabled = false;
 				btnH1.Enabled = false; btnH2.Enabled = false; btnH3.Enabled = false; btnH4.Enabled = false; btnH5.Enabled = false;
 				btnH6.Enabled = false; btnH7.Enabled = false; btnH8.Enabled = false; btnH9.Enabled = false; btnH10.Enabled = false;
 				btnI1.Enabled = false; btnI2.Enabled = false; btnI3.Enabled = false; btnI4.Enabled = false; btnI5.Enabled = false;

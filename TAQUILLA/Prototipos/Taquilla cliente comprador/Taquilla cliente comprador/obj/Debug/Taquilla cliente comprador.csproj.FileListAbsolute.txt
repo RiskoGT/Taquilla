@@ -82,3 +82,4 @@ C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente co
 C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla_cliente_comprador.frmCartelera.resources
 C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla_cliente_comprador.frmAsientos.resources
 C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla_cliente_comprador.frmTipoPago.resources
+C:\Users\gganp\Desktop\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla_cliente_comprador.frmTipoPago.resources

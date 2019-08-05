@@ -48,6 +48,8 @@ namespace Taquilla_cliente_comprador
 			conn.Close();
 		}
 
+
+		
 		private void Btn_verCartelera_Click(object sender, EventArgs e)
         {
             Form formulario = new Filtro(ComboSeleccioneCine.Text);
@@ -68,14 +70,13 @@ namespace Taquilla_cliente_comprador
 
 		private void ComboSeleccioneCiudad_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			ComboSeleccioneCine.Enabled = true;
 			try
 			{
 				ComboSeleccioneCine.Text = "Cines";
 				ComboSeleccioneCine.Items.Clear();
 
 				conn.Open();
-				OdbcCommand command = new OdbcCommand("SELECT * FROM cines Where idCiudad = "+ ComboSeleccioneCiudad.Text[0], conn);
+				OdbcCommand command = new OdbcCommand("SELECT * FROM cines", conn);
 				OdbcDataReader reader = command.ExecuteReader();
 				while (reader.Read())
 				{
@@ -88,6 +89,7 @@ namespace Taquilla_cliente_comprador
 				MessageBox.Show(ex.Message);
 			}
 			conn.Close();
+			ComboSeleccioneCine.Enabled = true;
 		}
 
 		private void ComboSeleccioneCine_SelectedIndexChanged(object sender, EventArgs e)
@@ -95,6 +97,14 @@ namespace Taquilla_cliente_comprador
 			btnVerCartelera.Enabled = true;
 		}
 
-        
-    }
+		private void ComboSeleccioneCiudad_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			e.Handled = true;
+		}
+
+		private void ComboSeleccioneCine_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			e.Handled = true;
+		}
+	}
 }
