@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-08-2019 a las 09:07:41
+-- Tiempo de generación: 08-08-2019 a las 03:25:43
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.3.1
 
@@ -972,6 +972,13 @@ CREATE TABLE `boletos` (
   `tipoBoleto` varchar(45) COLLATE utf8mb4_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
+--
+-- Volcado de datos para la tabla `boletos`
+--
+
+INSERT INTO `boletos` (`idBoleto`, `idFuncion`, `idAsiento`, `Fecha`, `Cine`, `tipoBoleto`) VALUES
+(1, 1, 'A-1', '2019-08-20', 'Portales', '3ra Edad');
+
 -- --------------------------------------------------------
 
 --
@@ -981,19 +988,30 @@ CREATE TABLE `boletos` (
 CREATE TABLE `cines` (
   `idCine` int(11) NOT NULL,
   `idCiudad` int(11) DEFAULT NULL,
-  `nombreCine` varchar(45) COLLATE utf8mb4_bin DEFAULT NULL
+  `nombreCine` varchar(45) COLLATE utf8mb4_bin DEFAULT NULL,
+  `estadoCine` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
 -- Volcado de datos para la tabla `cines`
 --
 
-INSERT INTO `cines` (`idCine`, `idCiudad`, `nombreCine`) VALUES
-(1, 1, 'Portales'),
-(2, 1, 'Miraflores'),
-(3, 1, 'Naranjo'),
-(4, 2, 'Plaza Americas'),
-(5, 3, 'Interplaza');
+INSERT INTO `cines` (`idCine`, `idCiudad`, `nombreCine`, `estadoCine`) VALUES
+(1, 1, 'Portales', 0),
+(2, 1, 'Miraflores', 0),
+(3, 1, 'Naranjo', 0),
+(4, 2, 'Plaza Americas', 0),
+(5, 3, 'Interplaza', 0);
+
+--
+-- Disparadores `cines`
+--
+DELIMITER $$
+CREATE TRIGGER `estdo sala` AFTER UPDATE ON `cines` FOR EACH ROW BEGIN
+UPDATE salas set estadoSala = new.estadoCine WHERE salas.idCine=new.idCine;
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -1003,17 +1021,28 @@ INSERT INTO `cines` (`idCine`, `idCiudad`, `nombreCine`) VALUES
 
 CREATE TABLE `ciudades` (
   `idCiudad` int(11) NOT NULL,
-  `nombreCiudad` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL
+  `nombreCiudad` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
+  `estadoCiudad` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
 -- Volcado de datos para la tabla `ciudades`
 --
 
-INSERT INTO `ciudades` (`idCiudad`, `nombreCiudad`) VALUES
-(1, 'Guatemala'),
-(2, 'Quetzaltenango'),
-(3, 'Xela');
+INSERT INTO `ciudades` (`idCiudad`, `nombreCiudad`, `estadoCiudad`) VALUES
+(1, 'Guatemala', 0),
+(2, 'Quetzaltenango', 0),
+(3, 'Xela', 0);
+
+--
+-- Disparadores `ciudades`
+--
+DELIMITER $$
+CREATE TRIGGER `ESTADO CINE` AFTER UPDATE ON `ciudades` FOR EACH ROW BEGIN
+UPDATE cines set estadoCine = new.estadoCiudad WHERE cines.idCiudad=new.idCiudad;
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -1049,9 +1078,17 @@ CREATE TABLE `detallefactura` (
   `numeroLinea` int(11) NOT NULL,
   `numeroFactura` int(11) NOT NULL,
   `idBoleto` int(11) DEFAULT NULL,
-  `idFuncion` int(11) NOT NULL,
-  `Costo` int(3) NOT NULL
+  `Costo` int(3) NOT NULL,
+  `estadoDetalleFactura` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+--
+-- Volcado de datos para la tabla `detallefactura`
+--
+
+INSERT INTO `detallefactura` (`numeroLinea`, `numeroFactura`, `idBoleto`, `Costo`, `estadoDetalleFactura`) VALUES
+(0, 1, 1, 35, 7),
+(1, 1, 1, 35, 7);
 
 -- --------------------------------------------------------
 
@@ -1061,11 +1098,20 @@ CREATE TABLE `detallefactura` (
 
 CREATE TABLE `detallereservacion` (
   `numeroLinea` int(11) NOT NULL,
-  `idReservasion` int(11) NOT NULL,
+  `idReservacion` int(11) NOT NULL,
   `idFuncion` int(11) NOT NULL,
   `idAsiento` varchar(5) COLLATE utf8mb4_bin DEFAULT NULL,
-  `tipoBoleto` varchar(45) COLLATE utf8mb4_bin DEFAULT NULL
+  `tipoBoleto` varchar(45) COLLATE utf8mb4_bin DEFAULT NULL,
+  `estadoDetalleReservacion` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+--
+-- Volcado de datos para la tabla `detallereservacion`
+--
+
+INSERT INTO `detallereservacion` (`numeroLinea`, `idReservacion`, `idFuncion`, `idAsiento`, `tipoBoleto`, `estadoDetalleReservacion`) VALUES
+(1, 1, 6, 'A-1', '3ra Edad', 0),
+(2, 1, 6, 'A-2', 'Adulto', 0);
 
 -- --------------------------------------------------------
 
@@ -1077,8 +1123,31 @@ CREATE TABLE `encabezadosfactura` (
   `numeroFactura` int(11) NOT NULL,
   `fechaFactura` date DEFAULT NULL,
   `Cine` varchar(45) COLLATE utf8mb4_bin NOT NULL,
-  `Funcion` int(11) NOT NULL
+  `Funcion` int(11) NOT NULL,
+  `estadoFactura` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+--
+-- Volcado de datos para la tabla `encabezadosfactura`
+--
+
+INSERT INTO `encabezadosfactura` (`numeroFactura`, `fechaFactura`, `Cine`, `Funcion`, `estadoFactura`) VALUES
+(1, '2019-08-14', 'Portales', 5, 7),
+(2, '2019-08-14', 'Naranjo', 2, 0),
+(3, '2019-08-05', 'Naranjo', 2, 0),
+(4, '2019-08-06', 'Portales', 4, 0);
+
+--
+-- Disparadores `encabezadosfactura`
+--
+DELIMITER $$
+CREATE TRIGGER `estado detalle` AFTER UPDATE ON `encabezadosfactura` FOR EACH ROW BEGIN
+UPDATE detallefactura
+set estadoDetalleFactura = new.estadoFactura
+WHERE detallefactura.numeroFactura = new.numeroFactura;
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -1091,23 +1160,24 @@ CREATE TABLE `funciones` (
   `idPelicula` int(11) DEFAULT NULL,
   `idSala` int(11) DEFAULT NULL,
   `cine` varchar(45) COLLATE utf8mb4_bin NOT NULL,
-  `horaFuncion` time DEFAULT NULL
+  `horaFuncion` time DEFAULT NULL,
+  `estadoFuncion` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
 -- Volcado de datos para la tabla `funciones`
 --
 
-INSERT INTO `funciones` (`idFuncion`, `idPelicula`, `idSala`, `cine`, `horaFuncion`) VALUES
-(1, 2, 5, 'Portales', '16:05:00'),
-(2, 2, 4, 'Naranjo', '11:00:00'),
-(3, 2, 3, 'Interplaza', '16:00:00'),
-(4, 6, 5, 'Portales', '16:05:00'),
-(5, 5, 3, 'Interplaza', '10:25:00'),
-(6, 5, 1, 'Portales', '12:50:00'),
-(7, 8, 6, 'Portales', '01:00:00'),
-(8, 6, 2, 'Interplaza', '00:00:02'),
-(9, 2, 4, 'Plaza Americas', '10:20:00');
+INSERT INTO `funciones` (`idFuncion`, `idPelicula`, `idSala`, `cine`, `horaFuncion`, `estadoFuncion`) VALUES
+(1, 2, 5, 'Portales', '16:05:00', 0),
+(2, 2, 4, 'Naranjo', '11:00:00', 0),
+(3, 2, 3, 'Interplaza', '16:00:00', 0),
+(4, 6, 5, 'Portales', '16:05:00', 0),
+(5, 5, 3, 'Interplaza', '10:25:00', 0),
+(6, 5, 1, 'Portales', '12:50:00', 0),
+(7, 8, 6, 'Portales', '01:00:00', 0),
+(8, 6, 2, 'Interplaza', '00:00:02', 0),
+(9, 2, 4, 'Plaza Americas', '10:20:00', 0);
 
 --
 -- Disparadores `funciones`
@@ -1221,18 +1291,29 @@ DELIMITER ;
 CREATE TABLE `multimedia` (
   `NoRegistro` int(10) NOT NULL,
   `Afiche` varchar(255) COLLATE utf8mb4_bin NOT NULL,
-  `Trailer` varchar(255) COLLATE utf8mb4_bin NOT NULL
+  `Trailer` varchar(255) COLLATE utf8mb4_bin NOT NULL,
+  `estadoMultimedia` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
 -- Volcado de datos para la tabla `multimedia`
 --
 
-INSERT INTO `multimedia` (`NoRegistro`, `Afiche`, `Trailer`) VALUES
-(1, 'https://img.europapress.es/fotoweb/fotonoticia_20190531140023_640.jpg', 'https://www.youtube.com/watch?v=8foZzQf1L9o&t=3s'),
-(2, 'https://img-cdn.hipertextual.com/files/2019/06/hipertextual-4-trajes-spider-man-lejos-casa-nuevo-trailer-2019196176.jpg?strip=all&lossy=1&quality=57&resize=740%2C490&ssl=1', 'https://www.youtube.com/watch?v=s1OxOBPWBeU'),
-(3, 'https://visitkearney.org/wp-content/uploads/hotel-mumbai.jpg', 'https://www.youtube.com/watch?v=td03ewyR9LI'),
-(5, 'http://www.endorfina.mx/wp-content/uploads/2019/06/4-360x290.jpg', 'https://www.youtube.com/watch?v=WPEgVaz9j2g');
+INSERT INTO `multimedia` (`NoRegistro`, `Afiche`, `Trailer`, `estadoMultimedia`) VALUES
+(1, 'https://img.europapress.es/fotoweb/fotonoticia_20190531140023_640.jpg', 'https://www.youtube.com/watch?v=8foZzQf1L9o&t=3s', 0),
+(2, 'https://img-cdn.hipertextual.com/files/2019/06/hipertextual-4-trajes-spider-man-lejos-casa-nuevo-trailer-2019196176.jpg?strip=all&lossy=1&quality=57&resize=740%2C490&ssl=1', 'https://www.youtube.com/watch?v=s1OxOBPWBeU', 0),
+(3, 'https://visitkearney.org/wp-content/uploads/hotel-mumbai.jpg', 'https://www.youtube.com/watch?v=td03ewyR9LI', 0),
+(5, 'http://www.endorfina.mx/wp-content/uploads/2019/06/4-360x290.jpg', 'https://www.youtube.com/watch?v=WPEgVaz9j2g', 0);
+
+--
+-- Disparadores `multimedia`
+--
+DELIMITER $$
+CREATE TRIGGER `estado multimedia` AFTER UPDATE ON `multimedia` FOR EACH ROW BEGIN
+UPDATE peliculas set estadoPelicula= new.estadoMultimedia WHERE multimedia=new.NoRegistro;
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -1249,18 +1330,29 @@ CREATE TABLE `peliculas` (
   `Sinopsis` text COLLATE utf8mb4_bin NOT NULL,
   `Idioma` varchar(45) COLLATE utf8mb4_bin DEFAULT NULL,
   `semanaEstrenoInicio` date DEFAULT NULL,
-  `semanaEstrenoFin` date DEFAULT NULL
+  `semanaEstrenoFin` date DEFAULT NULL,
+  `estadoPelicula` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
 -- Volcado de datos para la tabla `peliculas`
 --
 
-INSERT INTO `peliculas` (`idPelicula`, `Titulo`, `Multimedia`, `Formato`, `Clasificación`, `Sinopsis`, `Idioma`, `semanaEstrenoInicio`, `semanaEstrenoFin`) VALUES
-(2, 'Spider-Man: Lejos de casa', 2, '3D', 'B', 'Peter Parker regresa en Spider-Man: Lejos de casa el siguiente capítulo en la serie de Spider-Man: Homecoming. Nuestro amistoso vecino superhéroe decide unirse a sus mejores amigos Ned, MJ, y el resto del grupo a unas vacaciones europeas. Aunque, el plan de Peter sea dejar sus heroicidades atrás durante unas pocas semanas, pronto desecha esas ideas para ayudar a regañadientes a Nick Furia a desentrañar el misterio de los ataques de varias criaturas elementales, que están creando el caos en el mundo', 'Español', '2019-07-07', '2019-07-14'),
-(5, 'El rey león', 1, '2D', 'A', 'EL REY LEÓN de Disney, dirigida por Jon Favreau, nos lleva a la sabana africana donde un futuro rey ha nacido. Simba idolatra a su padre, el rey Mufasa, y está entusiasmado con su destino real. Pero no todos en el reino celebran la llegada del nuevo cachorro. Scar, el hermano de Mufasa y antiguo heredero al trono, tiene sus propios planes. La batalla de La Roca del Rey se ve teñida de traición, tragedia y drama, y acaba forzando a Simba al exilio. Con la ayuda de una curiosa pareja de amigos nuevos, Simba tendrá que arreglárselas para crecer y recuperar lo que legítimamente le corresponde. El estelar reparto incluye a: Donald Glover como Simba, Beyoncé Knowles-Carter en el papel de Nala, James Earl Jones como Mufasa, Chiwetel Ejiofor como Scar, Seth Rogen como Pumba y Billy Eichner en el papel de Timón.', 'Subtitulada', '2019-07-10', '2019-07-19'),
-(6, 'Desastre en París', 5, '2D', 'B', 'El día que una extraña niebla letal sumerge París, los supervivientes encuentran refugio en los pisos superiores de los edificios y en los tejados de la capital. Sin información, sin electricidad, sin agua ni comida, una pequeña familia trata de sobrevivir a este desastre. Pero pasan las horas y una cosa está clara: la ayuda no llegará y será necesario para poder salir, probar suerte en la niebla.', '1 hora 30 minutos', '2019-07-01', '2019-07-17'),
-(8, 'Hotel Mumbai', 3, '2D', 'B15', 'Una apasionante historia sobre humanidad y heroísmo, HOTEL MUMBAI cuenta vividamente el cerco de 2008 al Taj Hotel por un grupo de terroristas en Mumbai, India. Entre el personal del hotel se encuentra el renombrado chef Hemant Oberoi (Anupam Kher) y un camarero (Dev Patel) quienes eligen arriesgar sus vidas para proteger a los huéspedes, Mientras la situación avanza, una pareja desesperada (Armie Hammer y Nazanin Boniadi) se ve obligada hacer sacrificios impensables para proteger a su hijo recién nacido.', '1 Hora 30 minutos', '2019-08-07', '2019-08-31');
+INSERT INTO `peliculas` (`idPelicula`, `Titulo`, `Multimedia`, `Formato`, `Clasificación`, `Sinopsis`, `Idioma`, `semanaEstrenoInicio`, `semanaEstrenoFin`, `estadoPelicula`) VALUES
+(2, 'Spider-Man: Lejos de casa', 2, '3D', 'B', 'Peter Parker regresa en Spider-Man: Lejos de casa el siguiente capítulo en la serie de Spider-Man: Homecoming. Nuestro amistoso vecino superhéroe decide unirse a sus mejores amigos Ned, MJ, y el resto del grupo a unas vacaciones europeas. Aunque, el plan de Peter sea dejar sus heroicidades atrás durante unas pocas semanas, pronto desecha esas ideas para ayudar a regañadientes a Nick Furia a desentrañar el misterio de los ataques de varias criaturas elementales, que están creando el caos en el mundo', 'Español', '2019-07-07', '2019-07-14', 0),
+(5, 'El rey león', 1, '2D', 'A', 'EL REY LEÓN de Disney, dirigida por Jon Favreau, nos lleva a la sabana africana donde un futuro rey ha nacido. Simba idolatra a su padre, el rey Mufasa, y está entusiasmado con su destino real. Pero no todos en el reino celebran la llegada del nuevo cachorro. Scar, el hermano de Mufasa y antiguo heredero al trono, tiene sus propios planes. La batalla de La Roca del Rey se ve teñida de traición, tragedia y drama, y acaba forzando a Simba al exilio. Con la ayuda de una curiosa pareja de amigos nuevos, Simba tendrá que arreglárselas para crecer y recuperar lo que legítimamente le corresponde. El estelar reparto incluye a: Donald Glover como Simba, Beyoncé Knowles-Carter en el papel de Nala, James Earl Jones como Mufasa, Chiwetel Ejiofor como Scar, Seth Rogen como Pumba y Billy Eichner en el papel de Timón.', 'Subtitulada', '2019-07-10', '2019-07-19', 0),
+(6, 'Desastre en París', 5, '2D', 'B', 'El día que una extraña niebla letal sumerge París, los supervivientes encuentran refugio en los pisos superiores de los edificios y en los tejados de la capital. Sin información, sin electricidad, sin agua ni comida, una pequeña familia trata de sobrevivir a este desastre. Pero pasan las horas y una cosa está clara: la ayuda no llegará y será necesario para poder salir, probar suerte en la niebla.', 'Español', '2019-07-01', '2019-07-17', 0),
+(8, 'Hotel Mumbai', 3, '2D', 'B15', 'Una apasionante historia sobre humanidad y heroísmo, HOTEL MUMBAI cuenta vividamente el cerco de 2008 al Taj Hotel por un grupo de terroristas en Mumbai, India. Entre el personal del hotel se encuentra el renombrado chef Hemant Oberoi (Anupam Kher) y un camarero (Dev Patel) quienes eligen arriesgar sus vidas para proteger a los huéspedes, Mientras la situación avanza, una pareja desesperada (Armie Hammer y Nazanin Boniadi) se ve obligada hacer sacrificios impensables para proteger a su hijo recién nacido.', 'Español', '2019-08-07', '2019-08-31', 0);
+
+--
+-- Disparadores `peliculas`
+--
+DELIMITER $$
+CREATE TRIGGER `estado funciones peli` AFTER UPDATE ON `peliculas` FOR EACH ROW BEGIN
+UPDATE funciones set estadoFuncion = new.estadoPelicula WHERE funciones.idPelicula=new.idPelicula;
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -1289,11 +1381,33 @@ INSERT INTO `perfiles` (`idPerfil`, `Tipo`) VALUES
 --
 
 CREATE TABLE `reservaciones` (
-  `idReservasion` int(11) NOT NULL,
+  `idReservacion` int(11) NOT NULL,
   `idFuncion` int(11) DEFAULT NULL,
   `Fecha` date DEFAULT NULL,
-  `Cine` varchar(45) COLLATE utf8mb4_bin DEFAULT NULL
+  `Cine` varchar(45) COLLATE utf8mb4_bin DEFAULT NULL,
+  `estadoReservacion` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+--
+-- Volcado de datos para la tabla `reservaciones`
+--
+
+INSERT INTO `reservaciones` (`idReservacion`, `idFuncion`, `Fecha`, `Cine`, `estadoReservacion`) VALUES
+(1, 1, '2019-08-06', 'Portales', 0),
+(2, 4, '2019-08-13', 'Portales', 0),
+(3, 1, '2019-08-05', 'Portales', 0);
+
+--
+-- Disparadores `reservaciones`
+--
+DELIMITER $$
+CREATE TRIGGER `estado detalle reservacion` AFTER UPDATE ON `reservaciones` FOR EACH ROW BEGIN
+UPDATE detallereservacion
+set estadoDetalleReservacion = new.estadoReservacion
+WHERE detallereservacion.idReservacion = new.idReservacion;
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -1303,20 +1417,31 @@ CREATE TABLE `reservaciones` (
 
 CREATE TABLE `salas` (
   `idSala` int(11) NOT NULL,
-  `idCine` int(11) NOT NULL
+  `idCine` int(11) NOT NULL,
+  `estadoSala` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
 -- Volcado de datos para la tabla `salas`
 --
 
-INSERT INTO `salas` (`idSala`, `idCine`) VALUES
-(1, 1),
-(2, 4),
-(3, 5),
-(4, 3),
-(5, 2),
-(6, 1);
+INSERT INTO `salas` (`idSala`, `idCine`, `estadoSala`) VALUES
+(1, 1, 0),
+(2, 4, 0),
+(3, 5, 0),
+(4, 3, 0),
+(5, 2, 0),
+(6, 1, 0);
+
+--
+-- Disparadores `salas`
+--
+DELIMITER $$
+CREATE TRIGGER `estado funciones` AFTER UPDATE ON `salas` FOR EACH ROW BEGIN
+UPDATE funciones set estadoFuncion = new.estadoSala WHERE funciones.idSala=new.idSala;
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -1376,18 +1501,19 @@ CREATE TABLE `usuarios` (
   `Correo` varchar(50) COLLATE utf8mb4_bin NOT NULL,
   `Sexo` varchar(10) COLLATE utf8mb4_bin NOT NULL,
   `fechaNac` date NOT NULL,
-  `fechaInicio` date NOT NULL
+  `fechaInicio` date NOT NULL,
+  `estadoUsuario` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`Usuario`, `idPerfil`, `password`, `DPI`, `Nombres`, `Apellidos`, `Telefono`, `Correo`, `Sexo`, `fechaNac`, `fechaInicio`) VALUES
-('Gus', 3, 'b4288d9c0ec0a1841b3b3728321e7088', '3525036592121', 'Gustavo', 'Perez', '455221155', 'gus657@gmail.com', 'Masculino', '1998-08-08', '2019-07-07'),
-('Risko', 2, 'dd3d7a65733c4e476c310d7cfd7a2460', '894652', 'Risko', 'Risko', '84651325354', 'risko@Risko.com', 'masculino', '2019-07-01', '2019-07-31'),
-('edgar', 1, 'cf55ada960dedf6154b0d6905b2748ff', '444541541', 'Edgar', 'Casasola', '22665544', 'edgar@risko.com', 'Masculino', '2018-07-31', '2019-06-27'),
-('rchocm', 1, 'e9a529231e0c7e68bb358b0db3453c75', '4896513', 'Randy', 'Choc', '44558899', 'randy@risko.com', 'Masculino', '2017-12-16', '2019-07-25');
+INSERT INTO `usuarios` (`Usuario`, `idPerfil`, `password`, `DPI`, `Nombres`, `Apellidos`, `Telefono`, `Correo`, `Sexo`, `fechaNac`, `fechaInicio`, `estadoUsuario`) VALUES
+('Gus', 3, 'b4288d9c0ec0a1841b3b3728321e7088', '3525036592121', 'Gustavo', 'Perez', '455221155', 'gus657@gmail.com', 'Masculino', '1998-08-08', '2019-07-07', 0),
+('Risko', 2, 'dd3d7a65733c4e476c310d7cfd7a2460', '894652', 'Risko', 'Risko', '84651325354', 'risko@Risko.com', 'masculino', '2019-07-01', '2019-07-31', 0),
+('edgar', 1, 'cf55ada960dedf6154b0d6905b2748ff', '444541541', 'Edgar', 'Casasola', '22665544', 'edgar@risko.com', 'Masculino', '2018-07-31', '2019-06-27', 0),
+('rchocm', 1, 'e9a529231e0c7e68bb358b0db3453c75', '4896513', 'Randy', 'Choc', '44558899', 'randy@risko.com', 'Masculino', '2017-12-16', '2019-07-25', 0);
 
 --
 -- Índices para tablas volcadas
@@ -1423,13 +1549,15 @@ ALTER TABLE `boletos`
 ALTER TABLE `cines`
   ADD PRIMARY KEY (`idCine`),
   ADD KEY `nombreCine` (`nombreCine`),
-  ADD KEY `idCiudad` (`idCiudad`);
+  ADD KEY `idCiudad` (`idCiudad`),
+  ADD KEY `estadoCine` (`estadoCine`);
 
 --
 -- Indices de la tabla `ciudades`
 --
 ALTER TABLE `ciudades`
-  ADD PRIMARY KEY (`idCiudad`);
+  ADD PRIMARY KEY (`idCiudad`),
+  ADD KEY `estadoCiudad` (`estadoCiudad`);
 
 --
 -- Indices de la tabla `clasificacion`
@@ -1445,18 +1573,17 @@ ALTER TABLE `detallefactura`
   ADD PRIMARY KEY (`numeroLinea`,`numeroFactura`),
   ADD KEY `idBoleto` (`idBoleto`),
   ADD KEY `numeroFactura` (`numeroFactura`),
-  ADD KEY `Costo` (`Costo`),
-  ADD KEY `idFuncion` (`idFuncion`);
+  ADD KEY `Costo` (`Costo`);
 
 --
 -- Indices de la tabla `detallereservacion`
 --
 ALTER TABLE `detallereservacion`
-  ADD PRIMARY KEY (`numeroLinea`,`idReservasion`),
+  ADD PRIMARY KEY (`numeroLinea`,`idReservacion`),
   ADD KEY `idFuncion` (`idFuncion`),
   ADD KEY `idAsiento` (`idAsiento`),
   ADD KEY `tipoBoleto` (`tipoBoleto`),
-  ADD KEY `idReservasion` (`idReservasion`);
+  ADD KEY `idReservasion` (`idReservacion`);
 
 --
 -- Indices de la tabla `encabezadosfactura`
@@ -1500,7 +1627,7 @@ ALTER TABLE `perfiles`
 -- Indices de la tabla `reservaciones`
 --
 ALTER TABLE `reservaciones`
-  ADD PRIMARY KEY (`idReservasion`),
+  ADD PRIMARY KEY (`idReservacion`),
   ADD KEY `Cine` (`Cine`),
   ADD KEY `idFuncion` (`idFuncion`);
 
@@ -1547,13 +1674,13 @@ ALTER TABLE `bitacora`
 -- AUTO_INCREMENT de la tabla `boletos`
 --
 ALTER TABLE `boletos`
-  MODIFY `idBoleto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idBoleto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `cines`
 --
 ALTER TABLE `cines`
-  MODIFY `idCine` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idCine` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `ciudades`
@@ -1571,13 +1698,13 @@ ALTER TABLE `clasificacion`
 -- AUTO_INCREMENT de la tabla `detallereservacion`
 --
 ALTER TABLE `detallereservacion`
-  MODIFY `numeroLinea` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `numeroLinea` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `encabezadosfactura`
 --
 ALTER TABLE `encabezadosfactura`
-  MODIFY `numeroFactura` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `numeroFactura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `funciones`
@@ -1604,6 +1731,12 @@ ALTER TABLE `perfiles`
   MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT de la tabla `reservaciones`
+--
+ALTER TABLE `reservaciones`
+  MODIFY `idReservacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT de la tabla `salas`
 --
 ALTER TABLE `salas`
@@ -1613,7 +1746,7 @@ ALTER TABLE `salas`
 -- AUTO_INCREMENT de la tabla `timer`
 --
 ALTER TABLE `timer`
-  MODIFY `noRegistro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `noRegistro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
@@ -1652,8 +1785,7 @@ ALTER TABLE `cines`
 ALTER TABLE `detallefactura`
   ADD CONSTRAINT `detallefactura_ibfk_1` FOREIGN KEY (`numeroFactura`) REFERENCES `encabezadosfactura` (`numeroFactura`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `detallefactura_ibfk_2` FOREIGN KEY (`idBoleto`) REFERENCES `boletos` (`idBoleto`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `detallefactura_ibfk_3` FOREIGN KEY (`Costo`) REFERENCES `tiposboleto` (`Precio`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `detallefactura_ibfk_4` FOREIGN KEY (`idFuncion`) REFERENCES `funciones` (`idFuncion`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `detallefactura_ibfk_3` FOREIGN KEY (`Costo`) REFERENCES `tiposboleto` (`Precio`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `detallereservacion`
@@ -1662,7 +1794,7 @@ ALTER TABLE `detallereservacion`
   ADD CONSTRAINT `detallereservacion_ibfk_1` FOREIGN KEY (`idFuncion`) REFERENCES `funciones` (`idFuncion`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `detallereservacion_ibfk_2` FOREIGN KEY (`idAsiento`) REFERENCES `asientos` (`idAsiento`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `detallereservacion_ibfk_3` FOREIGN KEY (`tipoBoleto`) REFERENCES `tiposboleto` (`Tipo`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `detallereservacion_ibfk_6` FOREIGN KEY (`idReservasion`) REFERENCES `reservaciones` (`idReservasion`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `detallereservacion_ibfk_4` FOREIGN KEY (`idReservacion`) REFERENCES `reservaciones` (`idReservacion`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `encabezadosfactura`
