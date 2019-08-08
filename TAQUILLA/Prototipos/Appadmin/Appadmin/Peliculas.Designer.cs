@@ -396,7 +396,7 @@
             this.txtSinopsis.Multiline = true;
             this.txtSinopsis.Name = "txtSinopsis";
             this.txtSinopsis.Size = new System.Drawing.Size(365, 91);
-            this.txtSinopsis.TabIndex = 0;
+            this.txtSinopsis.TabIndex = 1;
             // 
             // dataGridView1
             // 
