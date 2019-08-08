@@ -64,7 +64,7 @@ namespace Taquilla_cliente_comprador
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			Process.Start("Manual.pdf");
+			
 		}
 	
 
@@ -106,5 +106,10 @@ namespace Taquilla_cliente_comprador
 		{
 			e.Handled = true;
 		}
-	}
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+            Process.Start("Manual.pdf");
+        }
+    }
 }

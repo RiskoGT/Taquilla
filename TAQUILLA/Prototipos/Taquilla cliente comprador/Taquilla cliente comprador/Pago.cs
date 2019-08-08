@@ -305,6 +305,9 @@ namespace Taquilla_cliente_comprador
             Combomes.Text = "Año";
         }
 
-        
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+            Process.Start("Manual.pdf");
+        }
     }
 }
