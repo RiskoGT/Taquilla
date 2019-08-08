@@ -201,7 +201,7 @@
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(179, 48);
-            this.label2.TabIndex = 0;
+            this.label2.TabIndex = 7;
             this.label2.Text = "Título";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -214,7 +214,7 @@
             this.label3.Location = new System.Drawing.Point(3, 48);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(179, 48);
-            this.label3.TabIndex = 1;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Multimedia";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -238,7 +238,7 @@
             this.txtTitulo.Location = new System.Drawing.Point(188, 3);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(179, 29);
-            this.txtTitulo.TabIndex = 3;
+            this.txtTitulo.TabIndex = 0;
             // 
             // comboFormato
             // 
@@ -254,7 +254,7 @@
             this.comboFormato.Location = new System.Drawing.Point(3, 99);
             this.comboFormato.Name = "comboFormato";
             this.comboFormato.Size = new System.Drawing.Size(179, 32);
-            this.comboFormato.TabIndex = 6;
+            this.comboFormato.TabIndex = 2;
             this.comboFormato.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ComboFormato_KeyDown);
             // 
             // comboMulti
@@ -266,7 +266,7 @@
             this.comboMulti.Location = new System.Drawing.Point(188, 51);
             this.comboMulti.Name = "comboMulti";
             this.comboMulti.Size = new System.Drawing.Size(179, 32);
-            this.comboMulti.TabIndex = 7;
+            this.comboMulti.TabIndex = 1;
             // 
             // comboIdioma
             // 
@@ -282,7 +282,7 @@
             this.comboIdioma.Location = new System.Drawing.Point(188, 147);
             this.comboIdioma.Name = "comboIdioma";
             this.comboIdioma.Size = new System.Drawing.Size(179, 32);
-            this.comboIdioma.TabIndex = 7;
+            this.comboIdioma.TabIndex = 4;
             // 
             // comboClas
             // 
@@ -293,7 +293,7 @@
             this.comboClas.Location = new System.Drawing.Point(188, 99);
             this.comboClas.Name = "comboClas";
             this.comboClas.Size = new System.Drawing.Size(179, 32);
-            this.comboClas.TabIndex = 7;
+            this.comboClas.TabIndex = 3;
             // 
             // tableLayoutPanel7
             // 
@@ -396,7 +396,7 @@
             this.txtSinopsis.Multiline = true;
             this.txtSinopsis.Name = "txtSinopsis";
             this.txtSinopsis.Size = new System.Drawing.Size(365, 91);
-            this.txtSinopsis.TabIndex = 2;
+            this.txtSinopsis.TabIndex = 0;
             // 
             // dataGridView1
             // 
@@ -408,7 +408,8 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(753, 202);
-            this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             this.dataGridView1.DoubleClick += new System.EventHandler(this.DataGridView1_DoubleClick);
             // 
             // tableLayoutPanel3
@@ -518,6 +519,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "peliculas";
+            this.Tag = "";
             this.Text = "Peliculas";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Cartelera_FormClosed);
             this.Load += new System.EventHandler(this.Peliculas_Load);

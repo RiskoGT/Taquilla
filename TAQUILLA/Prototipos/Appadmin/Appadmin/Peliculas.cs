@@ -227,7 +227,8 @@ namespace Appadmin
         {
             OdbcCommand codigo = new OdbcCommand();
             codigo.Connection = conn;
-            codigo.CommandText = ("SELECT * FROM peliculas");
+            codigo.CommandText = ("SELECT idPelicula, Titulo, Multimedia, Formato, Clasificación, Sinopsis, " +
+                "Idioma, semanaEstrenoInicio, semanaEstrenoFin FROM peliculas WHERE estadoPelicula=0");
             try
             {
                 OdbcDataAdapter ejecutar = new OdbcDataAdapter();
@@ -288,7 +289,7 @@ namespace Appadmin
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
-            string query = "DELETE FROM peliculas WHERE idPelicula =" 
+            string query = "UPDATE peliculas set estadoPelicula=1 WHERE idPelicula =" 
                 + dataGridView1.CurrentRow.Cells[0].Value.ToString();            
             conn.Open();
             OdbcCommand consulta = new OdbcCommand(query, conn);
@@ -396,6 +397,11 @@ namespace Appadmin
         private void ComboFormato_KeyDown(object sender, KeyEventArgs e)
         {
             
+        }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
