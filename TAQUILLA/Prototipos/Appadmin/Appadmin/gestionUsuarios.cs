@@ -76,7 +76,7 @@ namespace Appadmin
 
             OdbcCommand cod = new OdbcCommand();
             cod.Connection = conn;
-            cod.CommandText = ("SELECT * FROM usuarios WHERE estadoUsuario='"+varEst +"'" );
+            cod.CommandText = ("SELECT * FROM usuarios WHERE estadoUsuario='"+ varEst +"'" );
 
             try
             {
@@ -412,8 +412,8 @@ namespace Appadmin
             {
 
                 string nomPerfil = " ";
-
-                try
+                string Contra = " ";
+               /* try
                 {
 
                     conn.Open();
@@ -429,6 +429,23 @@ namespace Appadmin
                 {
                     MessageBox.Show(ex.Message);
                 }
+                conn.Close();*/
+                try
+                {
+
+                    conn.Open();
+                    OdbcCommand command = new OdbcCommand("SELECT CAST(AES_DECRYPT(password, 'abcdf')AS CHAR(50)) clave FROM usuarios WHERE Usuario="+ tblContenido.CurrentRow.Cells[0].Value.ToString());
+                    OdbcDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+
+                        Contra = reader.GetValue(0).ToString();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
                 conn.Close();
 
                 btnActualizar.Enabled = true;
@@ -436,7 +453,7 @@ namespace Appadmin
                 btnEliminar.Enabled = true;
                 txtUsuario.Text = tblContenido.CurrentRow.Cells[0].Value.ToString();
                 comboPerfil.Text = tblContenido.CurrentRow.Cells[1].Value.ToString() + " - " + nomPerfil;
-                txtContra.Text = tblContenido.CurrentRow.Cells[2].Value.ToString();
+                txtContra.Text = Contra;
                 txtDpi.Text = tblContenido.CurrentRow.Cells[3].Value.ToString();
                 txtNombre.Text = tblContenido.CurrentRow.Cells[4].Value.ToString();
                 txtApellido.Text = tblContenido.CurrentRow.Cells[5].Value.ToString();
