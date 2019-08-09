@@ -1,4 +1,11 @@
-﻿/*Edgar Casasola Menu Principal 0901-16-9*/
+﻿/*
+ * Integrantes a Cargo:
+ * 0901-16-   9 Edgar Casasola
+ * 0901-16- 420 Gustavo Perez
+ * 
+ * Edgar creo el form con los respectivos elementos
+ * Gustavo agrego diseño y código a los botones 
+ */
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

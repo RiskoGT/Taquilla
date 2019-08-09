@@ -1,4 +1,13 @@
-﻿/*Edgar Casasola Formulario Cartelera 0901-16-9*/
+﻿/*
+ * Integrantes a Cargo:
+ * 0901-16-1288 Randy Choc
+ * 0901-16-   9 Edgar Casasola
+ * 0901-16- 420 Gustavo Perez
+ * 
+ * Edgar creo el form con los respectivos elementos
+ * Gustavo agrego diseño y presentación al form
+ * Randy agrego código de Mantenimientos 
+ */
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

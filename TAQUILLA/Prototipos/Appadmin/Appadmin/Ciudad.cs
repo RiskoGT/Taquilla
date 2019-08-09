@@ -1,4 +1,14 @@
-﻿using System;
+﻿/*
+ * Integrantes a Cargo:
+ * 0901-16-1288 Randy Choc 
+ * 0901-16- 420 Gustavo Perez
+ * 
+ * Randy creo el form con los respectivos elementos
+ * Gustavo agrego diseño y codigo 
+ * Randy agrego código de Mantenimientos 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -110,7 +120,8 @@ namespace Appadmin
         {
             OdbcCommand codigo = new OdbcCommand();
             codigo.Connection = conn;
-            codigo.CommandText = ("SELECT * FROM ciudades");
+            codigo.CommandText = ("SELECT idCiudad, nombreCiudad FROM ciudades " +
+                "WHERE estadoCiudad=0");
             try
             {
                 OdbcDataAdapter ejecutar = new OdbcDataAdapter();
@@ -144,51 +155,46 @@ namespace Appadmin
 			this.Hide();
 		}
 
-		private void button3_Click(object sender, EventArgs e)
-		{
-			button1.Enabled = true;
-			button2.Enabled = true;
-			button3.Enabled = false;
-			if (txtCiudad.Text != "")
-			{
-
-				string query = "UPDATE ciudades SET " +
-				"nombreCiudad='" + txtCiudad.Text + "' WHERE idCiudad =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
-				conn.Open();
-				OdbcCommand consulta = new OdbcCommand(query, conn);
-				try
-				{
-					consulta.ExecuteNonQuery();
-					MessageBox.Show("Datos Actualizados Correctamente");
-					dataGridView1.Enabled = true;
-					//BITACORA
-					String IP = "";
-					IPAddress[] localIPs = Dns.GetHostAddresses(Dns.GetHostName());
-					foreach (IPAddress addr in localIPs)
-					{
-						IP += "   |   " + addr.ToString();
-					}
-					Bitacora("UPDATE", IP, "CIUDADES");
-					// FIN BITACORA
-					llenartabla();
-					conn.Close();
-				}
-				catch (Exception ex)
-				{
-					MessageBox.Show("\t Error! \n\n " + ex.ToString());
-					conn.Close();
-				}
-				txtCiudad.Text = "";
-
-
-			}
-			else
-			{
-				MessageBox.Show("Por favor, llene los campos para ingresar");
-
-			}
-		}
-
+        private void button3_Click(object sender, EventArgs e)
+        {
+            button1.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = false;
+            if (txtCiudad.Text != "")
+            {
+                string query = "UPDATE ciudades SET " + "nombreCiudad='" + txtCiudad.Text +
+                 "' WHERE idCiudad =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                conn.Open();
+                OdbcCommand consulta = new OdbcCommand(query, conn);
+                try
+                {
+                    consulta.ExecuteNonQuery();
+                    MessageBox.Show("Datos Actualizados Correctamente");
+                    dataGridView1.Enabled = true;
+                    //BITACORA
+                    String IP = "";
+                    IPAddress[] localIPs = Dns.GetHostAddresses(Dns.GetHostName());
+                    foreach (IPAddress addr in localIPs)
+                    {
+                        IP += "   |   " + addr.ToString();
+                    }
+                    Bitacora("UPDATE", IP, "CIUDADES");
+                    // FIN BITACORA
+                    llenartabla();
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("\t Error! \n\n " + ex.ToString());
+                    conn.Close();
+                }
+                txtCiudad.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Por favor, llene los campos para ingresar");
+            }
+        }
 		private void dataGridView1_DoubleClick(object sender, EventArgs e)
 		{
 			button1.Enabled = false;
@@ -201,15 +207,13 @@ namespace Appadmin
 			else
 			{
 				MessageBox.Show("Porfavor Seleccione un registro de la tabla");
-
 			}
 		}
-
 		private void button2_Click(object sender, EventArgs e)
 		{
 			if (dataGridView1.SelectedRows.Count == 1)
 			{
-				string query = "DELETE  from ciudades " +
+				string query = "UPDATE ciudades set estadoCiudad=1 " +
 				" WHERE idCiudad =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
 				conn.Open();
 				OdbcCommand consulta = new OdbcCommand(query, conn);
@@ -239,10 +243,8 @@ namespace Appadmin
 			else
 			{
 				MessageBox.Show("Porfavor Seleccione un registro de la tabla");
-
 			}
 		}
-
         private void TxtCiudad_KeyPress(object sender, KeyPressEventArgs e)
         {
             letra(e);

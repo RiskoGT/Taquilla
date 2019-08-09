@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * Integrantes a Cargo:
+ * 0901-16-1288 Randy Choc
+ * 0901-16- 420 Gustavo Perez
+ * 
+ * Randy creo el form con los respectivos elementos
+ * Gustavo agrego diseño y código
+ * Randy agrego código de Mantenimientos 
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,29 +20,23 @@ using System.Data.Odbc;
 using System.Net;
 
 namespace Appadmin
-{
-    
+{    
     public partial class Cine : Form
     {
         void letra(KeyPressEventArgs e)
         {
             if (char.IsLetter(e.KeyChar))
             {
-
                 e.Handled = false;
-
             }
             else if (char.IsControl(e.KeyChar))
             {
                 e.Handled = false;
-
             }
             else
             {
                 e.Handled = true;
-
             }
-
         }
         OdbcConnection conn = new OdbcConnection("Dsn=cine");
 		string user = "";
@@ -52,9 +55,7 @@ namespace Appadmin
 			OdbcCommand consulta = new OdbcCommand(query, conn);
 			try
 			{
-
 				consulta.ExecuteNonQuery();
-
 			}
 			catch (Exception ex)
 			{
@@ -74,7 +75,7 @@ namespace Appadmin
         {
             OdbcCommand codigo = new OdbcCommand();
             codigo.Connection = conn;
-            codigo.CommandText = ("SELECT * FROM cines");
+            codigo.CommandText = ("SELECT idCine, idCiudad, nombreCine FROM cines WHERE estadoCine=0");
             try
             {
                 OdbcDataAdapter ejecutar = new OdbcDataAdapter();
@@ -186,12 +187,10 @@ namespace Appadmin
 				}
 				txtCine.Text = "";
 				llenarCombos();
-
 			}
 			else
 			{
 				MessageBox.Show("Por favor, llene los campos para ingresar");
-
 			}
 		}
 
@@ -199,7 +198,7 @@ namespace Appadmin
 		{
 			if (dataGridView1.SelectedRows.Count == 1)
 			{
-				string query = "DELETE  from cines " +
+				string query = "UPDATE cines set estadoCine=1 " +
 				" WHERE idCine =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
 				conn.Open();
 				OdbcCommand consulta = new OdbcCommand(query, conn);
@@ -225,24 +224,18 @@ namespace Appadmin
 					MessageBox.Show("\t Error! \n\n " + ex.ToString());
 					conn.Close();
 				}
-
-
-
 			}
 			else
 			{
 				MessageBox.Show("Porfavor Seleccione un registro de la tabla");
-
 			}
 		}
-
 		private void Cine_FormClosed(object sender, FormClosedEventArgs e)
 		{
 			MenuCartelera nuevo = new MenuCartelera(user, level);
 			nuevo.Show();
 			this.Hide();
 		}
-
 		private void dataGridView1_DoubleClick(object sender, EventArgs e)
 		{
 			btnAgregarCine.Enabled = false;
@@ -254,26 +247,19 @@ namespace Appadmin
 
 				string ciudadId;
 				conn.Open();
-				OdbcCommand command = new OdbcCommand(""
-				+ "SELECT nombreCiudad FROM ciudades WHERE idCiudad = '" + dataGridView1.CurrentRow.Cells[1].Value.ToString() + "'", conn);
+				OdbcCommand command = new OdbcCommand("SELECT nombreCiudad FROM ciudades " +
+                "WHERE idCiudad = '" + dataGridView1.CurrentRow.Cells[1].Value.ToString() + "'", conn);
 				OdbcDataReader funciones = command.ExecuteReader();
-
 				funciones.Read();
-
 				ciudadId = funciones.GetValue(0).ToString();
-
 				conn.Close();
 				comboCiudad.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString() + " - "+ ciudadId;
 			}
 			else
 			{
 				MessageBox.Show("Porfavor Seleccione un registro de la tabla");
-
-			}
-
-			
+			}			
 		}
-
         private void TxtCine_TextChanged(object sender, EventArgs e)
         {
             

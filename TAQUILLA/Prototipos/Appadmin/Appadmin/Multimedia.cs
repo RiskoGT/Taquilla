@@ -26,8 +26,7 @@ namespace Appadmin
             this.WindowState = FormWindowState.Maximized;
 			llenartbl();
 			btnActualizar.Enabled = false;
-			level = nivel;
-			
+			level = nivel;			
         }
 		void Bitacora(string Accion, string ip, string Afectado)
 		{
@@ -35,9 +34,7 @@ namespace Appadmin
 			OdbcCommand consulta = new OdbcCommand(query, conn);
 			try
 			{
-
 				consulta.ExecuteNonQuery();
-
 			}
 			catch (Exception ex)
 			{
@@ -49,8 +46,8 @@ namespace Appadmin
 
 			OdbcCommand cod = new OdbcCommand();
 			cod.Connection = conn;
-			cod.CommandText = ("SELECT * FROM multimedia");
-
+			cod.CommandText = ("SELECT NoRegistro, Afiche, Trailer FROM multimedia " +
+                "WHERE estadoMultimedia=0");
 			try
 			{
 				OdbcDataAdapter eje = new OdbcDataAdapter();
@@ -161,10 +158,9 @@ namespace Appadmin
 			OdbcCommand consulta = new OdbcCommand(query, conn);
 			try
 			{
-					consulta.ExecuteNonQuery();
-					MessageBox.Show("Datos Registrados Correctamente");
-					
-					conn.Close();
+				consulta.ExecuteNonQuery();
+				MessageBox.Show("Datos Registrados Correctamente");		
+				conn.Close();
 			}
 			catch (Exception ex)
 			{
@@ -174,10 +170,7 @@ namespace Appadmin
 			txtPeli.Text = "";
 			txtAfiche.Text="";
 			picAfiche.BackgroundImage = global::Appadmin.Properties.Resources.fondopic;
-
 		}
-
-
 		private void button2_Click_1(object sender, EventArgs e)
 		{
 			WebRequest request = WebRequest.Create(txtAfiche.Text); //Initializes an instance with the given URL
@@ -195,7 +188,6 @@ namespace Appadmin
 		{
 			if (txtPeli.Text !="" && txtAfiche.Text!="")
 			{
-
 				string query = "INSERT INTO multimedia (Afiche, Trailer) VALUES ('" + txtAfiche.Text + "', '" + txtPeli.Text + "')";
 				conn.Open();
 				OdbcCommand consulta = new OdbcCommand(query, conn);
@@ -223,14 +215,11 @@ namespace Appadmin
 				txtPeli.Text = "";
 				txtAfiche.Text = "";
 				picAfiche.BackgroundImage = global::Appadmin.Properties.Resources.fondopic;
-
 			}
 			else
 			{
 				MessageBox.Show("Por favor, llene los campos para ingresar");
-
-			}
-			
+			}			
 		}
 
 		private void textBox1_TextChanged(object sender, EventArgs e)
@@ -247,20 +236,15 @@ namespace Appadmin
 			btnActualizar.Enabled = true;
 			tblMulitimedia.Enabled = false;
 			if (tblMulitimedia.SelectedRows.Count == 1)
-			{
-				
-				
+			{								
 				txtAfiche.Text = tblMulitimedia.CurrentRow.Cells[1].Value.ToString();
-				txtPeli.Text = tblMulitimedia.CurrentRow.Cells[2].Value.ToString();
-			
+				txtPeli.Text = tblMulitimedia.CurrentRow.Cells[2].Value.ToString();			
 			}
 			else
 			{
 				MessageBox.Show("Porfavor Seleccione un registro de la tabla");
-
 			}
 		}
-
 		private void btnActualizar_Click(object sender, EventArgs e)
 		{
 			btnGuardar.Enabled = true;
@@ -268,9 +252,8 @@ namespace Appadmin
 			btnActualizar.Enabled = false;
 			if (txtPeli.Text != "" && txtAfiche.Text != "")
 			{
-
-				string query = "UPDATE multimedia SET " +
-			"Afiche='" + txtAfiche.Text + "',Trailer='" + txtPeli.Text + "'" + " WHERE NoRegistro =" + tblMulitimedia.CurrentRow.Cells[0].Value.ToString();
+				string query = "UPDATE multimedia SET " + "Afiche='" + txtAfiche.Text + "',Trailer='" +
+                txtPeli.Text + "'" + " WHERE NoRegistro =" + tblMulitimedia.CurrentRow.Cells[0].Value.ToString();
 				conn.Open();
 				OdbcCommand consulta = new OdbcCommand(query, conn);
 				try
@@ -298,21 +281,18 @@ namespace Appadmin
 				txtPeli.Text = "";
 				txtAfiche.Text = "";
 				picAfiche.BackgroundImage = global::Appadmin.Properties.Resources.fondopic;
-
 			}
 			else
 			{
 				MessageBox.Show("Por favor, llene los campos para ingresar");
-
 			}
 		}
-
 		private void btnEliminar_Click(object sender, EventArgs e)
 		{
 			tblMulitimedia.Enabled = false;
 			if (tblMulitimedia.SelectedRows.Count == 1)
 			{
-				string query = "DELETE FROM multimedia WHERE NoRegistro=" + tblMulitimedia.CurrentRow.Cells[0].Value.ToString();
+				string query = "UPDATE multimedia set estadoMultimedia=1 WHERE NoRegistro=" + tblMulitimedia.CurrentRow.Cells[0].Value.ToString();
 				conn.Open();
 				OdbcCommand consulta = new OdbcCommand(query, conn);
 				try
@@ -340,7 +320,6 @@ namespace Appadmin
 				txtPeli.Text = "";
 				txtAfiche.Text = "";
 				picAfiche.BackgroundImage = global::Appadmin.Properties.Resources.fondopic;
-
 			}
 			else
 			{
@@ -348,9 +327,5 @@ namespace Appadmin
 
 			}
 		}
-	}
-
-       
-	
-    
+	}          
 }

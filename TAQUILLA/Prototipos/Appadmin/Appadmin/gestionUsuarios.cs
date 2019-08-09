@@ -1,4 +1,13 @@
-﻿/*Randy Choc Gestion Usuarios 0901-16-1288*/
+﻿/*
+ * Integrantes a Cargo: 
+ * 0901-16-1288 Randy Choc
+ * 0901-16-   9 Edgar Casasola
+ * 0901-16- 420 Gustavo Perez
+ * 
+ * Randy creo la maquetación
+ * Edgar creo el form con los respectivos elementos y agrego código de Mantenimientos 
+ * Gustavo agrego diseño
+ */
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

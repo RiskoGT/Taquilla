@@ -1,4 +1,9 @@
-﻿/*Edgar Casasola Formulario Cartelera 0901-16-9*/
+﻿/*
+ * Integrantes a Cargo: 
+ * 0901-16- 420 Gustavo Perez
+ * 
+ * Gustavo creo el diseño, aplico diseño y agrego código
+ */
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

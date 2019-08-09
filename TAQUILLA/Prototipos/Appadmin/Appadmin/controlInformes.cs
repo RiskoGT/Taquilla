@@ -1,4 +1,14 @@
-﻿using System;
+﻿/*
+ * Integrantes a Cargo:
+ * 0901-16-1288 Randy Choc 
+ * 0901-16- 420 Gustavo Perez
+ * 
+ * Randy creo la maquetación del form
+ * Randy creo el form con los respectivos elementos
+ * Gustavo agrego diseño y presentación al form
+ * Randy agrego código de Mantenimientos 
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
