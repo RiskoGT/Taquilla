@@ -23,6 +23,8 @@ namespace Appadmin
         OdbcConnection conn = new OdbcConnection("Dsn=cine");
         string user;
 		string nivel;
+        int varEst = 0;
+        int varElim = 1;
         public gestionUsuarios(string usuario, string level)
         {
             InitializeComponent();
@@ -65,7 +67,7 @@ namespace Appadmin
 
             OdbcCommand cod = new OdbcCommand();
             cod.Connection = conn;
-            cod.CommandText = ("SELECT * FROM usuarios");
+            cod.CommandText = ("SELECT * FROM usuarios WHERE estadoUsuario='"+varEst +"'" );
 
             try
             {
@@ -239,9 +241,9 @@ namespace Appadmin
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            string query = "INSERT INTO usuarios (Usuario,  idPerfil, Password, DPI, Nombres, Apellidos, Telefono , Correo, Sexo , fechaNac, fechaInicio) VALUES ('" + txtUsuario.Text
-               + "','" + comboPerfil.Text[0] + "', MD5('" + txtContra.Text + "'),'" + txtDpi.Text + "','" + txtNombre.Text + "','"
-               + txtApellido.Text + "','" + txtTel.Text + "','" + txtCorreo.Text + "','" + comboSexo.Text + "','" + dtpFechaNac.Text + "','"+ dtpFechaInicio.Text + "')";
+            string query = "INSERT INTO usuarios (Usuario,  idPerfil, Password, DPI, Nombres, Apellidos, Telefono , Correo, Sexo , fechaNac, fechaInicio, estadoUsuario) VALUES ('" + txtUsuario.Text
+               + "','" + comboPerfil.Text[0] + "', AES_ENCRYPT('" + txtContra.Text + "','abcdf'),'" + txtDpi.Text + "','" + txtNombre.Text + "','"
+               + txtApellido.Text + "','" + txtTel.Text + "','" + txtCorreo.Text + "','" + comboSexo.Text + "','" + dtpFechaNac.Text + "','"+ dtpFechaInicio.Text + "','" + varEst + "')";
             conn.Open();
             OdbcCommand consulta = new OdbcCommand(query, conn);
             try
@@ -285,7 +287,7 @@ namespace Appadmin
         private void BtnModif_Click(object sender, EventArgs e)
         {
 			string query = "UPDATE usuarios SET " +
-			"idPerfil='" + comboPerfil.Text[0] + "',password= MD5('" + txtContra.Text + "'),DPI='" + txtDpi.Text + "'," +
+			"idPerfil='" + comboPerfil.Text[0] + "',password= AES_ENCRYPT('" + txtContra.Text + "','abcdf'),DPI='" + txtDpi.Text + "'," +
 			"Nombres='" + txtNombre.Text + "',Apellidos='" + txtApellido.Text + "',Telefono='" + txtTel.Text + "',Correo='" + txtCorreo.Text + "',Sexo='" +
 			 comboSexo.Text + "',fechaNac='" + dtpFechaNac.Text + "',fechaInicio='" + dtpFechaInicio.Text + "'" + " WHERE Usuario ='" + txtUsuario.Text +"'";//+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
 
@@ -333,8 +335,10 @@ namespace Appadmin
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
-            string query = "DELETE FROM usuarios  WHERE  Usuario ='" + tblContenido.CurrentRow.Cells[0].Value.ToString()+ "'";
-           
+            string query = "UPDATE usuarios SET " +
+            "idPerfil='" + comboPerfil.Text[0] + "',password= AES_ENCRYPT('" + txtContra.Text + "','abcdf'),DPI='" + txtDpi.Text + "'," +
+            "Nombres='" + txtNombre.Text + "',Apellidos='" + txtApellido.Text + "',Telefono='" + txtTel.Text + "',Correo='" + txtCorreo.Text + "',Sexo='" +
+             comboSexo.Text + "',fechaNac='" + dtpFechaNac.Text + "',fechaInicio='" + dtpFechaInicio.Text +"',estadoUsuario='"+ varElim + "'" + " WHERE Usuario ='" + txtUsuario.Text + "'";
             conn.Open();
 
             OdbcCommand consulta = new OdbcCommand(query, conn);
@@ -343,7 +347,7 @@ namespace Appadmin
                 if (tblContenido.SelectedRows.Count == 1)
                 {
                     consulta.ExecuteNonQuery();
-                    MessageBox.Show("Eliminar");
+                    MessageBox.Show("Dato Eliminado");
                     txtApellido.Text = "";
                     txtContra.Text = "";
                     txtCorreo.Text = "";
