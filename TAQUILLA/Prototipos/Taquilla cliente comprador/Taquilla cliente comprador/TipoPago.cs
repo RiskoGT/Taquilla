@@ -44,6 +44,9 @@ namespace Taquilla_cliente_comprador
             }
         }
 
-       
-    }
+		private void frmTipoPago_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			Application.Exit();
+		}
+	}
 }

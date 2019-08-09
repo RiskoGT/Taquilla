@@ -76,7 +76,7 @@ namespace Taquilla_cliente_comprador
 				ComboSeleccioneCine.Items.Clear();
 
 				conn.Open();
-				OdbcCommand command = new OdbcCommand("SELECT * FROM cines", conn);
+				OdbcCommand command = new OdbcCommand("SELECT * FROM cines where idCiudad ="+ComboSeleccioneCiudad.Text[0], conn);
 				OdbcDataReader reader = command.ExecuteReader();
 				while (reader.Read())
 				{
