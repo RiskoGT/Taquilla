@@ -6,24 +6,45 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Odbc;
 using System.Windows.Forms;
 using System.Diagnostics;
 
 namespace Taquilla_cliente_comprador
 {
-    public partial class Frm_pago : Form
+	
+	public partial class Frm_pago : Form
     {
-        Correo c = new Correo();
+		OdbcConnection conn = new OdbcConnection("Dsn=cine");
+		Correo c = new Correo();
 
         /*Grupo 2  taquilla  cliente comprador
         Gustavo Perez 0901-16-420 y Juan José Gámez 0901-16-47  */
         int tiempo = 0;// tiempo será extraible desde base de datos y de modificara desde la app de administrador
         int op=0;
-        public Frm_pago(int dato,int info)
+		string cineSeleccionado;
+		int nofuncion;
+		int tipoPago;
+		int noTercera;
+		int noAdulto;
+		int noNino;
+		string[] Elegidos2 = new string[10];
+		public Frm_pago(int dato,int info, string[] arr, int funcion, string cine, int opcionPago, int trecera, int adulto, int nino)
         {
             InitializeComponent();
             tiempo = dato;
-            op = info;
+			Elegidos2 = arr;
+			tipoPago = opcionPago;
+			dateTimePicker1.Format = DateTimePickerFormat.Custom;
+			dateTimePicker1.CustomFormat = "yyyy-MM-dd";
+			nofuncion = funcion;
+			cineSeleccionado = cine;
+			noTercera = trecera;
+			noAdulto = adulto;
+			noNino = nino;
+			lbCorreo.Text = Elegidos2[0];
+			label2.Text = Elegidos2[1];
+			op = info;
             if (info == 1)
             {
 
@@ -76,9 +97,233 @@ namespace Taquilla_cliente_comprador
             ComboAño.Items.Add("23");
             ComboAño.Items.Add("24");
             ComboAño.Items.Add("25");
+			
 
-        }
-        void letra(KeyPressEventArgs e)
+		}
+
+		void cambiarEstadoAsientos(string asiento)
+		{
+			string query = "UPDATE Asientos SET " +
+				"estado=1 WHERE idAsiento= '"+asiento+"' AND idFuncion =" +nofuncion;
+			conn.Open();
+			OdbcCommand consulta = new OdbcCommand(query, conn);
+			try
+			{
+				consulta.ExecuteNonQuery();
+				conn.Close();
+
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("\t Error! \n\n " + ex.ToString());
+				conn.Close();
+			}
+		}
+
+		void Reservacion()
+		{
+			string query = "INSERT INTO Reservaciones (idFuncion, Fecha, Cine) Values(" + nofuncion + ",'"+ dateTimePicker1.Text+"','"+cineSeleccionado+"') ";
+				
+			conn.Open();
+			OdbcCommand consulta = new OdbcCommand(query, conn);
+			try
+			{
+				consulta.ExecuteNonQuery();
+				conn.Close();
+
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("\t Error! \n\n " + ex.ToString());
+				conn.Close();
+			}
+		}
+		int obtenerReservacion()
+		{
+			int id = 0;
+			try
+			{
+
+				conn.Open();
+				OdbcCommand command = new OdbcCommand("SELECT idReservacion FROM Reservaciones ORDER BY idReservacion DESC", conn);
+				OdbcDataReader reader = command.ExecuteReader();
+				reader.Read();
+				
+				 id= Convert.ToInt32(reader.GetValue(0).ToString()) ;
+
+
+			} catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			conn.Close();
+			return id;
+		}
+		void detalleReservacion(string asiento)
+		{
+			string query = "INSERT INTO detalleReservacion (idReservacion, idFuncion, idAsiento) Values(" + obtenerReservacion() + "," + nofuncion + ",'" + asiento + "') ";
+
+			conn.Open();
+			OdbcCommand consulta = new OdbcCommand(query, conn);
+			try
+			{
+				consulta.ExecuteNonQuery();
+				conn.Close();
+
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("\t Error! \n\n " + ex.ToString());
+				conn.Close();
+			}
+		}
+		void Factura()
+		{
+			string query = "INSERT INTO encabezadosFactura (fechaFactura, Cine, Funcion) Values('" + dateTimePicker1.Text+ "','" + cineSeleccionado + "'," + nofuncion + ") ";
+			lbCorreo.Text = dateTimePicker1.Text;
+			conn.Open();
+			OdbcCommand consulta = new OdbcCommand(query, conn);
+			try
+			{
+				consulta.ExecuteNonQuery();
+				conn.Close();
+
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("\t Error! \n\n " + ex.ToString());
+				conn.Close();
+			}
+		}
+		int obtenerFactura()
+		{
+			int id = 0;
+			try
+			{
+
+				conn.Open();
+				OdbcCommand command = new OdbcCommand("SELECT numeroFactura FROM encabezadosFactura ORDER BY numeroFactura DESC", conn);
+				OdbcDataReader reader = command.ExecuteReader();
+				reader.Read();
+
+				id = Convert.ToInt32(reader.GetValue(0).ToString());
+
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			conn.Close();
+			return id;
+		}
+		void boleto(string asiento, string tipo)
+		{
+			string query = "INSERT INTO Boletos (idFuncion, idAsiento, Fecha, Cine, tipoBoleto)"+
+			" Values(" + nofuncion+ ",'" + asiento + "','" + dateTimePicker1.Text + "', '"+cineSeleccionado+"', '"+tipo+"') ";
+
+			conn.Open();
+			OdbcCommand consulta = new OdbcCommand(query, conn);
+			try
+			{
+				consulta.ExecuteNonQuery();
+				conn.Close();
+
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("\t Error! \n\n " + ex.ToString());
+				conn.Close();
+			}
+		}
+		int obtenerBoleto()
+		{
+			int id = 0;
+			try
+			{
+
+				conn.Open();
+				OdbcCommand command = new OdbcCommand("SELECT idBoleto FROM Boletos ORDER BY idBoleto DESC", conn);
+				OdbcDataReader reader = command.ExecuteReader();
+				reader.Read();
+
+				id = Convert.ToInt32(reader.GetValue(0).ToString());
+
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			conn.Close();
+			return id;
+		}
+		int obtenerCosto(int idBoleto)
+		{
+			int id = 0;
+			string tipo="";
+			try
+			{
+
+				conn.Open();
+				OdbcCommand command = new OdbcCommand("SELECT tipoBoleto FROM Boletos where idBoleto ="+idBoleto, conn);
+				OdbcDataReader reader = command.ExecuteReader();
+				reader.Read();
+
+				tipo = reader.GetValue(0).ToString();
+
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			conn.Close();
+			try
+			{
+
+				conn.Open();
+				OdbcCommand command = new OdbcCommand("SELECT Precio FROM tiposBoleto where Tipo ='" + tipo+"'", conn);
+				OdbcDataReader reader = command.ExecuteReader();
+				reader.Read();
+
+				id = Convert.ToInt32(reader.GetValue(0).ToString());
+
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			conn.Close();
+			return id;
+		}
+		void detalleFactura(string asiento)
+		{
+			string query = "INSERT INTO detalleFactura (numeroFactura, idBoleto, costo)"+
+				" Values(" + obtenerFactura() + "," + obtenerBoleto() + "," + obtenerCosto(obtenerBoleto()) + ") ";
+
+			conn.Open();
+			OdbcCommand consulta = new OdbcCommand(query, conn);
+			try
+			{
+				consulta.ExecuteNonQuery();
+				conn.Close();
+
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("\t Error! \n\n " + ex.ToString());
+				conn.Close();
+			}
+		}
+		void letra(KeyPressEventArgs e)
         {
             if (char.IsLetter(e.KeyChar))
             {
@@ -149,7 +394,8 @@ namespace Taquilla_cliente_comprador
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (tiempo == 0)
+			
+			if (tiempo == 0)
             {
                 MessageBox.Show("El tiempo de Compra a terminado!");
                 Form formularioca = new frmMenu();
@@ -166,8 +412,64 @@ namespace Taquilla_cliente_comprador
                 else
                 {
                     c.enviarCorreo( txtCorreo.Text,txtNombre.Text);
+					//ASIENTOS SELECIONADOS//
+					/*int noAsiento = 0;
+					while (Elegidos2[noAsiento]!="$")
+					{
+						cambiarEstadoAsientos(Elegidos2[noAsiento]);
+						noAsiento++;
+					}*/
+					if (tipoPago == 0)
+					{
+						//factrua//
+						Factura();
+						int noAsiento = 0;
+						int cntTercera = 0;
+						int cntAdulto = 0;
+						int cntNino = 0;
+						while (Elegidos2[noAsiento] != "$")
+						{
+							if (cntTercera < noTercera)
+							{
+								boleto(Elegidos2[noAsiento], "3ra Edad");
+								cntTercera++;
+								detalleFactura(Elegidos2[noAsiento]);
+								noAsiento++;
+							}
+							if (cntAdulto < noAdulto)
+							{
+								boleto(Elegidos2[noAsiento], "Adulto");
+								cntAdulto++;
+								detalleFactura(Elegidos2[noAsiento]);
+								noAsiento++;
+							}
+							if (cntNino < noNino)
+							{
+								boleto(Elegidos2[noAsiento], "Niño");
+								cntNino++;
+								detalleFactura(Elegidos2[noAsiento]);
+								noAsiento++;
+							}
 
-                    Form formulariopago = new frmMenu();
+
+						}
+
+					}
+					else
+					{
+						//reservacion//
+						Reservacion();
+						int noAsiento = 0;
+						while (Elegidos2[noAsiento] != "$")
+						{
+							detalleReservacion(Elegidos2[noAsiento]);
+							noAsiento++;
+						}
+						
+
+					}
+
+					Form formulariopago = new frmMenu();
                     formulariopago.Show();
                     Visible = false;
                     Form formulariopago1 = new frmConfirmasion();

@@ -16,6 +16,7 @@ namespace Taquilla_cliente_comprador
 		/*Grupo 2  taquilla  cliente comprador
         Gustavo Perez 0901-16-420 y Juan José Gámez 0901-16-47  */
 		int contador = 0;
+		string cineSeleccionado;
 		int a1, a2, a3, a4, a5, a6, a7, a8, a9, a10 = 0;
 		int b1, b2, b3, b4, b5, b6, b7, b8, b9, b10 = 0;
 		int c1, c2, c3, c4, c5, c6, c7, c8, c9, c10 = 0;
@@ -33,14 +34,21 @@ namespace Taquilla_cliente_comprador
 
 		int tiempo = 0;
 		int nofuncion = 0;
+		int noTercera;
+		int noAdulto;
+		int noNino;
 		string[] Asientos = new string[90];
 		string[] Elegidos = new string[10];
 		OdbcConnection conn = new OdbcConnection("Dsn=cine");
-		public frmAsientos(int dato, int funcion)
+		public frmAsientos(int dato, int funcion, string cine, int trecera, int adulto, int nino)
 		{
 			InitializeComponent();
 			tiempo = dato;
 			nofuncion = funcion;
+			noTercera = trecera;
+			noAdulto = adulto;
+			noNino = nino;
+			cineSeleccionado = cine;
 			estadoAsientos();
 		}
 		void asientosSeleccionados()
@@ -144,6 +152,12 @@ namespace Taquilla_cliente_comprador
 			if (asientoI8 =="I-8") { Elegidos[posVec] = asientoI8; posVec++; }
 			if (asientoI9 =="I-9") { Elegidos[posVec] = asientoI9; posVec++; }
 			if (asientoI10 =="I-10") { Elegidos[posVec] = asientoI10; posVec++; }
+
+			if (posVec < 9)
+			{
+				posVec--;
+				while (posVec < 9){ posVec++; Elegidos[posVec] = "$"; }
+			}
 
 
 
@@ -2111,7 +2125,7 @@ namespace Taquilla_cliente_comprador
                 if (contador > 0 && contador == prueba)
                 {
 					asientosSeleccionados();
-					frmTipoPago tipoPago = new frmTipoPago(tiempo);
+					frmTipoPago tipoPago = new frmTipoPago(tiempo,Elegidos,nofuncion,cineSeleccionado, noTercera,noAdulto,noNino);
                     tipoPago.Show();
                     Visible = false;
                 }
@@ -2194,7 +2208,7 @@ namespace Taquilla_cliente_comprador
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            Form formulariopag = new frmBoletos(1);
+            Form formulariopag = new frmBoletos(nofuncion,cineSeleccionado);
             formulariopag.Show();
             Visible = false;
         }

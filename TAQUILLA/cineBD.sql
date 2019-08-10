@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-08-2019 a las 03:25:43
+-- Tiempo de generación: 10-08-2019 a las 06:58:17
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.3.1
 
@@ -264,7 +264,7 @@ INSERT INTO `asientos` (`idAsiento`, `idFuncion`, `estado`) VALUES
 ('C-4', 7, 0),
 ('C-4', 8, 0),
 ('C-4', 9, 0),
-('C-5', 1, 0),
+('C-5', 1, 1),
 ('C-5', 2, 0),
 ('C-5', 3, 0),
 ('C-5', 4, 0),
@@ -273,7 +273,7 @@ INSERT INTO `asientos` (`idAsiento`, `idFuncion`, `estado`) VALUES
 ('C-5', 7, 0),
 ('C-5', 8, 0),
 ('C-5', 9, 0),
-('C-6', 1, 0),
+('C-6', 1, 1),
 ('C-6', 2, 0),
 ('C-6', 3, 0),
 ('C-6', 4, 0),
@@ -723,7 +723,7 @@ INSERT INTO `asientos` (`idAsiento`, `idFuncion`, `estado`) VALUES
 ('H-5', 7, 0),
 ('H-5', 8, 0),
 ('H-5', 9, 0),
-('H-6', 1, 0),
+('H-6', 1, 1),
 ('H-6', 2, 0),
 ('H-6', 3, 0),
 ('H-6', 4, 0),
@@ -977,7 +977,10 @@ CREATE TABLE `boletos` (
 --
 
 INSERT INTO `boletos` (`idBoleto`, `idFuncion`, `idAsiento`, `Fecha`, `Cine`, `tipoBoleto`) VALUES
-(1, 1, 'A-1', '2019-08-20', 'Portales', '3ra Edad');
+(10, 1, 'A-8', '2019-08-09', 'Portales', '3ra Edad'),
+(11, 1, 'B-8', '2019-08-09', 'Portales', 'Adulto'),
+(12, 1, 'C-8', '2019-08-09', 'Portales', 'Niño'),
+(13, 1, 'D-8', '2019-08-09', 'Portales', 'Adulto');
 
 -- --------------------------------------------------------
 
@@ -997,9 +1000,9 @@ CREATE TABLE `cines` (
 --
 
 INSERT INTO `cines` (`idCine`, `idCiudad`, `nombreCine`, `estadoCine`) VALUES
-(1, 1, 'Portales', 0),
-(2, 1, 'Miraflores', 0),
-(3, 1, 'Naranjo', 0),
+(1, 1, 'Portales', 7),
+(2, 1, 'Miraflores', 7),
+(3, 1, 'Naranjo', 7),
 (4, 2, 'Plaza Americas', 0),
 (5, 3, 'Interplaza', 0);
 
@@ -1030,7 +1033,7 @@ CREATE TABLE `ciudades` (
 --
 
 INSERT INTO `ciudades` (`idCiudad`, `nombreCiudad`, `estadoCiudad`) VALUES
-(1, 'Guatemala', 0),
+(1, 'Guatemala', 7),
 (2, 'Quetzaltenango', 0),
 (3, 'Xela', 0);
 
@@ -1087,8 +1090,10 @@ CREATE TABLE `detallefactura` (
 --
 
 INSERT INTO `detallefactura` (`numeroLinea`, `numeroFactura`, `idBoleto`, `Costo`, `estadoDetalleFactura`) VALUES
-(0, 1, 1, 35, 7),
-(1, 1, 1, 35, 7);
+(1, 15, 10, 35, 0),
+(2, 15, 11, 40, 0),
+(3, 15, 12, 30, 0),
+(4, 15, 13, 40, 0);
 
 -- --------------------------------------------------------
 
@@ -1101,7 +1106,6 @@ CREATE TABLE `detallereservacion` (
   `idReservacion` int(11) NOT NULL,
   `idFuncion` int(11) NOT NULL,
   `idAsiento` varchar(5) COLLATE utf8mb4_bin DEFAULT NULL,
-  `tipoBoleto` varchar(45) COLLATE utf8mb4_bin DEFAULT NULL,
   `estadoDetalleReservacion` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
@@ -1109,9 +1113,22 @@ CREATE TABLE `detallereservacion` (
 -- Volcado de datos para la tabla `detallereservacion`
 --
 
-INSERT INTO `detallereservacion` (`numeroLinea`, `idReservacion`, `idFuncion`, `idAsiento`, `tipoBoleto`, `estadoDetalleReservacion`) VALUES
-(1, 1, 6, 'A-1', '3ra Edad', 0),
-(2, 1, 6, 'A-2', 'Adulto', 0);
+INSERT INTO `detallereservacion` (`numeroLinea`, `idReservacion`, `idFuncion`, `idAsiento`, `estadoDetalleReservacion`) VALUES
+(1, 1, 6, 'A-1', 0),
+(2, 1, 6, 'A-2', 0),
+(8, 9, 1, 'A-7', 0),
+(9, 9, 1, 'B-7', 0),
+(10, 9, 1, 'C-7', 0),
+(11, 10, 1, 'A-7', 0),
+(12, 10, 1, 'B-7', 0),
+(13, 11, 1, 'A-9', 0),
+(14, 12, 1, 'B-8', 0),
+(15, 12, 1, 'B-9', 0),
+(16, 13, 1, 'A-8', 0),
+(17, 13, 1, 'B-8', 0),
+(18, 14, 1, 'A-8', 0),
+(19, 14, 1, 'B-8', 0),
+(20, 15, 1, 'A-8', 0);
 
 -- --------------------------------------------------------
 
@@ -1132,10 +1149,7 @@ CREATE TABLE `encabezadosfactura` (
 --
 
 INSERT INTO `encabezadosfactura` (`numeroFactura`, `fechaFactura`, `Cine`, `Funcion`, `estadoFactura`) VALUES
-(1, '2019-08-14', 'Portales', 5, 7),
-(2, '2019-08-14', 'Naranjo', 2, 0),
-(3, '2019-08-05', 'Naranjo', 2, 0),
-(4, '2019-08-06', 'Portales', 4, 0);
+(15, '2019-08-09', 'Portales', 1, 0);
 
 --
 -- Disparadores `encabezadosfactura`
@@ -1169,15 +1183,15 @@ CREATE TABLE `funciones` (
 --
 
 INSERT INTO `funciones` (`idFuncion`, `idPelicula`, `idSala`, `cine`, `horaFuncion`, `estadoFuncion`) VALUES
-(1, 2, 5, 'Portales', '16:05:00', 0),
-(2, 2, 4, 'Naranjo', '11:00:00', 0),
+(1, 2, 5, 'Portales', '16:05:00', 7),
+(2, 2, 4, 'Naranjo', '11:00:00', 7),
 (3, 2, 3, 'Interplaza', '16:00:00', 0),
-(4, 6, 5, 'Portales', '16:05:00', 0),
+(4, 6, 5, 'Portales', '16:05:00', 7),
 (5, 5, 3, 'Interplaza', '10:25:00', 0),
-(6, 5, 1, 'Portales', '12:50:00', 0),
-(7, 8, 6, 'Portales', '01:00:00', 0),
+(6, 5, 1, 'Portales', '12:50:00', 7),
+(7, 8, 6, 'Portales', '01:00:00', 7),
 (8, 6, 2, 'Interplaza', '00:00:02', 0),
-(9, 2, 4, 'Plaza Americas', '10:20:00', 0);
+(9, 2, 4, 'Plaza Americas', '10:20:00', 7);
 
 --
 -- Disparadores `funciones`
@@ -1395,7 +1409,14 @@ CREATE TABLE `reservaciones` (
 INSERT INTO `reservaciones` (`idReservacion`, `idFuncion`, `Fecha`, `Cine`, `estadoReservacion`) VALUES
 (1, 1, '2019-08-06', 'Portales', 0),
 (2, 4, '2019-08-13', 'Portales', 0),
-(3, 1, '2019-08-05', 'Portales', 0);
+(3, 1, '2019-08-05', 'Portales', 0),
+(9, 1, '0000-00-00', 'Portales', 0),
+(10, 1, '2019-08-09', 'Portales', 0),
+(11, 1, '2019-08-09', 'Portales', 0),
+(12, 1, '2019-08-09', 'Portales', 0),
+(13, 1, '0000-00-00', 'Portales', 0),
+(14, 1, '0000-00-00', 'Portales', 0),
+(15, 1, '2019-08-09', 'Portales', 0);
 
 --
 -- Disparadores `reservaciones`
@@ -1426,12 +1447,12 @@ CREATE TABLE `salas` (
 --
 
 INSERT INTO `salas` (`idSala`, `idCine`, `estadoSala`) VALUES
-(1, 1, 0),
+(1, 1, 7),
 (2, 4, 0),
 (3, 5, 0),
-(4, 3, 0),
-(5, 2, 0),
-(6, 1, 0);
+(4, 3, 7),
+(5, 2, 7),
+(6, 1, 7);
 
 --
 -- Disparadores `salas`
@@ -1582,7 +1603,6 @@ ALTER TABLE `detallereservacion`
   ADD PRIMARY KEY (`numeroLinea`,`idReservacion`),
   ADD KEY `idFuncion` (`idFuncion`),
   ADD KEY `idAsiento` (`idAsiento`),
-  ADD KEY `tipoBoleto` (`tipoBoleto`),
   ADD KEY `idReservasion` (`idReservacion`);
 
 --
@@ -1674,13 +1694,13 @@ ALTER TABLE `bitacora`
 -- AUTO_INCREMENT de la tabla `boletos`
 --
 ALTER TABLE `boletos`
-  MODIFY `idBoleto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idBoleto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `cines`
 --
 ALTER TABLE `cines`
-  MODIFY `idCine` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idCine` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `ciudades`
@@ -1695,16 +1715,22 @@ ALTER TABLE `clasificacion`
   MODIFY `idClasificacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT de la tabla `detallefactura`
+--
+ALTER TABLE `detallefactura`
+  MODIFY `numeroLinea` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT de la tabla `detallereservacion`
 --
 ALTER TABLE `detallereservacion`
-  MODIFY `numeroLinea` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `numeroLinea` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `encabezadosfactura`
 --
 ALTER TABLE `encabezadosfactura`
-  MODIFY `numeroFactura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `numeroFactura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `funciones`
@@ -1734,7 +1760,7 @@ ALTER TABLE `perfiles`
 -- AUTO_INCREMENT de la tabla `reservaciones`
 --
 ALTER TABLE `reservaciones`
-  MODIFY `idReservacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idReservacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `salas`
@@ -1793,7 +1819,6 @@ ALTER TABLE `detallefactura`
 ALTER TABLE `detallereservacion`
   ADD CONSTRAINT `detallereservacion_ibfk_1` FOREIGN KEY (`idFuncion`) REFERENCES `funciones` (`idFuncion`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `detallereservacion_ibfk_2` FOREIGN KEY (`idAsiento`) REFERENCES `asientos` (`idAsiento`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `detallereservacion_ibfk_3` FOREIGN KEY (`tipoBoleto`) REFERENCES `tiposboleto` (`Tipo`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `detallereservacion_ibfk_4` FOREIGN KEY (`idReservacion`) REFERENCES `reservaciones` (`idReservacion`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --

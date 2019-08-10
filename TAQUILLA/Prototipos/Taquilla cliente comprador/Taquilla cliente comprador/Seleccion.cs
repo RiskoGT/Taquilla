@@ -345,7 +345,7 @@ namespace Taquilla_cliente_comprador
 
 		private void opennewform()
 		{
-			Application.Run(new frmBoletos(funcion));
+			Application.Run(new frmBoletos(funcion,cineSeleccionado));
 		}
 
 		private void Frm_cartelera_FormClosed(object sender, FormClosedEventArgs e)
