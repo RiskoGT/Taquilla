@@ -1,4 +1,13 @@
-﻿/*Edgar Casasola Formulario Cartelera 0901-16-9*/
+﻿/*
+ * Integrantes a Cargo:
+ * 0901-16-1288 Randy Choc
+ * 0901-16-   9 Edgar Casasola
+ * 0901-16- 420 Gustavo Perez
+ * 
+ * Edgar creo el form con los respectivos elementos
+ * Gustavo agrego diseño y código a los botones 
+ * Randy agrego código
+ */
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -172,16 +181,30 @@ namespace Appadmin
 			picAfiche.BackgroundImage = global::Appadmin.Properties.Resources.fondopic;
 		}
 		private void button2_Click_1(object sender, EventArgs e)
-		{
-			WebRequest request = WebRequest.Create(txtAfiche.Text); //Initializes an instance with the given URL
-			using (var response = request.GetResponse()) //Tries to access the object
-			{
-				using (var str = response.GetResponseStream()) //Returns the metadata of the image
-				{
-					picAfiche.BackgroundImage = Bitmap.FromStream(str); //Creates a bitmap based on the loaded metadata, in the sequence inserts into the image property.
-					picAfiche.BackgroundImageLayout = ImageLayout.Stretch;
-				}
-			}
+		{			
+            try
+            {
+                //Initializes an instance with the given URL
+                WebRequest request = WebRequest.Create(txtAfiche.Text);
+                //Tries to access the object
+                using (var response = request.GetResponse()) 
+                {
+                    //Returns the metadata of the image
+                    using (var str = response.GetResponseStream()) 
+                    {
+                        //Creates a bitmap based on the loaded metadata, in the 
+                        //sequence inserts into the image property.
+                        picAfiche.BackgroundImage = Bitmap.FromStream(str); 
+                        picAfiche.BackgroundImageLayout = ImageLayout.Stretch;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Imagen PROHIBIDA. \n\nSUGERENCIA: Ingrese otra imagen!! " +
+                    "\n\nDetalles: \n" + ex); 
+                txtAfiche.Text = "";                
+            }            
 		}
 
 		private void button1_Click(object sender, EventArgs e)

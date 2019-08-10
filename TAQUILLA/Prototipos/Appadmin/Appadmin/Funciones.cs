@@ -1,4 +1,13 @@
-﻿/*Edgar Casasola Formulario Cartelera 0901-16-9*/
+﻿/*
+ * Integrantes a Cargo:
+ * 0901-16-1288 Randy Choc
+ * 0901-16-   9 Edgar Casasola
+ * 0901-16- 420 Gustavo Perez
+ * 
+ * Edgar creo el form con los respectivos elementos
+ * Gustavo agrego diseño y código a los botones 
+ * Randy agrego código
+ */
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -240,7 +249,15 @@ namespace Appadmin
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            string query = "INSERT INTO funciones (idPelicula,  idSala, cine, horaFuncion) VALUES ('" +ComboPelicula.Text[0]
+            string auxpeli = ComboPelicula.Text;
+            string[] separarpeli;
+            separarpeli = auxpeli.Split(' ');
+            /* En caso exista un error por tamaño de idSala
+            string auxsala = comboSala.Text;
+            string[] separarsala;
+            separarsala = auxsala.Split(' '); */
+
+            string query = "INSERT INTO funciones (idPelicula,  idSala, cine, horaFuncion) VALUES ('" + separarpeli[0]
                + "','" + comboSala.Text + "','" + comboCine.Text + "','" + txtDuracion.Text + "')";
             conn.Open();
             OdbcCommand consulta = new OdbcCommand(query, conn);
