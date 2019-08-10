@@ -9,30 +9,35 @@ using System.Threading.Tasks;
 using System.Data.Odbc;
 using System.Windows.Forms;
 using System.Diagnostics;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 
 namespace Taquilla_cliente_comprador
 {
-	
+
 	public partial class Frm_pago : Form
-    {
+	{
 		OdbcConnection conn = new OdbcConnection("Dsn=cine");
 		Correo c = new Correo();
 
-        /*Grupo 2  taquilla  cliente comprador
+		/*Grupo 2  taquilla  cliente comprador
         Gustavo Perez 0901-16-420 y Juan José Gámez 0901-16-47  */
-        int tiempo = 0;// tiempo será extraible desde base de datos y de modificara desde la app de administrador
-        int op=0;
+		int tiempo = 0;// tiempo será extraible desde base de datos y de modificara desde la app de administrador
+		int op = 0;
 		string cineSeleccionado;
 		int nofuncion;
+		string linea;
+		string texto;
 		int tipoPago;
 		int noTercera;
 		int noAdulto;
 		int noNino;
 		string[] Elegidos2 = new string[10];
-		public Frm_pago(int dato,int info, string[] arr, int funcion, string cine, int opcionPago, int trecera, int adulto, int nino)
-        {
-            InitializeComponent();
-            tiempo = dato;
+		public Frm_pago(int dato, int info, string[] arr, int funcion, string cine, int opcionPago, int trecera, int adulto, int nino)
+		{
+			InitializeComponent();
+			tiempo = dato;
 			Elegidos2 = arr;
 			tipoPago = opcionPago;
 			dateTimePicker1.Format = DateTimePickerFormat.Custom;
@@ -45,66 +50,66 @@ namespace Taquilla_cliente_comprador
 			lbCorreo.Text = Elegidos2[0];
 			label2.Text = Elegidos2[1];
 			op = info;
-            if (info == 1)
-            {
+			if (info == 1)
+			{
 
-                lbPagoCompra.Text = "Reservación ";
-                txtTarjeta.Visible = false;
-                txtCodigo.Visible = false;
-                lbSeguridad.Visible = false;
-                lbVencimiento.Visible = false;
-                lbSeguridad.Visible = false;
-                ComboAño.Visible = false;
-                Combomes.Visible = false;
-                lbVencimiento.Visible = false;
-                LblGi.Visible = false;
-                lbTarjeta.Visible = false;
+				lbPagoCompra.Text = "Reservación ";
+				txtTarjeta.Visible = false;
+				txtCodigo.Visible = false;
+				lbSeguridad.Visible = false;
+				lbVencimiento.Visible = false;
+				lbSeguridad.Visible = false;
+				ComboAño.Visible = false;
+				Combomes.Visible = false;
+				lbVencimiento.Visible = false;
+				LblGi.Visible = false;
+				lbTarjeta.Visible = false;
 
-            }
-            else if (info == 2)
-            {
+			}
+			else if (info == 2)
+			{
 
-                lbPagoCompra.Text = "Pago";
-                txtTelefono.Visible = true;
-                txtTarjeta.Visible = true;
-                txtCodigo.Visible = true;
-                lbSeguridad.Visible = true;
-                lbVencimiento.Visible = true;
-                lbSeguridad.Visible = true;
-                ComboAño.Visible = true;
-                Combomes.Visible = true;
-                lbVencimiento.Visible = true;
-                LblGi.Visible = true;
-                lbTarjeta.Visible = true;
+				lbPagoCompra.Text = "Pago";
+				txtTelefono.Visible = true;
+				txtTarjeta.Visible = true;
+				txtCodigo.Visible = true;
+				lbSeguridad.Visible = true;
+				lbVencimiento.Visible = true;
+				lbSeguridad.Visible = true;
+				ComboAño.Visible = true;
+				Combomes.Visible = true;
+				lbVencimiento.Visible = true;
+				LblGi.Visible = true;
+				lbTarjeta.Visible = true;
 
-            }
-            Combomes.Items.Add("1");
-            Combomes.Items.Add("2");
-            Combomes.Items.Add("3");
-            Combomes.Items.Add("4");
-            Combomes.Items.Add("5");
-            Combomes.Items.Add("6");
-            Combomes.Items.Add("7");
-            Combomes.Items.Add("8");
-            Combomes.Items.Add("9");
-            Combomes.Items.Add("10");
-            Combomes.Items.Add("11");
-            Combomes.Items.Add("12");
-            ComboAño.Items.Add("19");
-            ComboAño.Items.Add("20");
-            ComboAño.Items.Add("21");
-            ComboAño.Items.Add("22");
-            ComboAño.Items.Add("23");
-            ComboAño.Items.Add("24");
-            ComboAño.Items.Add("25");
-			
+			}
+			Combomes.Items.Add("1");
+			Combomes.Items.Add("2");
+			Combomes.Items.Add("3");
+			Combomes.Items.Add("4");
+			Combomes.Items.Add("5");
+			Combomes.Items.Add("6");
+			Combomes.Items.Add("7");
+			Combomes.Items.Add("8");
+			Combomes.Items.Add("9");
+			Combomes.Items.Add("10");
+			Combomes.Items.Add("11");
+			Combomes.Items.Add("12");
+			ComboAño.Items.Add("19");
+			ComboAño.Items.Add("20");
+			ComboAño.Items.Add("21");
+			ComboAño.Items.Add("22");
+			ComboAño.Items.Add("23");
+			ComboAño.Items.Add("24");
+			ComboAño.Items.Add("25");
+
 
 		}
 
 		void cambiarEstadoAsientos(string asiento)
 		{
 			string query = "UPDATE Asientos SET " +
-				"estado=1 WHERE idAsiento= '"+asiento+"' AND idFuncion =" +nofuncion;
+				"estado=1 WHERE idAsiento= '" + asiento + "' AND idFuncion =" + nofuncion;
 			conn.Open();
 			OdbcCommand consulta = new OdbcCommand(query, conn);
 			try
@@ -123,8 +128,8 @@ namespace Taquilla_cliente_comprador
 
 		void Reservacion()
 		{
-			string query = "INSERT INTO Reservaciones (idFuncion, Fecha, Cine) Values(" + nofuncion + ",'"+ dateTimePicker1.Text+"','"+cineSeleccionado+"') ";
-				
+			string query = "INSERT INTO Reservaciones (idFuncion, Fecha, Cine) Values(" + nofuncion + ",'" + dateTimePicker1.Text + "','" + cineSeleccionado + "') ";
+
 			conn.Open();
 			OdbcCommand consulta = new OdbcCommand(query, conn);
 			try
@@ -150,8 +155,8 @@ namespace Taquilla_cliente_comprador
 				OdbcCommand command = new OdbcCommand("SELECT idReservacion FROM Reservaciones ORDER BY idReservacion DESC", conn);
 				OdbcDataReader reader = command.ExecuteReader();
 				reader.Read();
-				
-				 id= Convert.ToInt32(reader.GetValue(0).ToString()) ;
+
+				id = Convert.ToInt32(reader.GetValue(0).ToString());
 
 
 			} catch (Exception ex)
@@ -182,7 +187,7 @@ namespace Taquilla_cliente_comprador
 		}
 		void Factura()
 		{
-			string query = "INSERT INTO encabezadosFactura (fechaFactura, Cine, Funcion) Values('" + dateTimePicker1.Text+ "','" + cineSeleccionado + "'," + nofuncion + ") ";
+			string query = "INSERT INTO encabezadosFactura (fechaFactura, Cine, Funcion) Values('" + dateTimePicker1.Text + "','" + cineSeleccionado + "'," + nofuncion + ") ";
 			lbCorreo.Text = dateTimePicker1.Text;
 			conn.Open();
 			OdbcCommand consulta = new OdbcCommand(query, conn);
@@ -223,9 +228,9 @@ namespace Taquilla_cliente_comprador
 		}
 		void boleto(string asiento, string tipo)
 		{
-			string query = "INSERT INTO Boletos (idFuncion, idAsiento, Fecha, Cine, tipoBoleto)"+
-			" Values(" + nofuncion+ ",'" + asiento + "','" + dateTimePicker1.Text + "', '"+cineSeleccionado+"', '"+tipo+"') ";
-
+			string query = "INSERT INTO Boletos (idFuncion, idAsiento, Fecha, Cine, tipoBoleto)" +
+			" Values(" + nofuncion + ",'" + asiento + "','" + dateTimePicker1.Text + "', '" + cineSeleccionado + "', '" + tipo + "') ";
+			texto +="Funcion: "+ nofuncion + "   Asiento: "+asiento+"   Fecha: " + dateTimePicker1.Text+"   Cine: "+cineSeleccionado+"    Tipo Boleto: "+ tipo+"\n";
 			conn.Open();
 			OdbcCommand consulta = new OdbcCommand(query, conn);
 			try
@@ -266,12 +271,12 @@ namespace Taquilla_cliente_comprador
 		int obtenerCosto(int idBoleto)
 		{
 			int id = 0;
-			string tipo="";
+			string tipo = "";
 			try
 			{
 
 				conn.Open();
-				OdbcCommand command = new OdbcCommand("SELECT tipoBoleto FROM Boletos where idBoleto ="+idBoleto, conn);
+				OdbcCommand command = new OdbcCommand("SELECT tipoBoleto FROM Boletos where idBoleto =" + idBoleto, conn);
 				OdbcDataReader reader = command.ExecuteReader();
 				reader.Read();
 
@@ -288,7 +293,7 @@ namespace Taquilla_cliente_comprador
 			{
 
 				conn.Open();
-				OdbcCommand command = new OdbcCommand("SELECT Precio FROM tiposBoleto where Tipo ='" + tipo+"'", conn);
+				OdbcCommand command = new OdbcCommand("SELECT Precio FROM tiposBoleto where Tipo ='" + tipo + "'", conn);
 				OdbcDataReader reader = command.ExecuteReader();
 				reader.Read();
 
@@ -305,7 +310,7 @@ namespace Taquilla_cliente_comprador
 		}
 		void detalleFactura(string asiento)
 		{
-			string query = "INSERT INTO detalleFactura (numeroFactura, idBoleto, costo)"+
+			string query = "INSERT INTO detalleFactura (numeroFactura, idBoleto, costo)" +
 				" Values(" + obtenerFactura() + "," + obtenerBoleto() + "," + obtenerCosto(obtenerBoleto()) + ") ";
 
 			conn.Open();
@@ -321,6 +326,144 @@ namespace Taquilla_cliente_comprador
 			{
 				MessageBox.Show("\t Error! \n\n " + ex.ToString());
 				conn.Close();
+			}
+		}
+		string pdfFactura()
+		{
+			string cadena = "";
+			int id=obtenerFactura();
+			try
+			{
+
+				conn.Open();
+				OdbcCommand command = new OdbcCommand("SELECT numeroFactura, fechaFactura, Cine, Funcion FROM encabezadosFactura where numeroFactura="+id, conn);
+				OdbcDataReader reader = command.ExecuteReader();
+				reader.Read();
+
+				cadena =" Factura No. "+reader.GetValue(0).ToString()+ "\n  Fecha: " + reader.GetValue(1).ToString() 
+					+ "\n   Cine: " + reader.GetValue(2).ToString()
+					+ "\n   Funcion: " + reader.GetValue(3).ToString() +"\n\n";
+
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			conn.Close();
+			return cadena;
+		}
+		string pdfDetalleFact()
+		{
+			string cadena = "";
+			int id = obtenerFactura();
+			try
+			{
+
+				conn.Open();
+				OdbcCommand command = new OdbcCommand("SELECT idBoleto, Costo  FROM detalleFactura where numeroFactura=" + id, conn);
+				OdbcDataReader reader = command.ExecuteReader();
+
+				while (reader.Read())
+				{
+
+					cadena += " Boleto No. " + reader.GetValue(0).ToString() + " -  Costo: Q" + reader.GetValue(1).ToString()
+						+ ".00\n";
+				}
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			conn.Close();
+			// total
+			try
+			{
+
+				conn.Open();
+				OdbcCommand command = new OdbcCommand("SELECT SUM(Costo)  FROM detalleFactura where numeroFactura=" +id, conn);
+				OdbcDataReader reader = command.ExecuteReader();
+				reader.Read();
+
+				cadena += " TOTAL = " + reader.GetValue(0).ToString()+".00\n";
+
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			conn.Close();
+			return cadena;
+		}
+		string pdfReservacion()
+		{
+			string cadena = "";
+			int id = obtenerReservacion();
+			try
+			{
+
+				conn.Open();
+				OdbcCommand command = new OdbcCommand("SELECT idReservacion, idFuncion, Fecha, Cine FROM Reservaciones where idReservacion=" + id, conn);
+				OdbcDataReader reader = command.ExecuteReader();
+				reader.Read();
+
+				cadena = " Reservacion No. " + reader.GetValue(0).ToString() + "\n  Funcion: " + reader.GetValue(1).ToString()
+					+ "\n   Fecha: " + reader.GetValue(2).ToString()
+					+ "\n   Cine: " + reader.GetValue(3).ToString() + "\n\n";
+
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			conn.Close();
+			return cadena;
+		}
+		string pdfDetalleReservacion()
+		{
+			string cadena = "";
+			int id = obtenerReservacion();
+			try
+			{
+
+				conn.Open();
+				OdbcCommand command = new OdbcCommand("SELECT idFuncion, idAsiento FROM detalleReservacion where idReservacion=" + id, conn);
+				OdbcDataReader reader = command.ExecuteReader();
+
+				while (reader.Read())
+				{
+
+					cadena += "Funcion No. " + reader.GetValue(0).ToString() + " -  Asiento: " + reader.GetValue(1).ToString()
+						+ "\n";
+				}
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			conn.Close();
+			return cadena;
+		}
+		void nuevoPDF (string texto)
+		{
+			iTextSharp.text.Document doc = new iTextSharp.text.Document(PageSize.A4.Rotate());
+			try
+			{
+				PdfWriter.GetInstance(doc, new FileStream("PDF/ARCHIVO.pdf", FileMode.Create));
+				doc.Open();
+				doc.Add(new iTextSharp.text.Paragraph(texto));
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			finally
+			{
+				doc.Close();
 			}
 		}
 		void letra(KeyPressEventArgs e)
@@ -343,7 +486,6 @@ namespace Taquilla_cliente_comprador
             }
 
         }
-
         void letrasimbolo(KeyPressEventArgs e)
         {
 
@@ -411,14 +553,15 @@ namespace Taquilla_cliente_comprador
                 }
                 else
                 {
-                    c.enviarCorreo( txtCorreo.Text,txtNombre.Text);
+                    
 					//ASIENTOS SELECIONADOS//
-					/*int noAsiento = 0;
-					while (Elegidos2[noAsiento]!="$")
+					int noAsiento1 = 0;
+					while (Elegidos2[noAsiento1]!="$")
 					{
-						cambiarEstadoAsientos(Elegidos2[noAsiento]);
-						noAsiento++;
-					}*/
+						cambiarEstadoAsientos(Elegidos2[noAsiento1]);
+						noAsiento1++;
+						if (noAsiento1 == 10) { break; }
+					}
 					if (tipoPago == 0)
 					{
 						//factrua//
@@ -427,6 +570,9 @@ namespace Taquilla_cliente_comprador
 						int cntTercera = 0;
 						int cntAdulto = 0;
 						int cntNino = 0;
+						texto += "================================================================\n";
+						texto += "                          BOLETOS\n";
+						texto += "================================================================\n";
 						while (Elegidos2[noAsiento] != "$")
 						{
 							if (cntTercera < noTercera)
@@ -451,8 +597,18 @@ namespace Taquilla_cliente_comprador
 								noAsiento++;
 							}
 
-
+							if (noAsiento == 10) { break; }
 						}
+						texto += "================================================================\n";
+						linea = "\n\n========================================\n";
+						texto += linea;
+						linea = "            FACTURA TAQUILLA\n";
+						texto += linea;
+						texto += "\t" + pdfFactura();
+						texto += "\t" + pdfDetalleFact();
+						linea = "========================================\n";
+						texto += linea;
+						nuevoPDF(texto);
 
 					}
 					else
@@ -464,11 +620,20 @@ namespace Taquilla_cliente_comprador
 						{
 							detalleReservacion(Elegidos2[noAsiento]);
 							noAsiento++;
+							if (noAsiento == 10) { break; }
 						}
-						
 
+						linea = "\n\n========================================\n";
+						texto += linea;
+						linea = "            RESERVACION CINE\n";
+						texto += linea;
+						texto += "\t" + pdfReservacion();
+						texto += "\t" + pdfDetalleReservacion();
+						linea = "========================================\n";
+						texto += linea;
+						nuevoPDF(texto);
 					}
-
+					c.enviarCorreo(txtCorreo.Text, txtNombre.Text);
 					Form formulariopago = new frmMenu();
                     formulariopago.Show();
                     Visible = false;
