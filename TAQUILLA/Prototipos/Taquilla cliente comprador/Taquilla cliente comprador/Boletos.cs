@@ -25,12 +25,14 @@ namespace Taquilla_cliente_comprador
         int count5 = 0;
         int tiempo = 0;
 		int nofuncion;
-        OdbcConnection conn = new OdbcConnection("Dsn=cine");
-        public frmBoletos(int funcion)
+		string cineSeleccionado;
+		OdbcConnection conn = new OdbcConnection("Dsn=cine");
+        public frmBoletos(int funcion, string cine)
         {
             InitializeComponent();
 			nofuncion = funcion;
-            tiempo1();
+			cineSeleccionado = cine;
+			tiempo1();
             
         }
 
@@ -80,7 +82,7 @@ namespace Taquilla_cliente_comprador
                 else
                 {
 
-                    frmAsientos asi = new frmAsientos(tiempo, nofuncion);
+                    frmAsientos asi = new frmAsientos(tiempo, nofuncion, cineSeleccionado, Convert.ToInt32(txt3ra.Text), Convert.ToInt32(txtAdulto.Text), Convert.ToInt32(txtNiño.Text));
                     asi.txtAsientos.Text = txtTotalB.Text;
 
 
