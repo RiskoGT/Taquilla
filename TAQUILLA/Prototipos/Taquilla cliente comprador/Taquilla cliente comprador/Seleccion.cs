@@ -19,13 +19,13 @@ namespace Taquilla_cliente_comprador
 		/*Grupo 2  taquilla  cliente comprador
         Gustavo Perez 0901-16-420 y Juan José Gámez 0901-16-47  */
 		OdbcConnection conn = new OdbcConnection("Dsn=cine");
-		int sala = 1;
-		int numSalas = 0;
-		int funcion = 0;
-		string[] salas = new string[140];
-		string cineSeleccionado;
-		string formatoPeli;
-		string idiomaPeli;
+		int sala = 1;// variable para el control de la sala actual
+		int numSalas = 0; // numero maximo de salas encontradas
+		int funcion = 0; //almacena la funcion elegida
+		string[] salas = new string[140]; // registra los datos de las salas encontradas
+		string cineSeleccionado;//almacen el cine elegido
+		string formatoPeli; //almacena el formato elegido
+		string idiomaPeli; //almacena el idioma elegido
 
 		public frmCartelera( string cine, string Formato, string idioma)
 		{
@@ -33,12 +33,13 @@ namespace Taquilla_cliente_comprador
 			cineSeleccionado = cine;
 			formatoPeli = Formato;
 			idiomaPeli = idioma;
-			Cartelera();
+			Cartelera();// se cargan los datos de cartelera
 			funcion = Convert.ToInt32(salas[1]);
 			
 		}
-		void llenarCartelera(int a, int b, int c, int d, int e)
+		void llenarCartelera(int a, int b, int c, int d, int e)//esta funcion asigna los datos encontrados para una funcion en sus campos
 		{
+			//Gustavo Perez
 			lbtitulo.Text = salas[a];//titulo 2
 			lbFormato.Text = salas[b];//formato 3
 			lbClasificacion.Text = salas[c];//clasificacion 4
@@ -46,8 +47,9 @@ namespace Taquilla_cliente_comprador
 			lbHora.Text = salas[e];//hora 6
 		}
 
-		string MultimediaPeli()
-		{
+		string MultimediaPeli()// Obtiene los datos de la BD la multimedia de la pelicula cargada en cartelera
+		{ 
+			//Gustavo Perez
 			string idMulti;
 			string imagen;
 			conn.Open();
@@ -72,8 +74,9 @@ namespace Taquilla_cliente_comprador
 
 			return imagen;
 		}
-		string MultimediaTrailer()
+		string MultimediaTrailer()  //carga el trailer de la pelicula cargada en cartelera
 		{
+			//Gustavo Perez
 			string idMulti;
 			string imagen;
 			
@@ -99,18 +102,19 @@ namespace Taquilla_cliente_comprador
 
 			return imagen;
 		}
-		void cambiarCartelera(int sala)
+		void cambiarCartelera(int sala)// Controla el cambio de sala en la cartelera y re asigna los datos de las peliculas
 		{
-			WebRequest request = WebRequest.Create(MultimediaPeli()); //Initializes an instance with the given URL
-			using (var response = request.GetResponse()) //Tries to access the object
+			//Gustavo Perez
+			WebRequest request = WebRequest.Create(MultimediaPeli()); // se abre el Url de la imagen
+			using (var response = request.GetResponse()) 
 			{
-				using (var str = response.GetResponseStream()) //Returns the metadata of the image
+				using (var str = response.GetResponseStream()) //se obtiene la imagen de internet
 				{
-					picAfiche.BackgroundImage = Bitmap.FromStream(str); //Creates a bitmap based on the loaded metadata, in the sequence inserts into the image property.
+					picAfiche.BackgroundImage = Bitmap.FromStream(str); // se carga la imagen al programa
 					picAfiche.BackgroundImageLayout = ImageLayout.Stretch;
 				}
 			}
-			switch (sala)
+			switch (sala) // se cambiaran los datos encontrados en la cartelera segun el numero de sala o funcion en que se este
 			{
 				case 1:
 					funcion = Convert.ToInt32(salas[1]);
@@ -195,13 +199,10 @@ namespace Taquilla_cliente_comprador
 			}
 		}
 
-		void Multimedia(int num)
+		void Cartelera()	// Obtiene los datos de las funciones de la BD
 		{
-
-		}
-
-		void Cartelera()
-		{
+			//Gustavo Perez
+			int noCartelera = 0;
 			if (formatoPeli == "Formato" && idiomaPeli == "Idioma")// sin ningun flitro
 			{
 				conn.Open();
@@ -231,9 +232,10 @@ namespace Taquilla_cliente_comprador
 					salas[pos] = funciones.GetValue(5).ToString();//hora
 					pos++;
 					numSalas++;
-
+					noCartelera++;
 				}
 				conn.Close();
+			
 			}else if (formatoPeli != "Formato" && idiomaPeli == "Idioma") // filtrando formato
 			{
 				conn.Open();
@@ -263,10 +265,12 @@ namespace Taquilla_cliente_comprador
 					salas[pos] = funciones.GetValue(5).ToString();//hora
 					pos++;
 					numSalas++;
-
+					noCartelera++;
 				}
 				conn.Close();
-			}else if (formatoPeli == "Formato" && idiomaPeli != "Idioma") // filtrando idioma
+				
+			}
+			else if (formatoPeli == "Formato" && idiomaPeli != "Idioma") // filtrando idioma
 			{
 				conn.Open();
 				OdbcCommand command = new OdbcCommand(""
@@ -295,9 +299,10 @@ namespace Taquilla_cliente_comprador
 					salas[pos] = funciones.GetValue(5).ToString();//hora
 					pos++;
 					numSalas++;
-
+					noCartelera++;
 				}
 				conn.Close();
+				
 			}
 			else if (formatoPeli != "Formato" && idiomaPeli != "Idioma") // filtrando idioma y formato
 			{
@@ -329,16 +334,26 @@ namespace Taquilla_cliente_comprador
 					salas[pos] = funciones.GetValue(5).ToString();//hora
 					pos++;
 					numSalas++;
-
+					noCartelera++;
+					
 				}
 				conn.Close();
 			}
-
+			if (noCartelera == 0)
+			{
+				MessageBox.Show("No Hay peliculas con esas Preferencias...");
+				this.Close();
+				th = new Thread(opennewform2);
+				th.SetApartmentState(ApartmentState.STA);
+				th.Start();
+			}
+			else { tmrCartelera.Enabled = true; }
+			
 		}
-		private void button9_Click(object sender, EventArgs e)
+		private void button9_Click(object sender, EventArgs e)// btncontinuar
 		{
 			this.Close();
-			th = new Thread(opennewform);
+			th = new Thread(opennewform);// se crea un nuevo hilo para no bajar el rendimiento de la App
 			th.SetApartmentState(ApartmentState.STA);
 			th.Start();
 		}
@@ -353,7 +368,7 @@ namespace Taquilla_cliente_comprador
 			Application.Exit();
 		}
 
-		private void timer1_Tick(object sender, EventArgs e)
+		private void timer1_Tick(object sender, EventArgs e) // controla constantemente el cambio de la cartelera
 		{
 			
 			if (sala == 1)
@@ -428,7 +443,10 @@ namespace Taquilla_cliente_comprador
 			Application.Run(new Filtro(cineSeleccionado));
 		}
 
+		private void frmCartelera_Load(object sender, EventArgs e)
+		{
 
+		}
 	}
     }
 

@@ -20,20 +20,21 @@ namespace Taquilla_cliente_comprador
 		public frmMenu()
         {
             InitializeComponent();
-			llenarLista();
-			ComboSeleccioneCine.Enabled = false;
-			btnVerCartelera.Enabled = false;
+			llenarLista(); //Se llena el Combobox de Ciudades con las ciudades que poseen cines registrados
+			ComboSeleccioneCine.Enabled = false;// se deshabilita el combo de cine para evitar errores
+			btnVerCartelera.Enabled = false;//se deshabilita el boton de siguiente para evitar que se pueda continuar sin seleccionar campos
         }
 
-		void llenarLista()
+		void llenarLista()//lean el combo de ciudades
 		{
+			//Gustavo Perez
 			try
 			{
 				ComboSeleccioneCiudad.Text = "Ciudades";
 				ComboSeleccioneCiudad.Items.Clear();
 
 				conn.Open();
-				OdbcCommand command = new OdbcCommand("SELECT * FROM ciudades", conn);
+				OdbcCommand command = new OdbcCommand("SELECT * FROM ciudades A WHERE EXISTS(SELECT * FROM cines WHERE idCiudad = A.idCiudad) ", conn);
 				OdbcDataReader reader = command.ExecuteReader();
 				while (reader.Read())
 				{
@@ -68,15 +69,17 @@ namespace Taquilla_cliente_comprador
 		}
 	
 
-		private void ComboSeleccioneCiudad_SelectedIndexChanged(object sender, EventArgs e)
+		private void ComboSeleccioneCiudad_SelectedIndexChanged(object sender, EventArgs e)// se llena el combo de cines dependiendo la ciudad elegida
 		{
+			//Gustavo Perez
 			try
 			{
 				ComboSeleccioneCine.Text = "Cines";
 				ComboSeleccioneCine.Items.Clear();
 
 				conn.Open();
-				OdbcCommand command = new OdbcCommand("SELECT * FROM cines where idCiudad ="+ComboSeleccioneCiudad.Text[0], conn);
+				OdbcCommand command = new OdbcCommand("SELECT * FROM cines A where A.idCiudad ="+ComboSeleccioneCiudad.Text[0] +
+					 " AND EXISTS(SELECT * FROM funciones WHERE cine = A.nombreCine) ", conn);
 				OdbcDataReader reader = command.ExecuteReader();
 				while (reader.Read())
 				{

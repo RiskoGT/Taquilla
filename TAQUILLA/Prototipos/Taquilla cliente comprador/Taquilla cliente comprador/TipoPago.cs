@@ -13,12 +13,14 @@ namespace Taquilla_cliente_comprador
     public partial class frmTipoPago : Form
     {
         int tiempo2 = 0;
-		int tipoPago=0;
+		int tipoPago=0;// determina si se realizara una compra o reservacion
+		// Variables acarreadas para querys
 		string cineSeleccionado;
 		int nofuncion;
 		int noTercera;
 		int noAdulto;
 		int noNino;
+		// asientos elegidos
 		string[] Elegidos2 = new string[10];
 		public frmTipoPago(int tiempo,string[] arr, int funcion, string cine, int trecera, int adulto, int nino)
         {
@@ -35,7 +37,7 @@ namespace Taquilla_cliente_comprador
         private void BtPago_Click(object sender, EventArgs e)
         {
             int tipo = 2;
-			tipoPago = 0;
+			tipoPago = 0;// Pagar
             Frm_pago avilitar = new Frm_pago(tiempo2, tipo,Elegidos2,nofuncion,cineSeleccionado,tipoPago,noTercera,noAdulto,noNino);
             avilitar.Show();
             Visible = false;
@@ -44,7 +46,7 @@ namespace Taquilla_cliente_comprador
         private void BtReservar_Click(object sender, EventArgs e)
         {
             int tipo = 1;
-			tipoPago = 1;
+			tipoPago = 1;//Reservar
             Frm_pago avilitar = new Frm_pago(tiempo2, tipo,Elegidos2,nofuncion,cineSeleccionado, tipoPago,noTercera,noAdulto,noNino);
             avilitar.Show();
             Visible = false;

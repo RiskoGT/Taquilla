@@ -16,8 +16,8 @@ namespace Taquilla_cliente_comprador
 		/*Grupo 2  taquilla  cliente comprador
          Gustavo Perez 0901-16-420 y Juan José Gámez 0901-16-47  */
 		OdbcConnection conn = new OdbcConnection("Dsn=cine");
-		string cineSeleccionado;
-		public Filtro(string cine)
+		string cineSeleccionado;// almacen del cine seleccionado
+		public Filtro(string cine)// se recibe el cine seleccionado
         {
 
             InitializeComponent();
@@ -39,13 +39,26 @@ namespace Taquilla_cliente_comprador
 	
 		private void button1_Click_1(object sender, EventArgs e)
 		{
+			//Gustavo Perez
+			try// se controla la existencia de peliculas con las caracteristicas seleccionadas
+			{
+				Form formulario = new frmCartelera(cineSeleccionado, comboFormato.Text, comboIdioma.Text);
+				formulario.Show();
+				Visible = false;
+			}
+			catch
+			{
+				//si se produce un error el form siguiente esta validado para cerrarce y crear una nueva ventana
+			}
+			finally
+			{
+				this.Hide();
+			}
+
 			
-			Form formulario = new frmCartelera(cineSeleccionado, comboBox1.Text, comboBox2.Text);
-			formulario.Show();
-			Visible = false;
 		}
 
-		private void button2_Click(object sender, EventArgs e)
+		private void button2_Click(object sender, EventArgs e)//regresar al menu
 		{
 			Form formulario = new frmMenu();
 			formulario.Show();

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,6 +13,7 @@ namespace Taquilla_cliente_comprador
 {
     public partial class frmConfirmasion : Form
     {
+		Thread th;
         public frmConfirmasion()
         {
             InitializeComponent();
@@ -32,9 +34,18 @@ namespace Taquilla_cliente_comprador
 		private void button2_Click(object sender, EventArgs e)
 		{
 			
-			Visible = false;
+				this.Close();
+				th = new Thread(opennewform);
+				th.SetApartmentState(ApartmentState.STA);
+				th.Start();
+			
+
+			
+		}
+		private void opennewform()
+		{
+			Application.Run(new frmMenu());
 		}
 
-        
-    }
+	}
 }

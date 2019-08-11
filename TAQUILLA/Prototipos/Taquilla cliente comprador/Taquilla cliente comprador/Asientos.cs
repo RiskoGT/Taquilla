@@ -15,8 +15,8 @@ namespace Taquilla_cliente_comprador
 	{
 		/*Grupo 2  taquilla  cliente comprador
         Gustavo Perez 0901-16-420 y Juan José Gámez 0901-16-47  */
-		int contador = 0;
-		string cineSeleccionado;
+		int contador = 0;// contador de asientos
+		string cineSeleccionado;//almacen del cine seleccionado
 		int a1, a2, a3, a4, a5, a6, a7, a8, a9, a10 = 0;
 		int b1, b2, b3, b4, b5, b6, b7, b8, b9, b10 = 0;
 		int c1, c2, c3, c4, c5, c6, c7, c8, c9, c10 = 0;
@@ -42,8 +42,8 @@ namespace Taquilla_cliente_comprador
 		int noTercera;
 		int noAdulto;
 		int noNino;
-		string[] Asientos = new string[90];
-		string[] Elegidos = new string[10];
+		string[] Asientos = new string[90];// total de asientos 
+		string[] Elegidos = new string[10];// asientos elegibles maximos
 		OdbcConnection conn = new OdbcConnection("Dsn=cine");
 		public frmAsientos(int dato, int funcion, string cine, int trecera, int adulto, int nino)
 		{
@@ -54,10 +54,11 @@ namespace Taquilla_cliente_comprador
 			noAdulto = adulto;
 			noNino = nino;
 			cineSeleccionado = cine;
-			estadoAsientos();
+			estadoAsientos();// se carga el estado de los asientos
 		}
-		void asientosSeleccionados()
-		{
+		void asientosSeleccionados()//se verificasi el asiento fue seleccionado
+		{	
+			//Gustavo Perez
 			int posVec = 0;
 			if (asientoA1 =="A-1") { Elegidos[posVec] = asientoA1; posVec++; }
 			if (asientoA2 =="A-2") { Elegidos[posVec] = asientoA2; posVec++; }
@@ -158,7 +159,7 @@ namespace Taquilla_cliente_comprador
 			if (asientoI9 =="I-9") { Elegidos[posVec] = asientoI9; posVec++; }
 			if (asientoI10 =="I-10") { Elegidos[posVec] = asientoI10; posVec++; }
 
-			if (posVec < 9)
+			if (posVec < 9)// se controla que se seleccionaron maximo 10 asientos
 			{
 				posVec--;
 				while (posVec < 9){ posVec++; Elegidos[posVec] = "$"; }
@@ -168,9 +169,9 @@ namespace Taquilla_cliente_comprador
 
 
 		}
-		void estadoAsientos()
+		void estadoAsientos()// se cargan los asientos y su estado desde BD
 		{
-			
+			//Gustavo Perez
 				conn.Open();
 				OdbcCommand command = new OdbcCommand(""
 				+ "SELECT  estado FROM asientos WHERE idFuncion= " + nofuncion + "", conn);
@@ -1624,9 +1625,10 @@ namespace Taquilla_cliente_comprador
 			Application.Exit();
 		}
 
-		private void timer1_Tick(object sender, EventArgs e)
+		private void timer1_Tick(object sender, EventArgs e)// controla que no se puedan seleccionar mas asientos de los boletos elegidos
 		{
-			if (Int32.Parse(txtAsientos.Text) == contador)
+			// Gustavo Perez
+			if (Int32.Parse(txtAsientos.Text) == contador)//compara el numero de asientos con el contador de elegidos
 			{
 				btnA1.Enabled = false; btnA2.Enabled = false; btnA3.Enabled = false; btnA4.Enabled = false; btnA5.Enabled = false;
 				btnA6.Enabled = false; btnA7.Enabled = false; btnA8.Enabled = false; btnA9.Enabled = false; btnA10.Enabled = false;
@@ -2138,6 +2140,7 @@ namespace Taquilla_cliente_comprador
                 {
                     MessageBox.Show("Asientos no seleccionados por favor verificar la cantida de asientos");
                   
+					// se limian todas las variables involucradas en el conteo de asientos
                     contador = 0;
                     a1 = 0; a2 = 0; a3 = 0; a4 = 0; a5 = 0; a6 = 0; a7 = 0; a8 = 0; a9 = 0; a10 = 0;
                     b1 = 0; b2 = 0; b3 = 0; b4 = 0; b5 = 0; b6 = 0; b7 = 0; b8 = 0; b9 = 0; b10 = 0;
@@ -2215,7 +2218,7 @@ namespace Taquilla_cliente_comprador
             }
         }
 
-        private void Button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)//Boton continuar
         {
             Form formulariopag = new frmBoletos(nofuncion,cineSeleccionado);
             formulariopag.Show();

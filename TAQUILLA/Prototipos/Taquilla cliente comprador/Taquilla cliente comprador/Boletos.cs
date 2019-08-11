@@ -201,10 +201,10 @@ namespace Taquilla_cliente_comprador
                 int.Parse(txtAdulto.Text);
                 cont2++;
                 txtAdulto.Text = cont2.ToString();
-                count2 = count2 + 38;
+                count2 = count2 + 40;
                 int.Parse(txtAdultoT.Text);
                 txtAdultoT.Text = count2.ToString();
-                count4 = count4 + 38;
+                count4 = count4 + 40;
                 int.Parse(txtTotal.Text);
                 txtTotal.Text = count4.ToString();
                 count5 = count5 + 1;

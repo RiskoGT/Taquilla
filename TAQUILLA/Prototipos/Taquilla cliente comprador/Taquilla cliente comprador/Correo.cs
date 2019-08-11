@@ -48,9 +48,13 @@ namespace Taquilla_cliente_comprador
 
             
                 envios.Send(correos);
-             
+				
+				// abre el form de confirmacion
+				Form formulariopago1 = new frmConfirmasion();
+				formulariopago1.Show();
+				
 
-            }
+			}
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "No se envio el correo correctamente", MessageBoxButtons.OK, MessageBoxIcon.Error);
