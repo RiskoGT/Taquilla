@@ -366,7 +366,7 @@ namespace Taquilla_cliente_comprador
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            Process.Start("Manual.pdf");
+            Help.ShowHelp(this, " Página web ayuda/ayuda.chm", "Menúboletos.html");
         }
     }
 }
