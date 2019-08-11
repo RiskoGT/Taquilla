@@ -34,6 +34,7 @@ namespace Taquilla_cliente_comprador
                 {
                     System.Net.Mail.Attachment archivo = new System.Net.Mail.Attachment(ruta);
                     correos.Attachments.Add(archivo);
+        
                 }
 
                 correos.From = new MailAddress(usu);
@@ -45,8 +46,10 @@ namespace Taquilla_cliente_comprador
                 envios.Port = 587;
                 envios.EnableSsl = true;
 
-                //envios.Send(correos);
-                
+            
+                envios.Send(correos);
+             
+
             }
             catch (Exception ex)
             {
