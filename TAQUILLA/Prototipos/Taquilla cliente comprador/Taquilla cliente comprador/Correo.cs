@@ -6,19 +6,20 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Net.Mail;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Taquilla_cliente_comprador
 {
     class Correo
     {
-        MailMessage correos = new MailMessage();
+		Thread th;
+		MailMessage correos = new MailMessage();
         SmtpClient envios = new SmtpClient();
         string usu = "riskogt6@gmail.com";
         string pass = "Risgt657";
         string bol = " Risko   Boletos Comprados";
         string men = "Gracias por su compra:";
-        string ruta = "PDF/ARCHIVO.pdf";
-        public void enviarCorreo( string destinatario,string nombre)
+        public void enviarCorreo( string destinatario,string nombre, string nomArchivo)
         {
             try
             {
@@ -30,9 +31,9 @@ namespace Taquilla_cliente_comprador
                 correos.IsBodyHtml = true;
                 correos.To.Add(destinatario.Trim());
 
-                if (ruta.Equals("") == false)
+                if (nomArchivo.Equals("") == false)
                 {
-                    System.Net.Mail.Attachment archivo = new System.Net.Mail.Attachment(ruta);
+                    System.Net.Mail.Attachment archivo = new System.Net.Mail.Attachment(nomArchivo);
                     correos.Attachments.Add(archivo);
         
                 }
@@ -49,10 +50,13 @@ namespace Taquilla_cliente_comprador
             
                 envios.Send(correos);
 				
+
 				// abre el form de confirmacion
-				Form formulariopago1 = new frmConfirmasion();
-				formulariopago1.Show();
-				
+			
+				th = new Thread(opennewform);
+				th.SetApartmentState(ApartmentState.STA);
+				th.Start();
+
 
 			}
             catch (Exception ex)
@@ -60,6 +64,12 @@ namespace Taquilla_cliente_comprador
                 MessageBox.Show(ex.Message, "No se envio el correo correctamente", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-    }
+
+		private void opennewform()
+		{
+			Application.Run(new frmConfirmasion());
+		}
+
+	}
 }
 

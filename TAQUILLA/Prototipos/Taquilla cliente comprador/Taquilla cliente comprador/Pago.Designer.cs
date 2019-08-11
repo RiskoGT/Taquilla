@@ -57,10 +57,6 @@
 			this.lbSeguridad = new System.Windows.Forms.Label();
 			this.lbVencimiento = new System.Windows.Forms.Label();
 			this.lbTarjeta = new System.Windows.Forms.Label();
-			this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-			this.LblGi = new System.Windows.Forms.Label();
-			this.Combomes = new System.Windows.Forms.ComboBox();
-			this.ComboAño = new System.Windows.Forms.ComboBox();
 			this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
 			this.txtTarjeta = new System.Windows.Forms.TextBox();
 			this.lbTelefono = new System.Windows.Forms.Label();
@@ -71,6 +67,7 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.Error = new System.Windows.Forms.ErrorProvider(this.components);
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
+			this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.tlpPanel1.SuspendLayout();
 			this.tlpPanel6.SuspendLayout();
@@ -83,7 +80,6 @@
 			this.tableLayoutPanel4.SuspendLayout();
 			this.tlpPanel5.SuspendLayout();
 			this.tlpPanel10.SuspendLayout();
-			this.tableLayoutPanel7.SuspendLayout();
 			this.tableLayoutPanel8.SuspendLayout();
 			this.tlpPanel7.SuspendLayout();
 			this.tableLayoutPanel3.SuspendLayout();
@@ -233,9 +229,9 @@
 			this.tlpPanel2.Controls.Add(this.lbSeguridad, 1, 11);
 			this.tlpPanel2.Controls.Add(this.lbVencimiento, 1, 9);
 			this.tlpPanel2.Controls.Add(this.lbTarjeta, 1, 7);
-			this.tlpPanel2.Controls.Add(this.tableLayoutPanel7, 3, 9);
 			this.tlpPanel2.Controls.Add(this.tableLayoutPanel8, 3, 7);
 			this.tlpPanel2.Controls.Add(this.lbTelefono, 1, 5);
+			this.tlpPanel2.Controls.Add(this.dateTimePicker2, 3, 9);
 			this.tlpPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tlpPanel2.Location = new System.Drawing.Point(26, 131);
 			this.tlpPanel2.Name = "tlpPanel2";
@@ -533,64 +529,6 @@
 			this.lbTarjeta.Text = "Numero de la tarjeta:";
 			this.lbTarjeta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// tableLayoutPanel7
-			// 
-			this.tableLayoutPanel7.ColumnCount = 5;
-			this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 0.9708738F));
-			this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.60194F));
-			this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.854369F));
-			this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.60194F));
-			this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 0.9708738F));
-			this.tableLayoutPanel7.Controls.Add(this.LblGi, 2, 2);
-			this.tableLayoutPanel7.Controls.Add(this.Combomes, 3, 2);
-			this.tableLayoutPanel7.Controls.Add(this.ComboAño, 1, 2);
-			this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tableLayoutPanel7.Location = new System.Drawing.Point(493, 208);
-			this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-			this.tableLayoutPanel7.RowCount = 5;
-			this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-			this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1F));
-			this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88F));
-			this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1F));
-			this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-			this.tableLayoutPanel7.Size = new System.Drawing.Size(404, 34);
-			this.tableLayoutPanel7.TabIndex = 11;
-			// 
-			// LblGi
-			// 
-			this.LblGi.AutoSize = true;
-			this.LblGi.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.LblGi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.LblGi.Location = new System.Drawing.Point(194, 1);
-			this.LblGi.Name = "LblGi";
-			this.LblGi.Size = new System.Drawing.Size(13, 29);
-			this.LblGi.TabIndex = 1;
-			this.LblGi.Text = "/";
-			// 
-			// Combomes
-			// 
-			this.Combomes.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.Combomes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.Combomes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.Combomes.FormattingEnabled = true;
-			this.Combomes.Location = new System.Drawing.Point(213, 4);
-			this.Combomes.Name = "Combomes";
-			this.Combomes.Size = new System.Drawing.Size(182, 28);
-			this.Combomes.TabIndex = 1;
-			this.Combomes.SelectedIndexChanged += new System.EventHandler(this.Combomes_SelectedIndexChanged);
-			// 
-			// ComboAño
-			// 
-			this.ComboAño.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.ComboAño.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.ComboAño.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.ComboAño.FormattingEnabled = true;
-			this.ComboAño.Location = new System.Drawing.Point(6, 4);
-			this.ComboAño.Name = "ComboAño";
-			this.ComboAño.Size = new System.Drawing.Size(182, 28);
-			this.ComboAño.TabIndex = 3;
-			this.ComboAño.SelectedIndexChanged += new System.EventHandler(this.ComboAño_SelectedIndexChanged);
-			// 
 			// tableLayoutPanel8
 			// 
 			this.tableLayoutPanel8.ColumnCount = 3;
@@ -714,6 +652,17 @@
 			this.timer1.Interval = 1000;
 			this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
 			// 
+			// dateTimePicker2
+			// 
+			this.dateTimePicker2.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dateTimePicker2.Font = new System.Drawing.Font("Agency FB", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dateTimePicker2.Location = new System.Drawing.Point(493, 208);
+			this.dateTimePicker2.MaxDate = new System.DateTime(2025, 12, 31, 0, 0, 0, 0);
+			this.dateTimePicker2.MinDate = new System.DateTime(2019, 8, 1, 0, 0, 0, 0);
+			this.dateTimePicker2.Name = "dateTimePicker2";
+			this.dateTimePicker2.Size = new System.Drawing.Size(404, 36);
+			this.dateTimePicker2.TabIndex = 16;
+			// 
 			// Frm_pago
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -748,8 +697,6 @@
 			this.tableLayoutPanel4.PerformLayout();
 			this.tlpPanel5.ResumeLayout(false);
 			this.tlpPanel10.ResumeLayout(false);
-			this.tableLayoutPanel7.ResumeLayout(false);
-			this.tableLayoutPanel7.PerformLayout();
 			this.tableLayoutPanel8.ResumeLayout(false);
 			this.tableLayoutPanel8.PerformLayout();
 			this.tlpPanel7.ResumeLayout(false);
@@ -769,7 +716,6 @@
         private System.Windows.Forms.TableLayoutPanel tlpPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.TextBox txtTarjeta;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
@@ -789,9 +735,6 @@
         private System.Windows.Forms.Button btnSigiente;
         private System.Windows.Forms.TableLayoutPanel tlpPanel7;
         private System.Windows.Forms.Label lbData;
-        private System.Windows.Forms.Label LblGi;
-        private System.Windows.Forms.ComboBox Combomes;
-        private System.Windows.Forms.ComboBox ComboAño;
         private System.Windows.Forms.TableLayoutPanel tlpPanel10;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ErrorProvider Error;
@@ -804,5 +747,6 @@
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
 		private System.Windows.Forms.DateTimePicker dateTimePicker1;
 		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.DateTimePicker dateTimePicker2;
 	}
 }

@@ -59,10 +59,9 @@ namespace Taquilla_cliente_comprador
 				lbSeguridad.Visible = false;
 				lbVencimiento.Visible = false;
 				lbSeguridad.Visible = false;
-				ComboAño.Visible = false;
-				Combomes.Visible = false;
+				dateTimePicker2.Visible = false;
 				lbVencimiento.Visible = false;
-				LblGi.Visible = false;
+
 				lbTarjeta.Visible = false;
 
 			}
@@ -76,32 +75,13 @@ namespace Taquilla_cliente_comprador
 				lbSeguridad.Visible = true;
 				lbVencimiento.Visible = true;
 				lbSeguridad.Visible = true;
-				ComboAño.Visible = true;
-				Combomes.Visible = true;
+				dateTimePicker2.Visible = true;
 				lbVencimiento.Visible = true;
-				LblGi.Visible = true;
+				
 				lbTarjeta.Visible = true;
 
 			}
-			Combomes.Items.Add("1");
-			Combomes.Items.Add("2");
-			Combomes.Items.Add("3");
-			Combomes.Items.Add("4");
-			Combomes.Items.Add("5");
-			Combomes.Items.Add("6");
-			Combomes.Items.Add("7");
-			Combomes.Items.Add("8");
-			Combomes.Items.Add("9");
-			Combomes.Items.Add("10");
-			Combomes.Items.Add("11");
-			Combomes.Items.Add("12");
-			ComboAño.Items.Add("19");
-			ComboAño.Items.Add("20");
-			ComboAño.Items.Add("21");
-			ComboAño.Items.Add("22");
-			ComboAño.Items.Add("23");
-			ComboAño.Items.Add("24");
-			ComboAño.Items.Add("25");
+			
 
 
 		}
@@ -172,7 +152,8 @@ namespace Taquilla_cliente_comprador
 		void detalleReservacion(string asiento)// ingresa detalles de reservacion
 		{
 			//Gustavo Perez
-			string query = "INSERT INTO detalleReservacion (idReservacion, idFuncion, idAsiento) Values(" + obtenerReservacion() + "," + nofuncion + ",'" + asiento + "') ";
+			int id =obtenerReservacion();
+			string query = "INSERT INTO detalleReservacion (idReservacion, idFuncion, idAsiento) Values(" + id.ToString() + "," + nofuncion + ",'" + asiento + "') ";
 
 			conn.Open();
 			OdbcCommand consulta = new OdbcCommand(query, conn);
@@ -234,10 +215,11 @@ namespace Taquilla_cliente_comprador
 		}
 		void boleto(string asiento, string tipo)// ingresa un nuevo boleto
 		{
+			string Peli = obtenerPelicula();
 			//Gustavo Perez
 			string query = "INSERT INTO Boletos (idFuncion, idAsiento, Fecha, Cine, tipoBoleto)" +
 			" Values(" + nofuncion + ",'" + asiento + "','" + dateTimePicker1.Text + "', '" + cineSeleccionado + "', '" + tipo + "') ";
-			texto +="Funcion: "+ nofuncion + "   Asiento: "+asiento+"   Fecha: " + dateTimePicker1.Text+"   Cine: "+cineSeleccionado+"    Tipo Boleto: "+ tipo+"\n";
+			texto +="Funcion: "+ Peli+ "   Asiento: "+asiento+"   Fecha: " + dateTimePicker1.Text+"   Cine: "+cineSeleccionado+"    Tipo Boleto: "+ tipo+"\n";
 			conn.Open();
 			OdbcCommand consulta = new OdbcCommand(query, conn);
 			try
@@ -268,6 +250,26 @@ namespace Taquilla_cliente_comprador
 				id = Convert.ToInt32(reader.GetValue(0).ToString());
 
 
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			conn.Close();
+			return id;
+		}
+		string obtenerPelicula()// Obtiene el ultimo boleto registrado
+		{
+			//Gustavo Perez
+			string id = "";
+			try
+			{
+
+				conn.Open();
+				OdbcCommand command = new OdbcCommand("SELECT Titulo FROM Peliculas where idPelicula= (SELECT idPelicula from Funciones where idFuncion="+nofuncion+")" , conn);
+				OdbcDataReader reader = command.ExecuteReader();
+				reader.Read();
+				id = reader.GetValue(0).ToString();
 			}
 			catch (Exception ex)
 			{
@@ -338,10 +340,12 @@ namespace Taquilla_cliente_comprador
 				conn.Close();
 			}
 		}
+		
 		string pdfFactura()// caraga de BD los datos de la factura al PDF
 		{
 			//Gustavo Perez
 			string cadena = "";
+			string Peli = obtenerPelicula();
 			int id=obtenerFactura();
 			try
 			{
@@ -353,7 +357,7 @@ namespace Taquilla_cliente_comprador
 
 				cadena =" Factura No. "+reader.GetValue(0).ToString()+ "\n  Fecha: " + reader.GetValue(1).ToString() 
 					+ "\n   Cine: " + reader.GetValue(2).ToString()
-					+ "\n   Funcion: " + reader.GetValue(3).ToString() +"\n\n";
+					+ "\n   Funcion: " + Peli +"\n\n";
 
 
 			}
@@ -413,6 +417,7 @@ namespace Taquilla_cliente_comprador
 		{
 			//Gustavo Perez
 			string cadena = "";
+			string Peli = obtenerPelicula();
 			int id = obtenerReservacion();
 			try
 			{
@@ -422,7 +427,7 @@ namespace Taquilla_cliente_comprador
 				OdbcDataReader reader = command.ExecuteReader();
 				reader.Read();
 
-				cadena = " Reservacion No. " + reader.GetValue(0).ToString() + "\n  Funcion: " + reader.GetValue(1).ToString()
+				cadena = " Reservacion No. " + reader.GetValue(0).ToString() + "\n  Funcion: " + Peli
 					+ "\n   Fecha: " + reader.GetValue(2).ToString()
 					+ "\n   Cine: " + reader.GetValue(3).ToString() + "\n\n";
 
@@ -439,6 +444,7 @@ namespace Taquilla_cliente_comprador
 		{
 			//Gustavo Perez
 			string cadena = "";
+			string Peli = obtenerPelicula();
 			int id = obtenerReservacion();
 			try
 			{
@@ -450,7 +456,7 @@ namespace Taquilla_cliente_comprador
 				while (reader.Read())
 				{
 
-					cadena += "Funcion No. " + reader.GetValue(0).ToString() + " -  Asiento: " + reader.GetValue(1).ToString()
+					cadena += "Funcion No. " + Peli + " -  Asiento: " + reader.GetValue(1).ToString()
 						+ "\n";
 				}
 
@@ -462,23 +468,26 @@ namespace Taquilla_cliente_comprador
 			conn.Close();
 			return cadena;
 		}
-		void nuevoPDF (string texto) // Crea el PDF a adjuntar al correo
+		void nuevoPDF (string texto, string nombre) // Crea el PDF a adjuntar al correo
 		{//Gustavo Perez
+
 			iTextSharp.text.Document doc = new iTextSharp.text.Document(PageSize.A4.Rotate());
 			try
 			{
-				PdfWriter.GetInstance(doc, new FileStream("PDF/ARCHIVO.pdf", FileMode.Create));
+				
+				PdfWriter.GetInstance(doc, new FileStream(nombre, FileMode.Create));
 				doc.Open();
+			
 				doc.Add(new iTextSharp.text.Paragraph(texto));
+				doc.Close();
+				
 			}
 			catch (Exception ex)
 			{
 				MessageBox.Show(ex.Message);
-			}
-			finally
-			{
 				doc.Close();
 			}
+			
 		}
 		void letra(KeyPressEventArgs e)
         {
@@ -584,7 +593,7 @@ namespace Taquilla_cliente_comprador
 				}
 				else
 				{
-
+					string nomArchivo = "PDF/" + dateTimePicker1.Text +" "+DateTime.Now.ToString("hh - mm -ss tt")+ ".pdf";
 					//ASIENTOS SELECIONADOS//
 					int noAsiento1 = 0;
 					while (Elegidos2[noAsiento1] != "$")
@@ -602,9 +611,9 @@ namespace Taquilla_cliente_comprador
 						int cntAdulto = 0;
 						int cntNino = 0;
 							// Se cargan de boletos datos a PDF de envio
-						texto += "================================================================\n";
+						texto += "==================================================================================================\n";
 						texto += "                          BOLETOS\n";
-						texto += "================================================================\n";
+						texto += "==================================================================================================\n";
 						while (Elegidos2[noAsiento] != "$")// se controla el numero de asientos elegidos
 						{
 							if (cntTercera < noTercera)// se asignan asientos de tercera edad
@@ -632,16 +641,17 @@ namespace Taquilla_cliente_comprador
 							if (noAsiento == 10) { break; }// se termina el proceso al llegar al limite de asientos
 						}
 						// se cargan datos de Fatura al PDF
-						texto += "================================================================\n";
-						linea = "\n\n========================================\n";
+						texto += "====================================================================================================\n";
+						linea = "\n\n=================================================================================================\n";
 						texto += linea;
 						linea = "            FACTURA TAQUILLA\n";
 						texto += linea;
 						texto += "\t" + pdfFactura();//encabezado
 						texto += "\t" + pdfDetalleFact();// detalle
-						linea = "========================================\n";
+						linea = "======================================================================================================\n";
 						texto += linea;
-						nuevoPDF(texto);// Se crea el PDF
+						
+						nuevoPDF(texto, nomArchivo);// Se crea el PDF
 
 					}
 					else
@@ -656,19 +666,20 @@ namespace Taquilla_cliente_comprador
 							if (noAsiento == 10) { break; }// se detienen al llegar al limite de asientos
 						}
 						// se cargan datos de reseracion al PDF
-						linea = "\n\n========================================\n";
+						linea = "\n\n=====================================================================================================\n";
 						texto += linea;
 						linea = "            RESERVACION CINE\n";
 						texto += linea;
 						texto += "\t" + pdfReservacion();
 						texto += "\t" + pdfDetalleReservacion();
-						linea = "========================================\n";
+						linea = "===========================================================================================================\n";
 						texto += linea;
-						nuevoPDF(texto);
-					}
+						
+						nuevoPDF(texto, nomArchivo);// Se crea el PDF
+						}
 
-					c.enviarCorreo(txtCorreo.Text, txtNombre.Text);// se envia el correo electronico
-
+					c.enviarCorreo(txtCorreo.Text, txtNombre.Text, nomArchivo);// se envia el correo electronico
+						Application.Exit();
 				}
 			}
 			}
@@ -788,15 +799,7 @@ namespace Taquilla_cliente_comprador
             numero(e);
         }
 
-        private void Combomes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Combomes.Text = "Mes";
-        }
-
-        private void ComboAño_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Combomes.Text = "Año";
-        }
+      
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {

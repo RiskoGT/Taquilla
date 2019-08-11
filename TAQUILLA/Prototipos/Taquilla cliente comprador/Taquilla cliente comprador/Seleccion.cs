@@ -26,13 +26,15 @@ namespace Taquilla_cliente_comprador
 		string cineSeleccionado;//almacen el cine elegido
 		string formatoPeli; //almacena el formato elegido
 		string idiomaPeli; //almacena el idioma elegido
+		string fechaPeli;
 
-		public frmCartelera( string cine, string Formato, string idioma)
+		public frmCartelera( string cine, string Formato, string idioma, string fecha)
 		{
 			InitializeComponent();
 			cineSeleccionado = cine;
 			formatoPeli = Formato;
 			idiomaPeli = idioma;
+			fechaPeli = fecha;
 			Cartelera();// se cargan los datos de cartelera
 			funcion = Convert.ToInt32(salas[1]);
 			
@@ -212,7 +214,9 @@ namespace Taquilla_cliente_comprador
 				"(SELECT formato FROM peliculas WHERE idPelicula = A.idPelicula) formato ," +
 				"(SELECT clasificación FROM peliculas WHERE idPelicula = A.idPelicula) clasificacion," +
 				"(SELECT sinopsis FROM peliculas WHERE idPelicula = A.idPelicula) sinopsis, A.horaFuncion " +
-				"from funciones A where A.Cine = '" + cineSeleccionado + "'", conn);
+				"from funciones A where A.Cine = '" + cineSeleccionado + "' "+
+				"AND (SELECT semanaEstrenoInicio from peliculas WHERE idPelicula = A.idPelicula) <= '"+fechaPeli+"'"+
+				"AND(SELECT semanaEstrenoFin from peliculas WHERE idPelicula = A.idPelicula) >= '"+fechaPeli+ "'", conn);
 				OdbcDataReader funciones = command.ExecuteReader();
 
 				int pos = 1;
@@ -245,7 +249,10 @@ namespace Taquilla_cliente_comprador
 				"(SELECT formato FROM peliculas WHERE idPelicula = A.idPelicula) formato ," +
 				"(SELECT clasificación FROM peliculas WHERE idPelicula = A.idPelicula) clasificacion," +
 				"(SELECT sinopsis FROM peliculas WHERE idPelicula = A.idPelicula) sinopsis, A.horaFuncion " +
-				"from funciones A, peliculas where A.Cine = '" + cineSeleccionado + "'AND A.idPelicula = peliculas.idPelicula AND formato ='" + formatoPeli + "'", conn);
+				"from funciones A, peliculas where A.Cine = '" + cineSeleccionado + "'AND A.idPelicula = peliculas.idPelicula "+
+				"AND formato ='" + formatoPeli + "'" +
+				"AND (SELECT semanaEstrenoInicio from peliculas WHERE idPelicula = A.idPelicula) <= '" + fechaPeli + "'" +
+				"AND(SELECT semanaEstrenoFin from peliculas WHERE idPelicula = A.idPelicula) >= '" + fechaPeli + "'", conn);
 				OdbcDataReader funciones = command.ExecuteReader();
 
 				int pos = 1;
@@ -279,7 +286,10 @@ namespace Taquilla_cliente_comprador
 				"(SELECT formato FROM peliculas WHERE idPelicula = A.idPelicula) formato ," +
 				"(SELECT clasificación FROM peliculas WHERE idPelicula = A.idPelicula) clasificacion," +
 				"(SELECT sinopsis FROM peliculas WHERE idPelicula = A.idPelicula) sinopsis, A.horaFuncion " +
-				"from funciones A, peliculas where A.Cine = '" + cineSeleccionado + "'AND A.idPelicula = peliculas.idPelicula AND idioma ='" + idiomaPeli + "'", conn);
+				"from funciones A, peliculas where A.Cine = '" + cineSeleccionado + "' "+
+				"AND A.idPelicula = peliculas.idPelicula AND idioma ='" + idiomaPeli + "'" +
+				"AND (SELECT semanaEstrenoInicio from peliculas WHERE idPelicula = A.idPelicula) <= '" + fechaPeli + "'" +
+				"AND(SELECT semanaEstrenoFin from peliculas WHERE idPelicula = A.idPelicula) >= '" + fechaPeli + "'", conn);
 				OdbcDataReader funciones = command.ExecuteReader();
 
 				int pos = 1;
@@ -314,7 +324,9 @@ namespace Taquilla_cliente_comprador
 				"(SELECT clasificación FROM peliculas WHERE idPelicula = A.idPelicula) clasificacion," +
 				"(SELECT sinopsis FROM peliculas WHERE idPelicula = A.idPelicula) sinopsis, A.horaFuncion " +
 				"from funciones A, peliculas where A.Cine = '" + cineSeleccionado + "'AND A.idPelicula = peliculas.idPelicula AND formato ='" + 
-				formatoPeli + "'"+ "AND idioma ='" + idiomaPeli + "'", conn);
+				formatoPeli + "'"+ "AND idioma ='" + idiomaPeli + "'" +
+				"AND (SELECT semanaEstrenoInicio from peliculas WHERE idPelicula = A.idPelicula) <= '" + fechaPeli + "'" +
+				"AND(SELECT semanaEstrenoFin from peliculas WHERE idPelicula = A.idPelicula) >= '" + fechaPeli + "'", conn);
 				OdbcDataReader funciones = command.ExecuteReader();
 
 				int pos = 1;

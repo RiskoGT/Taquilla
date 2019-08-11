@@ -22,8 +22,10 @@ namespace Taquilla_cliente_comprador
 
             InitializeComponent();
 			cineSeleccionado = cine;
-     
-        }
+			dtpFecha.Format = DateTimePickerFormat.Custom;
+			dtpFecha.CustomFormat = "yyyy-MM-dd";
+
+		}
 	
 
 		private void Filtro_FormClosed(object sender, FormClosedEventArgs e)
@@ -42,7 +44,7 @@ namespace Taquilla_cliente_comprador
 			//Gustavo Perez
 			try// se controla la existencia de peliculas con las caracteristicas seleccionadas
 			{
-				Form formulario = new frmCartelera(cineSeleccionado, comboFormato.Text, comboIdioma.Text);
+				Form formulario = new frmCartelera(cineSeleccionado, comboFormato.Text, comboIdioma.Text , dtpFecha.Text);
 				formulario.Show();
 				Visible = false;
 			}

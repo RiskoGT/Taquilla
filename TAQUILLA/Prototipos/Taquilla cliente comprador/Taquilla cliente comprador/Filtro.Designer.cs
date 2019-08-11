@@ -43,6 +43,7 @@
 			this.btnAtras = new System.Windows.Forms.Button();
 			this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
 			this.btnVerCartelera = new System.Windows.Forms.Button();
+			this.dtpFecha = new System.Windows.Forms.DateTimePicker();
 			this.tlppanel6.SuspendLayout();
 			this.tlppanel3.SuspendLayout();
 			this.tableLayoutPanel2.SuspendLayout();
@@ -177,6 +178,7 @@
 			this.tableLayoutPanel1.Controls.Add(this.comboIdioma, 2, 0);
 			this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 7);
 			this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 2, 7);
+			this.tableLayoutPanel1.Controls.Add(this.dtpFecha, 1, 2);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(121, 265);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -295,6 +297,18 @@
 			this.btnVerCartelera.UseVisualStyleBackColor = false;
 			this.btnVerCartelera.Click += new System.EventHandler(this.button1_Click_1);
 			// 
+			// dtpFecha
+			// 
+			this.dtpFecha.CalendarFont = new System.Drawing.Font("Agency FB", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dtpFecha.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dtpFecha.Font = new System.Drawing.Font("Agency FB", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dtpFecha.Location = new System.Drawing.Point(97, 79);
+			this.dtpFecha.MaxDate = new System.DateTime(2019, 12, 25, 0, 0, 0, 0);
+			this.dtpFecha.MinDate = new System.DateTime(2019, 6, 1, 0, 0, 0, 0);
+			this.dtpFecha.Name = "dtpFecha";
+			this.dtpFecha.Size = new System.Drawing.Size(370, 40);
+			this.dtpFecha.TabIndex = 8;
+			// 
 			// Filtro
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
@@ -340,6 +354,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.PictureBox btnAyuda;
-    }
+		private System.Windows.Forms.DateTimePicker dtpFecha;
+	}
 }
 
