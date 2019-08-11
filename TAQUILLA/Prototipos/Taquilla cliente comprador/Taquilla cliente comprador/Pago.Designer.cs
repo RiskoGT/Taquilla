@@ -36,7 +36,7 @@
             this.tlpPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.btAyuda = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbSegundos = new System.Windows.Forms.Label();
             this.lbtiempo = new System.Windows.Forms.Label();
             this.tlpPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
@@ -178,7 +178,7 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.lbSegundos, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.lbtiempo, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(792, 8);
@@ -189,18 +189,18 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(335, 41);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
-            // label2
+            // lbSegundos
             // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Agency FB", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(161, 41);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Segundos restantes";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbSegundos.AutoSize = true;
+            this.lbSegundos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSegundos.Font = new System.Drawing.Font("Agency FB", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSegundos.ForeColor = System.Drawing.Color.White;
+            this.lbSegundos.Location = new System.Drawing.Point(3, 0);
+            this.lbSegundos.Name = "lbSegundos";
+            this.lbSegundos.Size = new System.Drawing.Size(161, 41);
+            this.lbSegundos.TabIndex = 0;
+            this.lbSegundos.Text = "Segundos restantes";
+            this.lbSegundos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbtiempo
             // 
@@ -728,6 +728,7 @@
             this.Text = "Datos de Cobro";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_pago_FormClosed);
+            this.Load += new System.EventHandler(this.Frm_pago_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tlpPanel1.ResumeLayout(false);
             this.tlpPanel1.PerformLayout();
@@ -797,7 +798,7 @@
 		private System.Windows.Forms.Timer timer1;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
 		private System.Windows.Forms.Label lbtiempo;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbSegundos;
         private System.Windows.Forms.TableLayoutPanel tlpPanel6;
         private System.Windows.Forms.PictureBox btAyuda;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;

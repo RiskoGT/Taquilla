@@ -45,8 +45,8 @@ namespace Taquilla_cliente_comprador
                 envios.Port = 587;
                 envios.EnableSsl = true;
 
-                envios.Send(correos);
-                MessageBox.Show("El mensaje fue enviado correctamente");
+                //envios.Send(correos);
+                
             }
             catch (Exception ex)
             {

@@ -63,5 +63,17 @@ namespace Taquilla_cliente_comprador
 		{
 			Application.Exit();
 		}
-	}
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            Form formulariopago = new frmMenu();
+            formulariopago.Show();
+            Visible = false;
+        }
+
+        private void Lbayuda_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, " Página web ayuda/ayuda.chm", "menutipopago.html");
+        }
+    }
 }

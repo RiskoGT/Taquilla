@@ -107,6 +107,8 @@ namespace Taquilla_cliente_comprador
                 count4 = 0;
                 count5 = 0;
                 cont1 = 0;
+                cont2 = 0;
+                cont3 = 0;
                 txt3ra.Text = "0";
                 txtAdulto.Text = "0";
                 txtNiño.Text = "0";
@@ -181,7 +183,9 @@ namespace Taquilla_cliente_comprador
                 count3 = 0;
                 count4 = 0;
                 count5 = 0;
+                cont1 = 0;
                 cont2 = 0;
+                cont3 = 0;
                 txt3ra.Text = "0";
                 txtAdulto.Text = "0";
                 txtNiño.Text = "0";
@@ -250,6 +254,8 @@ namespace Taquilla_cliente_comprador
                 count3 = 0;
                 count4 = 0;
                 count5 = 0;
+                cont1 = 0;
+                cont2 = 0;
                 cont3 = 0;
                 txt3ra.Text = "0";
                 txtAdulto.Text = "0";

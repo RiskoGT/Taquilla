@@ -47,9 +47,7 @@ namespace Taquilla_cliente_comprador
 			noTercera = trecera;
 			noAdulto = adulto;
 			noNino = nino;
-			lbCorreo.Text = Elegidos2[0];
-			label2.Text = Elegidos2[1];
-			op = info;
+		    op = info;
 			if (info == 1)
 			{
 
@@ -775,6 +773,11 @@ namespace Taquilla_cliente_comprador
         private void PictureBox1_Click(object sender, EventArgs e)
         {
             Help.ShowHelp(this, " Página web ayuda/ayuda.chm", "menutipopago.html");
+        }
+
+        private void Frm_pago_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

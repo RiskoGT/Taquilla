@@ -32,7 +32,12 @@ namespace Taquilla_cliente_comprador
 		string asientoH1, asientoH2, asientoH3, asientoH4, asientoH5, asientoH6, asientoH7, asientoH8, asientoH9, asientoH10 = "";
 		string asientoI1, asientoI2, asientoI3, asientoI4, asientoI5, asientoI6, asientoI7, asientoI8, asientoI9, asientoI10 = "";
 
-		int tiempo = 0;
+        private void FrmAsientos_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        int tiempo = 0;
 		int nofuncion = 0;
 		int noTercera;
 		int noAdulto;
@@ -2116,7 +2121,7 @@ namespace Taquilla_cliente_comprador
                 Form formularioca = new frmMenu();
                 formularioca.Show();
                 Visible = false;
-
+               
             }
             else
             {
@@ -2131,7 +2136,8 @@ namespace Taquilla_cliente_comprador
                 }
                 else
                 {
-                    MessageBox.Show("Asientos no seleccionados");
+                    MessageBox.Show("Asientos no seleccionados por favor verificar la cantida de asientos");
+                  
                     contador = 0;
                     a1 = 0; a2 = 0; a3 = 0; a4 = 0; a5 = 0; a6 = 0; a7 = 0; a8 = 0; a9 = 0; a10 = 0;
                     b1 = 0; b2 = 0; b3 = 0; b4 = 0; b5 = 0; b6 = 0; b7 = 0; b8 = 0; b9 = 0; b10 = 0;
@@ -2167,6 +2173,9 @@ namespace Taquilla_cliente_comprador
                     btnH6.BackColor = Color.White; btnH7.BackColor = Color.White; btnH8.BackColor = Color.White; btnH9.BackColor = Color.White; btnH10.BackColor = Color.White;
                     btnI1.BackColor = Color.White; btnI2.BackColor = Color.White; btnI3.BackColor = Color.White; btnI4.BackColor = Color.White; btnI5.BackColor = Color.White;
                     btnI6.BackColor = Color.White; btnI7.BackColor = Color.White; btnI8.BackColor = Color.White; btnI9.BackColor = Color.White; btnI10.BackColor = Color.White;
+                    Form formulariopag = new frmBoletos(nofuncion, cineSeleccionado);
+                    formulariopag.Show();
+                    Visible = false;
                 }
             }
         }
