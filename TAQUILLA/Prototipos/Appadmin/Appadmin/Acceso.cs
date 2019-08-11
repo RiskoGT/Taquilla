@@ -82,8 +82,8 @@ namespace Appadmin
         {
             conn.Open(); //Abrimos la conexion creada.
             //Realizamos una selecion de la tabla usuarios.
-            OdbcCommand cmd = new OdbcCommand("SELECT Usuario, idPerfil FROM usuarios WHERE Usuario='" + txtUser.Text + "' AND password= CAST(AES_ENCRYPT('"
-                + txtPass.Text + "','abcdf') AS CHAR (50)) ", conn); 
+            OdbcCommand cmd = new OdbcCommand("SELECT Usuario, idPerfil FROM usuarios WHERE Usuario='" + txtUser.Text + "' AND password= AES_ENCRYPT('"
+                + txtPass.Text + "','abcdf') ", conn); 
             OdbcDataReader leer = cmd.ExecuteReader();
             if (leer.Read()) //Si el usuario es correcto nos abrira la otra ventana.
             {

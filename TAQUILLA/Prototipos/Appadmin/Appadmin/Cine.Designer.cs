@@ -46,9 +46,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Agency FB", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label1.Location = new System.Drawing.Point(204, 9);
+            this.label1.Location = new System.Drawing.Point(272, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 31);
+            this.label1.Size = new System.Drawing.Size(66, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cines";
             this.label1.Click += new System.EventHandler(this.Label1_Click);
@@ -58,9 +59,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label2.Location = new System.Drawing.Point(58, 53);
+            this.label2.Location = new System.Drawing.Point(77, 65);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 17);
+            this.label2.Size = new System.Drawing.Size(36, 21);
             this.label2.TabIndex = 1;
             this.label2.Text = "Cine:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -70,18 +72,20 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label3.Location = new System.Drawing.Point(46, 76);
+            this.label3.Location = new System.Drawing.Point(61, 94);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 17);
+            this.label3.Size = new System.Drawing.Size(48, 21);
             this.label3.TabIndex = 2;
             this.label3.Text = "Ciudad:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // txtCine
             // 
-            this.txtCine.Location = new System.Drawing.Point(95, 50);
+            this.txtCine.Location = new System.Drawing.Point(127, 62);
+            this.txtCine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCine.Name = "txtCine";
-            this.txtCine.Size = new System.Drawing.Size(172, 20);
+            this.txtCine.Size = new System.Drawing.Size(228, 22);
             this.txtCine.TabIndex = 3;
             this.txtCine.TextChanged += new System.EventHandler(this.TxtCine_TextChanged);
             this.txtCine.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCine_KeyPress);
@@ -92,9 +96,10 @@
             this.btnAgregarCine.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.btnAgregarCine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarCine.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarCine.Location = new System.Drawing.Point(323, 31);
+            this.btnAgregarCine.Location = new System.Drawing.Point(431, 38);
+            this.btnAgregarCine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAgregarCine.Name = "btnAgregarCine";
-            this.btnAgregarCine.Size = new System.Drawing.Size(78, 27);
+            this.btnAgregarCine.Size = new System.Drawing.Size(104, 33);
             this.btnAgregarCine.TabIndex = 5;
             this.btnAgregarCine.Text = "Agregar";
             this.btnAgregarCine.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -107,9 +112,10 @@
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(323, 88);
+            this.button2.Location = new System.Drawing.Point(431, 108);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(78, 27);
+            this.button2.Size = new System.Drawing.Size(104, 33);
             this.button2.TabIndex = 6;
             this.button2.Text = "Eliminar";
             this.button2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -120,11 +126,13 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 133);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 164);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(439, 127);
+            this.dataGridView1.Size = new System.Drawing.Size(585, 156);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
@@ -132,9 +140,10 @@
             // 
             this.comboCiudad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboCiudad.FormattingEnabled = true;
-            this.comboCiudad.Location = new System.Drawing.Point(95, 77);
+            this.comboCiudad.Location = new System.Drawing.Point(127, 95);
+            this.comboCiudad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboCiudad.Name = "comboCiudad";
-            this.comboCiudad.Size = new System.Drawing.Size(172, 21);
+            this.comboCiudad.Size = new System.Drawing.Size(228, 24);
             this.comboCiudad.TabIndex = 8;
             // 
             // btnModificarCine
@@ -143,9 +152,10 @@
             this.btnModificarCine.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.btnModificarCine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificarCine.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarCine.Location = new System.Drawing.Point(323, 60);
+            this.btnModificarCine.Location = new System.Drawing.Point(431, 74);
+            this.btnModificarCine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnModificarCine.Name = "btnModificarCine";
-            this.btnModificarCine.Size = new System.Drawing.Size(78, 27);
+            this.btnModificarCine.Size = new System.Drawing.Size(104, 33);
             this.btnModificarCine.TabIndex = 9;
             this.btnModificarCine.Text = "Actualizar";
             this.btnModificarCine.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -154,10 +164,10 @@
             // 
             // Cine
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ClientSize = new System.Drawing.Size(463, 281);
+            this.ClientSize = new System.Drawing.Size(617, 346);
             this.Controls.Add(this.btnModificarCine);
             this.Controls.Add(this.comboCiudad);
             this.Controls.Add(this.dataGridView1);
@@ -168,6 +178,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Cine";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cines";

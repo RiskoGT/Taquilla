@@ -95,5 +95,13 @@ namespace Appadmin
             frm.Show();
             this.Hide();
         }
+
+        private void FrmTiempo_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+            MainMenu frm = new MainMenu(usuario, nivel);
+            frm.Show();
+            this.Hide();
+        }
     }
 }

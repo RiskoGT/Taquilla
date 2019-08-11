@@ -76,7 +76,7 @@ namespace Appadmin
 
             OdbcCommand cod = new OdbcCommand();
             cod.Connection = conn;
-            cod.CommandText = ("SELECT * FROM usuarios WHERE estadoUsuario='"+ varEst +"'" );
+            cod.CommandText = ("SELECT Usuario, idPerfil, DPI, Nombres, Apellidos, Telefono, Correo, sexo, fechaNac, fechaInicio FROM usuarios WHERE estadoUsuario='"+ varEst +"'" );
 
             try
             {
@@ -413,10 +413,11 @@ namespace Appadmin
 
                 string nomPerfil = " ";
                 string Contra = " ";
-               /* try
+                try
                 {
 
                     conn.Open();
+
                     OdbcCommand command = new OdbcCommand("SELECT Tipo FROM perfiles WHERE idPerfil =" + tblContenido.CurrentRow.Cells[1].Value.ToString(), conn);
                     OdbcDataReader reader = command.ExecuteReader();
                     while (reader.Read())
@@ -429,12 +430,14 @@ namespace Appadmin
                 {
                     MessageBox.Show(ex.Message);
                 }
-                conn.Close();*/
+                conn.Close();
+
                 try
                 {
 
                     conn.Open();
-                    OdbcCommand command = new OdbcCommand("SELECT CAST(AES_DECRYPT(password, 'abcdf')AS CHAR(50)) clave FROM usuarios WHERE Usuario="+ tblContenido.CurrentRow.Cells[0].Value.ToString());
+
+                    OdbcCommand command = new OdbcCommand("SELECT CAST(AES_DECRYPT(password, 'abcdf') AS CHAR(50))  FROM usuarios WHERE Usuario = '"+ tblContenido.CurrentRow.Cells[0].Value.ToString()+"'", conn);
                     OdbcDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
@@ -454,14 +457,14 @@ namespace Appadmin
                 txtUsuario.Text = tblContenido.CurrentRow.Cells[0].Value.ToString();
                 comboPerfil.Text = tblContenido.CurrentRow.Cells[1].Value.ToString() + " - " + nomPerfil;
                 txtContra.Text = Contra;
-                txtDpi.Text = tblContenido.CurrentRow.Cells[3].Value.ToString();
-                txtNombre.Text = tblContenido.CurrentRow.Cells[4].Value.ToString();
-                txtApellido.Text = tblContenido.CurrentRow.Cells[5].Value.ToString();
-                txtTel.Text = tblContenido.CurrentRow.Cells[6].Value.ToString();
-                txtCorreo.Text = tblContenido.CurrentRow.Cells[7].Value.ToString();
-                comboSexo.Text = tblContenido.CurrentRow.Cells[8].Value.ToString();
-                dtpFechaNac.Text = tblContenido.CurrentRow.Cells[9].Value.ToString();
-                dtpFechaInicio.Text = tblContenido.CurrentRow.Cells[10].Value.ToString();
+                txtDpi.Text = tblContenido.CurrentRow.Cells[2].Value.ToString();
+                txtNombre.Text = tblContenido.CurrentRow.Cells[3].Value.ToString();
+                txtApellido.Text = tblContenido.CurrentRow.Cells[4].Value.ToString();
+                txtTel.Text = tblContenido.CurrentRow.Cells[5].Value.ToString();
+                txtCorreo.Text = tblContenido.CurrentRow.Cells[6].Value.ToString();
+                comboSexo.Text = tblContenido.CurrentRow.Cells[7].Value.ToString();
+                dtpFechaNac.Text = tblContenido.CurrentRow.Cells[8].Value.ToString();
+                dtpFechaInicio.Text = tblContenido.CurrentRow.Cells[9].Value.ToString();
                 btnActualizar.Enabled = true;
             }
         
