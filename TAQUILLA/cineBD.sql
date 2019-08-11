@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-08-2019 a las 06:58:17
--- Versión del servidor: 10.1.37-MariaDB
--- Versión de PHP: 7.3.1
+-- Tiempo de generación: 11-08-2019 a las 05:07:16
+-- Versión del servidor: 10.3.16-MariaDB
+-- Versión de PHP: 7.1.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -861,8 +861,8 @@ CREATE TABLE `bitacora` (
   `Usuario` varchar(45) COLLATE utf8mb4_bin DEFAULT NULL,
   `Accion` varchar(20) COLLATE utf8mb4_bin NOT NULL,
   `Afectado` varchar(45) COLLATE utf8mb4_bin NOT NULL,
-  `ipAddress` text COLLATE utf8mb4_bin,
-  `fechaHora` text COLLATE utf8mb4_bin
+  `ipAddress` text COLLATE utf8mb4_bin DEFAULT NULL,
+  `fechaHora` text COLLATE utf8mb4_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
@@ -955,7 +955,8 @@ INSERT INTO `bitacora` (`noReg`, `Usuario`, `Accion`, `Afectado`, `ipAddress`, `
 (83, 'edgar', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '5/08/2019 00:53:00'),
 (84, 'Risko', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '5/08/2019 00:54:07'),
 (85, 'Gus', 'SELECT', ' BITACORA', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '5/08/2019 00:55:02'),
-(86, 'Gus', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '5/08/2019 00:55:02');
+(86, 'Gus', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '5/08/2019 00:55:02'),
+(87, 'admin', 'LOG IN', 'LOGIN ', '   |   fe80::21d3:e139:f1b0:b6a%21   |   fe80::b1b4:5e8f:fd81:9700%29   |   192.168.56.1   |   192.168.1.10', '10/8/2019 21:04:52');
 
 -- --------------------------------------------------------
 
@@ -992,7 +993,7 @@ CREATE TABLE `cines` (
   `idCine` int(11) NOT NULL,
   `idCiudad` int(11) DEFAULT NULL,
   `nombreCine` varchar(45) COLLATE utf8mb4_bin DEFAULT NULL,
-  `estadoCine` int(1) NOT NULL DEFAULT '0'
+  `estadoCine` int(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
@@ -1025,7 +1026,7 @@ DELIMITER ;
 CREATE TABLE `ciudades` (
   `idCiudad` int(11) NOT NULL,
   `nombreCiudad` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
-  `estadoCiudad` int(1) NOT NULL DEFAULT '0'
+  `estadoCiudad` int(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
@@ -1106,7 +1107,7 @@ CREATE TABLE `detallereservacion` (
   `idReservacion` int(11) NOT NULL,
   `idFuncion` int(11) NOT NULL,
   `idAsiento` varchar(5) COLLATE utf8mb4_bin DEFAULT NULL,
-  `estadoDetalleReservacion` int(1) NOT NULL DEFAULT '0'
+  `estadoDetalleReservacion` int(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
@@ -1175,7 +1176,7 @@ CREATE TABLE `funciones` (
   `idSala` int(11) DEFAULT NULL,
   `cine` varchar(45) COLLATE utf8mb4_bin NOT NULL,
   `horaFuncion` time DEFAULT NULL,
-  `estadoFuncion` int(1) NOT NULL DEFAULT '0'
+  `estadoFuncion` int(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
@@ -1306,7 +1307,7 @@ CREATE TABLE `multimedia` (
   `NoRegistro` int(10) NOT NULL,
   `Afiche` varchar(255) COLLATE utf8mb4_bin NOT NULL,
   `Trailer` varchar(255) COLLATE utf8mb4_bin NOT NULL,
-  `estadoMultimedia` int(1) NOT NULL DEFAULT '0'
+  `estadoMultimedia` int(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
@@ -1345,7 +1346,7 @@ CREATE TABLE `peliculas` (
   `Idioma` varchar(45) COLLATE utf8mb4_bin DEFAULT NULL,
   `semanaEstrenoInicio` date DEFAULT NULL,
   `semanaEstrenoFin` date DEFAULT NULL,
-  `estadoPelicula` int(1) NOT NULL DEFAULT '0'
+  `estadoPelicula` int(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
@@ -1399,7 +1400,7 @@ CREATE TABLE `reservaciones` (
   `idFuncion` int(11) DEFAULT NULL,
   `Fecha` date DEFAULT NULL,
   `Cine` varchar(45) COLLATE utf8mb4_bin DEFAULT NULL,
-  `estadoReservacion` int(1) NOT NULL DEFAULT '0'
+  `estadoReservacion` int(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
@@ -1439,7 +1440,7 @@ DELIMITER ;
 CREATE TABLE `salas` (
   `idSala` int(11) NOT NULL,
   `idCine` int(11) NOT NULL,
-  `estadoSala` int(1) NOT NULL DEFAULT '0'
+  `estadoSala` int(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
@@ -1514,7 +1515,7 @@ INSERT INTO `tiposboleto` (`idBoleto`, `Tipo`, `Precio`) VALUES
 CREATE TABLE `usuarios` (
   `Usuario` varchar(45) COLLATE utf8mb4_bin NOT NULL,
   `idPerfil` int(11) DEFAULT NULL,
-  `password` text COLLATE utf8mb4_bin NOT NULL,
+  `password` blob NOT NULL,
   `DPI` varchar(13) COLLATE utf8mb4_bin NOT NULL,
   `Nombres` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   `Apellidos` varchar(100) COLLATE utf8mb4_bin NOT NULL,
@@ -1523,7 +1524,7 @@ CREATE TABLE `usuarios` (
   `Sexo` varchar(10) COLLATE utf8mb4_bin NOT NULL,
   `fechaNac` date NOT NULL,
   `fechaInicio` date NOT NULL,
-  `estadoUsuario` int(1) NOT NULL DEFAULT '0'
+  `estadoUsuario` int(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
@@ -1531,10 +1532,11 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`Usuario`, `idPerfil`, `password`, `DPI`, `Nombres`, `Apellidos`, `Telefono`, `Correo`, `Sexo`, `fechaNac`, `fechaInicio`, `estadoUsuario`) VALUES
-('Gus', 3, 'b4288d9c0ec0a1841b3b3728321e7088', '3525036592121', 'Gustavo', 'Perez', '455221155', 'gus657@gmail.com', 'Masculino', '1998-08-08', '2019-07-07', 0),
-('Risko', 2, 'dd3d7a65733c4e476c310d7cfd7a2460', '894652', 'Risko', 'Risko', '84651325354', 'risko@Risko.com', 'masculino', '2019-07-01', '2019-07-31', 0),
-('edgar', 1, 'cf55ada960dedf6154b0d6905b2748ff', '444541541', 'Edgar', 'Casasola', '22665544', 'edgar@risko.com', 'Masculino', '2018-07-31', '2019-06-27', 0),
-('rchocm', 1, 'e9a529231e0c7e68bb358b0db3453c75', '4896513', 'Randy', 'Choc', '44558899', 'randy@risko.com', 'Masculino', '2017-12-16', '2019-07-25', 0);
+('Gus', 3, 0x6234323838643963306563306131383431623362333732383332316537303838, '3525036592121', 'Gustavo', 'Perez', '455221155', 'gus657@gmail.com', 'Masculino', '1998-08-08', '2019-07-07', 0),
+('Risko', 2, 0x6464336437613635373333633465343736633331306437636664376132343630, '894652', 'Risko', 'Risko', '84651325354', 'risko@Risko.com', 'masculino', '2019-07-01', '2019-07-31', 0),
+('admin', 3, 0xd358f5a3329dcf037724e0629fc7f899, '', '', '', '', '', '', '0000-00-00', '0000-00-00', 0),
+('edgar', 1, 0x6366353561646139363064656466363135346230643639303562323734386666, '444541541', 'Edgar', 'Casasola', '22665544', 'edgar@risko.com', 'Masculino', '2018-07-31', '2019-06-27', 0),
+('rchocm', 1, 0x6539613532393233316530633765363862623335386230646233343533633735, '4896513', 'Randy', 'Choc', '44558899', 'randy@risko.com', 'Masculino', '2017-12-16', '2019-07-25', 0);
 
 --
 -- Índices para tablas volcadas
@@ -1688,7 +1690,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `bitacora`
 --
 ALTER TABLE `bitacora`
-  MODIFY `noReg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+  MODIFY `noReg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
 -- AUTO_INCREMENT de la tabla `boletos`
