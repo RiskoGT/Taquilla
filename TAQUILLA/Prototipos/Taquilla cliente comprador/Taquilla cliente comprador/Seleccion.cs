@@ -204,152 +204,171 @@ namespace Taquilla_cliente_comprador
 		void Cartelera()	// Obtiene los datos de las funciones de la BD
 		{
 			//Gustavo Perez
+			
 			int noCartelera = 0;
 			if (formatoPeli == "Formato" && idiomaPeli == "Idioma")// sin ningun flitro
 			{
-				conn.Open();
-				OdbcCommand command = new OdbcCommand(""
-				+ "select A.idfuncion," +
-				"(SELECT titulo FROM peliculas WHERE idPelicula = A.idPelicula) titulo," +
-				"(SELECT formato FROM peliculas WHERE idPelicula = A.idPelicula) formato ," +
-				"(SELECT clasificación FROM peliculas WHERE idPelicula = A.idPelicula) clasificacion," +
-				"(SELECT sinopsis FROM peliculas WHERE idPelicula = A.idPelicula) sinopsis, A.horaFuncion " +
-				"from funciones A where A.Cine = '" + cineSeleccionado + "' "+
-				"AND (SELECT semanaEstrenoInicio from peliculas WHERE idPelicula = A.idPelicula) <= '"+fechaPeli+"'"+
-				"AND(SELECT semanaEstrenoFin from peliculas WHERE idPelicula = A.idPelicula) >= '"+fechaPeli+ "'", conn);
-				OdbcDataReader funciones = command.ExecuteReader();
-
-				int pos = 1;
-				while (funciones.Read())
+				try
 				{
+					conn.Open();
+					OdbcCommand command = new OdbcCommand(""
+					+ "select A.idfuncion," +
+					"(SELECT titulo FROM peliculas WHERE idPelicula = A.idPelicula) titulo," +
+					"(SELECT formato FROM peliculas WHERE idPelicula = A.idPelicula) formato ," +
+					"(SELECT clasificación FROM peliculas WHERE idPelicula = A.idPelicula) clasificacion," +
+					"(SELECT sinopsis FROM peliculas WHERE idPelicula = A.idPelicula) sinopsis, A.horaFuncion " +
+					"from funciones A where A.Cine = '" + cineSeleccionado + "' " +
+					"AND (SELECT semanaEstrenoInicio from peliculas WHERE idPelicula = A.idPelicula) <= '" + fechaPeli + "'" +
+					"AND(SELECT semanaEstrenoFin from peliculas WHERE idPelicula = A.idPelicula) >= '" + fechaPeli + "'", conn);
+					OdbcDataReader funciones = command.ExecuteReader();
 
-					salas[pos] = funciones.GetValue(0).ToString(); // funcion
-					pos++;
-					salas[pos] = funciones.GetValue(1).ToString();//titulo
-					pos++;
-					salas[pos] = funciones.GetValue(2).ToString();//formato
-					pos++;
-					salas[pos] = funciones.GetValue(3).ToString(); // clasificacion
-					pos++;
-					salas[pos] = funciones.GetValue(4).ToString();//sinopsis
-					pos++;
-					salas[pos] = funciones.GetValue(5).ToString();//hora
-					pos++;
-					numSalas++;
-					noCartelera++;
+					int pos = 1;
+					while (funciones.Read())
+					{
+
+						salas[pos] = funciones.GetValue(0).ToString(); // funcion
+						pos++;
+						salas[pos] = funciones.GetValue(1).ToString();//titulo
+						pos++;
+						salas[pos] = funciones.GetValue(2).ToString();//formato
+						pos++;
+						salas[pos] = funciones.GetValue(3).ToString(); // clasificacion
+						pos++;
+						salas[pos] = funciones.GetValue(4).ToString();//sinopsis
+						pos++;
+						salas[pos] = funciones.GetValue(5).ToString();//hora
+						pos++;
+						numSalas++;
+						noCartelera++;
+					}
+					conn.Close();
+
 				}
-				conn.Close();
-			
-			}else if (formatoPeli != "Formato" && idiomaPeli == "Idioma") // filtrando formato
-			{
-				conn.Open();
-				OdbcCommand command = new OdbcCommand(""
-				+ "select A.idfuncion," +
-				"(SELECT titulo FROM peliculas WHERE idPelicula = A.idPelicula) titulo," +
-				"(SELECT formato FROM peliculas WHERE idPelicula = A.idPelicula) formato ," +
-				"(SELECT clasificación FROM peliculas WHERE idPelicula = A.idPelicula) clasificacion," +
-				"(SELECT sinopsis FROM peliculas WHERE idPelicula = A.idPelicula) sinopsis, A.horaFuncion " +
-				"from funciones A, peliculas where A.Cine = '" + cineSeleccionado + "'AND A.idPelicula = peliculas.idPelicula "+
-				"AND formato ='" + formatoPeli + "'" +
-				"AND (SELECT semanaEstrenoInicio from peliculas WHERE idPelicula = A.idPelicula) <= '" + fechaPeli + "'" +
-				"AND(SELECT semanaEstrenoFin from peliculas WHERE idPelicula = A.idPelicula) >= '" + fechaPeli + "'", conn);
-				OdbcDataReader funciones = command.ExecuteReader();
-
-				int pos = 1;
-				while (funciones.Read())
-				{
-
-					salas[pos] = funciones.GetValue(0).ToString(); // funcion
-					pos++;
-					salas[pos] = funciones.GetValue(1).ToString();//titulo
-					pos++;
-					salas[pos] = funciones.GetValue(2).ToString();//formato
-					pos++;
-					salas[pos] = funciones.GetValue(3).ToString(); // clasificacion
-					pos++;
-					salas[pos] = funciones.GetValue(4).ToString();//sinopsis
-					pos++;
-					salas[pos] = funciones.GetValue(5).ToString();//hora
-					pos++;
-					numSalas++;
-					noCartelera++;
-				}
-				conn.Close();
+				catch(Exception ex) { MessageBox.Show(ex.Message);  conn.Close(); }
 				
+
+			}
+			else if (formatoPeli != "Formato" && idiomaPeli == "Idioma") // filtrando formato
+			{
+				try
+				{
+					conn.Open();
+					OdbcCommand command = new OdbcCommand(""
+					+ "select A.idfuncion," +
+					"(SELECT titulo FROM peliculas WHERE idPelicula = A.idPelicula) titulo," +
+					"(SELECT formato FROM peliculas WHERE idPelicula = A.idPelicula) formato ," +
+					"(SELECT clasificación FROM peliculas WHERE idPelicula = A.idPelicula) clasificacion," +
+					"(SELECT sinopsis FROM peliculas WHERE idPelicula = A.idPelicula) sinopsis, A.horaFuncion " +
+					"from funciones A, peliculas where A.Cine = '" + cineSeleccionado + "'AND A.idPelicula = peliculas.idPelicula " +
+					"AND formato ='" + formatoPeli + "'" +
+					"AND (SELECT semanaEstrenoInicio from peliculas WHERE idPelicula = A.idPelicula) <= '" + fechaPeli + "'" +
+					"AND(SELECT semanaEstrenoFin from peliculas WHERE idPelicula = A.idPelicula) >= '" + fechaPeli + "'", conn);
+					OdbcDataReader funciones = command.ExecuteReader();
+
+					int pos = 1;
+					while (funciones.Read())
+					{
+
+						salas[pos] = funciones.GetValue(0).ToString(); // funcion
+						pos++;
+						salas[pos] = funciones.GetValue(1).ToString();//titulo
+						pos++;
+						salas[pos] = funciones.GetValue(2).ToString();//formato
+						pos++;
+						salas[pos] = funciones.GetValue(3).ToString(); // clasificacion
+						pos++;
+						salas[pos] = funciones.GetValue(4).ToString();//sinopsis
+						pos++;
+						salas[pos] = funciones.GetValue(5).ToString();//hora
+						pos++;
+						numSalas++;
+						noCartelera++;
+					}
+					conn.Close();
+				}
+				catch (Exception ex) { MessageBox.Show(ex.Message); conn.Close(); }
+
+
 			}
 			else if (formatoPeli == "Formato" && idiomaPeli != "Idioma") // filtrando idioma
 			{
-				conn.Open();
-				OdbcCommand command = new OdbcCommand(""
-				+ "select A.idfuncion," +
-				"(SELECT titulo FROM peliculas WHERE idPelicula = A.idPelicula) titulo," +
-				"(SELECT formato FROM peliculas WHERE idPelicula = A.idPelicula) formato ," +
-				"(SELECT clasificación FROM peliculas WHERE idPelicula = A.idPelicula) clasificacion," +
-				"(SELECT sinopsis FROM peliculas WHERE idPelicula = A.idPelicula) sinopsis, A.horaFuncion " +
-				"from funciones A, peliculas where A.Cine = '" + cineSeleccionado + "' "+
-				"AND A.idPelicula = peliculas.idPelicula AND idioma ='" + idiomaPeli + "'" +
-				"AND (SELECT semanaEstrenoInicio from peliculas WHERE idPelicula = A.idPelicula) <= '" + fechaPeli + "'" +
-				"AND(SELECT semanaEstrenoFin from peliculas WHERE idPelicula = A.idPelicula) >= '" + fechaPeli + "'", conn);
-				OdbcDataReader funciones = command.ExecuteReader();
+				try {
+					conn.Open();
+					OdbcCommand command = new OdbcCommand(""
+					+ "select A.idfuncion," +
+					"(SELECT titulo FROM peliculas WHERE idPelicula = A.idPelicula) titulo," +
+					"(SELECT formato FROM peliculas WHERE idPelicula = A.idPelicula) formato ," +
+					"(SELECT clasificación FROM peliculas WHERE idPelicula = A.idPelicula) clasificacion," +
+					"(SELECT sinopsis FROM peliculas WHERE idPelicula = A.idPelicula) sinopsis, A.horaFuncion " +
+					"from funciones A, peliculas where A.Cine = '" + cineSeleccionado + "' " +
+					"AND A.idPelicula = peliculas.idPelicula AND idioma ='" + idiomaPeli + "'" +
+					"AND (SELECT semanaEstrenoInicio from peliculas WHERE idPelicula = A.idPelicula) <= '" + fechaPeli + "'" +
+					"AND(SELECT semanaEstrenoFin from peliculas WHERE idPelicula = A.idPelicula) >= '" + fechaPeli + "'", conn);
+					OdbcDataReader funciones = command.ExecuteReader();
 
-				int pos = 1;
-				while (funciones.Read())
-				{
+					int pos = 1;
+					while (funciones.Read())
+					{
 
-					salas[pos] = funciones.GetValue(0).ToString(); // funcion
-					pos++;
-					salas[pos] = funciones.GetValue(1).ToString();//titulo
-					pos++;
-					salas[pos] = funciones.GetValue(2).ToString();//formato
-					pos++;
-					salas[pos] = funciones.GetValue(3).ToString(); // clasificacion
-					pos++;
-					salas[pos] = funciones.GetValue(4).ToString();//sinopsis
-					pos++;
-					salas[pos] = funciones.GetValue(5).ToString();//hora
-					pos++;
-					numSalas++;
-					noCartelera++;
-				}
-				conn.Close();
+						salas[pos] = funciones.GetValue(0).ToString(); // funcion
+						pos++;
+						salas[pos] = funciones.GetValue(1).ToString();//titulo
+						pos++;
+						salas[pos] = funciones.GetValue(2).ToString();//formato
+						pos++;
+						salas[pos] = funciones.GetValue(3).ToString(); // clasificacion
+						pos++;
+						salas[pos] = funciones.GetValue(4).ToString();//sinopsis
+						pos++;
+						salas[pos] = funciones.GetValue(5).ToString();//hora
+						pos++;
+						numSalas++;
+						noCartelera++;
+					}
+					conn.Close();
+				} catch (Exception ex) { MessageBox.Show(ex.Message); conn.Close(); }
+				
 				
 			}
 			else if (formatoPeli != "Formato" && idiomaPeli != "Idioma") // filtrando idioma y formato
 			{
-				conn.Open();
-				OdbcCommand command = new OdbcCommand(""
-				+ "select A.idfuncion," +
-				"(SELECT titulo FROM peliculas WHERE idPelicula = A.idPelicula) titulo," +
-				"(SELECT formato FROM peliculas WHERE idPelicula = A.idPelicula) formato ," +
-				"(SELECT clasificación FROM peliculas WHERE idPelicula = A.idPelicula) clasificacion," +
-				"(SELECT sinopsis FROM peliculas WHERE idPelicula = A.idPelicula) sinopsis, A.horaFuncion " +
-				"from funciones A, peliculas where A.Cine = '" + cineSeleccionado + "'AND A.idPelicula = peliculas.idPelicula AND formato ='" + 
-				formatoPeli + "'"+ "AND idioma ='" + idiomaPeli + "'" +
-				"AND (SELECT semanaEstrenoInicio from peliculas WHERE idPelicula = A.idPelicula) <= '" + fechaPeli + "'" +
-				"AND(SELECT semanaEstrenoFin from peliculas WHERE idPelicula = A.idPelicula) >= '" + fechaPeli + "'", conn);
-				OdbcDataReader funciones = command.ExecuteReader();
+				try {
+					conn.Open();
+					OdbcCommand command = new OdbcCommand(""
+					+ "select A.idfuncion," +
+					"(SELECT titulo FROM peliculas WHERE idPelicula = A.idPelicula) titulo," +
+					"(SELECT formato FROM peliculas WHERE idPelicula = A.idPelicula) formato ," +
+					"(SELECT clasificación FROM peliculas WHERE idPelicula = A.idPelicula) clasificacion," +
+					"(SELECT sinopsis FROM peliculas WHERE idPelicula = A.idPelicula) sinopsis, A.horaFuncion " +
+					"from funciones A, peliculas where A.Cine = '" + cineSeleccionado + "'AND A.idPelicula = peliculas.idPelicula AND formato ='" +
+					formatoPeli + "'" + "AND idioma ='" + idiomaPeli + "'" +
+					"AND (SELECT semanaEstrenoInicio from peliculas WHERE idPelicula = A.idPelicula) <= '" + fechaPeli + "'" +
+					"AND(SELECT semanaEstrenoFin from peliculas WHERE idPelicula = A.idPelicula) >= '" + fechaPeli + "'", conn);
+					OdbcDataReader funciones = command.ExecuteReader();
 
-				int pos = 1;
-				while (funciones.Read())
-				{
+					int pos = 1;
+					while (funciones.Read())
+					{
 
-					salas[pos] = funciones.GetValue(0).ToString(); // funcion
-					pos++;
-					salas[pos] = funciones.GetValue(1).ToString();//titulo
-					pos++;
-					salas[pos] = funciones.GetValue(2).ToString();//formato
-					pos++;
-					salas[pos] = funciones.GetValue(3).ToString(); // clasificacion
-					pos++;
-					salas[pos] = funciones.GetValue(4).ToString();//sinopsis
-					pos++;
-					salas[pos] = funciones.GetValue(5).ToString();//hora
-					pos++;
-					numSalas++;
-					noCartelera++;
-					
-				}
-				conn.Close();
+						salas[pos] = funciones.GetValue(0).ToString(); // funcion
+						pos++;
+						salas[pos] = funciones.GetValue(1).ToString();//titulo
+						pos++;
+						salas[pos] = funciones.GetValue(2).ToString();//formato
+						pos++;
+						salas[pos] = funciones.GetValue(3).ToString(); // clasificacion
+						pos++;
+						salas[pos] = funciones.GetValue(4).ToString();//sinopsis
+						pos++;
+						salas[pos] = funciones.GetValue(5).ToString();//hora
+						pos++;
+						numSalas++;
+						noCartelera++;
+
+					}
+					conn.Close();
+				} catch (Exception ex) { MessageBox.Show(ex.Message); conn.Close(); }
+				
 			}
 			if (noCartelera == 0)
 			{

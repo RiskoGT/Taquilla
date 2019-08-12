@@ -60,6 +60,7 @@
 			this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
 			this.txtTarjeta = new System.Windows.Forms.TextBox();
 			this.lbTelefono = new System.Windows.Forms.Label();
+			this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
 			this.tlpPanel7 = new System.Windows.Forms.TableLayoutPanel();
 			this.lbData = new System.Windows.Forms.Label();
 			this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -67,7 +68,6 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.Error = new System.Windows.Forms.ErrorProvider(this.components);
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
-			this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.tlpPanel1.SuspendLayout();
 			this.tlpPanel6.SuspendLayout();
@@ -572,6 +572,17 @@
 			this.lbTelefono.Text = "Telefono:";
 			this.lbTelefono.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
+			// dateTimePicker2
+			// 
+			this.dateTimePicker2.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dateTimePicker2.Font = new System.Drawing.Font("Agency FB", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dateTimePicker2.Location = new System.Drawing.Point(493, 208);
+			this.dateTimePicker2.MaxDate = new System.DateTime(2025, 12, 31, 0, 0, 0, 0);
+			this.dateTimePicker2.MinDate = new System.DateTime(2019, 8, 1, 0, 0, 0, 0);
+			this.dateTimePicker2.Name = "dateTimePicker2";
+			this.dateTimePicker2.Size = new System.Drawing.Size(404, 36);
+			this.dateTimePicker2.TabIndex = 16;
+			// 
 			// tlpPanel7
 			// 
 			this.tlpPanel7.ColumnCount = 5;
@@ -651,17 +662,6 @@
 			this.timer1.Enabled = true;
 			this.timer1.Interval = 1000;
 			this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-			// 
-			// dateTimePicker2
-			// 
-			this.dateTimePicker2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dateTimePicker2.Font = new System.Drawing.Font("Agency FB", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.dateTimePicker2.Location = new System.Drawing.Point(493, 208);
-			this.dateTimePicker2.MaxDate = new System.DateTime(2025, 12, 31, 0, 0, 0, 0);
-			this.dateTimePicker2.MinDate = new System.DateTime(2019, 8, 1, 0, 0, 0, 0);
-			this.dateTimePicker2.Name = "dateTimePicker2";
-			this.dateTimePicker2.Size = new System.Drawing.Size(404, 36);
-			this.dateTimePicker2.TabIndex = 16;
 			// 
 			// Frm_pago
 			// 

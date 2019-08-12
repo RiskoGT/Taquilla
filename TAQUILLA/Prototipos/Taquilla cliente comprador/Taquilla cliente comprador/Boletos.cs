@@ -326,7 +326,7 @@ namespace Taquilla_cliente_comprador
 
         private void Btn_regresar_Click(object sender, EventArgs e)
         {
-            Form formulariocar = new Filtro("Portales");
+            Form formulariocar = new Filtro(cineSeleccionado);
             formulariocar.Show();
             Visible = false;
         }

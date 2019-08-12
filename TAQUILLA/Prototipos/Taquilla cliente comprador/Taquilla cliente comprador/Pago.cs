@@ -89,7 +89,7 @@ namespace Taquilla_cliente_comprador
 		void cambiarEstadoAsientos(string asiento)// cambia el estado de los asientos a ocupados
 		{
 			//Gustavo Perez
-			string query = "UPDATE Asientos SET " +
+			string query = "UPDATE asientos SET " +
 				"estado=1 WHERE idAsiento= '" + asiento + "' AND idFuncion =" + nofuncion;
 			conn.Open();
 			OdbcCommand consulta = new OdbcCommand(query, conn);
@@ -110,7 +110,7 @@ namespace Taquilla_cliente_comprador
 		void Reservacion()// ingresa las cabeceras de las reservasiones
 		{
 			//Gustavo Perez
-			string query = "INSERT INTO Reservaciones (idFuncion, Fecha, Cine) Values(" + nofuncion + ",'" + dateTimePicker1.Text + "','" + cineSeleccionado + "') ";
+			string query = "INSERT INTO reservaciones (idFuncion, Fecha, Cine) Values(" + nofuncion + ",'" + dateTimePicker1.Text + "','" + cineSeleccionado + "') ";
 
 			conn.Open();
 			OdbcCommand consulta = new OdbcCommand(query, conn);
@@ -135,7 +135,7 @@ namespace Taquilla_cliente_comprador
 			{
 
 				conn.Open();
-				OdbcCommand command = new OdbcCommand("SELECT idReservacion FROM Reservaciones ORDER BY idReservacion DESC", conn);
+				OdbcCommand command = new OdbcCommand("SELECT idReservacion FROM reservaciones ORDER BY idReservacion DESC", conn);
 				OdbcDataReader reader = command.ExecuteReader();
 				reader.Read();
 
@@ -153,15 +153,16 @@ namespace Taquilla_cliente_comprador
 		{
 			//Gustavo Perez
 			int id =obtenerReservacion();
-			string query = "INSERT INTO detalleReservacion (idReservacion, idFuncion, idAsiento) Values(" + id.ToString() + "," + nofuncion + ",'" + asiento + "') ";
+			
+			string query = "INSERT INTO detallereservacion (idReservacion, idFuncion, idAsiento) Values(" + id + "," + nofuncion + ",'" + asiento + "') ";
 
-			conn.Open();
-			OdbcCommand consulta = new OdbcCommand(query, conn);
 			try
 			{
+				conn.Open();
+				
+				OdbcCommand consulta = new OdbcCommand(query, conn);
 				consulta.ExecuteNonQuery();
 				conn.Close();
-
 
 			}
 			catch (Exception ex)
@@ -173,7 +174,7 @@ namespace Taquilla_cliente_comprador
 		void Factura()// ingresa los encabezados de factura
 		{
 			//Gustavo Perez
-			string query = "INSERT INTO encabezadosFactura (fechaFactura, Cine, Funcion) Values('" + dateTimePicker1.Text + "','" + cineSeleccionado + "'," + nofuncion + ") ";
+			string query = "INSERT INTO encabezadosfactura (fechaFactura, Cine, Funcion) Values('" + dateTimePicker1.Text + "','" + cineSeleccionado + "'," + nofuncion + ") ";
 			lbCorreo.Text = dateTimePicker1.Text;
 			conn.Open();
 			OdbcCommand consulta = new OdbcCommand(query, conn);
@@ -198,7 +199,7 @@ namespace Taquilla_cliente_comprador
 			{
 
 				conn.Open();
-				OdbcCommand command = new OdbcCommand("SELECT numeroFactura FROM encabezadosFactura ORDER BY numeroFactura DESC", conn);
+				OdbcCommand command = new OdbcCommand("SELECT numeroFactura FROM encabezadosfactura ORDER BY numeroFactura DESC", conn);
 				OdbcDataReader reader = command.ExecuteReader();
 				reader.Read();
 
@@ -217,7 +218,7 @@ namespace Taquilla_cliente_comprador
 		{
 			string Peli = obtenerPelicula();
 			//Gustavo Perez
-			string query = "INSERT INTO Boletos (idFuncion, idAsiento, Fecha, Cine, tipoBoleto)" +
+			string query = "INSERT INTO boletos (idFuncion, idAsiento, Fecha, Cine, tipoBoleto)" +
 			" Values(" + nofuncion + ",'" + asiento + "','" + dateTimePicker1.Text + "', '" + cineSeleccionado + "', '" + tipo + "') ";
 			texto +="Funcion: "+ Peli+ "   Asiento: "+asiento+"   Fecha: " + dateTimePicker1.Text+"   Cine: "+cineSeleccionado+"    Tipo Boleto: "+ tipo+"\n";
 			conn.Open();
@@ -243,7 +244,7 @@ namespace Taquilla_cliente_comprador
 			{
 
 				conn.Open();
-				OdbcCommand command = new OdbcCommand("SELECT idBoleto FROM Boletos ORDER BY idBoleto DESC", conn);
+				OdbcCommand command = new OdbcCommand("SELECT idBoleto FROM boletos ORDER BY idBoleto DESC", conn);
 				OdbcDataReader reader = command.ExecuteReader();
 				reader.Read();
 
@@ -266,7 +267,7 @@ namespace Taquilla_cliente_comprador
 			{
 
 				conn.Open();
-				OdbcCommand command = new OdbcCommand("SELECT Titulo FROM Peliculas where idPelicula= (SELECT idPelicula from Funciones where idFuncion="+nofuncion+")" , conn);
+				OdbcCommand command = new OdbcCommand("SELECT Titulo FROM peliculas where idPelicula= (SELECT idPelicula from funciones where idFuncion="+nofuncion+")" , conn);
 				OdbcDataReader reader = command.ExecuteReader();
 				reader.Read();
 				id = reader.GetValue(0).ToString();
@@ -287,7 +288,7 @@ namespace Taquilla_cliente_comprador
 			{
 
 				conn.Open();
-				OdbcCommand command = new OdbcCommand("SELECT tipoBoleto FROM Boletos where idBoleto =" + idBoleto, conn);
+				OdbcCommand command = new OdbcCommand("SELECT tipoBoleto FROM boletos where idBoleto =" + idBoleto, conn);
 				OdbcDataReader reader = command.ExecuteReader();
 				reader.Read();
 
@@ -304,7 +305,7 @@ namespace Taquilla_cliente_comprador
 			{
 
 				conn.Open();
-				OdbcCommand command = new OdbcCommand("SELECT Precio FROM tiposBoleto where Tipo ='" + tipo + "'", conn);
+				OdbcCommand command = new OdbcCommand("SELECT Precio FROM tiposboleto where Tipo ='" + tipo + "'", conn);
 				OdbcDataReader reader = command.ExecuteReader();
 				reader.Read();
 
@@ -322,7 +323,7 @@ namespace Taquilla_cliente_comprador
 		void detalleFactura(string asiento)// ingresa los detalles de factura
 		{
 			//Gustavo Perez
-			string query = "INSERT INTO detalleFactura (numeroFactura, idBoleto, costo)" +
+			string query = "INSERT INTO detallefactura (numeroFactura, idBoleto, costo)" +
 				" Values(" + obtenerFactura() + "," + obtenerBoleto() + "," + obtenerCosto(obtenerBoleto()) + ") ";
 
 			conn.Open();
@@ -351,7 +352,7 @@ namespace Taquilla_cliente_comprador
 			{
 
 				conn.Open();
-				OdbcCommand command = new OdbcCommand("SELECT numeroFactura, fechaFactura, Cine, Funcion FROM encabezadosFactura where numeroFactura="+id, conn);
+				OdbcCommand command = new OdbcCommand("SELECT numeroFactura, fechaFactura, Cine, Funcion FROM encabezadosfactura where numeroFactura="+id, conn);
 				OdbcDataReader reader = command.ExecuteReader();
 				reader.Read();
 
@@ -377,7 +378,7 @@ namespace Taquilla_cliente_comprador
 			{
 
 				conn.Open();
-				OdbcCommand command = new OdbcCommand("SELECT idBoleto, Costo  FROM detalleFactura where numeroFactura=" + id, conn);
+				OdbcCommand command = new OdbcCommand("SELECT idBoleto, Costo  FROM detallefactura where numeroFactura=" + id, conn);
 				OdbcDataReader reader = command.ExecuteReader();
 
 				while (reader.Read())
@@ -398,7 +399,7 @@ namespace Taquilla_cliente_comprador
 			{
 
 				conn.Open();
-				OdbcCommand command = new OdbcCommand("SELECT SUM(Costo)  FROM detalleFactura where numeroFactura=" +id, conn);
+				OdbcCommand command = new OdbcCommand("SELECT SUM(Costo)  FROM detallefactura where numerofactura=" +id, conn);
 				OdbcDataReader reader = command.ExecuteReader();
 				reader.Read();
 
@@ -423,7 +424,7 @@ namespace Taquilla_cliente_comprador
 			{
 
 				conn.Open();
-				OdbcCommand command = new OdbcCommand("SELECT idReservacion, idFuncion, Fecha, Cine FROM Reservaciones where idReservacion=" + id, conn);
+				OdbcCommand command = new OdbcCommand("SELECT idReservacion, idFuncion, Fecha, Cine FROM reservaciones where idReservacion=" + id, conn);
 				OdbcDataReader reader = command.ExecuteReader();
 				reader.Read();
 
@@ -450,7 +451,7 @@ namespace Taquilla_cliente_comprador
 			{
 
 				conn.Open();
-				OdbcCommand command = new OdbcCommand("SELECT idFuncion, idAsiento FROM detalleReservacion where idReservacion=" + id, conn);
+				OdbcCommand command = new OdbcCommand("SELECT idFuncion, idAsiento FROM detallereservacion where idReservacion=" + id, conn);
 				OdbcDataReader reader = command.ExecuteReader();
 
 				while (reader.Read())
@@ -606,6 +607,7 @@ namespace Taquilla_cliente_comprador
 					{
 						//factrua//
 						Factura();
+							
 						int noAsiento = 0;
 						int cntTercera = 0;
 						int cntAdulto = 0;
@@ -619,21 +621,22 @@ namespace Taquilla_cliente_comprador
 							if (cntTercera < noTercera)// se asignan asientos de tercera edad
 							{
 								boleto(Elegidos2[noAsiento], "3ra Edad");
-								cntTercera++;
+									cntTercera++;
 								detalleFactura(Elegidos2[noAsiento]);
 								noAsiento++;
 							}
 							if (cntAdulto < noAdulto)// se asignan asientos de adultos
 							{
 								boleto(Elegidos2[noAsiento], "Adulto");
-								cntAdulto++;
+							
+									cntAdulto++;
 								detalleFactura(Elegidos2[noAsiento]);
 								noAsiento++;
 							}
 							if (cntNino < noNino)// se asignan asientos de ninos
 							{
 								boleto(Elegidos2[noAsiento], "Niño");
-								cntNino++;
+									cntNino++;
 								detalleFactura(Elegidos2[noAsiento]);
 								noAsiento++;
 							}
@@ -647,8 +650,8 @@ namespace Taquilla_cliente_comprador
 						linea = "            FACTURA TAQUILLA\n";
 						texto += linea;
 						texto += "\t" + pdfFactura();//encabezado
-						texto += "\t" + pdfDetalleFact();// detalle
-						linea = "======================================================================================================\n";
+							texto += "\t" + pdfDetalleFact();// detalle
+							linea = "======================================================================================================\n";
 						texto += linea;
 						
 						nuevoPDF(texto, nomArchivo);// Se crea el PDF
@@ -658,11 +661,15 @@ namespace Taquilla_cliente_comprador
 					{
 						//reservacion//
 						Reservacion();
-						int noAsiento = 0;
-						while (Elegidos2[noAsiento] != "$")// se controla el numero de asientos elegidos
-						{
+							int noAsiento = 0;
 							detalleReservacion(Elegidos2[noAsiento]);
-							noAsiento++;
+						
+							while (Elegidos2[noAsiento] != "$")// se controla el numero de asientos elegidos
+							{
+					
+								detalleReservacion(Elegidos2[noAsiento]);
+							
+								noAsiento++;
 							if (noAsiento == 10) { break; }// se detienen al llegar al limite de asientos
 						}
 						// se cargan datos de reseracion al PDF
@@ -671,8 +678,10 @@ namespace Taquilla_cliente_comprador
 						linea = "            RESERVACION CINE\n";
 						texto += linea;
 						texto += "\t" + pdfReservacion();
-						texto += "\t" + pdfDetalleReservacion();
-						linea = "===========================================================================================================\n";
+							
+							texto += "\t" + pdfDetalleReservacion();
+							
+							linea = "===========================================================================================================\n";
 						texto += linea;
 						
 						nuevoPDF(texto, nomArchivo);// Se crea el PDF
