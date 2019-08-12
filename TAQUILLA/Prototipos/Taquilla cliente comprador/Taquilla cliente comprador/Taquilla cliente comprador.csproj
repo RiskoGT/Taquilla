@@ -59,6 +59,12 @@
     <Compile Include="Boletos.Designer.cs">
       <DependentUpon>Boletos.cs</DependentUpon>
     </Compile>
+    <Compile Include="nuevoCorreo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nuevoCorreo.Designer.cs">
+      <DependentUpon>nuevoCorreo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Confirmacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     </Compile>
     <EmbeddedResource Include="Boletos.resx">
       <DependentUpon>Boletos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nuevoCorreo.resx">
+      <DependentUpon>nuevoCorreo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Confirmacion.resx">
       <DependentUpon>Confirmacion.cs</DependentUpon>

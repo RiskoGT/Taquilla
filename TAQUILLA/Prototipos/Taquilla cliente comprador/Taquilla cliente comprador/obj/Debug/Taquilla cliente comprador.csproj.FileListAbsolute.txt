@@ -89,3 +89,4 @@ C:\Users\gganp\Desktop\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\T
 C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\bin\Debug\itextsharp.dll
 C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\bin\Debug\itextsharp.xml
 C:\Users\juan_\Documents\GitHub\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla cliente comprador.csproj.CopyComplete
+C:\Users\gganp\Desktop\Taquilla\TAQUILLA\Prototipos\Taquilla cliente comprador\Taquilla cliente comprador\obj\Debug\Taquilla_cliente_comprador.nuevoCorreo.resources

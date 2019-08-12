@@ -13,6 +13,8 @@ namespace Taquilla_cliente_comprador
     class Correo
     {
 		Thread th;
+		string nom;
+		string nomArch;
 		MailMessage correos = new MailMessage();
         SmtpClient envios = new SmtpClient();
         string usu = "riskogt6@gmail.com";
@@ -34,6 +36,8 @@ namespace Taquilla_cliente_comprador
                 if (nomArchivo.Equals("") == false)
                 {
                     System.Net.Mail.Attachment archivo = new System.Net.Mail.Attachment(nomArchivo);
+					nomArch = nomArchivo;
+					nom = nombre;
                     correos.Attachments.Add(archivo);
         
                 }
@@ -67,7 +71,7 @@ namespace Taquilla_cliente_comprador
 
 		private void opennewform()
 		{
-			Application.Run(new frmConfirmasion());
+			Application.Run(new frmConfirmasion(nom, nomArch));
 		}
 
 	}

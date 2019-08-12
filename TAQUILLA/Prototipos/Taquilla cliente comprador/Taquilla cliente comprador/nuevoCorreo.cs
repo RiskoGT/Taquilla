@@ -11,14 +11,16 @@ using System.Windows.Forms;
 
 namespace Taquilla_cliente_comprador
 {
-    public partial class frmConfirmasion : Form
+    public partial class nuevoCorreo : Form
     {
 		Thread th;
+		Correo c = new Correo();
+
 		string nom;
 		string arch;
-        public frmConfirmasion(string nombre, string archivo)
+        public nuevoCorreo(string nombre , string archivo)
         {
-            InitializeComponent();
+			InitializeComponent();
 			nom = nombre;
 			arch = archivo;
         }
@@ -37,34 +39,17 @@ namespace Taquilla_cliente_comprador
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-			
-				this.Close();
+			c.enviarCorreo(textBox1.Text, nom, arch);// se envia el correo electronico
+			Application.Exit();
+			this.Close();
 				th = new Thread(opennewform);
 				th.SetApartmentState(ApartmentState.STA);
 				th.Start();
-			
-
-			
 		}
 		private void opennewform()
 		{
 			Application.Run(new frmMenu());
 		}
 
-		private void button1_Click(object sender, EventArgs e)
-		{
-
-			this.Close();
-			th = new Thread(opennewform);
-			th.SetApartmentState(ApartmentState.STA);
-			th.Start();
-		}
-
-		private void button2_Click_1(object sender, EventArgs e)
-		{
-			nuevoCorreo nuevo = new nuevoCorreo(nom, arch);
-			this.Hide();
-			nuevo.Show();
-		}
 	}
 }
