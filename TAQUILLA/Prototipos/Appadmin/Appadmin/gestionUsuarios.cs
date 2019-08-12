@@ -397,7 +397,9 @@ namespace Appadmin
 
         private void GestionUsuarios_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            MainMenu frm = new MainMenu(user, nivel);
+            frm.Show();
+            this.Hide();
         }
 
         private void Label2_Click_1(object sender, EventArgs e)
