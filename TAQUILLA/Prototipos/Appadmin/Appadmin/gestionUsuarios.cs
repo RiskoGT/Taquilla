@@ -57,7 +57,7 @@ namespace Appadmin
            
        
         }
-		void Bitacora(string Accion, string ip, string Afectado)
+		void Bitacora(string Accion, string ip, string Afectado)// Esta funcion se encarga de registrar en bitacora la actividad en la tabla bitacora
 		{
 			string query = "INSERT INTO bitacora (Usuario,Accion,Afectado,ipAddress,fechaHora) VALUES ('" + user + "','" + Accion + "',' " + Afectado + "','" + ip + "','" + DateTime.Now.ToString("G") + "')";
 			OdbcCommand consulta = new OdbcCommand(query, conn);
@@ -71,8 +71,9 @@ namespace Appadmin
 			{
 				MessageBox.Show(ex.ToString());
 			}
-		}
-		void llenartbl() {
+		} 
+		void llenartbl()// al inicializar la tabla de usuarios
+        {
 
             OdbcCommand cod = new OdbcCommand();
             cod.Connection = conn;
@@ -95,7 +96,7 @@ namespace Appadmin
                 conn.Close();
             }
         }
-        void llenarCombos()
+        void llenarCombos()//llena los combobox obteniendo los campos de la tabla
         {
             //llenado de comboBox CLASIFICACION
             try
@@ -118,7 +119,8 @@ namespace Appadmin
             }
             conn.Close();
         }
-        void letra(KeyPressEventArgs e) {
+        void letra(KeyPressEventArgs e)//permite solo escribir letras en el txtbox
+        {
             if (char.IsLetter(e.KeyChar))
             {
 
@@ -138,7 +140,8 @@ namespace Appadmin
 
         }
 
-        void letrasimbolo(KeyPressEventArgs e) {
+        void letrasimbolo(KeyPressEventArgs e)//permite solo escribir simbolos en el txtbox
+        {
 
 
             if (char.IsLetter(e.KeyChar))
@@ -164,7 +167,8 @@ namespace Appadmin
             }
 
         }
-        void numero(KeyPressEventArgs e) {
+        void numero(KeyPressEventArgs e)//permite solo escribir numeros en el txtbox
+        {
 
             if (char.IsNumber(e.KeyChar))
             {
@@ -248,7 +252,7 @@ namespace Appadmin
             
         }
 
-        private void BtnAgregar_Click(object sender, EventArgs e)
+        private void BtnAgregar_Click(object sender, EventArgs e)//boton para agregar un nuevo usuario
         {
             string query = "INSERT INTO usuarios (Usuario,  idPerfil, Password, DPI, Nombres, Apellidos, Telefono , Correo, Sexo , fechaNac, fechaInicio, estadoUsuario) VALUES ('" + txtUsuario.Text
                + "','" + comboPerfil.Text[0] + "', AES_ENCRYPT('" + txtContra.Text + "','abcdf'),'" + txtDpi.Text + "','" + txtNombre.Text + "','"
@@ -293,7 +297,7 @@ namespace Appadmin
         {
 
         }        
-        private void BtnModif_Click(object sender, EventArgs e)
+        private void BtnModif_Click(object sender, EventArgs e) //boton para modificar algun registro
         {
 			string query = "UPDATE usuarios SET " +
 			"idPerfil='" + comboPerfil.Text[0] + "',password= AES_ENCRYPT('" + txtContra.Text + "','abcdf'),DPI='" + txtDpi.Text + "'," +
@@ -342,7 +346,7 @@ namespace Appadmin
           
         }
 
-        private void BtnEliminar_Click(object sender, EventArgs e)
+        private void BtnEliminar_Click(object sender, EventArgs e)//elimina un registro pero solo actualiza su estado 
         {
             string query = "UPDATE usuarios SET " +
             "idPerfil='" + comboPerfil.Text[0] + "',password= AES_ENCRYPT('" + txtContra.Text + "','abcdf'),DPI='" + txtDpi.Text + "'," +
@@ -405,7 +409,7 @@ namespace Appadmin
         {
         }
 
-        private void TblContenido_DoubleClick(object sender, EventArgs e)
+        private void TblContenido_DoubleClick(object sender, EventArgs e)//evento para el datagrid que al da doble click carga los registros en los combos y txtbox
         {
 
             if (tblContenido.SelectedRows.Count == 1)
