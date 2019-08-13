@@ -18,6 +18,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using WindowsFormsAppPruebas;
+
 namespace Appadmin
 {
     public partial class controlInformes : Form
@@ -84,6 +86,12 @@ namespace Appadmin
             this.Hide();
             MainMenu mainM = new MainMenu(usuario, level);
             mainM.Show();
+        }
+
+        private void BtnReporteGanancia_Click(object sender, EventArgs e)
+        {
+            rpHorario horario = new rpHorario();
+            horario.Show();
         }
     }
 }
