@@ -50,7 +50,8 @@ namespace Taquilla_cliente_comprador
 			noAdulto = adulto;
 			noNino = nino;
 		    op = info;
-			if (info == 1)
+            //juan jose Gamez
+			if (info == 1) //Validasion en el formulario segun la informacion que se selecciono en la opcion de pago
 			{
 
 				lbPagoCompra.Text = "Reservación ";
@@ -490,7 +491,8 @@ namespace Taquilla_cliente_comprador
 			}
 			
 		}
-		void letra(KeyPressEventArgs e)
+        //juan Gamez
+		void letra(KeyPressEventArgs e) //validacion de letras
         {
             if (char.IsLetter(e.KeyChar))
             {
@@ -510,7 +512,8 @@ namespace Taquilla_cliente_comprador
             }
 
         }
-        void letrasimbolo(KeyPressEventArgs e)
+        //Juan Gamez
+        void letrasimbolo(KeyPressEventArgs e)//Validacion de simbolos
         {
 
 
@@ -537,7 +540,8 @@ namespace Taquilla_cliente_comprador
             }
 
         }
-        void numero(KeyPressEventArgs e)
+        //Juan Gamez
+        void numero(KeyPressEventArgs e) //Validacion para que acepte solo numeros
         {
 
             if (char.IsNumber(e.KeyChar))
@@ -699,16 +703,16 @@ namespace Taquilla_cliente_comprador
 			Application.Exit();
 		}
 
-
-        private void BtnCancelar_Click_1(object sender, EventArgs e)
+        //juam Gamez
+        private void BtnCancelar_Click_1(object sender, EventArgs e) //Validaciones
         {
            Form formulariocal = new frmMenu();
             MessageBox.Show("Su compra a sido cancelada, Gracias!!");
             formulariocal.Show();
             Visible = false;
         }
-
-        private void TxtCorreo_Validated(object sender, EventArgs e)
+        //juam Gamez
+        private void TxtCorreo_Validated(object sender, EventArgs e) //Validacion de errores de campos
         {
             if (txtCorreo.Text.Trim() == "")
             {
@@ -720,7 +724,7 @@ namespace Taquilla_cliente_comprador
                
             }
         }
-
+        //juam Gamez
         private void TxtNombre_Validated(object sender, EventArgs e)
         {
             if (txtNombre.Text.Trim() == "")
@@ -735,7 +739,7 @@ namespace Taquilla_cliente_comprador
             }
 
         }
-
+        //juam Gamez
         private void TxtTarjeta_Validated(object sender, EventArgs e)
         {
             if (txtTarjeta.Text.Trim() == "")
@@ -749,7 +753,7 @@ namespace Taquilla_cliente_comprador
 
             }
         }
-
+        //juam Gamez
         private void TxtCodigo_Validated(object sender, EventArgs e)
         {
             if (txtCodigo.Text.Trim() == "")
@@ -778,8 +782,8 @@ namespace Taquilla_cliente_comprador
 
             }
         }
-
-		private void timer1_Tick(object sender, EventArgs e)
+        //juam Gamez
+        private void timer1_Tick(object sender, EventArgs e)
 		{
 
             if (tiempo > 0)
@@ -789,7 +793,7 @@ namespace Taquilla_cliente_comprador
             }
 
         }
-               
+        //juam Gamez     
         private void TxtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
             numero(e);
@@ -802,17 +806,17 @@ namespace Taquilla_cliente_comprador
             numero(e);
 
         }
-
-        private void TxtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        //juan Gamez
+        private void TxtCodigo_KeyPress(object sender, KeyPressEventArgs e)//Validacion solo para que asepte numeros
         {
             numero(e);
         }
 
       
-
+        //juan Gamez
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            Help.ShowHelp(this, " Página web ayuda/ayuda.chm", "menutipopago.html");
+            Help.ShowHelp(this, " Página web ayuda/ayuda.chm", "menutipopago.html");//Esta funcion abre la opcion de ayuda con HTML
         }
 
         private void Frm_pago_Load(object sender, EventArgs e)

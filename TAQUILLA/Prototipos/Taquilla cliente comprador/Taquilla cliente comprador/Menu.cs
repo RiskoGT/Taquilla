@@ -63,12 +63,6 @@ namespace Taquilla_cliente_comprador
 			Application.Exit();
 		}
 
-		private void button1_Click(object sender, EventArgs e)
-		{
-			
-		}
-	
-
 		private void ComboSeleccioneCiudad_SelectedIndexChanged(object sender, EventArgs e)// se llena el combo de cines dependiendo la ciudad elegida
 		{
 			//Gustavo Perez
@@ -109,10 +103,10 @@ namespace Taquilla_cliente_comprador
 		{
 			e.Handled = true;
 		}
-
+        //juan jose Gamez
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            Help.ShowHelp(this, " Página web ayuda/ayuda.chm", "menuPrincipal.html");
+            Help.ShowHelp(this, " Página web ayuda/ayuda.chm", "menuPrincipal.html"); //Esta funcion abre la opcion de ayuda con HTML
         }
     }
 }

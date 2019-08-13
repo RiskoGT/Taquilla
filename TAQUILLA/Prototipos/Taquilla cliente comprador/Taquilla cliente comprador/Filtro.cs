@@ -32,13 +32,7 @@ namespace Taquilla_cliente_comprador
 		{
 			Application.Exit();
 		}
-
-		private void button1_Click(object sender, EventArgs e)
-		{
-			
-		}
-
-	
+        			
 		private void button1_Click_1(object sender, EventArgs e)
 		{
 			//Gustavo Perez
@@ -78,10 +72,10 @@ namespace Taquilla_cliente_comprador
 		{
 			e.Handled = true;
 		}
-
+        //juan jose Gamez
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            Help.ShowHelp(this, " Página web ayuda/ayuda.chm", "Filtros.html");
+            Help.ShowHelp(this, " Página web ayuda/ayuda.chm", "Filtros.html"); //Esta funcion abre la opcion de ayuda con HTML
         }
     }
 }

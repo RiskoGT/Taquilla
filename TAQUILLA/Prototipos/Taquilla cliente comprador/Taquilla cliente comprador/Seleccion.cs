@@ -474,10 +474,8 @@ namespace Taquilla_cliente_comprador
 			Application.Run(new Filtro(cineSeleccionado));
 		}
 
-		private void frmCartelera_Load(object sender, EventArgs e)
-		{
 
-		}
-	}
+        
+    }
     }
 

@@ -39,7 +39,7 @@ namespace Taquilla_cliente_comprador
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-			c.enviarCorreo(textBox1.Text, nom, arch);// se envia el correo electronico
+			c.enviarCorreo(TextCorreo.Text, nom, arch);// se envia el correo electronico
 			Application.Exit();
 			this.Close();
 				th = new Thread(opennewform);

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//juan jose Gamez
 
 namespace Taquilla_cliente_comprador
 {
@@ -33,8 +34,8 @@ namespace Taquilla_cliente_comprador
 			tiempo2 = tiempo;
 			Elegidos2 = arr;
         }
-
-        private void BtPago_Click(object sender, EventArgs e)
+        //juan gamez
+        private void BtPago_Click(object sender, EventArgs e) //Esta opcion abre el menu de pago
         {
             int tipo = 2;
 			tipoPago = 0;// Pagar
@@ -42,8 +43,8 @@ namespace Taquilla_cliente_comprador
             avilitar.Show();
             Visible = false;
         }
-
-        private void BtReservar_Click(object sender, EventArgs e)
+        //juan Gamez
+        private void BtReservar_Click(object sender, EventArgs e) //Esta opcion abrira la opcion de reservar
         {
             int tipo = 1;
 			tipoPago = 1;//Reservar
@@ -51,7 +52,7 @@ namespace Taquilla_cliente_comprador
             avilitar.Show();
             Visible = false;
         }
-
+        
         private void Timer1_Tick(object sender, EventArgs e)
         {
             if (tiempo2 > 0)
@@ -72,10 +73,12 @@ namespace Taquilla_cliente_comprador
             formulariopago.Show();
             Visible = false;
         }
-
+        //juan Gamez
         private void Lbayuda_Click(object sender, EventArgs e)
         {
-            Help.ShowHelp(this, " Página web ayuda/ayuda.chm", "menutipopago.html");
+            Help.ShowHelp(this, " Página web ayuda/ayuda.chm", "menutipopago.html");//Esta funcion abre la opcion de ayuda con HTML
         }
+
+      
     }
 }

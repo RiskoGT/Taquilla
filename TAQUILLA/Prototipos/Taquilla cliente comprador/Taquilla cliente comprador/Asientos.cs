@@ -2117,8 +2117,8 @@ namespace Taquilla_cliente_comprador
 
             }
         }
-
-            private void Btn_confirmar_Click(object sender, EventArgs e)
+        //juan Gamez y Gustavo Perez
+            private void Btn_confirmar_Click(object sender, EventArgs e) //Validaciones de asientos
         {
             if (tiempo == 0)
             {

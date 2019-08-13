@@ -10,8 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Taquilla_cliente_comprador
-{
-    public partial class frmConfirmasion : Form
+{ //Juan Gamez y Gustavo Perez
+    public partial class frmConfirmasion : Form 
     {
 		Thread th;
 		string nom;
@@ -66,5 +66,10 @@ namespace Taquilla_cliente_comprador
 			this.Hide();
 			nuevo.Show();
 		}
-	}
+
+        private void FrmConfirmasion_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

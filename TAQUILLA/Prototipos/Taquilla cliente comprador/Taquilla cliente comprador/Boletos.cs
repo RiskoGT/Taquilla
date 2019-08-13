@@ -12,8 +12,7 @@ using System.Data.Odbc;
 
 namespace Taquilla_cliente_comprador
 {
-   
-    public partial class frmBoletos : Form   
+       public partial class frmBoletos : Form   
     {
         /*Grupo 2  taquilla  cliente comprador
         Gustavo Perez 0901-16-420 y Juan José Gámez 0901-16-47  */
@@ -35,7 +34,7 @@ namespace Taquilla_cliente_comprador
 			tiempo1();
             
         }
-
+        //Juan Gamez Control del teimpo
 
         void tiempo1()
         {
@@ -44,7 +43,7 @@ namespace Taquilla_cliente_comprador
                
 
                 conn.Open();
-                OdbcCommand command = new OdbcCommand("SELECT * FROM timer", conn);
+                OdbcCommand command = new OdbcCommand("SELECT * FROM timer", conn); //El tiempo puede ser variable desde la aplicacion administrador
                 OdbcDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
@@ -59,12 +58,7 @@ namespace Taquilla_cliente_comprador
             conn.Close();
 
         }
-
-        private void Txt_niño_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+              
         private void Btn_Siguente_Click(object sender, EventArgs e)
         {
             if (tiempo == 0)
@@ -94,9 +88,9 @@ namespace Taquilla_cliente_comprador
                 }
             }
         }
-
-        private void Button2_Click(object sender, EventArgs e)
-        {
+        //juan Gamez
+        private void Button2_Click(object sender, EventArgs e)//Validacion de los botones para los boletos
+        { 
             if (txtTotalB.Text == "10")
             {
                 MessageBox.Show("No se pueden seleccionar mas de 10 boletos!! Gracias");
@@ -143,8 +137,8 @@ namespace Taquilla_cliente_comprador
 
             }
         }
-
-        private void Button1_Click(object sender, EventArgs e)
+        //Juan Gamez
+        private void Button1_Click(object sender, EventArgs e)//Validaciones del contador de boletos
         {
             int.Parse(txt3ra.Text);
             cont1--;
@@ -171,8 +165,8 @@ namespace Taquilla_cliente_comprador
             }
            
         }
-
-        private void Button4_Click(object sender, EventArgs e)
+        //Juan Gamez
+        private void Button4_Click(object sender, EventArgs e) //Validacion para los 10 asientos
         {
             if (txtTotalB.Text == "10")
             {
@@ -213,7 +207,7 @@ namespace Taquilla_cliente_comprador
                 txtTotalB.Text = count5.ToString();
             }
         }
-
+        //Juan Gamez
         private void Button3_Click(object sender, EventArgs e)
         {
              int.Parse(txtAdulto.Text);
@@ -242,7 +236,7 @@ namespace Taquilla_cliente_comprador
             }
 
         }
-
+        //Juan Gamez
         private void Button6_Click(object sender, EventArgs e)
         {
             if (txtTotalB.Text == "10")
@@ -284,6 +278,7 @@ namespace Taquilla_cliente_comprador
                 txtTotalB.Text = count5.ToString();
             }
         }
+        //Juan Gamez
         private void Button5_Click(object sender, EventArgs e)
         {
             int.Parse(txtNiño.Text);
@@ -313,18 +308,8 @@ namespace Taquilla_cliente_comprador
            
         }
 
-        private void Txt_total_TextChanged(object sender, EventArgs e)
-        {
-            
-
-        }
-
-        private void Txt_3raT_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Btn_regresar_Click(object sender, EventArgs e)
+        //juan Gamez
+        private void Btn_regresar_Click(object sender, EventArgs e) //Navegacion de Formularios
         {
             Form formulariocar = new Filtro(cineSeleccionado);
             formulariocar.Show();
@@ -335,33 +320,10 @@ namespace Taquilla_cliente_comprador
 		{
 			Application.Exit();
 		}
-
-		private void Btn_canTBoletos_Click(object sender, EventArgs e)
-		{
-
-		}
-
-        private void Btn_ayuda_Click(object sender, EventArgs e)
-        {
-
-		}
-
-        private void Frm_boletos_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TableLayoutPanel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void TlpPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Timer1_Tick(object sender, EventArgs e)
+        
+                
+        //Juan Gamez
+        private void Timer1_Tick(object sender, EventArgs e)//Control del tiempo
         {
             if (tiempo > 0)
             {
@@ -369,10 +331,10 @@ namespace Taquilla_cliente_comprador
                 lbTiempo.Text = tiempo.ToString();
             }
         }
-
+        //juan Gamez
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            Help.ShowHelp(this, " Página web ayuda/ayuda.chm", "Menúboletos.html");
+            Help.ShowHelp(this, " Página web ayuda/ayuda.chm", "Menúboletos.html");//Abre el menu de ayuda HTML
         }
     }
 }
