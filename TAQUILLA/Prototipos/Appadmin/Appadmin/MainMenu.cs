@@ -124,7 +124,7 @@ namespace Appadmin
 
         private void Button4_Click(object sender, EventArgs e)
         {
-
+            Help.ShowHelp(this, "Pagina de ayuda admin/ayudaAdmin.chm", "menuPrincipalAG.html"); //Esta funcion abre la opcion de ayuda con HTML
         }
 
         private void Button5_Click(object sender, EventArgs e)
@@ -132,6 +132,11 @@ namespace Appadmin
             frmTiempo frm = new frmTiempo(user, level);
             frm.Show();
             this.Hide();
+        }
+
+        private void PictureBox2_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

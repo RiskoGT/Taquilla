@@ -141,5 +141,10 @@ namespace Appadmin
 			nuevo.Show();
 			this.Hide();
 		}
-	}
+
+        private void PictureBox2_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "Pagina de ayuda admin/ayudaAdmin.chm", "menuCartelera.html"); //Esta funcion abre la opcion de ayuda con HTML
+        }
+    }
 }

@@ -33,11 +33,11 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lbPass = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.TextBox();
-            this.lbUser = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.txtPass = new System.Windows.Forms.TextBox();
+            this.lbUser = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -121,18 +121,6 @@
             this.txtUser.TabIndex = 39;
             this.txtUser.TextChanged += new System.EventHandler(this.Accesotext_TextChanged);
             // 
-            // lbUser
-            // 
-            this.lbUser.AutoSize = true;
-            this.lbUser.BackColor = System.Drawing.Color.Transparent;
-            this.lbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUser.ForeColor = System.Drawing.Color.White;
-            this.lbUser.Location = new System.Drawing.Point(325, 38);
-            this.lbUser.Name = "lbUser";
-            this.lbUser.Size = new System.Drawing.Size(96, 29);
-            this.lbUser.TabIndex = 36;
-            this.lbUser.Text = "Usuario";
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
@@ -194,6 +182,18 @@
             this.txtPass.Size = new System.Drawing.Size(317, 34);
             this.txtPass.TabIndex = 40;
             // 
+            // lbUser
+            // 
+            this.lbUser.AutoSize = true;
+            this.lbUser.BackColor = System.Drawing.Color.Transparent;
+            this.lbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUser.ForeColor = System.Drawing.Color.White;
+            this.lbUser.Location = new System.Drawing.Point(325, 38);
+            this.lbUser.Name = "lbUser";
+            this.lbUser.Size = new System.Drawing.Size(96, 29);
+            this.lbUser.TabIndex = 36;
+            this.lbUser.Text = "Usuario";
+            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.BackColor = System.Drawing.SystemColors.HotTrack;
@@ -201,7 +201,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.125F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.875F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 584F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 171F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 172F));
             this.tableLayoutPanel4.Controls.Add(this.label3, 2, 0);
             this.tableLayoutPanel4.Controls.Add(this.pictureBox1, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -221,7 +221,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Gold;
-            this.label3.Location = new System.Drawing.Point(216, 0);
+            this.label3.Location = new System.Drawing.Point(215, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(578, 87);
             this.label3.TabIndex = 37;
@@ -250,6 +250,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.PictureBox2_Click);
             // 
             // panel1
             // 

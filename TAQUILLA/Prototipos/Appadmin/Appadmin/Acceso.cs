@@ -150,5 +150,10 @@ namespace Appadmin
         {
 
         }
+
+        private void PictureBox2_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "Pagina de ayuda admin/ayudaAdmin.chm", "iniciosesion.html"); //Esta funcion abre la opcion de ayuda con HTML
+        }
     }
 }

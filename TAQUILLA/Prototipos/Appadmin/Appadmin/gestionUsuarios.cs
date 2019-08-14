@@ -527,6 +527,17 @@ namespace Appadmin
             /*comboSexo.Items.Add("Sexo");
             comboSexo.SelectedItem = "Sexo";
         */}
+
+        private void TableLayoutPanel9_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void PictureBox2_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "Pagina de ayuda admin/ayudaAdmin.chm", "gestionUsuario.html"); //Esta funcion abre la opcion de ayuda con HTML
+
+        }
     }
     }
 
