@@ -2,10 +2,10 @@
 -- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jul 14, 2019 at 09:07 AM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.2.21
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 14-08-2019 a las 17:03:38
+-- Versión del servidor: 10.3.16-MariaDB
+-- Versión de PHP: 7.1.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,12 +19,12 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `cine`
+-- Base de datos: `cine`
 --
 
 DELIMITER $$
 --
--- Procedures
+-- Procedimientos
 --
 CREATE DEFINER=`root`@`localhost` PROCEDURE `horario` (`date1` DATE, `date2` DATE, `mes` VARCHAR(50))  SELECT SUM((SELECT SUM(Costo)FROM detallefactura WHERE numeroFactura = E.numeroFactura)) "Ventas Totales", mes "Mes" FROM encabezadosfactura E WHERE fechaFactura >= date1 AND fechaFactura <= date2$$
 
@@ -33,7 +33,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `asientos`
+-- Estructura de tabla para la tabla `asientos`
 --
 
 CREATE TABLE `asientos` (
@@ -43,7 +43,7 @@ CREATE TABLE `asientos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- Dumping data for table `asientos`
+-- Volcado de datos para la tabla `asientos`
 --
 
 INSERT INTO `asientos` (`idAsiento`, `idFuncion`, `estado`) VALUES
@@ -861,7 +861,7 @@ INSERT INTO `asientos` (`idAsiento`, `idFuncion`, `estado`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bitacora`
+-- Estructura de tabla para la tabla `bitacora`
 --
 
 CREATE TABLE `bitacora` (
@@ -874,7 +874,7 @@ CREATE TABLE `bitacora` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- Dumping data for table `bitacora`
+-- Volcado de datos para la tabla `bitacora`
 --
 
 INSERT INTO `bitacora` (`noReg`, `Usuario`, `Accion`, `Afectado`, `ipAddress`, `fechaHora`) VALUES
@@ -974,12 +974,18 @@ INSERT INTO `bitacora` (`noReg`, `Usuario`, `Accion`, `Afectado`, `ipAddress`, `
 (94, 'admin', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '13/08/2019 23:11:35'),
 (96, 'admin', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '13/08/2019 23:52:34'),
 (97, 'admin', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '14/06/2019 00:46:23'),
-(98, 'admin', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '14/07/2019 00:49:25');
+(98, 'admin', 'LOG IN', 'LOGIN ', '   |   fe80::bcee:cf39:bf89:475%14   |   fe80::bd74:d5b6:1520:c945%9   |   192.168.56.1   |   192.168.1.5', '14/07/2019 00:49:25'),
+(99, 'admin', 'LOG IN', 'LOGIN ', '   |   fe80::21d3:e139:f1b0:b6a%21   |   192.168.56.1', '14/8/2019 09:01:22'),
+(100, 'admin', 'UPDATE', ' USUARIOS', '   |   fe80::21d3:e139:f1b0:b6a%21   |   192.168.56.1', '14/8/2019 09:02:08'),
+(101, 'admin', 'UPDATE', ' USUARIOS', '   |   fe80::21d3:e139:f1b0:b6a%21   |   192.168.56.1', '14/8/2019 09:02:23'),
+(102, 'admin', 'UPDATE', ' USUARIOS', '   |   fe80::21d3:e139:f1b0:b6a%21   |   192.168.56.1', '14/8/2019 09:02:38'),
+(103, 'admin', 'UPDATE', ' USUARIOS', '   |   fe80::21d3:e139:f1b0:b6a%21   |   192.168.56.1', '14/8/2019 09:03:01'),
+(104, 'edgar', 'LOG IN', 'LOGIN ', '   |   fe80::21d3:e139:f1b0:b6a%21   |   192.168.56.1', '14/8/2019 09:03:09');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `boletos`
+-- Estructura de tabla para la tabla `boletos`
 --
 
 CREATE TABLE `boletos` (
@@ -992,7 +998,7 @@ CREATE TABLE `boletos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- Dumping data for table `boletos`
+-- Volcado de datos para la tabla `boletos`
 --
 
 INSERT INTO `boletos` (`idBoleto`, `idFuncion`, `idAsiento`, `Fecha`, `Cine`, `tipoBoleto`) VALUES
@@ -1210,7 +1216,7 @@ INSERT INTO `boletos` (`idBoleto`, `idFuncion`, `idAsiento`, `Fecha`, `Cine`, `t
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cines`
+-- Estructura de tabla para la tabla `cines`
 --
 
 CREATE TABLE `cines` (
@@ -1221,7 +1227,7 @@ CREATE TABLE `cines` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- Dumping data for table `cines`
+-- Volcado de datos para la tabla `cines`
 --
 
 INSERT INTO `cines` (`idCine`, `idCiudad`, `nombreCine`, `estadoCine`) VALUES
@@ -1232,7 +1238,7 @@ INSERT INTO `cines` (`idCine`, `idCiudad`, `nombreCine`, `estadoCine`) VALUES
 (5, 3, 'Interplaza', 0);
 
 --
--- Triggers `cines`
+-- Disparadores `cines`
 --
 DELIMITER $$
 CREATE TRIGGER `estdo sala` AFTER UPDATE ON `cines` FOR EACH ROW BEGIN
@@ -1244,7 +1250,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ciudades`
+-- Estructura de tabla para la tabla `ciudades`
 --
 
 CREATE TABLE `ciudades` (
@@ -1254,7 +1260,7 @@ CREATE TABLE `ciudades` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- Dumping data for table `ciudades`
+-- Volcado de datos para la tabla `ciudades`
 --
 
 INSERT INTO `ciudades` (`idCiudad`, `nombreCiudad`, `estadoCiudad`) VALUES
@@ -1263,7 +1269,7 @@ INSERT INTO `ciudades` (`idCiudad`, `nombreCiudad`, `estadoCiudad`) VALUES
 (3, 'Xela', 0);
 
 --
--- Triggers `ciudades`
+-- Disparadores `ciudades`
 --
 DELIMITER $$
 CREATE TRIGGER `ESTADO CINE` AFTER UPDATE ON `ciudades` FOR EACH ROW BEGIN
@@ -1275,7 +1281,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `clasificacion`
+-- Estructura de tabla para la tabla `clasificacion`
 --
 
 CREATE TABLE `clasificacion` (
@@ -1285,7 +1291,7 @@ CREATE TABLE `clasificacion` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `clasificacion`
+-- Volcado de datos para la tabla `clasificacion`
 --
 
 INSERT INTO `clasificacion` (`idClasificacion`, `clasificacion`, `detalle`) VALUES
@@ -1299,7 +1305,7 @@ INSERT INTO `clasificacion` (`idClasificacion`, `clasificacion`, `detalle`) VALU
 -- --------------------------------------------------------
 
 --
--- Table structure for table `detallefactura`
+-- Estructura de tabla para la tabla `detallefactura`
 --
 
 CREATE TABLE `detallefactura` (
@@ -1311,7 +1317,7 @@ CREATE TABLE `detallefactura` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- Dumping data for table `detallefactura`
+-- Volcado de datos para la tabla `detallefactura`
 --
 
 INSERT INTO `detallefactura` (`numeroLinea`, `numeroFactura`, `idBoleto`, `Costo`, `estadoDetalleFactura`) VALUES
@@ -1527,7 +1533,7 @@ INSERT INTO `detallefactura` (`numeroLinea`, `numeroFactura`, `idBoleto`, `Costo
 -- --------------------------------------------------------
 
 --
--- Table structure for table `detallereservacion`
+-- Estructura de tabla para la tabla `detallereservacion`
 --
 
 CREATE TABLE `detallereservacion` (
@@ -1539,7 +1545,7 @@ CREATE TABLE `detallereservacion` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- Dumping data for table `detallereservacion`
+-- Volcado de datos para la tabla `detallereservacion`
 --
 
 INSERT INTO `detallereservacion` (`numeroLinea`, `idReservacion`, `idFuncion`, `idAsiento`, `estadoDetalleReservacion`) VALUES
@@ -1677,7 +1683,7 @@ INSERT INTO `detallereservacion` (`numeroLinea`, `idReservacion`, `idFuncion`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `encabezadosfactura`
+-- Estructura de tabla para la tabla `encabezadosfactura`
 --
 
 CREATE TABLE `encabezadosfactura` (
@@ -1689,7 +1695,7 @@ CREATE TABLE `encabezadosfactura` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- Dumping data for table `encabezadosfactura`
+-- Volcado de datos para la tabla `encabezadosfactura`
 --
 
 INSERT INTO `encabezadosfactura` (`numeroFactura`, `fechaFactura`, `Cine`, `Funcion`, `estadoFactura`) VALUES
@@ -1749,7 +1755,7 @@ INSERT INTO `encabezadosfactura` (`numeroFactura`, `fechaFactura`, `Cine`, `Func
 (68, '2019-07-14', 'Portales', 1, 0);
 
 --
--- Triggers `encabezadosfactura`
+-- Disparadores `encabezadosfactura`
 --
 DELIMITER $$
 CREATE TRIGGER `estado detalle` AFTER UPDATE ON `encabezadosfactura` FOR EACH ROW BEGIN
@@ -1763,7 +1769,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `funciones`
+-- Estructura de tabla para la tabla `funciones`
 --
 
 CREATE TABLE `funciones` (
@@ -1776,7 +1782,7 @@ CREATE TABLE `funciones` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- Dumping data for table `funciones`
+-- Volcado de datos para la tabla `funciones`
 --
 
 INSERT INTO `funciones` (`idFuncion`, `idPelicula`, `idSala`, `cine`, `horaFuncion`, `estadoFuncion`) VALUES
@@ -1791,7 +1797,7 @@ INSERT INTO `funciones` (`idFuncion`, `idPelicula`, `idSala`, `cine`, `horaFunci
 (9, 2, 4, 'Plaza Americas', '10:20:00', 0);
 
 --
--- Triggers `funciones`
+-- Disparadores `funciones`
 --
 DELIMITER $$
 CREATE TRIGGER `asientos funcion` AFTER INSERT ON `funciones` FOR EACH ROW BEGIN
@@ -1896,7 +1902,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `multimedia`
+-- Estructura de tabla para la tabla `multimedia`
 --
 
 CREATE TABLE `multimedia` (
@@ -1907,7 +1913,7 @@ CREATE TABLE `multimedia` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- Dumping data for table `multimedia`
+-- Volcado de datos para la tabla `multimedia`
 --
 
 INSERT INTO `multimedia` (`NoRegistro`, `Afiche`, `Trailer`, `estadoMultimedia`) VALUES
@@ -1917,7 +1923,7 @@ INSERT INTO `multimedia` (`NoRegistro`, `Afiche`, `Trailer`, `estadoMultimedia`)
 (5, 'http://www.endorfina.mx/wp-content/uploads/2019/06/4-360x290.jpg', 'https://www.youtube.com/watch?v=WPEgVaz9j2g', 0);
 
 --
--- Triggers `multimedia`
+-- Disparadores `multimedia`
 --
 DELIMITER $$
 CREATE TRIGGER `estado multimedia` AFTER UPDATE ON `multimedia` FOR EACH ROW BEGIN
@@ -1929,7 +1935,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `peliculas`
+-- Estructura de tabla para la tabla `peliculas`
 --
 
 CREATE TABLE `peliculas` (
@@ -1946,7 +1952,7 @@ CREATE TABLE `peliculas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- Dumping data for table `peliculas`
+-- Volcado de datos para la tabla `peliculas`
 --
 
 INSERT INTO `peliculas` (`idPelicula`, `Titulo`, `Multimedia`, `Formato`, `Clasificación`, `Sinopsis`, `Idioma`, `semanaEstrenoInicio`, `semanaEstrenoFin`, `estadoPelicula`) VALUES
@@ -1956,7 +1962,7 @@ INSERT INTO `peliculas` (`idPelicula`, `Titulo`, `Multimedia`, `Formato`, `Clasi
 (8, 'Hotel Mumbai', 3, '2D', 'B15', 'Una apasionante historia sobre humanidad y heroísmo, HOTEL MUMBAI cuenta vividamente el cerco de 2008 al Taj Hotel por un grupo de terroristas en Mumbai, India. Entre el personal del hotel se encuentra el renombrado chef Hemant Oberoi (Anupam Kher) y un camarero (Dev Patel) quienes eligen arriesgar sus vidas para proteger a los huéspedes, Mientras la situación avanza, una pareja desesperada (Armie Hammer y Nazanin Boniadi) se ve obligada hacer sacrificios impensables para proteger a su hijo recién nacido.', 'Español', '2019-08-07', '2019-08-31', 0);
 
 --
--- Triggers `peliculas`
+-- Disparadores `peliculas`
 --
 DELIMITER $$
 CREATE TRIGGER `estado funciones peli` AFTER UPDATE ON `peliculas` FOR EACH ROW BEGIN
@@ -1968,7 +1974,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `perfiles`
+-- Estructura de tabla para la tabla `perfiles`
 --
 
 CREATE TABLE `perfiles` (
@@ -1977,7 +1983,7 @@ CREATE TABLE `perfiles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- Dumping data for table `perfiles`
+-- Volcado de datos para la tabla `perfiles`
 --
 
 INSERT INTO `perfiles` (`idPerfil`, `Tipo`) VALUES
@@ -1988,7 +1994,7 @@ INSERT INTO `perfiles` (`idPerfil`, `Tipo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reservaciones`
+-- Estructura de tabla para la tabla `reservaciones`
 --
 
 CREATE TABLE `reservaciones` (
@@ -2000,7 +2006,7 @@ CREATE TABLE `reservaciones` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- Dumping data for table `reservaciones`
+-- Volcado de datos para la tabla `reservaciones`
 --
 
 INSERT INTO `reservaciones` (`idReservacion`, `idFuncion`, `Fecha`, `Cine`, `estadoReservacion`) VALUES
@@ -2028,7 +2034,7 @@ INSERT INTO `reservaciones` (`idReservacion`, `idFuncion`, `Fecha`, `Cine`, `est
 (32, 1, '2019-07-14', 'Portales', 0);
 
 --
--- Triggers `reservaciones`
+-- Disparadores `reservaciones`
 --
 DELIMITER $$
 CREATE TRIGGER `estado detalle reservacion` AFTER UPDATE ON `reservaciones` FOR EACH ROW BEGIN
@@ -2042,7 +2048,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `salas`
+-- Estructura de tabla para la tabla `salas`
 --
 
 CREATE TABLE `salas` (
@@ -2052,7 +2058,7 @@ CREATE TABLE `salas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- Dumping data for table `salas`
+-- Volcado de datos para la tabla `salas`
 --
 
 INSERT INTO `salas` (`idSala`, `idCine`, `estadoSala`) VALUES
@@ -2064,7 +2070,7 @@ INSERT INTO `salas` (`idSala`, `idCine`, `estadoSala`) VALUES
 (6, 1, 7);
 
 --
--- Triggers `salas`
+-- Disparadores `salas`
 --
 DELIMITER $$
 CREATE TRIGGER `estado funciones` AFTER UPDATE ON `salas` FOR EACH ROW BEGIN
@@ -2076,7 +2082,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `timer`
+-- Estructura de tabla para la tabla `timer`
 --
 
 CREATE TABLE `timer` (
@@ -2087,7 +2093,7 @@ CREATE TABLE `timer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- Dumping data for table `timer`
+-- Volcado de datos para la tabla `timer`
 --
 
 INSERT INTO `timer` (`noRegistro`, `Tiempo`, `Fecha`, `Usuario`) VALUES
@@ -2096,7 +2102,7 @@ INSERT INTO `timer` (`noRegistro`, `Tiempo`, `Fecha`, `Usuario`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tiposboleto`
+-- Estructura de tabla para la tabla `tiposboleto`
 --
 
 CREATE TABLE `tiposboleto` (
@@ -2106,7 +2112,7 @@ CREATE TABLE `tiposboleto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- Dumping data for table `tiposboleto`
+-- Volcado de datos para la tabla `tiposboleto`
 --
 
 INSERT INTO `tiposboleto` (`idBoleto`, `Tipo`, `Precio`) VALUES
@@ -2117,7 +2123,7 @@ INSERT INTO `tiposboleto` (`idBoleto`, `Tipo`, `Precio`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuarios`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -2136,36 +2142,36 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- Dumping data for table `usuarios`
+-- Volcado de datos para la tabla `usuarios`
 --
 
 INSERT INTO `usuarios` (`Usuario`, `idPerfil`, `password`, `DPI`, `Nombres`, `Apellidos`, `Telefono`, `Correo`, `Sexo`, `fechaNac`, `fechaInicio`, `estadoUsuario`) VALUES
-('Gus', 3, 0x6234323838643963306563306131383431623362333732383332316537303838, '3525036592121', 'Gustavo', 'Perez', '455221155', 'gus657@gmail.com', 'Masculino', '1998-08-08', '2019-07-07', 0),
-('Risko', 2, 0x6464336437613635373333633465343736633331306437636664376132343630, '894652', 'Risko', 'Risko', '84651325354', 'risko@Risko.com', 'masculino', '2019-07-01', '2019-07-31', 0),
+('Gus', 3, 0x0a329bec20f50bc0517e5997cddfe9f5, '3525036592121', 'Gustavo', 'Perez', '455221155', 'gus657@gmail.com', 'Masculino', '1998-01-21', '2019-08-14', 0),
+('Risko', 2, 0x55ccdca00ef63adf1a5a37df03bd814a, '894652', 'Risko', 'Risko', '84651325354', 'risko@Risko.com', 'Masculino', '1998-01-21', '2019-08-14', 0),
 ('admin', 3, 0xd358f5a3329dcf037724e0629fc7f899, '', '', '', '', '', '', '0000-00-00', '0000-00-00', 0),
-('edgar', 1, 0x6366353561646139363064656466363135346230643639303562323734386666, '444541541', 'Edgar', 'Casasola', '22665544', 'edgar@risko.com', 'Masculino', '2018-07-31', '2019-06-27', 0),
-('rchocm', 1, 0x6539613532393233316530633765363862623335386230646233343533633735, '4896513', 'Randy', 'Choc', '44558899', 'randy@risko.com', 'Masculino', '2017-12-16', '2019-07-25', 0);
+('edgar', 1, 0x8bec1c836e9018efa2874bfb59bc1222, '444541541', 'Edgar', 'Casasola', '22665544', 'edgar@risko.com', 'Masculino', '1998-01-21', '2019-08-14', 0),
+('rchocm', 3, 0x4c75b8c968c7e826c082716c177f4e16, '4896513', 'Randy', 'Choc', '44558899', 'randy@risko.com', 'Masculino', '1998-01-21', '2019-08-14', 0);
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `asientos`
+-- Indices de la tabla `asientos`
 --
 ALTER TABLE `asientos`
   ADD PRIMARY KEY (`idAsiento`,`idFuncion`),
   ADD KEY `idSala` (`idFuncion`);
 
 --
--- Indexes for table `bitacora`
+-- Indices de la tabla `bitacora`
 --
 ALTER TABLE `bitacora`
   ADD PRIMARY KEY (`noReg`),
   ADD KEY `Usuario` (`Usuario`);
 
 --
--- Indexes for table `boletos`
+-- Indices de la tabla `boletos`
 --
 ALTER TABLE `boletos`
   ADD PRIMARY KEY (`idBoleto`),
@@ -2175,7 +2181,7 @@ ALTER TABLE `boletos`
   ADD KEY `tipoBoleto` (`tipoBoleto`);
 
 --
--- Indexes for table `cines`
+-- Indices de la tabla `cines`
 --
 ALTER TABLE `cines`
   ADD PRIMARY KEY (`idCine`),
@@ -2184,21 +2190,21 @@ ALTER TABLE `cines`
   ADD KEY `estadoCine` (`estadoCine`);
 
 --
--- Indexes for table `ciudades`
+-- Indices de la tabla `ciudades`
 --
 ALTER TABLE `ciudades`
   ADD PRIMARY KEY (`idCiudad`),
   ADD KEY `estadoCiudad` (`estadoCiudad`);
 
 --
--- Indexes for table `clasificacion`
+-- Indices de la tabla `clasificacion`
 --
 ALTER TABLE `clasificacion`
   ADD PRIMARY KEY (`idClasificacion`),
   ADD KEY `clasificacion` (`clasificacion`);
 
 --
--- Indexes for table `detallefactura`
+-- Indices de la tabla `detallefactura`
 --
 ALTER TABLE `detallefactura`
   ADD PRIMARY KEY (`numeroLinea`,`numeroFactura`),
@@ -2207,7 +2213,7 @@ ALTER TABLE `detallefactura`
   ADD KEY `Costo` (`Costo`);
 
 --
--- Indexes for table `detallereservacion`
+-- Indices de la tabla `detallereservacion`
 --
 ALTER TABLE `detallereservacion`
   ADD PRIMARY KEY (`numeroLinea`,`idReservacion`),
@@ -2216,7 +2222,7 @@ ALTER TABLE `detallereservacion`
   ADD KEY `idReservasion` (`idReservacion`);
 
 --
--- Indexes for table `encabezadosfactura`
+-- Indices de la tabla `encabezadosfactura`
 --
 ALTER TABLE `encabezadosfactura`
   ADD PRIMARY KEY (`numeroFactura`),
@@ -2224,7 +2230,7 @@ ALTER TABLE `encabezadosfactura`
   ADD KEY `Funcion` (`Funcion`);
 
 --
--- Indexes for table `funciones`
+-- Indices de la tabla `funciones`
 --
 ALTER TABLE `funciones`
   ADD PRIMARY KEY (`idFuncion`),
@@ -2233,13 +2239,13 @@ ALTER TABLE `funciones`
   ADD KEY `cine` (`cine`);
 
 --
--- Indexes for table `multimedia`
+-- Indices de la tabla `multimedia`
 --
 ALTER TABLE `multimedia`
   ADD PRIMARY KEY (`NoRegistro`);
 
 --
--- Indexes for table `peliculas`
+-- Indices de la tabla `peliculas`
 --
 ALTER TABLE `peliculas`
   ADD PRIMARY KEY (`idPelicula`),
@@ -2248,13 +2254,13 @@ ALTER TABLE `peliculas`
   ADD KEY `Multimedia` (`Multimedia`);
 
 --
--- Indexes for table `perfiles`
+-- Indices de la tabla `perfiles`
 --
 ALTER TABLE `perfiles`
   ADD PRIMARY KEY (`idPerfil`);
 
 --
--- Indexes for table `reservaciones`
+-- Indices de la tabla `reservaciones`
 --
 ALTER TABLE `reservaciones`
   ADD PRIMARY KEY (`idReservacion`),
@@ -2262,21 +2268,21 @@ ALTER TABLE `reservaciones`
   ADD KEY `idFuncion` (`idFuncion`);
 
 --
--- Indexes for table `salas`
+-- Indices de la tabla `salas`
 --
 ALTER TABLE `salas`
   ADD PRIMARY KEY (`idSala`,`idCine`),
   ADD KEY `idCine` (`idCine`);
 
 --
--- Indexes for table `timer`
+-- Indices de la tabla `timer`
 --
 ALTER TABLE `timer`
   ADD PRIMARY KEY (`noRegistro`),
   ADD KEY `Usuario` (`Usuario`);
 
 --
--- Indexes for table `tiposboleto`
+-- Indices de la tabla `tiposboleto`
 --
 ALTER TABLE `tiposboleto`
   ADD PRIMARY KEY (`idBoleto`),
@@ -2284,124 +2290,124 @@ ALTER TABLE `tiposboleto`
   ADD KEY `Tipo` (`Tipo`);
 
 --
--- Indexes for table `usuarios`
+-- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`Usuario`),
   ADD KEY `idPerfil` (`idPerfil`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `bitacora`
+-- AUTO_INCREMENT de la tabla `bitacora`
 --
 ALTER TABLE `bitacora`
-  MODIFY `noReg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+  MODIFY `noReg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
 
 --
--- AUTO_INCREMENT for table `boletos`
+-- AUTO_INCREMENT de la tabla `boletos`
 --
 ALTER TABLE `boletos`
   MODIFY `idBoleto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=220;
 
 --
--- AUTO_INCREMENT for table `cines`
+-- AUTO_INCREMENT de la tabla `cines`
 --
 ALTER TABLE `cines`
   MODIFY `idCine` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `ciudades`
+-- AUTO_INCREMENT de la tabla `ciudades`
 --
 ALTER TABLE `ciudades`
   MODIFY `idCiudad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `clasificacion`
+-- AUTO_INCREMENT de la tabla `clasificacion`
 --
 ALTER TABLE `clasificacion`
   MODIFY `idClasificacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `detallefactura`
+-- AUTO_INCREMENT de la tabla `detallefactura`
 --
 ALTER TABLE `detallefactura`
   MODIFY `numeroLinea` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=209;
 
 --
--- AUTO_INCREMENT for table `detallereservacion`
+-- AUTO_INCREMENT de la tabla `detallereservacion`
 --
 ALTER TABLE `detallereservacion`
   MODIFY `numeroLinea` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=146;
 
 --
--- AUTO_INCREMENT for table `encabezadosfactura`
+-- AUTO_INCREMENT de la tabla `encabezadosfactura`
 --
 ALTER TABLE `encabezadosfactura`
   MODIFY `numeroFactura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
--- AUTO_INCREMENT for table `funciones`
+-- AUTO_INCREMENT de la tabla `funciones`
 --
 ALTER TABLE `funciones`
   MODIFY `idFuncion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `multimedia`
+-- AUTO_INCREMENT de la tabla `multimedia`
 --
 ALTER TABLE `multimedia`
   MODIFY `NoRegistro` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `peliculas`
+-- AUTO_INCREMENT de la tabla `peliculas`
 --
 ALTER TABLE `peliculas`
   MODIFY `idPelicula` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `perfiles`
+-- AUTO_INCREMENT de la tabla `perfiles`
 --
 ALTER TABLE `perfiles`
   MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `reservaciones`
+-- AUTO_INCREMENT de la tabla `reservaciones`
 --
 ALTER TABLE `reservaciones`
   MODIFY `idReservacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- AUTO_INCREMENT for table `salas`
+-- AUTO_INCREMENT de la tabla `salas`
 --
 ALTER TABLE `salas`
   MODIFY `idSala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `timer`
+-- AUTO_INCREMENT de la tabla `timer`
 --
 ALTER TABLE `timer`
   MODIFY `noRegistro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `asientos`
+-- Filtros para la tabla `asientos`
 --
 ALTER TABLE `asientos`
   ADD CONSTRAINT `asientos_ibfk_1` FOREIGN KEY (`idFuncion`) REFERENCES `funciones` (`idFuncion`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `bitacora`
+-- Filtros para la tabla `bitacora`
 --
 ALTER TABLE `bitacora`
   ADD CONSTRAINT `bitacora_ibfk_2` FOREIGN KEY (`Usuario`) REFERENCES `usuarios` (`Usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Constraints for table `boletos`
+-- Filtros para la tabla `boletos`
 --
 ALTER TABLE `boletos`
   ADD CONSTRAINT `boletos_ibfk_1` FOREIGN KEY (`idAsiento`) REFERENCES `asientos` (`idAsiento`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -2410,13 +2416,13 @@ ALTER TABLE `boletos`
   ADD CONSTRAINT `boletos_ibfk_4` FOREIGN KEY (`Cine`) REFERENCES `cines` (`nombreCine`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `cines`
+-- Filtros para la tabla `cines`
 --
 ALTER TABLE `cines`
   ADD CONSTRAINT `cines_ibfk_1` FOREIGN KEY (`idCiudad`) REFERENCES `ciudades` (`idCiudad`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `detallefactura`
+-- Filtros para la tabla `detallefactura`
 --
 ALTER TABLE `detallefactura`
   ADD CONSTRAINT `detallefactura_ibfk_1` FOREIGN KEY (`numeroFactura`) REFERENCES `encabezadosfactura` (`numeroFactura`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -2424,7 +2430,7 @@ ALTER TABLE `detallefactura`
   ADD CONSTRAINT `detallefactura_ibfk_3` FOREIGN KEY (`Costo`) REFERENCES `tiposboleto` (`Precio`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `detallereservacion`
+-- Filtros para la tabla `detallereservacion`
 --
 ALTER TABLE `detallereservacion`
   ADD CONSTRAINT `detallereservacion_ibfk_1` FOREIGN KEY (`idFuncion`) REFERENCES `funciones` (`idFuncion`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -2432,14 +2438,14 @@ ALTER TABLE `detallereservacion`
   ADD CONSTRAINT `detallereservacion_ibfk_4` FOREIGN KEY (`idReservacion`) REFERENCES `reservaciones` (`idReservacion`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `encabezadosfactura`
+-- Filtros para la tabla `encabezadosfactura`
 --
 ALTER TABLE `encabezadosfactura`
   ADD CONSTRAINT `encabezadosfactura_ibfk_1` FOREIGN KEY (`Cine`) REFERENCES `cines` (`nombreCine`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `encabezadosfactura_ibfk_2` FOREIGN KEY (`Funcion`) REFERENCES `funciones` (`idFuncion`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `funciones`
+-- Filtros para la tabla `funciones`
 --
 ALTER TABLE `funciones`
   ADD CONSTRAINT `funciones_ibfk_1` FOREIGN KEY (`idPelicula`) REFERENCES `peliculas` (`idPelicula`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -2447,33 +2453,33 @@ ALTER TABLE `funciones`
   ADD CONSTRAINT `funciones_ibfk_3` FOREIGN KEY (`cine`) REFERENCES `cines` (`nombreCine`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `peliculas`
+-- Filtros para la tabla `peliculas`
 --
 ALTER TABLE `peliculas`
   ADD CONSTRAINT `peliculas_ibfk_1` FOREIGN KEY (`Clasificación`) REFERENCES `clasificacion` (`clasificacion`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `peliculas_ibfk_3` FOREIGN KEY (`Multimedia`) REFERENCES `multimedia` (`NoRegistro`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `reservaciones`
+-- Filtros para la tabla `reservaciones`
 --
 ALTER TABLE `reservaciones`
   ADD CONSTRAINT `reservaciones_ibfk_1` FOREIGN KEY (`Cine`) REFERENCES `cines` (`nombreCine`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `reservaciones_ibfk_2` FOREIGN KEY (`idFuncion`) REFERENCES `funciones` (`idFuncion`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `salas`
+-- Filtros para la tabla `salas`
 --
 ALTER TABLE `salas`
   ADD CONSTRAINT `salas_ibfk_1` FOREIGN KEY (`idCine`) REFERENCES `cines` (`idCine`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `timer`
+-- Filtros para la tabla `timer`
 --
 ALTER TABLE `timer`
   ADD CONSTRAINT `timer_ibfk_1` FOREIGN KEY (`Usuario`) REFERENCES `usuarios` (`Usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `usuarios`
+-- Filtros para la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`idPerfil`) REFERENCES `perfiles` (`idPerfil`) ON DELETE NO ACTION ON UPDATE NO ACTION;
