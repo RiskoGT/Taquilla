@@ -24,6 +24,7 @@ namespace Appadmin
 {
     public partial class peliculas : Form
     {
+        //nueva conexion llamada CONN, usando como parametro 'Dsn=cine', el mismo nombre que esta en la conexion ODBC
         OdbcConnection conn = new OdbcConnection("Dsn=cine");
         string usuario;
 		string nivel;
@@ -32,6 +33,7 @@ namespace Appadmin
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
+            //inicializamos las siguientes variables
             usuario = user;
 			nivel = level;
             txtTitulo.Focus();
@@ -42,6 +44,7 @@ namespace Appadmin
         }
 		void Bitacora(string Accion, string ip, string Afectado)
 		{
+            //guardamos cada accion realizada en este form
 			string query = "INSERT INTO bitacora (Usuario,Accion,Afectado,ipAddress,fechaHora) VALUES ('" + usuario + "','" + Accion + "',' " + Afectado + "','" + ip + "','" + DateTime.Now.ToString("G") + "')";
 			OdbcCommand consulta = new OdbcCommand(query, conn);
 			try
@@ -65,6 +68,7 @@ namespace Appadmin
 
         private void regresarMenu_Click_1(object sender, EventArgs e)
         {            
+            //mostramos el form MenuCartelera
             MenuCartelera frm = new MenuCartelera(usuario, nivel);
             frm.Show();
             this.Hide();
@@ -104,6 +108,7 @@ namespace Appadmin
 
         private void button7_Click(object sender, EventArgs e)
         {            
+            //mostramos el form MenuCartelera
             this.Hide();
             MenuCartelera mainMenu = new MenuCartelera(usuario, nivel);
             mainMenu.Show();
@@ -124,8 +129,10 @@ namespace Appadmin
             //mensaje para determinar si el usuario sigue activo en el sistema
             try
             {
+                //variables para convertir la fecha del DateTimePicker a formato que acepta la BD
                 txtEstreno.Text = dateTimePicker1.Value.Date.ToString("yyyy/MM/dd");
                 txtFin.Text = dateTimePicker2.Value.Date.ToString("yyyy/MM/dd");
+                //query de insercion
                 string query = "INSERT INTO peliculas (Titulo, Multimedia, Formato, Clasificación, Sinopsis,"
                     + " Idioma, semanaEstrenoInicio, semanaEstrenoFin) VALUES " +
                     "('" + txtTitulo.Text + "'," + comboMulti.Text[0] + ",'" + comboFormato.Text +
@@ -135,10 +142,12 @@ namespace Appadmin
                 OdbcCommand consulta = new OdbcCommand(query, conn);
                 try
                 {
+                    //verificamos que los campos no esten vacios 
                     if (txtTitulo.Text != "" && txtSinopsis.Text != "" && comboIdioma.Text != "" &&
                         comboMulti.Text != "" && comboClas.Text != "" &&
                         comboFormato.Text != " " && comboIdioma.Text != " ")
                     {
+                        //ejecutamos el query para guardar los datos 
                         consulta.ExecuteNonQuery();
                         MessageBox.Show("Datos Registrados Correctamente");
                         txtTitulo.Text = "";
@@ -185,6 +194,7 @@ namespace Appadmin
 
         private void BtnActualizar_Click(object sender, EventArgs e)
         {
+            //variables para convertir la fecha del DateTimePicker a formato que acepta la BD
             txtEstreno.Text = dateTimePicker1.Value.Date.ToString("yyyy/MM/dd");
             txtFin.Text = dateTimePicker2.Value.Date.ToString("yyyy/MM/dd");
             string query = "UPDATE peliculas SET Titulo = '" + txtTitulo.Text
@@ -196,6 +206,7 @@ namespace Appadmin
             OdbcCommand consulta = new OdbcCommand(query, conn);
             try
             {
+                //Verificamos que los campos no esten vacios 
                 if (txtTitulo.Text != "" && txtSinopsis.Text != "" & comboIdioma.Text != " "
                     && comboFormato.Text != "")
                 {
@@ -234,6 +245,7 @@ namespace Appadmin
 
         void llenarTabla()
         {
+            //llenamos el DataGridView
             OdbcCommand codigo = new OdbcCommand();
             codigo.Connection = conn;
             codigo.CommandText = ("SELECT idPelicula, Titulo, Multimedia, Formato, Clasificación, Sinopsis, " +
@@ -298,6 +310,7 @@ namespace Appadmin
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
+            //codigo para ELIMINAR. En realidad no se elimina el registro, solo cambia de estado 
             string query = "UPDATE peliculas set estadoPelicula=1 WHERE idPelicula =" 
                 + dataGridView1.CurrentRow.Cells[0].Value.ToString();            
             conn.Open();
@@ -363,6 +376,7 @@ namespace Appadmin
 
         private void DataGridView1_DoubleClick(object sender, EventArgs e)
         {
+            //codigo para trasladar los datos de la fila seleccionada en el DataGridView a los textbox de entrada
             if (dataGridView1.SelectedRows.Count == 1)
             {                
                 llenarCombos();

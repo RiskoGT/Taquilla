@@ -1,4 +1,11 @@
-﻿using CrystalDecisions.CrystalReports.Engine;
+﻿/*
+ * Integrantes a Cargo:
+ * 0901-16-1288 Randy Choc
+ * 
+ * Randy creo el form con los respectivos elementos
+ * Randy agrego diseño y codigo al boton CONSULTAR 
+ */
+using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 using System;
 using System.Collections.Generic;
@@ -29,6 +36,7 @@ namespace WindowsFormsAppPruebas
         }
         private void BtnConsultar_Click(object sender, EventArgs e)
         {
+            //validaciones para seleccionar los rangos de fecha segun el mes ingresado 
             if (comboMes.Text == "Enero")
             {
                 txtInicio.Text = "2019-01-01";
@@ -85,14 +93,13 @@ namespace WindowsFormsAppPruebas
                 txtInicio.Text = "2019-12-01";
                 txtFin.Text = "2019-12-31";
             }
-            //Creamos el objeto qe apuntara al reporte de crystal en mi caso CrystalReport1.rpt
-            ganancias crystalrpt = new ganancias();
-            
+            //Creamos el objeto que apuntara al reporte de crystal en mi caso ganancias.rpt
+            ganancias crystalrpt = new ganancias();            
             //Contendra los objetos cada campo de parámetros del informe.
             ParameterFieldDefinitions pfds;
             //representa un registro en el reporte
             ParameterFieldDefinition pfd;
-            //objeto qe contendra el valor del parametro
+            //objeto que contendra el valor del parametro
             ParameterValues pvs = new ParameterValues();
             ParameterDiscreteValue pdv = new ParameterDiscreteValue();
             try
@@ -111,7 +118,7 @@ namespace WindowsFormsAppPruebas
                 pvs.Add(pdv);
                 pfd.ApplyCurrentValues(pvs);
 
-                //aqui pasamos el segundo valor del textbox y el nombre del segundo parametro
+                //aqui pasamos el tercer valor del textbox y el nombre del tercer parametro
                 pdv.Value = comboMes.Text;
                 pfds = crystalrpt.DataDefinition.ParameterFields;
                 pfd = pfds["mes"];

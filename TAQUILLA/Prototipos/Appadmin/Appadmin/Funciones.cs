@@ -24,6 +24,7 @@ namespace Appadmin
 {
     public partial class Funciones : Form
     {
+        //creamos una nueva conexion con la BD
         OdbcConnection conn = new OdbcConnection("Dsn=cine");
         string usuario;
 		string nivel;
@@ -57,7 +58,7 @@ namespace Appadmin
                 MessageBox.Show(ex.Message);
             }
             conn.Close();
-
+            //llenado de comboBox CINES
             try
             {
                 comboCine.Text = "Cine";
@@ -80,7 +81,7 @@ namespace Appadmin
         }
         void llenartbl()
         {
-
+            //codigo para llenar DataGridView
             OdbcCommand cod = new OdbcCommand();
             cod.Connection = conn;
             cod.CommandText = ("SELECT idFuncion, idPelicula, idSala, cine, horaFuncion " +
@@ -103,6 +104,7 @@ namespace Appadmin
         }
         void Bitacora(string Accion, string ip, string Afectado)
         {
+            //codigo para eliminar cada accion realizada entre el sistema y la BD
             string query = "INSERT INTO bitacora (Usuario,Accion,Afectado,ipAddress,fechaHora) " +
                 "VALUES ('" + usuario + "','" + Accion + "',' " + Afectado + "','" + ip + 
                 "','" + DateTime.Now.ToString("G") + "')";
@@ -199,6 +201,7 @@ namespace Appadmin
         }
         private void regresarMenu_Click_1(object sender, EventArgs e)
         {
+            //mostramos el form MainMenu
             MainMenu frm = new MainMenu(usuario, nivel);
             frm.Show();
             this.Hide();
@@ -234,6 +237,7 @@ namespace Appadmin
 		}
 		private void button7_Click(object sender, EventArgs e)
 		{
+            //mostramos el form mainMenu
 			this.Hide();
 			MenuCartelera mainMenu = new MenuCartelera(usuario, nivel);
 			mainMenu.Show();
@@ -249,6 +253,7 @@ namespace Appadmin
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            //separamos los valores del comboPelicula para poder ingresar mas de 9 datos en la BD
             string auxpeli = ComboPelicula.Text;
             string[] separarpeli;
             separarpeli = auxpeli.Split(' ');
@@ -296,6 +301,7 @@ namespace Appadmin
         }
         private void BtnActualizar_Click(object sender, EventArgs e)
         {
+            //codigo para actualizar un dato en la BD
             string query = "UPDATE funciones SET "+
             "idPelicula=" + ComboPelicula.Text[0] + ",idSala=" + comboSala.Text + "," +
             "cine='" + comboCine.Text + "',horaFuncion='" + txtDuracion.Text+ "' WHERE idFuncion =" + dtgFunciones.CurrentRow.Cells[0].Value.ToString();         
@@ -334,9 +340,9 @@ namespace Appadmin
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
+            //codigo para ELIMINAR. En realidad no elimina, solo cambia el estado del registro 
             string query = "UPDATE funciones set estadoFuncion=1 WHERE idFuncion ='" + dtgFunciones.CurrentRow.Cells[0].Value.ToString() + "'";            
             conn.Open();
-
             OdbcCommand consulta = new OdbcCommand(query, conn);
             try
             {
@@ -377,6 +383,7 @@ namespace Appadmin
 
 		private void comboCine_SelectedIndexChanged(object sender, EventArgs e)
 		{
+            //llenado del combo CINE
 			try
 			{
 				comboSala.Text = "Sala";
@@ -413,7 +420,6 @@ namespace Appadmin
                 string sala = "";
 				try
 				{
-
 					conn.Open();
 					OdbcCommand command = new OdbcCommand("SELECT titulo FROM peliculas WHERE idPelicula =" + dtgFunciones.CurrentRow.Cells[1].Value.ToString(), conn);
 					OdbcDataReader reader = command.ExecuteReader();
@@ -430,7 +436,6 @@ namespace Appadmin
 				conn.Close();
                 try
                 {
-
                     conn.Open();
                     OdbcCommand command = new OdbcCommand("SELECT * FROM funciones ", conn);
                     OdbcDataReader reader = command.ExecuteReader();
@@ -454,8 +459,7 @@ namespace Appadmin
 				comboCine.Text = dtgFunciones.CurrentRow.Cells[3].Value.ToString();
 				txtDuracion.Text = dtgFunciones.CurrentRow.Cells[4].Value.ToString();
 				btnActualizar.Enabled = true;
-			}
-			
+			}			
 		}
 	}         
 }

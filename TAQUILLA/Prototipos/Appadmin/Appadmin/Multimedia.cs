@@ -25,6 +25,7 @@ namespace Appadmin
 {
     public partial class Multimedia : Form
     {
+        //creamos nueva conexion 
         OdbcConnection conn = new OdbcConnection("Dsn=cine");
         string user;
 		string level;
@@ -39,6 +40,7 @@ namespace Appadmin
         }
 		void Bitacora(string Accion, string ip, string Afectado)
 		{
+            //codigo para guardar cada accion realizada entre visual y la BD
 			string query = "INSERT INTO bitacora (Usuario,Accion,Afectado,ipAddress,fechaHora) VALUES ('" + user + "','" + Accion + "',' "+Afectado + "','" + ip + "','" + DateTime.Now.ToString("G") + "')";
 			OdbcCommand consulta = new OdbcCommand(query, conn);
 			try
@@ -52,7 +54,7 @@ namespace Appadmin
 		}
 		void llenartbl()
 		{
-
+            //codigo para llevar el DataGridView
 			OdbcCommand cod = new OdbcCommand();
 			cod.Connection = conn;
 			cod.CommandText = ("SELECT NoRegistro, Afiche, Trailer FROM multimedia " +
@@ -86,6 +88,7 @@ namespace Appadmin
 
         private void regresarMenu_Click_1(object sender, EventArgs e)
         {
+            //mostramos el form MenuCartelera
             MenuCartelera frm = new MenuCartelera(user,level);
             frm.Show();
             this.Hide();
@@ -115,53 +118,42 @@ namespace Appadmin
         {
 
         }
-
 		private void Cartelera_FormClosed(object sender, FormClosedEventArgs e)
 		{
 			Application.Exit();
 
 		}
-
 		private void button7_Click(object sender, EventArgs e)
 		{
+            //mostramos el form MenuCartelera
 			this.Hide();
 			MenuCartelera mainMenu = new MenuCartelera(user, level);
 			mainMenu.Show();
 		}
-
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-        }
-
-		
-
+        }		
         private void TextBox1_StyleChanged(object sender, EventArgs e)
         {
 
         }
-
         private void TextBox1_StyleChanged_1(object sender, EventArgs e)
         {
             webPeli.Navigate(txtPeli.Text);
-
         }
-
         private void TxtPeli_TextChanged(object sender, EventArgs e)
         {
             webPeli.Navigate(txtPeli.Text);
 			btnVer.Enabled = true;
         }
-
         private void Multimedia_Load(object sender, EventArgs e)
         {
 
         }
-
 		private void button2_Click(object sender, EventArgs e)
 		{
-			
-
+			//codigo para insertar el la BD
 			string query = "INSERT INTO multimedia (Afiche, Trailer) VALUES ('"+txtAfiche.Text+"', '"+txtPeli.Text+"')";
 			conn.Open();
 			OdbcCommand consulta = new OdbcCommand(query, conn);
@@ -247,7 +239,6 @@ namespace Appadmin
 
 		private void textBox1_TextChanged(object sender, EventArgs e)
 		{
-
 			webPeli.Navigate(txtPeli.Text);
 			btnVer.Enabled = true;
 		}
@@ -270,6 +261,7 @@ namespace Appadmin
 		}
 		private void btnActualizar_Click(object sender, EventArgs e)
 		{
+            //boton para actualizar datos en la BD
 			btnGuardar.Enabled = true;
 			btnEliminar.Enabled = true;
 			btnActualizar.Enabled = false;
@@ -312,6 +304,7 @@ namespace Appadmin
 		}
 		private void btnEliminar_Click(object sender, EventArgs e)
 		{
+            //boton para ELIMINAR. En realidad no elimina, solo cambia de estado el registro 
 			tblMulitimedia.Enabled = false;
 			if (tblMulitimedia.SelectedRows.Count == 1)
 			{
@@ -347,7 +340,6 @@ namespace Appadmin
 			else
 			{
 				MessageBox.Show("Porfavor Seleccione un registro de la tabla");
-
 			}
 		}
 	}          

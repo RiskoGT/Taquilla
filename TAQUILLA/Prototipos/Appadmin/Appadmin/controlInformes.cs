@@ -30,6 +30,7 @@ namespace Appadmin
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
+            //inicializamos los siguientes componentes y variables 
             usuario = user;
 			level = nivel;
             lbUsuario.Text = user;
@@ -49,8 +50,11 @@ namespace Appadmin
         }
         private void regresarMenu_Click(object sender, EventArgs e)
         {
+            //llamamos el form MainMenu
             MainMenu frm = new MainMenu(usuario, level);
+            //mostramos el form 
             frm.Show();
+            //ocultamos el form actual 
             this.Hide();
         }
         private void label5_MouseDown(object sender, MouseEventArgs e)
@@ -71,8 +75,11 @@ namespace Appadmin
         }
         private void BtnRegresar_Click(object sender, EventArgs e)
         {
+            //ocultamos la ventana actual 
             this.Hide();
+            //llamamos el form MainMenu
             MainMenu mainMenu = new MainMenu(usuario, level);
+            //mostramos el form 
             mainMenu.Show();
         }
         private void BtnReporteTaquillera_Click(object sender, EventArgs e)
@@ -90,7 +97,9 @@ namespace Appadmin
 
         private void BtnReporteGanancia_Click(object sender, EventArgs e)
         {
+            //creamos una nueva conexion con el form 'rpHorario' 
             rpHorario horario = new rpHorario();
+            //mostrarmos el form 'rpHorario'
             horario.Show();
         }
     }
