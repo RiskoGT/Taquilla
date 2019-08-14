@@ -76,13 +76,29 @@ namespace Taquilla_cliente_comprador
                 else
                 {
 
-                    frmAsientos asi = new frmAsientos(tiempo, nofuncion, cineSeleccionado, Convert.ToInt32(txt3ra.Text), Convert.ToInt32(txtAdulto.Text), Convert.ToInt32(txtNiño.Text));
-                    asi.txtAsientos.Text = txtTotalB.Text;
 
+					try
+					{
 
+						conn.Open();
+						OdbcCommand command = new OdbcCommand("SELECT estado FROM asientos where  idFuncion="+nofuncion+" AND estado=0", conn);
+						OdbcDataReader reader = command.ExecuteReader();
+						if (reader.Read())
+						{
+							frmAsientos asi = new frmAsientos(tiempo, nofuncion, cineSeleccionado, Convert.ToInt32(txt3ra.Text), Convert.ToInt32(txtAdulto.Text), Convert.ToInt32(txtNiño.Text));
+							asi.txtAsientos.Text = txtTotalB.Text;
+							asi.Show();
+							Visible = false;
+						}
+						else { MessageBox.Show("Funcion Llena"); }  
+					}
+					catch (Exception ex)
+					{
+						MessageBox.Show(ex.Message);
+					}
+					conn.Close();
 
-                    asi.Show();
-                    Visible = false;
+                    
 
 
                 }
