@@ -665,7 +665,9 @@ namespace Taquilla_cliente_comprador
 					{
 						//reservacion//
 						Reservacion();
-							int noAsiento = 0;			
+							int noAsiento = 0;
+							detalleReservacion(Elegidos2[noAsiento]);
+						
 							while (Elegidos2[noAsiento] != "$")// se controla el numero de asientos elegidos
 							{
 					
