@@ -1,0 +1,25 @@
+.tipop{
+    text-align: justify;
+    font-size: 30px;
+    font-family:Arial, Helvetica, sans-serif ;
+    color: black;
+    width: 95%;
+    margin:20px;
+}
+.textopelicula{
+    position: relative;
+
+    left:5% ;
+    text-align: left;
+    font-size: 30px;
+    font-family:Arial, Helvetica, sans-serif ;
+    color: black;
+    width: 100%;
+    margin: 20px;
+}
+
+.bit{
+
+width: 90%;
+
+}
